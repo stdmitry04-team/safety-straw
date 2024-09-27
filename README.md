@@ -10,11 +10,19 @@
 ### Backend
 
 - For those who believe they're going to be developing in the backend, please create a MongoDB Atlas Account
+- install NodeJs
 - cd into the 'backend' folder
-- Run in the terminal "npm install mongodb"
-- Run in the terminal "npm install dotenv"
-- In the config file, add ATLAS_URI = mongodb+srv://\<db_username\>:\<db_password>\@safetystraw.lfyxk.mongodb.net/?retryWrites=true&w=majority&appName=SafetyStraw
-- In config.env, replace db_password and db_username with the correct credentials. Reach out to Bryan or Dmitri to get this information.
+- run "npm install" in the terminal if you  are running it first time
+- Create config.env file inside of the backend folder
+- Copy insides of config.env.example to config.env and put your variables there. For port, use 5000
+- To start the local host, run "npm run dev" in the terminal
+
+
+### Frontend
+
+ - cd into 'frontend'
+ - Create .env file inside of the backend folder
+ - Copy insides of .env.example to .env and put your variables there. For PORT, use 3000; For REACT_APP_BACKEND_URL, use http://localhost:5000
 
 ### How to Run Local Host
 

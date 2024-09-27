@@ -17,7 +17,7 @@ async function run() {
     // Connect to the MongoDB cluster
     await client.connect();
     // Access your database
-    const database = client.db(); // No specific database mentioned, defaults to the first one in the URI
+    const database = client.db('SafetyStraw'); // No specific database mentioned, defaults to the first one in the URI
     console.log(`Connected to database: ${database.databaseName}`);
     // You can add more database operations here as needed
   } catch (error) {
