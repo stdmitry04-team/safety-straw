@@ -13,7 +13,6 @@
 - cd into the 'backend' folder
 - Run in the terminal "npm install mongodb"
 - Run in the terminal "npm install dotenv"
-- If you don't have one already, make a 'config.env' file in the backend folder
 - In the config file, add ATLAS_URI = mongodb+srv://\<db_username\>:\<db_password>\@safetystraw.lfyxk.mongodb.net/?retryWrites=true&w=majority&appName=SafetyStraw
 - In config.env, replace db_password and db_username with the correct credentials. Reach out to Bryan or Dmitri to get this information.
 
