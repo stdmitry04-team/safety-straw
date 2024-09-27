@@ -4,7 +4,7 @@
 
 ### Node.JS
 
-- Please visit the following link and install Node.js
+- Please install Node.js
 - You can check if you've installed it correctly by running "node -v" in your terminal to check your version status
 
 ### Backend
