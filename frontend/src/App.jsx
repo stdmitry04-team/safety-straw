@@ -2,9 +2,9 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
-
+import Product from "./components/product";
 function App() {
-  return <>hello world</>;
+  return <Product/>
 }
 
 export default App;

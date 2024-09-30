@@ -1,0 +1,76 @@
+* {
+    font-family: Aileron;   
+}
+body {
+    background: linear-gradient(360deg, #DC5647 0%, #FCD678 99.99%);
+}
+.product {
+    display: flex;
+    justify-content: space-evenly;
+}
+.product-left {
+    display: flex;
+    flex-flow: row;
+}
+.product-left-left-desc {
+    width: 284px;
+    height: 137px;
+    top: 340px;
+    left: 165px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Gantari;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+}
+.product-left-right-desc {
+    width: 257px;
+    height: 137px;
+    position: absolute; /* Ensure absolute positioning */
+    top: 613px; /* Increase this value to move the element down */
+    left: 661px;
+    font-family: Gantari;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 30px;
+    text-align: left;
+    color: #000000;
+}
+
+.product-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    font-family: Aileron;
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: center;
+}
+.red {
+    color: #D63A29;; /* Change this to your desired color */
+}
+.waitlist-button {
+    background-color: #D63A29;
+    width: 391px;
+    height: 80px;
+    top: 599px;
+    left: 1057px;
+    gap: 0px;
+    border-radius: 20px;
+    opacity: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: Gantari;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 48px;
+    text-align: left;
+    border: 0px;
+
+}
