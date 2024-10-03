@@ -1,42 +1,50 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Aileron:wght@600;900&display=swap');
+
+/* Global styles */
+body {
+    background-color: #f7c270;
+    font-family: 'Aileron', sans-serif; 
+    font-weight: 600;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.our_mission {
+    padding: 30px; 
+    margin: 40px auto; 
+    width: 70%; 
+    background-color: white; 
+    border-radius: 20px; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+    font-family: 'Aileron', sans-serif; 
+
+h1 {
+    text-align: center; 
+    font-weight: 900; 
+    margin-bottom: 20px;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.mission_text {
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: left; 
+    font-family: 'Aileron', sans-serif;
+    font-weight: 600;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.mission_text p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    line-height: 1.5em; 
 }
 
-.card {
-  padding: 2em;
+.author {
+    text-align: right; 
+    color: orangered;
+    font-weight: 600; 
+    margin-top: 20px;
 }
 
-.read-the-docs {
-  color: #888;
+.highlight {
+    color: orangered; 
+    font-weight: 600;
+}
 }
