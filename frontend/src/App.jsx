@@ -2,19 +2,13 @@ import { useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
+import Video from "./components/video";
+import Our_mission from "./components/our_mission"
 
 function App() {
   return (
-    <div className="our_mission">
-      <h1> OUR MISSION </h1>
-      <div className="mission_text">
-        <p>Safety Straw’s mission is to eliminate the number of</p>
-        <p>date rape victims from the world. Our goal is to</p>
-        <p>create a <span className="highlight">safer</span>, more <span className="highlight">secure</span> nightlife environment.</p>
-      </div>
-      <p className="author"> ~ Jack & Zak </p>
-    </div>
-  );
-}
+  <Our_mission/>
+  )
+} 
 
 export default App;

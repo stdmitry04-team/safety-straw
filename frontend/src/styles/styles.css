@@ -1,0 +1,49 @@
+@import url('https://fonts.googleapis.com/css2?family=Aileron:wght@600;900&display=swap');
+
+/* Global styles */
+body {
+    background-color: #f7c270;
+    font-family: 'Aileron', sans-serif; 
+    font-weight: 600;
+}
+
+.our_mission {
+    padding: 30px; 
+    margin: 40px auto; 
+    width: 70%; 
+    background-color: white; 
+    border-radius: 20px; 
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); 
+    font-family: 'Aileron', sans-serif; 
+
+h1 {
+    text-align: center; 
+    font-weight: 900; 
+    margin-bottom: 20px;
+}
+
+.mission_text {
+    width: 50%; 
+    margin: 0 auto; 
+    text-align: left; 
+    font-family: 'Aileron', sans-serif;
+    font-weight: 600;
+}
+
+.mission_text p {
+    font-size: 1.2em;
+    margin: 10px 0;
+    line-height: 1.5em; 
+}
+
+.author {
+    text-align: right; 
+    color: orangered;
+    font-weight: 600; 
+}
+
+.highlight {
+    color: orangered; 
+    font-weight: 600;
+}
+}
