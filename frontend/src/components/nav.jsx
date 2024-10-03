@@ -1,7 +1,7 @@
 // nav component
 
 import { useState } from 'react';
-import logo from '../images/straw-logo.png'
+import logo from '../images/logo.png'
 import profileIcon from '../images/profile.png'
 import cartIcon from '../images/cart.png'
 import menuIcon from '../images/menu.png'
