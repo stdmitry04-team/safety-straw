@@ -1,7 +1,6 @@
 const nodemailer = require("nodemailer");
 require("dotenv").config({ path: "./config.env" });
-const { MongoClient, ServerApiVersion } = require("mongodb");
-const { connectDB } = require("./connect.js");
+const { connectDB, connectClient } = require("./connect.js");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com", //define mailer service, this one is gmail
@@ -13,17 +12,39 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+/**
+ * Main driver function to send emails
+ */
 async function main() {
-  const db = await connectDB();
-  const waitlistCollection = db.collection("waitlist");
+  const client = await connectClient();
+  const db = connectDB(client);
+  const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
   const emails = await waitlistCollection.find({}).toArray();
   let recipients = emails.map((item) => item.email).join(", ");
+  const newsletter_content = await fetchNewsLetterContent(db);
 
   const info = await transporter.sendMail({
-    from: '"Bryan Tran" <Btran21003@gmail.com>',
+    from: `${process.env.MAILING_EMAIL}`,
     to: recipients,
-    subject: "Hello ✔",
-    html: `<!DOCTYPE html>
+    subject: newsletter_content[0],
+    html: newsletter_content[1],
+    attachments: [newsletter_content[2]],
+  });
+
+  console.log(info);
+  client.close();
+}
+
+/**
+ * Collects the necessary information from the database and returns
+ * information necessary to send the newsletter
+ * @param {Db} db
+ * @returns
+ */
+async function fetchNewsLetterContent(db) {
+  const collection = db.collection(process.env.NEWS_COLLECTION);
+  const data = await collection.findOne({ name: process.env.MAIN_NEWSLETTER });
+  let content = `<!DOCTYPE html>
 <html>
   <head>
     <style>
@@ -31,7 +52,8 @@ async function main() {
         text-align: center;
       }
       body {
-        background-image: linear-gradient(#f7c170, #df614b);
+        background-color: #ff7e5f; /* Fallback for older clients */
+        background: linear-gradient(#f7c170, #df614b);
         height: 100vh;
       }
       .content-container {
@@ -49,31 +71,14 @@ async function main() {
     </style>
   </head>
   <body>
-    <h1 class="email-header">This is the email header</h1>
+    <h1 class="email-header">${data["header"]}</h1>
     <div class="content-container">
       <img
-        src="logo"
+        src="cid:logo"
         class="company-logo"
       />
       <p>
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
-        This is dummy text. This is dummy text. This is dummy text. This is
-        dummy text. This is dummy text. This is dummy text. This is dummy text.
+        ${data["content"]}
       </p>
     </div>
     <footer>
@@ -81,15 +86,17 @@ async function main() {
     </footer>
   </body>
 </html>
-`,
-    attachments: [
-      {
-        filename: "safety-straw-logo.png",
-        path: "../frontend/src/assets/safety-straw-logo.png",
-        cid: "logo",
-      },
-    ],
-  });
+`;
+
+  return [
+    data["subject"],
+    content,
+    {
+      filename: "safety-straw-logo.png",
+      path: "../frontend/src/assets/safety-straw-logo.png",
+      cid: "logo",
+    },
+  ];
 }
 
 main().catch(console.error);

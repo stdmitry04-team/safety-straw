@@ -3,7 +3,7 @@ require("dotenv").config({ path: "./config.env" });
 
 // Create a MongoClient with a MongoClientOptions object to set the Stable API version
 
-async function connectDB() {
+async function connectClient() {
   const client = new MongoClient(process.env.ATLAS_URI, {
     serverApi: {
       version: ServerApiVersion.v1,
@@ -16,13 +16,18 @@ async function connectDB() {
     // Connect to the MongoDB cluster
     await client.connect();
     // Access your database
-    const database = client.db("safety_straw"); // No specific database mentioned, defaults to the first one in the URI
-    console.log(`Connected to database: ${database.databaseName}`);
-    return database;
+    return client;
     // You can add more database operations here as needed
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);
   }
 }
 
-module.exports = { connectDB };
+function connectDB(client) {
+  console.log(client);
+  const database = client.db(process.env.DATABASE_NAME); // No specific database mentioned, defaults to the first one in the URI
+  console.log(`Connected to database: ${database.databaseName}`);
+  return database;
+}
+
+module.exports = { connectClient, connectDB };
