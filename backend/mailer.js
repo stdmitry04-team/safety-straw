@@ -1,5 +1,7 @@
 const nodemailer = require("nodemailer");
+const schedule = require("node-schedule");
 require("dotenv").config({ path: "./config.env" });
+require("dotenv").config({ path: "./database.env" });
 const { connectDB, connectClient } = require("./connect.js");
 
 const transporter = nodemailer.createTransport({
@@ -12,10 +14,14 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+async function main() {
+  await sendNewsLetter();
+}
+
 /**
  * Main driver function to send emails
  */
-async function main() {
+async function sendNewsLetter() {
   const client = await connectClient();
   const db = connectDB(client);
   const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
@@ -31,7 +37,6 @@ async function main() {
     attachments: [newsletter_content[2]],
   });
 
-  console.log(info);
   client.close();
 }
 
@@ -99,4 +104,8 @@ async function fetchNewsLetterContent(db) {
   ];
 }
 
-main().catch(console.error);
+schedule.scheduleJob("* * * * *", () => {
+  // This runs every minute
+  console.log("Running job every minute.");
+  main();
+});

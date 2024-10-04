@@ -18,7 +18,6 @@ async function updateEmailContents(header, content, subject) {
   };
 
   const result = await collection.updateOne(filter, updateDoc, options);
-  console.log(result);
   client.close();
 }
 
