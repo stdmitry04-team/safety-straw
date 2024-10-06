@@ -1,0 +1,94 @@
+.waitlist {
+    background-color: #FCD578;
+    width: 125vw;
+    height: 261.97px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    font-family: sans-serif;
+    padding-left: 84px;
+    padding-right: 84px;
+    box-sizing: border-box;
+    zoom: 0.8;
+}
+
+.waitlist-header {
+    font-size: 28.8px;
+    color: #D63A29;
+    font-weight: 900;
+}
+
+.waitlist-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 7px;
+    width: 1045px;
+    height: 100%;
+}
+
+.waitlist-form {
+    padding-top: 88px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 28px;
+    height: 68px;
+    width: 100%;
+}
+
+.waitlist-input {
+    border: none;
+    border-radius: 20px;
+    font-size: 29px;
+    outline: none;
+    height: 100%;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+}
+
+.waitlist-firstname {
+    width: 234px;
+}
+
+.waitlist-email-wrapper {
+    height: 100%;
+    position: relative;
+    width: 783px;
+}
+.waitlist-email {
+    width: 615px;
+}
+
+.waitlist-terms {
+    font-size: 20px;
+}
+
+.waitlist-button {
+    position: absolute;
+    right: 0;
+    background-color: #D63A29;
+    border-radius: 20px;
+    width: 197px; 
+    height: 67.99px;
+    border: none;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 0;
+}
+
+.waitlist-button:hover {
+    cursor: pointer;
+}
+
+.term-link {
+    color: #D63A29;
+    font-weight: 900;
+}
