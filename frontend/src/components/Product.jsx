@@ -6,18 +6,17 @@ import productimagewave from "../assets/productimagewave.png"
 function Product(){
     return (
         <div class = "product">
-            <div class = "product-left">
-                    <p class = "product-left-left-desc">Color changes from yellow to red when the straw scomes into contact with a drugged liquid</p>
-                    <img src={strawimage} alt="Straw Image"></img>
-                    <p class = "product-left-right-desc">Made from material...</p>
-            </div>
+            {/* <div class = "product-left">
+                    <p class = "product-left-left-desc">Color changes from <br/>yellow to red when<br/> the straw comes <br/> into contact with a <br/>drugged liquid</p>
+                    <img class = "straw-image" src={strawimage} alt="Straw Image"></img>
+                    <p class = "product-left-right-desc">Made from<br/> material...</p>
+            </div> */}
             <div class = "product-right">
-                <h3>OUR PRODUCT</h3>
-                <h5>Safety Straw is the <span class="red">first</span> date rape detection straw in the <span class="red">entire market.</span></h5>
-                <h5>We offer a variety of sizes, fit for any and all establishments.</h5>
+                <p class="our-product">OUR PRODUCT</p>
+                <p class ="our-product-text-1">Safety Straw is the <span class="red">first</span> date rape <br /> detection straw in the <span class="red">entire market.</span></p> 
+                <p class = "our-product-text-2"> We offer a variety of sizes, fit for <br />any and all establishments</p>
                 <button class="waitlist-button">Join Waitlist</button>
             </div>
-            
         </div>
         
     );

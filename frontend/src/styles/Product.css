@@ -1,76 +1,145 @@
+@font-face {
+    font-family: 'Aileron-700';
+    src: url('../fonts/Aileron-SemiBold.otf') format('opentype');
+}
 * {
-    font-family: Aileron;   
-}
-body {
-    background: linear-gradient(360deg, #DC5647 0%, #FCD678 99.99%);
-}
-.product {
-    display: flex;
-    justify-content: space-evenly;
-}
-.product-left {
-    display: flex;
-    flex-flow: row;
-}
-.product-left-left-desc {
-    width: 284px;
-    height: 137px;
-    top: 340px;
-    left: 165px;
-    gap: 0px;
-    opacity: 0px;
-    font-family: Gantari;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: left;
-}
-.product-left-right-desc {
-    width: 257px;
-    height: 137px;
-    position: absolute; /* Ensure absolute positioning */
-    top: 613px; /* Increase this value to move the element down */
-    left: 661px;
-    font-family: Gantari;
-    font-size: 30px;
-    font-weight: 600;
-    line-height: 30px;
-    text-align: left;
-    color: #000000;
-}
-
-.product-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: column;
-    font-family: Aileron;
-    font-size: 50px;
-    font-weight: 700;
-    line-height: 60px;
-    text-align: center;
+    font-family: 'Aileron-700';
+      
 }
 .red {
-    color: #D63A29;; /* Change this to your desired color */
-}
-.waitlist-button {
-    background-color: #D63A29;
-    width: 391px;
-    height: 80px;
-    top: 599px;
-    left: 1057px;
-    gap: 0px;
-    border-radius: 20px;
-    opacity: 0px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-family: Gantari;
-    font-size: 40px;
-    font-weight: 600;
-    line-height: 48px;
-    text-align: left;
-    border: 0px;
+    color: #D63A29;
 
+}
+body {
+    background: 
+        url('../assets/product-middle-bubbles.png') no-repeat,  /* Middle bubbles image */
+        url('../assets/product-bottom-bubbles.png') no-repeat,  /* Bottom bubbles image */
+        url('../assets/product-background.png') no-repeat,      /* Background image */
+        linear-gradient(180deg, #E79B56 0%, #F9C673 50%, #FFFFFF 99.99%); /* Gradient */
+    
+    background-size: contain, contain, contain, cover, cover;   /* Ensures the image fits, and the gradient covers the screen */
+    
+    background-position: center, /* Middle bubbles position */
+                      calc(100% - 50px) bottom,  /* Moves the bottom bubbles up by 50px */
+                      30% 38vh, /* Background image position */
+                      center;                    /* Gradient position */
+
+    height: 100vh;  /* Full viewport height */
+    margin: 0;      /* Removes default margins */
+}
+
+
+
+/* width: 1920
+height: 1080 */
+/* Desktop screen*/
+@media screen and (min-width: 550px) {
+
+    
+    /* html {
+        font-size: 16px;
+    }
+    .straw-image {
+        left: 20vw;
+        top: 4.89vh;
+        bottom: 15.58vh;
+        right: 64.35vw;
+        width: 13.38vw;
+        height: 62.3vh;
+    }
+    .product-left-left-desc {
+        width: 14.79vw;
+        height: 12.68vh;
+        top: 28.33vh;
+        left: 8.59vw;
+        font-size: 1.875rem; 
+        line-height: 2.7rem; 
+        text-align: left;
+    }
+    .product-left-right-desc {
+        font-size: 1.875rem;
+        line-height: 2.7rem;
+
+    } */
+    /* .our-product {
+        font-size: 4.375rem;
+        width: 26.30vw;
+        height: 7.78vh;
+        top: 14.722vh;
+        left: 51.30vw;
+    } */
+
+    /* .product{
+        display: flex;
+
+    } */
+
+    /* .product-right h5 {
+        font-size: 3.125rem;
+        line-height: 5.5vh;
+    } */
+    
+    /* #root {
+        padding: 0;
+        margin: 0;
+    } */
+
+    .waitlist-button{
+        position: absolute;
+        top: 55vh;
+        left: 55vw;
+        right:12.60vw;
+        width: 20.36vw;
+        height: 7.4vh;
+        border-radius: 15px;
+        background-color: #D63A29;
+        color: white;
+        border: none;
+        font-size: 2.5rem;
+        line-height: 4.44vh;
+
+    }
+
+    .our-product-text-1{
+        position: absolute;
+        top: 25vh;
+        left: 24.75vw;
+        right:12.60vw;
+        font-size: 5vh;
+        line-height: 3.56vw;
+        margin: 0;
+        width: 80vw;
+        height: 11.11vh;
+        text-align: center;
+    }
+    .our-product-text-2{
+        position: absolute;
+        top: 40vh;
+        left: 24.75vw;
+        right:12.60vw;
+        font-size: 5vh;
+        line-height: 3.56vw;
+        margin: 0;
+        width: 80vw;
+        height: 11.11vh;
+        text-align: center;
+    }
+
+    .our-product {
+        position: absolute;
+        top: 14.72vh;
+        left: 51.3vw;
+        margin: 0;
+        padding: 0;
+        font-size: 7vh;
+        line-height: 7.77vh;
+    }
+}
+
+/* spacing: 71/1920*100
+line height: 30/1080*100= 
+font size: 30/16= */
+/* Mobile screen */
+@media screen and (max-width: 550px) {
+    
 }
