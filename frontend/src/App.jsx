@@ -1,15 +1,19 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
+import Navbar from "./components/nav.jsx";
+import Footer from "./components/footer.jsx";
 import "./App.css";
-import Video from "./components/video";
+
 
 
 function App() {
-  return(
-    <Video/>
-  )
-
+  return (
+    <div class = "app">
+      <Navbar />
+      <Footer/>
+      
+    </div>
+  );
 }
 
 export default App;
