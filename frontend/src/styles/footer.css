@@ -60,7 +60,7 @@
     .icons{
         display: flex;
         justify-content: center;
-        margin-bottom: 3vh;
+        margin-bottom: 2.5vh;
     }
     
     .icons img {
@@ -70,7 +70,7 @@
     .footer-links {
         display: flex;
         justify-content: space-between;
-        padding-top: 7vh;
+        padding-top: 7.15vh;
         width: 66.15%;
         height: 100%;
     }
