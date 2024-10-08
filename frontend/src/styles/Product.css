@@ -10,6 +10,15 @@
     color: #D63A29;
 
 }
+.our-product {
+    position: absolute;
+    top: 14.72vh;
+    left: 51.3vw;
+    margin: 0;
+    padding: 0;
+    font-size: 7vh;
+    line-height: 7.77vh;
+}
 body {
     background: 
         linear-gradient(180deg, #E79B56 0%, #F9C673 50%, #FFFFFF 99.99%); /* Gradient */
@@ -162,15 +171,7 @@ height: 1080 */
         text-align: center;
     }
 
-    .our-product {
-        position: absolute;
-        top: 14.72vh;
-        left: 51.3vw;
-        margin: 0;
-        padding: 0;
-        font-size: 7vh;
-        line-height: 7.77vh;
-    }
+    
 /* } */
 
 /* spacing: 71/1920*100
