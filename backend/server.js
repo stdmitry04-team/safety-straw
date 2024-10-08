@@ -16,6 +16,11 @@ app.post('/api/waitlist', async (req, res) => {
         return res.status(400).json({ message: 'Name and email are required' });
     }
 
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+        return res.status(400).json({ message: 'Email format is incorrect' });
+    }
+
     try {
         const client = await connectClient();
         const db = connectDB(client);
