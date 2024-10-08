@@ -12,28 +12,73 @@
 }
 body {
     background: 
-        url('../assets/product-middle-bubbles.png') no-repeat,  /* Middle bubbles image */
-        url('../assets/product-bottom-bubbles.png') no-repeat,  /* Bottom bubbles image */
-        url('../assets/product-background.png') no-repeat,      /* Background image */
         linear-gradient(180deg, #E79B56 0%, #F9C673 50%, #FFFFFF 99.99%); /* Gradient */
-    
-    background-size: contain, contain, contain, cover, cover;   /* Ensures the image fits, and the gradient covers the screen */
-    
-    background-position: center, /* Middle bubbles position */
-                      calc(100% - 50px) bottom,  /* Moves the bottom bubbles up by 50px */
-                      30% 38vh, /* Background image position */
-                      center;                    /* Gradient position */
 
     height: 100vh;  /* Full viewport height */
     margin: 0;      /* Removes default margins */
 }
+.backgroundbottom {
+    position: absolute;
+    width: 116.41vw;
+    top: 29.81vh;
+    left: -9.2vw;
+    height: 85.57vh;
+}
+.bubbles {
+    position: absolute;
+    width: 93.96vw;
+    height: 105.43vh;
+    top: -1vh;
+}
+.straw {
+    position: absolute;
+    left: 20vw;
+    top: 4.89vh;
+    bottom: 15.58vh;
+    right:64.35vw;
+    width: 13.39vw;
+    height: 62.36vh;
+}
+.product-left-description {
+    position: absolute;
+    width: 14.79vw;
+    height: 12.68vh;
+    top: 28.33vh;
+    left: 8.59vw;
+    font-size: 2.5vh; 
+    line-height: 3vh; 
+    text-align: left;
+    
+}
+.product-right-description {
+    position: absolute;
+    width: 14.79vw;
+    height: 12.68vh;
+    top: 56.76vh;
+    left: 34.43vw;
+    font-size: 2.5vh; 
+    line-height: 3vh; 
+    text-align: left;
+}
 
-
-
+.leftarrow {
+    position: absolute;
+    width: 6.83vw;
+    height: 10.87vh;
+    top: 20.85vh;
+    left: 17.86vw;
+}
+.rightarrow {
+    position: absolute;
+    width: 6.83vw;
+    height: 10.87vh;
+    top: 45.18vh;
+    left: 30.13vw;
+}
 /* width: 1920
 height: 1080 */
 /* Desktop screen*/
-@media screen and (min-width: 550px) {
+/* @media screen and (min-width: 550px) { */
 
     
     /* html {
@@ -47,15 +92,7 @@ height: 1080 */
         width: 13.38vw;
         height: 62.3vh;
     }
-    .product-left-left-desc {
-        width: 14.79vw;
-        height: 12.68vh;
-        top: 28.33vh;
-        left: 8.59vw;
-        font-size: 1.875rem; 
-        line-height: 2.7rem; 
-        text-align: left;
-    }
+    
     .product-left-right-desc {
         font-size: 1.875rem;
         line-height: 2.7rem;
@@ -95,7 +132,7 @@ height: 1080 */
         background-color: #D63A29;
         color: white;
         border: none;
-        font-size: 2.5rem;
+        font-size: 4vh;
         line-height: 4.44vh;
 
     }
@@ -134,12 +171,12 @@ height: 1080 */
         font-size: 7vh;
         line-height: 7.77vh;
     }
-}
+/* } */
 
 /* spacing: 71/1920*100
 line height: 30/1080*100= 
 font size: 30/16= */
 /* Mobile screen */
-@media screen and (max-width: 550px) {
+/* @media screen and (max-width: 550px) {
     
-}
+} */
