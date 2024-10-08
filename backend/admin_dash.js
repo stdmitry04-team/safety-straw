@@ -6,7 +6,7 @@ async function updateEmailContents(header, content, subject) {
   const client = await connectClient();
   const db = connectDB(client);
   const collection = db.collection(process.env.NEWS_COLLECTION);
-
+  console.log(header, content, subject);
   const filter = { name: process.env.MAIN_NEWSLETTER };
   const options = { upsert: true };
   const updateDoc = {
@@ -19,10 +19,7 @@ async function updateEmailContents(header, content, subject) {
 
   const result = await collection.updateOne(filter, updateDoc, options);
   client.close();
+  return result;
 }
 
-updateEmailContents(
-  "test1",
-  "this is a test for updating mongodb",
-  "testingtest"
-).catch(console.error);
+module.exports = { updateEmailContents };

@@ -1,0 +1,63 @@
+.dash-container {
+  display: grid;
+  grid-template-columns: 27.5vw 37.5vw;
+  margin: 3rem 15vw 0 15vw;
+  column-gap: 5vw;
+}
+
+@media (max-width: 700px) {
+  .dash-container {
+    grid-template-columns: 70vw;
+  }
+}
+
+.dash-settings-container {
+  align-items: center;
+  justify-content: center;
+  display: inline-block;
+  text-align: center;
+}
+
+.admin-labels {
+  margin-bottom: -0.01rem;
+  font-size: 1.25rem;
+  text-align: left;
+}
+
+#subject {
+  height: 1.5rem;
+  width: 100%;
+}
+
+#header {
+  height: 1.5rem;
+  width: 100%;
+}
+
+#content {
+  height: 8rem;
+  width: 100%;
+  resize: none;
+  border: none;
+  outline: none;
+}
+
+.form-properties {
+  border: none;
+  outline: none;
+  border-radius: 0.25rem;
+  background-color: rgb(250, 233, 207);
+}
+
+#submit-newsletter {
+  width: 14rem;
+  height: 2.5rem;
+  border-radius: 0.3rem;
+  margin: 1rem auto;
+  padding: 0;
+  background-color: rgb(248, 207, 119);
+  line-height: 100%;
+  border: none;
+  outline: none;
+  font-size: 1.1rem;
+}
