@@ -92,3 +92,38 @@
     color: #D63A29;
     font-weight: 900;
 }
+
+@media only screen and (max-width: 650px) {
+    .waitlist {
+        flex-direction: column;
+        padding: 0;
+    }
+    .waitlist-right {
+        height: auto;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .waitlist-form {
+        flex-direction: column;
+        padding: 0;
+        height: fit-content;
+        row-gap: 10px;
+    }
+    .waitlist-email-wrapper {
+        width: 100vw;
+        height: fit-content;
+    }
+    .waitlist-input {
+        height: 55px;
+    }
+    .waitlist-firstname {
+        width: 100%;
+    }
+    .waitlist-email {
+        width: 80%;
+    }
+    .waitlist-button {
+        height: 55px;
+    }
+  }
