@@ -6,6 +6,8 @@ import Footer from "./components/footer.jsx";
 import Background from "./components/background.jsx";
 import Mission from "./components/our_mission.jsx";
 import Product from "./components/product.jsx";
+import WaitlistBar from "./components/WaitlistBar.jsx";
+import WaitlistModal from "./components/WaitlistModal.jsx";
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
       <Product></Product>
       <Background></Background>
       <Mission></Mission>
+      <WaitlistBar />
+      <WaitlistModal />
       <Footer />
     </div>
   );
