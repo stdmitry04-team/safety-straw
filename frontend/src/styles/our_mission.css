@@ -9,11 +9,9 @@
 }
 
 body {
-    /*background-color: #f7c270; */
     background: linear-gradient(180deg, #f5c677 0%, #f4b66c 99.99%);
     
 }
-
 
 html {
     font-size: 16px;
@@ -130,4 +128,5 @@ h1 {
     top: 35.09vh;   
 }
 */
+
 
