@@ -8,7 +8,7 @@ import Footer from "./components/footer.jsx"
 function App() {
   return (
     <div class="app">
-      <Navbar></Navbar>
+      <Navbar/>
       <Video/>
       <Footer/>
     </div>
