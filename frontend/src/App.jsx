@@ -4,10 +4,14 @@ import viteLogo from "/vite.svg";
 import "./App.css";
 import Video from "./components/video";
 import Our_mission from "./components/our_mission"
+import Background from "./components/background";
 
 function App() {
   return (
-  <Our_mission/>
+  <div>
+    <Background/>
+    <Our_mission/>
+  </div>
   )
 } 
 
