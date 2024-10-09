@@ -12,9 +12,12 @@
 }
 
 .video iframe {
-  top: 9vh;
   left: 0;
   width: 100%;
-  height: 90.74vh;
+  height: 100%;
   border: none;
+}
+
+.video {
+  height: 92vh;
 }
