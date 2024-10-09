@@ -32,7 +32,7 @@ async function sendNewsLetter() {
   const info = await transporter.sendMail({
     from: `${process.env.MAILING_EMAIL}`,
     to: recipients,
-    subject: newsletter_content[0],
+    subject: newsletter_content[0][0],
     html: newsletter_content[1],
     attachments: [newsletter_content[2]],
   });
@@ -94,7 +94,7 @@ async function fetchNewsLetterContent(db) {
 `;
 
   return [
-    data["subject"],
+    [data["subject"], data["header"], data["content"]],
     content,
     {
       filename: "safety-straw-logo.png",
@@ -104,8 +104,10 @@ async function fetchNewsLetterContent(db) {
   ];
 }
 
-schedule.scheduleJob("* * * * *", () => {
-  // This runs every minute
-  console.log("Running job every minute.");
-  main();
-});
+// schedule.scheduleJob("* * * * *", () => {
+//   // This runs every minute
+//   console.log("Running job every minute.");
+//   main();
+// });
+
+module.exports = { fetchNewsLetterContent };

@@ -18,6 +18,13 @@
   text-align: center;
 }
 
+.dash-example-container {
+}
+
+.example-header {
+  text-align: center;
+  font-size: 2rem;
+}
 .admin-labels {
   margin-bottom: -0.01rem;
   font-size: 1.25rem;
@@ -60,4 +67,23 @@
   border: none;
   outline: none;
   font-size: 1.1rem;
+}
+.email-header {
+  text-align: center;
+}
+body {
+  background: linear-gradient(#f7c170, #df614b);
+  height: 100vh;
+}
+.content-container {
+  margin: 1vh 2.5vw 5vh 2.5vw;
+}
+.company-logo {
+  float: right;
+  width: 5rem;
+  padding: 1rem 2rem 1rem 1rem;
+}
+footer {
+  text-align: center;
+  margin: 5vh 2.5vw 5vh 2.5vw;
 }

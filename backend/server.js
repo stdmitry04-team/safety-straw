@@ -2,6 +2,8 @@ const connect = require("./connect.js");
 const express = require("express");
 const cors = require("cors");
 const { updateEmailContents } = require("./admin_dash.js");
+const { fetchNewsLetterContent } = require("./mailer.js");
+const { connectDB, connectClient } = require("./connect.js");
 require("dotenv").config({ path: "./config.env" });
 
 const app = express();
@@ -10,6 +12,8 @@ const PORT = process.env.PORT || 5000;
 app.use(cors());
 app.use(express.json());
 
+//need to figure out some kind of authentication, security key into db that
+//becomes a cookie?
 app.post("/api/update", async (req, res) => {
   const { subject, header, content } = req.body;
 
@@ -26,6 +30,15 @@ app.post("/api/update", async (req, res) => {
     console.log("Error updating the newsletter:", e);
     res.status(500).json({ message: "Failed to update the newsletter" });
   }
+});
+
+//need to figure out some kind of authentication
+app.get("/api/get-newsletter", async (req, res) => {
+  const client = await connectClient();
+  const db = connectDB(client);
+  const data = await fetchNewsLetterContent(db);
+  res.send(data[0]);
+  client.close();
 });
 
 app.listen(PORT, async () => {});

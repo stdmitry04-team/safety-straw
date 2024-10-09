@@ -1,14 +1,17 @@
 import "../styles/Admin.css";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import companyLogo from "../assets/safety-straw-logo.png";
+
 export function Admin() {
   const [subject, setSubject] = useState("");
   const [header, setHeader] = useState("");
   const [content, setContent] = useState("");
+  const [subjectTemplate, setSubjectTemplate] = useState("");
+  const [headerTemplate, setHeaderTemplate] = useState("");
+  const [contentTemplate, setContentTemplate] = useState("");
 
   const handleSubmit = async (e) => {
     if (subject && header && content) {
-      //e.preventDefault();
-
       console.log(subject);
       const response = await fetch("http://localhost:5000/api/update", {
         method: "POST",
@@ -30,6 +33,29 @@ export function Admin() {
       }
     }
   };
+
+  const getData = async () => {
+    try {
+      const response = await fetch("http://localhost:5000/api/get-newsletter", {
+        method: "GET",
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      setSubjectTemplate(data[0]);
+      setHeaderTemplate(data[1]);
+      setContentTemplate(data[2]);
+    } catch (error) {
+      console.log("Error fetching data:", error);
+    }
+  };
+
+  useEffect(() => {
+    getData();
+  });
 
   return (
     <>
@@ -63,7 +89,15 @@ export function Admin() {
           </form>
         </div>
         <div className="dash-example-container">
-          <p>col 2</p>
+          <p class="example-header">Example email:</p>
+          <h1 class="email-header">{headerTemplate}</h1>
+          <div class="content-container">
+            <img src={companyLogo} class="company-logo" />
+            <p>{contentTemplate}</p>
+          </div>
+          <footer>
+            <p>This is the footer</p>
+          </footer>
         </div>
       </div>
     </>
