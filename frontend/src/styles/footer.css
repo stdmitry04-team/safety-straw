@@ -1,0 +1,270 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@700;900&display=swap');
+
+
+@media screen and (min-width: 500px){
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    html{
+        font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Gantari', sans-serif;
+    }
+    
+    .footer{
+        height:44.72vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+    
+    }
+    
+    
+    .footer-left {
+        left: 3.7vw;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: space-between; 
+        width: calc(100vw - 66.15vw);
+        height: 100%;
+        padding-left:3.7vw;
+        padding-top: 2.8vh;
+    }
+    
+    
+    .footer-text {
+        font-family: 'Gantari', 'sans-serif';
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 2.78vh;
+        text-align: left;
+        
+    }
+    
+    
+    .footer-logo{
+        display: flex;
+        left: 3.70vw;
+        bottom: 21.64vh;
+        
+    }
+    
+    .icons{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 2.5vh;
+    }
+    
+    .icons img {
+        padding-right:1.09vw;
+    }
+    
+    .footer-links {
+        display: flex;
+        justify-content: space-between;
+        padding-top: 7.15vh;
+        width: 66.15%;
+        height: 100%;
+    }
+    
+    .footer-links ul {
+        list-style: none;
+    }
+    
+    /* --------------------- RIGHT PART ---------------------  */
+    
+    /* Customers Section */
+    .customers {
+        padding-right: 9.635vw;
+        text-align: left;
+    }
+    
+    /* Contact Us Section */
+    .contact_us {
+        padding-right: 5.99vw;
+        text-align: left;
+    }
+    
+    /* Company Section */
+    .company {
+        padding-right: 8.072vw;
+        text-align: left;
+    }
+    
+    /* Style for all first-child headings */
+    .footer-links ul li:first-child {
+        font-family: 'Gantari', sans-serif;
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: 2.5vh;
+    }
+    
+    /* Style for other list items */
+    .footer-links ul li:not(:first-child) {
+        font-family: 'Gantari', sans-serif;
+        font-size: 2rem;
+        font-weight: 700;
+        line-height: 1.56vh;
+        padding-top: 4.4vh;
+    }
+    
+    .footer-links ul li{
+        width: 125%;
+    }
+    
+}
+
+
+
+
+
+
+
+/* 
+@media screen and (max-width: 500px) {
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+    
+    
+    html{
+        font-size: 16px;
+    }
+    
+    body {
+      font-family: 'Gantari', sans-serif;
+    }
+    
+    .footer{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-end; 
+        background-color: #f8f8f8;
+        height: 23.29vh;
+
+        padding: 2.42vh 13.59vw;
+    
+    }
+    
+    
+
+    .footer-left {
+        order: 2;
+        display: flex;
+        flex-direction: column;
+        width: 38vw;
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+
+    
+    
+    .footer-text {
+        font-family: 'Gantari', 'sans-serif';
+        font-size: 0.695625rem;
+        font-weight: 700;
+        line-height: 0.9657vh;
+        text-align: left;
+        margin-bottom: 2vw;
+        
+    }
+    
+    
+    .footer-logo{
+        display: flex;
+        margin-bottom: 0.529vw;
+        width:20vw;
+        height: 5.45vh;
+        
+    }
+
+    .footer-logo img {
+        width: 29.6vw;
+        height: 5.475vh;
+        margin-bottom: 0.5vh;
+    }
+    
+    .icons{
+        display: flex;
+        justify-content: left;
+    }
+    
+    .icons img {
+        width:5.43vw;
+        height: auto;
+        margin-right: 1.82vw;
+
+    }
+    
+    
+    .TM {
+        position: absolute;
+        display:flex;
+        font-family: 'Gantari', 'sans-serif';
+        font-size: 0.2825rem;
+        font-weight: 700;
+        line-height: 0.412vh;
+        text-align: left;
+    
+    
+        
+    }
+    
+    
+    .footer-links {
+        order: 1;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 1.215vh;
+        height: 100%;
+    }
+    
+    .footer-links ul {
+        list-style: none;
+        padding: 0 7vw;
+    }
+    
+    .customers {
+        text-align: left;
+    }
+
+    .contact_us {
+        text-align: left;
+    }
+    
+    .company {
+        text-align: left;
+    }
+    
+    .footer-links ul li:first-child {
+        font-family: 'Gantari', sans-serif;
+        font-size: 0.869375rem;
+        font-weight: 900;
+        line-height: 1.268vh;
+    }
+    
+    .footer-links ul li:not(:first-child) {
+        font-family: 'Gantari', sans-serif;
+        font-size: 0.695625rem;
+        font-weight: 700;
+        line-height: 0.793vh;
+        padding-top: 0.15vh;
+    }
+    
+    .footer-links ul li{
+        width: 100%;
+        padding-bottom: 1vh;
+    }
+} */

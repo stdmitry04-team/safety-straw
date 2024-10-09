@@ -1,9 +1,8 @@
 // nav component
 
 import { useState } from 'react';
-import logo from '../images/logo.png'
-import profileIcon from '../images/profile.png'
-import cartIcon from '../images/cart.png'
+import logo from '../assets/logo.svg'
+import profileIcon from '../assets/profile.svg'
 import menuIcon from '../images/menu.png'
 import '../styles/navbar.css'; 
 
@@ -40,9 +39,7 @@ function Navbar() {
                 
             </div>
             
-            <button className="cart-btn">
-                <img src={cartIcon} alt="Cart" className="cart-icon"/>
-            </button>
+          
             <img src={profileIcon} alt="User Profile" className="profile-icon" />
 
             <button className="menu-toggle-btn" onClick={toggleDropdown}>
