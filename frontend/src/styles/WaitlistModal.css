@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 900;
+}
+
 .waitlist-modal {
     width: 1074px;
     height: 671px;
@@ -14,7 +26,7 @@
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-family: sans-serif;
+    font-family: 'Aileron';
     zoom: 0.8;
     z-index: 1001;
 }

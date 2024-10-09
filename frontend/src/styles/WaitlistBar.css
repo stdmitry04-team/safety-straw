@@ -1,3 +1,15 @@
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 900;
+}
+
 .waitlist {
     background-color: #FCD578;
     width: 125vw;
@@ -7,7 +19,7 @@
     align-items: center;
     justify-content: center;
     column-gap: 3vw;
-    font-family: sans-serif;
+    font-family: 'Aileron';
     padding-left: 5.46vw;
     padding-right: 5.46vw;
     box-sizing: border-box;
