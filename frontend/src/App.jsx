@@ -1,8 +1,11 @@
 import { useState } from "react";
+import Footer from "./components/footer.jsx";
+import Video from "./components/video";
+import Product from "./components/product";
+import Navbar from "./components/nav";
+
 import "./App.css";
-import Navbar from "./components/nav.jsx";
-import Video from "./components/video.jsx";
-import Footer from "./components/footer.jsx"
+
 
 
 function App() {
@@ -10,6 +13,7 @@ function App() {
     <div class="app">
       <Navbar/>
       <Video/>
+      <Product/>
       <Footer/>
     </div>
 
