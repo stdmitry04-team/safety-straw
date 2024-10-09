@@ -11,6 +11,7 @@ export default function WaitlistModal(props) {
     const [email, setEmail] = useState('');
 
     const handleSubmit = async (e) => {
+        onClose();
         e.preventDefault();
 
         const response = await fetch('http://localhost:5000/api/waitlist', {
@@ -24,12 +25,11 @@ export default function WaitlistModal(props) {
         const data = await response.json();
 
         if (response.ok) {
-            console.log(data.message); // Waitlist entry added successfully
-            // Optionally, reset the input fields
+            console.log(data.message);
             setName('');
             setEmail('');
         } else {
-            console.error(data.message); // Error message from the server
+            console.error(data.message);
         }
     }
     
@@ -43,8 +43,8 @@ export default function WaitlistModal(props) {
                 to receive updates on Safety Straw!
             </p>
             <form className="modal-form" onSubmit={handleSubmit}>
-                <input className="modal-input" type="text" onChange={(e) => setName(e.target.value)} placeholder="First Name" />
-                <input className="modal-input" type="text" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address"/>
+                <input id="modal-username" className="modal-input" type="text" onChange={(e) => setName(e.target.value)} placeholder="First Name" />
+                <input id="modal-email" className="modal-input" type="text" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address"/>
                 <button className="modal-button" type="submit">Yes Please!</button>
             </form>
             <p className="modal-terms">
