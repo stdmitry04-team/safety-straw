@@ -107,3 +107,29 @@
 .modal-visibility {
     visibility: hidden;
 }
+
+@media only screen and (max-width: 900px) {
+    .waitlist-modal {
+        width: 125vw;
+    }
+    .modal-header {
+        margin: 0;
+        font-size: 50px;
+    }
+    .modal-header2 {
+        font-size: 30px;
+    }
+}
+
+@media only screen and (max-width: 500px) {
+    .modal-form {
+        width: 115vw;
+    }
+    .modal-terms {
+        width: 115vw;
+    }
+    .modal-header2 {
+        font-size: 25px;
+        width: 115vw;
+    }
+}
