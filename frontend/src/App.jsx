@@ -5,6 +5,8 @@ import Video from "./components/video.jsx";
 import Footer from "./components/footer.jsx"
 import Background from "./components/background.jsx"
 import Mission from "./components/our_mission.jsx"
+import Product from "./components/product.jsx"
+
 
 
 function App() {
@@ -12,6 +14,7 @@ function App() {
     <div class="app">
       <Navbar/>
       <Video/>
+      <Product></Product>
       <Background></Background>
       <Mission></Mission>
       <Footer/>
