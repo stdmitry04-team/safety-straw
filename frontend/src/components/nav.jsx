@@ -1,7 +1,6 @@
-// nav component
-
 import { useState } from 'react';
 import logo from '../assets/logo.svg'
+import logo_text from '../assets/logo-text.svg'
 import profileIcon from '../assets/profile.svg'
 import menuIcon from '../images/menu.png'
 import '../styles/navbar.css'; 
@@ -24,7 +23,7 @@ function Navbar() {
           <div className="navbar-left">
             <a href="#" className="navbar-logo" onClick={topFunction}>
               <img src={logo} alt="Safety Straw Logo" className="logo-image" />
-              SAFETY STRAW
+              <img src={logo_text} alt="Safety Straw Logo" className="logo-text" />
             </a>
           </div>
     
