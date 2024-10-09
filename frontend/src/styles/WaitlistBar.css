@@ -128,12 +128,23 @@
     }
     .waitlist-header {
         text-align: center;
-        font-size: 26px;
     }
     .waitlist-terms {
         font-size: 18px;
     }
-  }
+}
+
+@media only screen and (max-width: 550px) {
+    .waitlist-header {
+        font-size: 24px;
+    }
+    .waitlist-input {
+        font-size: 20px;
+    }
+    .waitlist-terms {
+        font-size: 16px;
+    }
+}
 
 @media only screen and (min-width: 1537px) {
     .waitlist-header {
@@ -141,5 +152,4 @@
         text-align: center;
         font-size: 35px;
     }
-    
 }
