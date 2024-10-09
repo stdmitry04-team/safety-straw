@@ -8,11 +8,12 @@
   flex-direction: column;
   flex-grow: 1;
   justify-content: flex-start; /* Ensure items align from the top */
+  overflow-y: scroll;
 }
 
 html, body {
   margin: 0;
   padding: 0;
-  height: 100%;
+  height: fit-content;
   overflow: auto; /* Enable scrolling when content overflows */
 }
