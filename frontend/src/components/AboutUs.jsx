@@ -1,14 +1,40 @@
+import "../styles/AboutUs.css";
 export default function AboutUs() {
     return (
-        <div>
-        <h1>About Us</h1>
-        <p>
-            Safety Straw is a company that is dedicated to providing the best
-            possible solution to the plastic straw problem. Our straws are made of
-            100% biodegradable materials and are safe for the environment. We are
-            committed to reducing the amount of plastic waste that ends up in our
-            oceans and landfills.
-        </p>
+        <div className="container">
+            <div className="top">
+                <div className="about-us">
+                    <h1>
+                        ABOUT US
+                    </h1>
+                </div>
+                
+            </div>
+            <div className="bottom">
+                <div className="left">
+                    <iframe src="https://www.youtube.com/embed/hC4Tc3nyhLg"></iframe>
+                </div>
+                <div className="right">
+                    <div className="text">
+                        <p>
+                            We're Jack & Zak, childhood friends and co-founders of Safety Straw
+                        </p>
+                        <br></br>
+                        <p>
+                            The company was born to create a safer environment for all and make a real difference. Want to find out more about our story?
+                        </p>
+                    </div>
+                    <div className="contact">
+                        <button>Contact Us</button>
+
+                    </div>
+
+                </div>
+                
+
+            </div>
+          
+        
         </div>
     );
     }
