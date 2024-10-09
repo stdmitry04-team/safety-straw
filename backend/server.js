@@ -1,4 +1,3 @@
-const { connectClient, connectDB } = require("./connect.js");
 const express = require("express");
 const cors = require("cors");
 const { updateEmailContents } = require("./admin_dash.js");
