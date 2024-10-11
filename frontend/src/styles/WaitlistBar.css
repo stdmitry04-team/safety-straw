@@ -1,0 +1,169 @@
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 900;
+}
+
+.waitlist {
+    background-color: #FCD578;
+    width: 100vw;
+    height: 261.97px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 3vw;
+    font-family: 'Aileron';
+    padding-left: 5.46vw;
+    padding-right: 5.46vw;
+    box-sizing: border-box;
+    zoom: 0.8;
+}
+
+.waitlist-header {
+    font-size: 28.8px;
+    color: #D63A29;
+    font-weight: 900;
+}
+
+.waitlist-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 7px;
+    width: 1045px;
+    height: 100%;
+}
+
+.waitlist-form {
+    padding-top: 96.98px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 28px;
+    width: 100%;
+}
+
+.waitlist-input {
+    border: none;
+    border-radius: 20px;
+    font-size: 29px;
+    outline: none;
+    height: 68px;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+}
+
+.waitlist-firstname {
+    width: 234px;
+}
+
+.waitlist-email-wrapper {
+    height: 100%;
+    position: relative;
+    width: 783px;
+    display: flex;
+    align-items: start;
+}
+.waitlist-email {
+    width: 615px;
+}
+
+.waitlist-terms {
+    font-size: 20px;
+    text-align: start;
+}
+
+.waitlist-button {
+    position: absolute;
+    right: 0;
+    background-color: #D63A29;
+    border-radius: 20px;
+    width: 197px; 
+    height: 67.99px;
+    border: none;
+    color: white;
+    font-size: 32px;
+    font-weight: 700;
+    padding: 0;
+}
+
+.waitlist-button:hover {
+    cursor: pointer;
+}
+
+.term-link {
+    color: #D63A29;
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 1070px) {
+    .waitlist {
+        flex-direction: column;
+        padding: 0;
+    }
+    .waitlist-right {
+        height: auto;
+        width: 100vw;
+        align-items: center;
+        justify-content: center;
+    }
+    .waitlist-form {
+        flex-direction: column;
+        padding: 0;
+        height: fit-content;
+        row-gap: 10px;
+    }
+    .waitlist-email-wrapper {
+        width: 100vw;
+        height: fit-content;
+    }
+    .waitlist-input {
+        height: 55px;
+    }
+    .waitlist-firstname {
+        width: 100%;
+    }
+    .waitlist-email {
+        width: 90%;
+    }
+    .waitlist-button {
+        height: 55px;
+    }
+    .waitlist-header {
+        text-align: center;
+    }
+    .waitlist-terms {
+        font-size: 18px;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .waitlist-header {
+        font-size: 24px;
+    }
+    .waitlist-input {
+        font-size: 20px;
+    }
+    .waitlist-terms {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1537px) {
+    .waitlist-header {
+        width: 1045px;
+        text-align: center;
+        font-size: 35px;
+    }
+}
