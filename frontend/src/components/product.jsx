@@ -21,7 +21,7 @@ return (
         <h1 className = "our-product-paragraph">OUR PRODUCT</h1>
         <p className = "our-product-text-1">Safety Straw is the <span className="text-1-color">first</span>  date rape <br />detection straw in the <span className="text-1-color">entire market.</span></p>
         <p className = "our-product-text-2">We offer a variety of sizes, fit for <br /> any and all establishments.</p>
-
+        <button className="join-waitlist">Join Waitlist</button>
     </div>
 
 
