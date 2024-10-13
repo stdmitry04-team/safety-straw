@@ -25,9 +25,13 @@ async function connectClient() {
 }
 
 function connectDB(client) {
-  const database = client.db(process.env.DATABASE_NAME); // No specific database mentioned, defaults to the first one in the URI
-  console.log(`Connected to database: ${database.databaseName}`);
-  return database;
+  try {
+    const database = client.db(process.env.DATABASE_NAME); // No specific database mentioned, defaults to the first one in the URI
+    console.log(`Connected to database: ${database.databaseName}`);
+    return database;
+  } catch (e) {
+    console.log("Failed to connect to the database...");
+  }
 }
 
 module.exports = { connectClient, connectDB };

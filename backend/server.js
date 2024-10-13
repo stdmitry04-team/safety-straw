@@ -37,7 +37,17 @@ app.get("/api/get-newsletter", async (req, res) => {
   const client = await connectClient();
   const db = connectDB(client);
   const data = await fetchNewsLetterContent(db);
-  res.send(data[0]);
+  res.send(data);
+  client.close();
+});
+
+app.get("/api/get-recipients", async (req, res) => {
+  const client = await connectClient();
+  const db = connectDB(client);
+  const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
+  const emails = await waitlistCollection.find({}).toArray();
+  let recipients = emails.map((item) => item.email).join(", ");
+  res.send(recipients);
   client.close();
 });
 

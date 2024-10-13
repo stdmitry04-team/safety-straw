@@ -2,7 +2,6 @@ const nodemailer = require("nodemailer");
 const schedule = require("node-schedule");
 require("dotenv").config({ path: "./config.env" });
 require("dotenv").config({ path: "./database.env" });
-const { connectDB, connectClient } = require("./connect.js");
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com", //define mailer service, this one is gmail
@@ -16,28 +15,6 @@ const transporter = nodemailer.createTransport({
 
 async function main() {
   await sendNewsLetter();
-}
-
-/**
- * Main driver function to send emails
- */
-async function sendNewsLetter() {
-  const client = await connectClient();
-  const db = connectDB(client);
-  const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
-  const emails = await waitlistCollection.find({}).toArray();
-  let recipients = emails.map((item) => item.email).join(", ");
-  const newsletter_content = await fetchNewsLetterContent(db);
-
-  const info = await transporter.sendMail({
-    from: `${process.env.MAILING_EMAIL}`,
-    to: recipients,
-    subject: newsletter_content[0][0],
-    html: newsletter_content[1],
-    attachments: [newsletter_content[2]],
-  });
-
-  client.close();
 }
 
 /**

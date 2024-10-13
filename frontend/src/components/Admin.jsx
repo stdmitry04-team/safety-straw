@@ -1,5 +1,5 @@
 import "../styles/Admin.css";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import companyLogo from "../assets/safety-straw-logo.png";
 
 export function Admin() {
@@ -9,6 +9,7 @@ export function Admin() {
   const [subjectTemplate, setSubjectTemplate] = useState("");
   const [headerTemplate, setHeaderTemplate] = useState("");
   const [contentTemplate, setContentTemplate] = useState("");
+  const calendar = useRef(null);
 
   const handleSubmit = async (e) => {
     if (subject && header && content) {
@@ -34,6 +35,41 @@ export function Admin() {
     }
   };
 
+  /**
+   * Main driver function to send emails
+   */
+  const sendNewsLetter = async () => {
+    let response = await fetch("http://localhost:5000/api/get-recipients", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    let recipients = await response.json();
+    console.log(recipients);
+
+    response = await fetch("http://localhost:5000/api/get-newsletter", {
+      method: "GET",
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    let newsletter_content = await response.json();
+
+    const info = await transporter.sendMail({
+      from: `${process.env.MAILING_EMAIL}`,
+      to: recipients,
+      subject: newsletter_content[0][0],
+      html: newsletter_content[1],
+      attachments: [newsletter_content[2]],
+    });
+
+    client.close();
+  };
+
   const getData = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/get-newsletter", {
@@ -44,7 +80,8 @@ export function Admin() {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
-      const data = await response.json();
+      let data = await response.json();
+      data = data[0];
       setSubjectTemplate(data[0]);
       setHeaderTemplate(data[1]);
       setContentTemplate(data[2]);
@@ -55,6 +92,9 @@ export function Admin() {
 
   useEffect(() => {
     getData();
+    const today = new Date().toISOString().split("T")[0];
+
+    document.getElementById("calendar").setAttribute("min", today);
   });
 
   return (
@@ -83,22 +123,42 @@ export function Admin() {
               className="form-properties"
               onChange={(e) => setContent(e.target.value)}
             ></textarea>
-            <button id="submit-newsletter" type="submit">
+            <button
+              className="dash-buttons"
+              id="submit-newsletter"
+              type="submit"
+            >
               Update newsletter!
             </button>
           </form>
         </div>
         <div className="dash-example-container">
-          <p class="example-header">Example email:</p>
-          <h1 class="email-header">{headerTemplate}</h1>
-          <div class="content-container">
-            <img src={companyLogo} class="company-logo" />
+          <p className="example-header">Example email:</p>
+          <h1 className="email-header">{headerTemplate}</h1>
+          <div className="content-container">
+            <img src={companyLogo} className="company-logo" />
             <p>{contentTemplate}</p>
           </div>
           <footer>
             <p>This is the footer</p>
           </footer>
         </div>
+      </div>
+      <div className="settings-container">
+        <h1>Schedule your email</h1>
+        <input type="date" id="calendar" name="scheduled-time" ref={calendar} />
+        <button className="dash-buttons" id="schedule-button">
+          Schedule Email!
+        </button>
+        <button
+          className="dash-buttons"
+          id="send-mail"
+          onClick={async () => {
+            await sendNewsLetter();
+          }}
+        >
+          Send Now!
+        </button>
       </div>
     </>
   );

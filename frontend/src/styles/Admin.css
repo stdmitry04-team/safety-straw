@@ -56,7 +56,7 @@
   background-color: rgb(250, 233, 207);
 }
 
-#submit-newsletter {
+.dash-buttons {
   width: 14rem;
   height: 2.5rem;
   border-radius: 0.3rem;
@@ -86,4 +86,14 @@ body {
 footer {
   text-align: center;
   margin: 5vh 2.5vw 5vh 2.5vw;
+}
+.settings-container {
+  display: flex;
+  flex-direction: column;
+  margin: 3rem 15vw 0 15vw;
+}
+
+#calendar {
+  width: 10rem;
+  margin: 0 auto 0 auto;
 }

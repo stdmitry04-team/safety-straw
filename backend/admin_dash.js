@@ -4,22 +4,26 @@ require("dotenv").config({ path: "./database.env" });
 const { connectDB, connectClient } = require("./connect.js");
 
 async function updateEmailContents(header, content, subject) {
-  const client = await connectClient();
-  const db = connectDB(client);
-  const collection = db.collection(process.env.NEWS_COLLECTION);
-  const filter = { name: process.env.MAIN_NEWSLETTER };
+  try {
+    const client = await connectClient();
+    const db = connectDB(client);
+    const collection = db.collection(process.env.NEWS_COLLECTION);
+    const filter = { name: process.env.MAIN_NEWSLETTER };
 
-  const updateDoc = {
-    $set: {
-      header: header,
-      content: content,
-      subject: subject,
-    },
-  };
+    const updateDoc = {
+      $set: {
+        header: header,
+        content: content,
+        subject: subject,
+      },
+    };
 
-  const result = await collection.updateOne(filter, updateDoc);
-  client.close();
-  return result;
+    const result = await collection.updateOne(filter, updateDoc);
+    client.close();
+    return result;
+  } catch (e) {
+    console.log("Failed to update newsletter:", e);
+  }
 }
 
 module.exports = { updateEmailContents };
