@@ -29,10 +29,7 @@
     font-size: 4.375rem;
     line-height: 7.78vh;
 
-    position: absolute;
-
-    /* width: 22.708vw;  */
-    /* height: 7.778vh; */
-    top: 650.37vh;
-    left: 38.646vw;
+}
+.blog-post {
+    text-align: center;
 }
