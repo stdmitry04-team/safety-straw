@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
