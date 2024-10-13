@@ -32,4 +32,5 @@
 }
 .blog-post {
     text-align: center;
+    background: linear-gradient(180deg, #E36f52, #dc5745);
 }
