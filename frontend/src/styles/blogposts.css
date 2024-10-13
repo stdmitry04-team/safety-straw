@@ -13,3 +13,26 @@
     font-weight: 700;
     font-style: normal;
 }
+/* .our-product-paragraph {
+    font-family: 'Aileron', 'sans-serif';
+    font-size: 900;
+    font-size: 4.375rem;
+    line-height: 7.78vh;
+
+    position: absolute;
+    top:14.72vh;
+    right:22.4vw;
+} */
+.blog-posts {
+    font-family: 'Aileron', 'sans-serif';
+    font-size: 900;
+    font-size: 4.375rem;
+    line-height: 7.78vh;
+
+    position: absolute;
+
+    /* width: 22.708vw;  */
+    /* height: 7.778vh; */
+    top: 650.37vh;
+    left: 38.646vw;
+}
