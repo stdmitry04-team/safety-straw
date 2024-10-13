@@ -28,9 +28,31 @@
     font-size: 900;
     font-size: 4.375rem;
     line-height: 7.78vh;
+    top: 650.37vh;
 
 }
 .blog-post {
     text-align: center;
     background: linear-gradient(180deg, #E36f52, #dc5745);
+    }
+.blog_l_image {
+    width: 25.333vw;
+    height: 43.565vh;
+    /* top: 667.715vh; */
+    left: 10.79vw;
+
+}
+.blog_m_image {
+    width: 25.333vw;
+    height: 43.565vh;
+    /* top: 667.715vh; */
+    padding: 0px 18.61px;
+    left: 37.589vw;
+
+}
+.blog_r_image {
+    width: 25.333vw;
+    height: 43.565vh;
+    /* top: 667.715vh; */
+    left: 64.388vw;
 }
