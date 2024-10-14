@@ -18,4 +18,5 @@ html, body {
   padding: 0;
   height: fit-content;
   overflow: auto; /* Enable scrolling when content overflows */
+  font-size: 16px;
 }
