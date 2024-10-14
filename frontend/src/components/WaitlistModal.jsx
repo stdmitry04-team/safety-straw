@@ -1,11 +1,8 @@
 import "../styles/WaitlistModal.css";
 import React, { useState } from 'react';
 
-export default function WaitlistModal(props) {
-    const [isModalOpen, setModalOpen] = useState(false);
-    const onClose = () => {
-        setModalOpen(true);
-    }
+export default function WaitlistModal({ isOpen, onClose }) {
+    if (!isOpen) return null;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
@@ -34,7 +31,7 @@ export default function WaitlistModal(props) {
     }
     
     return (
-        <div className={isModalOpen ? "modal-overlay modal-visibility" : "modal-overlay"}>
+        <div className="modal-overlay">
         <div className="waitlist-modal">
             <h1 className="modal-header">Stay up to date on Safety Straw news!</h1>
             <p className="modal-header2">

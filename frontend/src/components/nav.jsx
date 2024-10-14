@@ -4,10 +4,20 @@ import logo_text from '../assets/logo-text.svg'
 import profileIcon from '../assets/profile.svg'
 import menuIcon from '../images/menu.png'
 import '../styles/navbar.css'; 
+import WaitlistModal from './WaitlistModal';
 
 
 function Navbar() {
     const [isDropdownOpen, setDropdownOpen] = useState(false);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const openModal = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
 
     const toggleDropdown = () => {
         setDropdownOpen(!isDropdownOpen);
@@ -34,7 +44,7 @@ function Navbar() {
                 <a href="#" className="nav-link">Merchandise</a>
                 <button className="nav-link btn-link">Bar Locator</button>
                 <button className="nav-link btn-link">Blog</button>
-                <button className="join-btn">Join Waitlist</button>
+                <button onClick={openModal} className="join-btn">Join Waitlist</button>
                 
             </div>
             
@@ -55,6 +65,8 @@ function Navbar() {
             <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Blog</button>
           </div>
         )}
+
+        <WaitlistModal isOpen={isModalOpen} onClose={closeModal}/>
         </nav>
 
         

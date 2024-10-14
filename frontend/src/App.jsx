@@ -20,7 +20,6 @@ function App() {
       <Background></Background>
       <Mission></Mission>
       <WaitlistBar/>
-      <WaitlistModal/>
       <Footer/>
     </div>
 
