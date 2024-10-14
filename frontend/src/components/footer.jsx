@@ -13,8 +13,8 @@ export default function Footer(){
                 <div className="footer-logo">
                     <img src={footer_logo} alt="logo" />
                 </div>
-                <p class = "footer-text">Safety Straw is a company <br />focused on establishing a <br/> safer nightlife environment.</p>
-                <div class="icons">
+                <p className = "footer-text">Safety Straw is a company <br />focused on establishing a <br/> safer nightlife environment.</p>
+                <div className="icons">
                     <img src={inst} alt="" />
                     <img src={linkedin} alt="" />
                     <img src={tiktok} alt="" />
@@ -24,8 +24,8 @@ export default function Footer(){
             </div>
 
 
-            <div class="footer-links">
-                <ul class="customers">
+            <div className="footer-links">
+                <ul className="customers">
                     <li>Customers</li>
                     <li>Login</li>
                     <li>Order History</li>
@@ -33,14 +33,14 @@ export default function Footer(){
                     <li>Support</li>
                 </ul>
 
-                <ul class="contact_us">
+                <ul className="contact_us">
                     <li>Contact Us</li>
                     <li>1 (555)-5555</li>
                     <li>SafetyStraws@gmail.com</li>
                     <li>222 CompanyAd St, MI</li>
                 </ul>
 
-                <ul class="company">
+                <ul className="company">
                     <li>Company</li>
                     <li>About Us</li>
                     <li>FAQs</li>
