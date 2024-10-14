@@ -13,8 +13,43 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-async function main() {
-  await sendNewsLetter();
+async function scheduleMail(date) {
+  console.log(new Date(date));
+  console.log(date);
+  schedule.scheduleJob(new Date(date), async () => {
+    // This runs every minute
+    console.log("Scheduled mail");
+    await sendNewsLetter();
+  });
+}
+
+async function sendNewsLetter() {
+  let response = await fetch("http://localhost:5000/api/get-recipients", {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  let recipients = await response.json();
+
+  response = await fetch("http://localhost:5000/api/get-newsletter", {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+  let newsletter_content = await response.json();
+
+  const info = await transporter.sendMail({
+    from: `${process.env.MAILING_EMAIL}`,
+    to: recipients,
+    subject: newsletter_content[0][0],
+    html: newsletter_content[1],
+    attachments: [newsletter_content[2]],
+  });
 }
 
 /**
@@ -81,10 +116,4 @@ async function fetchNewsLetterContent(db) {
   ];
 }
 
-// schedule.scheduleJob("* * * * *", () => {
-//   // This runs every minute
-//   console.log("Running job every minute.");
-//   main();
-// });
-
-module.exports = { fetchNewsLetterContent };
+module.exports = { fetchNewsLetterContent, sendNewsLetter, scheduleMail };

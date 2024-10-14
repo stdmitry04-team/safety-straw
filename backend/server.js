@@ -2,7 +2,11 @@ const connect = require("./connect.js");
 const express = require("express");
 const cors = require("cors");
 const { updateEmailContents } = require("./admin_dash.js");
-const { fetchNewsLetterContent } = require("./mailer.js");
+const {
+  fetchNewsLetterContent,
+  sendNewsLetter,
+  scheduleMail,
+} = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
 require("dotenv").config({ path: "./config.env" });
 
@@ -47,8 +51,17 @@ app.get("/api/get-recipients", async (req, res) => {
   const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
   const emails = await waitlistCollection.find({}).toArray();
   let recipients = emails.map((item) => item.email).join(", ");
-  res.send(recipients);
+  res.json(recipients);
   client.close();
+});
+
+app.post("/api/send-mail", async (req, res) => {
+  await sendNewsLetter();
+});
+
+app.post("/api/schedule-mail", async (req, res) => {
+  const { date } = req.body;
+  await scheduleMail(date);
 });
 
 app.listen(PORT, async () => {});

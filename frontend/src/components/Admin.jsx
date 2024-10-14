@@ -6,9 +6,9 @@ export function Admin() {
   const [subject, setSubject] = useState("");
   const [header, setHeader] = useState("");
   const [content, setContent] = useState("");
-  const [subjectTemplate, setSubjectTemplate] = useState("");
   const [headerTemplate, setHeaderTemplate] = useState("");
   const [contentTemplate, setContentTemplate] = useState("");
+  const [subjectTemplate, setSubjectTemplate] = useState("");
   const calendar = useRef(null);
 
   const handleSubmit = async (e) => {
@@ -33,41 +33,6 @@ export function Admin() {
         console.error(data.message); // Error message from the server
       }
     }
-  };
-
-  /**
-   * Main driver function to send emails
-   */
-  const sendNewsLetter = async () => {
-    let response = await fetch("http://localhost:5000/api/get-recipients", {
-      method: "GET",
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    let recipients = await response.json();
-    console.log(recipients);
-
-    response = await fetch("http://localhost:5000/api/get-newsletter", {
-      method: "GET",
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-
-    let newsletter_content = await response.json();
-
-    const info = await transporter.sendMail({
-      from: `${process.env.MAILING_EMAIL}`,
-      to: recipients,
-      subject: newsletter_content[0][0],
-      html: newsletter_content[1],
-      attachments: [newsletter_content[2]],
-    });
-
-    client.close();
   };
 
   const getData = async () => {
@@ -147,14 +112,31 @@ export function Admin() {
       <div className="settings-container">
         <h1>Schedule your email</h1>
         <input type="date" id="calendar" name="scheduled-time" ref={calendar} />
-        <button className="dash-buttons" id="schedule-button">
+        <button
+          className="dash-buttons"
+          id="schedule-button"
+          onClick={async () => {
+            if (calendar.current.value) {
+              let scheduleTime = calendar.current.value + "T12:00:00";
+              await fetch("http://localhost:5000/api/schedule-mail", {
+                method: "POST",
+                body: JSON.stringify({ date: scheduleTime }),
+                headers: {
+                  "Content-Type": "application/json",
+                },
+              });
+            }
+          }}
+        >
           Schedule Email!
         </button>
         <button
           className="dash-buttons"
           id="send-mail"
           onClick={async () => {
-            await sendNewsLetter();
+            await fetch("http://localhost:5000/api/send-mail", {
+              method: "POST",
+            });
           }}
         >
           Send Now!
