@@ -21,7 +21,6 @@ export default function WaitlistModal({ isOpen, onClose }) {
         const data = await response.json();
 
         if (response.ok) {
-            console.log(data.message);
             setName('');
             setEmail('');
 

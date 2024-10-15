@@ -128,7 +128,7 @@
 
 @media only screen and (max-width: 900px) {
   .waitlist-modal {
-    width: 125vw;
+    width: 115vw;
   }
   .modal-header {
     margin: 0;
@@ -139,18 +139,18 @@
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 530px) {
   .modal-form {
-    width: 115vw;
+    width: 105vw;
   }
   .modal-terms {
-    width: 115vw;
+    width: 105vw;
   }
   .modal-error {
-    width: 115vw;
+    width: 105vw;
   }
   .modal-header2 {
     font-size: 1.563rem;
-    width: 115vw;
+    width: 105vw;
   }
 }
