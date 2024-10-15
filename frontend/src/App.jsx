@@ -1,18 +1,22 @@
 import { useState } from "react";
-import viteLogo from "/vite.svg";
-import Footer from "./components/footer.jsx";
-import Video from "./components/video";
 import "./App.css";
-
-
+import Navbar from "./components/nav.jsx";
+import Video from "./components/video.jsx";
+import Footer from "./components/footer.jsx";
+import Background from "./components/background.jsx";
+import Mission from "./components/our_mission.jsx";
+import Product from "./components/product.jsx";
 
 function App() {
   return (
     <div class="app">
-      <Video/>
-      <Footer/>
+      <Navbar />
+      <Video />
+      <Product></Product>
+      <Background></Background>
+      <Mission></Mission>
+      <Footer />
     </div>
-
   );
 }
 

@@ -1,7 +1,22 @@
-body {
-  width: 100vw;
+#root {
+  display: flex;
+  flex-direction: column;
   height: 100vh;
-  margin: 0;
-  background: linear-gradient(#f8c471, #dd5a48);
+  width: 100vw;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: flex-start; /* Ensure items align from the top */
+  overflow-y: scroll;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: fit-content;
+  overflow: auto; /* Enable scrolling when content overflows */
+}
