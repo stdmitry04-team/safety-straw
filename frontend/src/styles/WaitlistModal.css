@@ -46,7 +46,7 @@
 
 .modal-form {
   width: 36rem;
-  height: 14.625rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   row-gap: 0.938rem;
@@ -120,6 +120,12 @@
   visibility: hidden;
 }
 
+.modal-invalid {
+  font-size: 1.25rem;
+  text-align: start;
+  color: #D63A29;
+}
+
 @media only screen and (max-width: 900px) {
   .waitlist-modal {
     width: 125vw;
@@ -138,6 +144,9 @@
     width: 115vw;
   }
   .modal-terms {
+    width: 115vw;
+  }
+  .modal-error {
     width: 115vw;
   }
   .modal-header2 {

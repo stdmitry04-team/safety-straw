@@ -8,7 +8,6 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [email, setEmail] = useState('');
 
     const handleSubmit = async (e) => {
-        onClose();
         e.preventDefault();
 
         const response = await fetch('http://localhost:5000/api/waitlist', {
@@ -25,8 +24,12 @@ export default function WaitlistModal({ isOpen, onClose }) {
             console.log(data.message);
             setName('');
             setEmail('');
+
+            document.getElementById("modal-error").textContent = '';
+            onClose();
         } else {
             console.error(data.message);
+            document.getElementById("modal-error").textContent = data.message;
         }
     }
     
@@ -42,6 +45,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
             <form className="modal-form" onSubmit={handleSubmit}>
                 <input id="modal-username" className="modal-input" type="text" onChange={(e) => setName(e.target.value)} placeholder="First Name" />
                 <input id="modal-email" className="modal-input" type="text" onChange={(e) => setEmail(e.target.value)} placeholder="Email Address"/>
+                <p id="modal-error" className="modal-invalid"></p>
                 <button className="modal-button" type="submit">Yes Please!</button>
             </form>
             <p className="modal-terms">
