@@ -54,7 +54,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
              & <span className="highlighted-text"> Privacy Policy</span>.
             </p>
             <button className="modal-close" onClick={onClose}>
-                <img src="\images\close-button.png" width="16" height="16" />
+                <img src="\src\assets\close-button.png" width="16" height="16" />
             </button>
         </div>
         </div>
