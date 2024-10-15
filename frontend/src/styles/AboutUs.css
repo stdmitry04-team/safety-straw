@@ -1,3 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
+
 *{
     margin:0;
     padding:0;
@@ -8,61 +24,161 @@ p{
     font-weight:500;
     color:#333;
 }
-h1{
-    font-size:4rem;
-    font-weight:700;
-    color:#333;
+.header{
+    height:7.7vh;
+    width: 40.18vw;
+    border:1px solid red;
+}
+.header h1{
+    font-family: 'Aileron', sans-serif;
+    font-size:4.375rem;
+    font-weight:900;
+    line-height:5.25rem;
+    color:#000000
 }
 .container{
     display:flex;
-    width:100%;
-    height:100%;
-    border:1px solid black;
+    width:83.39vw;
+    height:58.61vh;
+    border:1px solid red;
     flex-direction:column;
+    position:relative;
 }
 .top{
-
     display:flex;
     justify-content:center;
     align-items:center;
-    width:100%;
-    height:20%;
-   
 }
-
 .bottom{
     display:flex;
-    
+    position:absolute;
+    bottom:0;
     width:100%;
-    height:80%;
+    border:1px solid green;
 }
 .left{
-    width:60%;
-    height:100%;
-    
+    width:50.73vw;
+    height:46vh;
+    border:1px solid rgb(8, 17, 59);
+    position:absolute;
+    bottom:0;
+    left:0;
 }
 .right{
     width:40%;
-    height:100%;
-    
+    height:46vh;
     display:flex;
     flex-direction:column;
     padding:2rem;
 }
-iframe{
-    width:80%;
-    height:80%;
-    margin-top:2rem;
-
+.left iframe{
+    width:100%;
+    height:100%;
 }
-button{
-    border-radius:1rem;
+.contact button{
+    border-radius:1.25rem;
     padding:0.5rem;
-    width:90%;
-    font-size:2rem;
+    width:29.3vw;
+    height:6.296vh;
+    line-height:1.875rem;
+    font-size:2.5rem;
     background-color: orange;
     color:white;
     border:none;
-    margin-top:30%;
     cursor:pointer;
+    position:absolute;
+    bottom:0;
+    right:0;
+    font-family: 'Gantari', 'sans-serif';
+    font-weight:600;
+    
 }
+.about-us{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    width:100vw;
+    height:100vh;
+}
+.right .text{
+    border:1px solid blue;
+    width:29.27vw;
+    height:42.41vh;
+    position:absolute;
+    right:0;
+    top:0;
+    line-height:3.075rem;
+    text-align:left;
+}
+.right .text p{
+    font-family: 'Aileron', sans-serif;
+    font-size:2.5625rem;
+    font-weight:400;
+    margin-bottom:5%;
+    color:#000000;
+
+}
+@media screen and (max-width:390px){
+    .container{
+        display:flex;
+        flex-direction:column;
+    }
+    .bottom{
+        display:flex;
+        height:50vh;
+        justify-content:center;
+    }
+
+    .header h1{
+        font-size:1.7rem;
+        line-height:3rem;
+    }
+    .right .text P{
+        font-size:1.0875rem;
+        line-height:1.305rem;
+    }
+    .contact button{
+        font-size:1.1rem;
+        border-radius:0.55rem;
+        height:3.79vh;
+        width:100%;
+        line-height:0.8225rem;
+        margin-bottom:1.875vh;
+        
+    }
+    .right{
+        width:90%;
+        height:24.37vh;
+        bottom:0;
+        position:absolute;
+        
+    }
+    .left{
+        width:100%;
+        height:22.1vh;
+        bottom:28vh;
+    }
+    .right .text{
+        width:100%;
+        text-align:center;
+        height:24.37vh;
+
+        
+    }
+}
+@media screen and (max-width:768px){
+    .header h1{
+        font-size:1.7rem;
+        line-height:3rem;
+    }
+    .right .text P{
+        font-size:1rem;
+        line-height:1.1rem;
+    }
+    .contact button{
+        font-size:1rem;
+        line-height:1.875rem;
+        padding:0rem;;
+    }
+    }
+@media screen and 
