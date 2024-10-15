@@ -13,12 +13,12 @@ app.post('/api/waitlist', async (req, res) => {
     const { name, email } = req.body;
 
     if (!name || !email) {
-        return res.status(400).json({ message: 'Name and email are required' });
+        return res.status(400).json({ message: 'Please fill out all fields' });
     }
 
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-        return res.status(400).json({ message: 'Email format is incorrect' });
+        return res.status(400).json({ message: 'Oops! That doesn\'t look like a valid email address' });
     }
 
     try {

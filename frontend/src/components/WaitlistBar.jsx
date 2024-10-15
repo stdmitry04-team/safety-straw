@@ -19,12 +19,14 @@ export default function WaitlistBar(props) {
         const data = await response.json();
 
         if (response.ok) {
-            console.log(data.message); // Waitlist entry added successfully
-            // Optionally, reset the input fields
+            console.log(data.message);
+
             setName('');
             setEmail('');
+            document.getElementById("error-message").textContent = '';
         } else {
             console.error(data.message); // Error message from the server
+            document.getElementById("error-message").textContent = data.message;
         }
     }
 
@@ -32,6 +34,7 @@ export default function WaitlistBar(props) {
         <div className="waitlist">
             <h2 className="waitlist-header">Stay up to date on Safety Straw news!</h2>
             <div className="waitlist-right">
+                <p id="error-message" className="waitlist-invalid"></p>
                 <form className="waitlist-form" onSubmit={handleSubmit}>
                     <input className="waitlist-input waitlist-firstname" onChange={(e) => setName(e.target.value)} placeholder="First Name" type="text" />
                     <div className="waitlist-email-wrapper">
