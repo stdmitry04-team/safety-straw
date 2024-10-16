@@ -6,6 +6,7 @@ import Footer from "./components/footer.jsx"
 import Background from "./components/background.jsx"
 import Mission from "./components/our_mission.jsx"
 import Product from "./components/product.jsx"
+import AboutUs from "./components/AboutUs.jsx"
 function App() {
   return(
     <div className="app">
@@ -15,6 +16,8 @@ function App() {
     <Product></Product>
     <Background></Background>
     <Mission></Mission>
+    <AboutUs></AboutUs>
+
     <Footer/>
   </div>
 
