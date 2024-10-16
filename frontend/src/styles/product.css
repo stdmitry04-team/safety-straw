@@ -14,116 +14,1087 @@
     font-style: normal;
 }
 
+@media screen and (min-width: 400px) and (max-width: 499px){
+    html{
+        font-size: 5px !important;
+    }
 
-*{
-    box-sizing: border-box;
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;  
+        justify-content: center;  
+        display: flex;
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 14.95vw;
+        top: 25.63vh;
+        width: 12.5%;
+        height: 12.5%;
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 43.85vh;
+        width: 10%;
+        height: 10%;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 2.25rem;
+        line-height: 2vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 20.33vh;
+        left: 2.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 51.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 5.466rem;
+        line-height: 6.594vh;
+    
+        position: absolute;
+        top:3.33vh;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.904rem;
+        /* line-height: 2.3vh; */
+        height: 4.26vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 8.52vh;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 13.7vh;
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        top: 19.16vh;
+        border: none;
+        width: 20.36vw;
+        height: 2.89vh;
+    }  
 }
 
-.our-product {
-    padding-top:5vh;
-    background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
-    position: relative;
-    height:100vh;
-    width:100vw;
+@media screen and (min-width: 500px) and (max-width: 599px){
+    html{
+        font-size: 5px !important;
+    }
 
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 2.52vh;
+        left: 22vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 14.95vw;
+        top: 20.63vh;
+        width: 12.5%;
+        height: 12.5%;
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 35.85vh;
+        width: 10%;
+        height: 10%;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 2.25rem;
+        line-height: 2vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 28.33vh;
+        left: 2.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 43.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:17.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 3.5vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 34.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 50.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }  
 }
 
-.our-product-background {
-    width: 100%;
-    z-index: 1;
-    width:100%;
-    height: 100%;
+@media screen and (min-width: 600px) and (max-width: 699px){
+    html{
+        font-size: 6px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 14.95vw;
+        top: 25.63vh;
+        width: 12.5%;
+        height: 12.5%;
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 43.85vh;
+        width: 10%;
+        height: 10%;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 2.25rem;
+        line-height: 2vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 33.33vh;
+        left: 2.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 51.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:17.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 3.5vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 34.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 50.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }  
 }
 
-.straw{ 
-    position: absolute;
-    z-index: 2;
-    width: 13.385vw;
-    height: 62.356vh;
-    top: 8.52vh;
-    left: 20vw;
+@media screen and (min-width: 700px) and (max-width: 800px){
+    html{
+        font-size: 7px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 12.95vw;
+        top: 27.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 43.85vh;
+        width: 10%;
+        height: 10%;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 2.25rem;
+        line-height: 2vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 31.33vh;
+        left: 2.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 53.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 3.5vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 34.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 50.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }  
 }
 
-.l_arr {
-    position: absolute;
-    left: 18.95vw;
-    top: 24.63vh;
 
+@media screen and (min-width: 801px) and (max-width: 999px){
+    html{
+        font-size: 8px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 12.95vw;
+        top: 27.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 43.85vh;
+        width: 10%;
+        height: 10%;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 1.875rem;
+        line-height: 2.78vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 31.33vh;
+        left: 2.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 53.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 39.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 40.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }  
 }
 
-.r_arr {
-    position: absolute;
-    left: 29.53vw;
-    top: 46.85vh;
 
+@media screen and (min-width: 1000px) and (max-width: 1199px){
+    html{
+        font-size: 10px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 15.95vw;
+        top: 24.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 46.85vh;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 1.875rem;
+        line-height: 2.78vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 28.33vh;
+        left: 8.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 56.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 39.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 40.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }  
 }
 
-.l_text, .r_text {
-    font-size: 1.875rem;
-    line-height: 2.78vh;
-    font-family: 'Gantari', 'sans-serif';
-    font-weight: 600;
+@media screen and (min-width: 1200px) and (max-width: 1400px){
+    html{
+        font-size: 12px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 18.95vw;
+        top: 24.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 46.85vh;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 1.875rem;
+        line-height: 2.78vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 28.33vh;
+        left: 8.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 56.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 39.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 40.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 5.4vh;
+    }
 }
 
-.l_text {
-    position: absolute;
-    top: 28.33vh;
-    left: 8.594vw; 
+@media screen and (min-width: 1401px) and (max-width: 1600px){
+    html{
+        font-size: 14px !important;
+    }
+
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 18.95vw;
+        top: 24.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 46.85vh;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 1.875rem;
+        line-height: 2.78vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 28.33vh;
+        left: 8.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 56.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 39.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 37.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 7.4vh;
+    }
 }
 
-.r_text {
-    position: absolute;
-    top: 56.76vh;
-    left: 34.43vw; 
-}
+@media screen and (min-width: 1601px){
+    html{
+        font-size: 16px !important;
+    }
 
-.our-product-paragraph {
-    font-family: 'Aileron', 'sans-serif';
-    font-size: 900;
-    font-size: 4.375rem;
-    line-height: 7.78vh;
-
-    position: absolute;
-    top:14.72vh;
-    right:22.4vw;
-}
-
-.our-product-text-1, .our-product-text-2 {
-    font-size: 3.125rem;
-    line-height: 5.56vh;
-    font-family: 'Aileron', 'sans-serif';
-    font-weight: 700;
-    text-align: center;
-}
-
-.our-product-text-1 {
-    position: absolute;
-    top: 26.2vh;
-    right: 12.6vw;
-}
-
-.our-product-text-2 {
-    position: absolute;
-    top: 39.8vh;
-    right: 14.32vw; 
-}
-
-.text-1-color{
-    color: #D63A29;
-}
-
-.join-waitlist{
-    position: absolute;
-    background: #D63A29;
-    color: white;
-    font-size: 2.5rem;
-    border-radius: 1.85vh;
-    line-height: 4.4vh;
-    font-family: 'Gantari';
-    font-weight: 600;
-    right: 24.58vw;
-    bottom: 37.13vh;
-    border: none;
-    width: 20.36vw;
-    height: 7.4vh;
+    *{
+        box-sizing: border-box;
+    }
+    
+    .our-product {
+        padding-top:5vh;
+        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+        position: relative;
+        height:100vh;
+        width:100vw;
+    
+    }
+    
+    .our-product-background {
+        width: 100%;
+        z-index: 1;
+        width:100%;
+        height: 100%;
+    }
+    
+    .straw{ 
+        position: absolute;
+        z-index: 2;
+        width: 13.385vw;
+        height: 62.356vh;
+        top: 8.52vh;
+        left: 20vw;
+    }
+    
+    .l_arr {
+        position: absolute;
+        left: 18.95vw;
+        top: 24.63vh;
+    
+    }
+    
+    .r_arr {
+        position: absolute;
+        left: 29.53vw;
+        top: 46.85vh;
+    
+    }
+    
+    .l_text, .r_text {
+        font-size: 1.875rem;
+        line-height: 2.78vh;
+        font-family: 'Gantari', 'sans-serif';
+        font-weight: 600;
+    }
+    
+    .l_text {
+        position: absolute;
+        top: 28.33vh;
+        left: 8.594vw; 
+    }
+    
+    .r_text {
+        position: absolute;
+        top: 56.76vh;
+        left: 34.43vw; 
+    }
+    
+    .our-product-paragraph {
+        font-family: 'Aileron', 'sans-serif';
+        font-size: 900;
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+    
+        position: absolute;
+        top:14.72vh;
+        right:22.4vw;
+    }
+    
+    .our-product-text-1, .our-product-text-2 {
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron', 'sans-serif';
+        font-weight: 700;
+        text-align: center;
+    }
+    
+    .our-product-text-1 {
+        position: absolute;
+        top: 26.2vh;
+        right: 12.6vw;
+    }
+    
+    .our-product-text-2 {
+        position: absolute;
+        top: 39.8vh;
+        right: 14.32vw; 
+    }
+    
+    .text-1-color{
+        color: #D63A29;
+    }
+    
+    .join-waitlist{
+        position: absolute;
+        background: #D63A29;
+        color: white;
+        font-size: 2.5rem;
+        border-radius: 1.85vh;
+        line-height: 4.4vh;
+        font-family: 'Gantari';
+        font-weight: 600;
+        right: 24.58vw;
+        bottom: 37.13vh;
+        border: none;
+        width: 20.36vw;
+        height: 7.4vh;
+    }
 }
