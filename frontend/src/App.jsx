@@ -6,7 +6,7 @@ import "./App.css";
 // import Background from "./components/background.jsx"
 // import Mission from "./components/our_mission.jsx"
 // import Product from "./components/product.jsx"
-import Blogpost from "./components/blogpost.jsx"
+import Blogpost from "./components/blogsection.jsx"
 
 
 function App() {
