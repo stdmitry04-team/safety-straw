@@ -31,6 +31,11 @@ app.post('/api/waitlist', async (req, res) => {
 
         const token = crypto.randomBytes(32).toString('hex');
 
+        const existingUser = await collection.findOne({email: email});
+        if (existingUser) {
+            return res.status(400).json({ message: 'You\'ve already joined with this email. No further action needed!'})
+        }
+
         await collection.insertOne( {name: name, email: email, token: token, confirm: false } );
 
         let transporter = nodemailer.createTransport({
@@ -44,7 +49,7 @@ app.post('/api/waitlist', async (req, res) => {
         });
 
         let mailOptions = {
-            from: process.env.EMAIL_USER,
+            from: process.env.EMAIL_USR,
             to: email,
             subject: 'Safety Straw Waitlist Email Verification',
             html:`<p>Please verify your email by clicking <a href="http://localhost:5000/api/waitlist/confirm?token=${token}">here</a>.</p>`
