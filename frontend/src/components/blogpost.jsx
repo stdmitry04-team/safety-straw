@@ -10,9 +10,11 @@ export default function blogpost () {
         <div className = "blog-post">
             <img className = "blogpost-background" src={background} alt="" />
             <p className = "blog-posts"> BLOG POSTS</p>
-            <img className = "blog_l_image" src={l_image} alt="" />
-            <img className = "blog_m_image" src={m_image} alt="" />
-            <img className = "blog_r_image" src={r_image} alt="" />
+            <div className = "blog_images">
+                <img className = "blog_l_image" src={l_image} alt="" />
+                <img className = "blog_m_image" src={m_image} alt="" />
+                <img className = "blog_r_image" src={r_image} alt="" />
+            </div>   
         </div>
     )
 }
