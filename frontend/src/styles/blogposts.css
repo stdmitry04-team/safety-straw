@@ -29,7 +29,7 @@
     text-align: center;
     background: linear-gradient(180deg, #E36f52, #dc5745);
     }
-.blog_l_image {
+/* .blog_l_image {
     width: 486.39px;
     height: 470.5px;
     left: 10.79vw;
@@ -44,6 +44,19 @@
     width: 486.39px;
     height: 470.5px;
     left: 64.388vw;
+} */
+
+.blog-post-image {
+    width: 486.39px;
+    height: 470.5px;
+}
+
+.posts{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
 }
 @media (max-width: 1440px) {
     .blog_l_image {
