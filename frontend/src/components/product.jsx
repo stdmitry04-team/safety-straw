@@ -8,7 +8,6 @@ import r_arr from "../assets/right-arrow.svg"
 
 
 export default function product () {
-
 return (
     <div className = "our-product">
         <img className = "l_arr" src={l_arr} alt="" />
@@ -28,7 +27,4 @@ return (
 
 
 )
-
-
-
 }

@@ -53,11 +53,11 @@ html {
     left: 33.43vw;
 
     height: 7.8vh;
-    /*width: 21.21vw;*/
-    width: 21.43vw;
 
-    /*font-size: 4.375rem; */
-    font-size: 2.92rem;
+    display: flex;
+    flex-grow: 1;
+
+    font-size: 4.375rem;
     line-height: 7.78vh;
     font-family: 'Aileron';
     font-weight: 900;
@@ -68,11 +68,8 @@ html {
 .our_mission-text {
     position: absolute;
     top: 16.67vh;
-    /*left: 15.10vw;*/
-    left : 19.33vw;
-
-    /*font-size: 3.125rem;*/
-    font-size: 2.125rem;
+    left: 15.10vw;
+    font-size: 3.125rem;
     line-height: 5.56vh;
     font-family: 'Aileron';
     font-weight: 600;
@@ -80,7 +77,7 @@ html {
     width: 60.89vw;
     height: 16.94vh;
 
-    text-align: left;
+    text-align: center;
 }
 
 .text-color{
@@ -93,313 +90,49 @@ html {
     bottom: 5vh;
 }
 
-@media screen and (max-width: 2200px) {
+@media screen and (max-width: 390px) {
+    html{
+        font-size: 8px !important;
+    }
+
     .our_mission-whitebox{
-        height: 50vh;
-    }
-    .our_mission-p{
-        font-size: 2.92rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 2.5rem;
+        height: 39.5vh;
     }
 
     .whitebox-quotation{
-        width: 8vh;
+        width: 3vh;
     }
 
     .jack_and_zack{
-        width: 23vh;
+        width: 10vh;
     }
 }
 
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 391px) and (max-width: 600px){
+    html{
+        font-size: 10px !important;
+    }
+
     .our_mission-whitebox{
-        height: 50vh;
-    }
-    .our_mission-p{
-        font-size: 2.8rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 2.5rem;
+        height: 39.5vh;
     }
 
     .whitebox-quotation{
-        width: 8vh;
+        width: 3vh;
     }
 
     .jack_and_zack{
-        width: 23vh;
+        width: 10vh;
     }
 }
 
-
-@media screen and (max-width: 1910px) {
-    .our_mission-whitebox{
-        height: 49vh;
-    }
-    .our_mission-p{
-        font-size: 2.77rem;
-
+@media screen and (min-width: 600px) and (max-width: 1050px) {
+    html{
+        font-size: 12px !important;
     }
 
-    .our_mission-text{
-        font-size: 2.5rem;
-    }
-
-    .whitebox-quotation{
-        width: 8vh;
-    }
-
-    .jack_and_zack{
-        width: 27vh;
-    }
-}
-@media screen and (max-width: 1800px) {
-    .our_mission-p{
-        font-size: 2.75rem;
-    }
-
-    .our_mission-text{
-        font-size: 2.25rem;
-    }
-}
-
-@media screen and (max-width: 1500px) {
-    .our_mission-whitebox{
-        height: 48vh;
-    }
-
-    .our_mission-p{
-        font-size: 2.95rem;
-    }
-
-    .our_mission-text{
-        font-size: 2.25rem;
-    }
-
-    .whitebox-quotation{
-        width: 7vh;
-    }
-
-    .jack_and_zack{
-        width: 20vh;
-    }
-}
-
-@media screen and (max-width: 1450px) {
-    .our_mission-whitebox{
-        height: 47vh;
-    }
-    .our_mission-p{
-        font-size: 2.74rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 2.17rem;
-    }
-
-    .whitebox-quotation{
-        width: 8vh;
-    }
-
-    .jack_and_zack{
-        width: 23vh;
-    }
-}
-
-@media screen and (max-width: 1350px) {
-    .our_mission-whitebox{
-        height: 46.5vh;
-    }
-    .our_mission-p{
-        font-size: 2.65rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 2.1rem;
-    }
-
-    .whitebox-quotation{
-        width: 7vh;
-    }
-
-    .jack_and_zack{
-        width: 23vh;
-    }
-}
-
-@media screen and (max-width: 1300px) {
-    .our_mission-whitebox{
-        height: 46vh;
-    }
-    .our_mission-p{
-        font-size: 2.5rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 2rem;
-    }
-
-    .whitebox-quotation{
-        width: 6vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 1250px) {
-    .our_mission-whitebox{
-        height: 45.5vh;
-    }
-    .our_mission-p{
-        font-size: 2.45rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.95rem;
-    }
-
-    .whitebox-quotation{
-        width: 6vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .our_mission-whitebox{
-        height: 45vh;
-    }
-    .our_mission-p{
-        font-size: 2.39rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.9rem;
-    }
-
-    .whitebox-quotation{
-        width: 5.5vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 1170px) {
-    .our_mission-whitebox{
-        height: 45vh;
-    }
-    .our_mission-p{
-        font-size: 2.2rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.7rem;
-    }
-
-    .whitebox-quotation{
-        width: 5.5vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 1100px) {
-    .our_mission-whitebox{
-        height: 44vh;
-    }
-    .our_mission-p{
-        font-size: 2rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.6rem;
-    }
-
-    .whitebox-quotation{
-        width: 5vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 1000px) {
     .our_mission-whitebox{
         height: 43vh;
-    }
-    .our_mission-p{
-        font-size: 1.8rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.45rem;
-    }
-
-    .whitebox-quotation{
-        width: 4.5vh;
-    }
-
-    .jack_and_zack{
-        width: 18vh;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .our_mission-whitebox{
-        height: 43vh;
-    }
-    .our_mission-p{
-        font-size: 1.63rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.3rem;
-    }
-
-    .whitebox-quotation{
-        width: 4.5vh;
-    }
-
-    .jack_and_zack{
-        width: 17.5vh;
-    }
-}
-
-@media screen and (max-width: 800px) {
-    .our_mission-whitebox{
-        height: 43vh;
-    }
-    .our_mission-p{
-        font-size: 1.4rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 1.12rem;
     }
 
     .whitebox-quotation{
@@ -411,90 +144,147 @@ html {
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (min-width: 950px) and (max-width: 1650px) {
+    
+    html {
+        font-size: 8px !important;
+    }
+    
+    .our_mission{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .our_mission-whitebox{
-        height: 41vh;
+        background-color: white;
+        border-radius: 3.26vh;
+    
+        position: relative;
+        width: 91.15vw;
+        height: 44.26vh;
     }
-    .our_mission-p{
-        font-size: 1.18rem;
-
+    
+    .whitebox-quotation {
+        position: absolute;
+        width: 8.8vh;
+        top: 10.93vh;
+        left: 11.6vw;
     }
-
-    .our_mission-text{
-        font-size: 0.9rem;
+    
+    .our_mission-p {
+        position: absolute;
+        top: 4.62vh;
+        left: 33.43vw;
+    
+        height: 7.8vh;
+    
+        display: flex;
+        flex-grow: 1;
+    
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+        font-family: 'Aileron';
+        font-weight: 900;
+    
+        text-align: center;
     }
-
-    .whitebox-quotation{
-        width: 3.5vh;
+    
+    .our_mission-text {
+        position: absolute;
+        top: 16.67vh;
+        left: 15.10vw;
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron';
+        font-weight: 600;
+    
+        width: 60.89vw;
+        height: 16.94vh;
+    
+        text-align: center;
     }
-
-    .jack_and_zack{
-        width: 14vh;
+    
+    .text-color{
+        color: #D63A29;
+    }
+    
+    .jack_and_zack {
+        position: absolute;
+        right:9.75vw;
+        bottom: 5vh;
     }
 }
 
-@media screen and (max-width: 600px) {
+
+@media screen and (max-width: 1950px) {
+    
+    html {
+        font-size: 16px !important;
+    }
+    
+    .our_mission{
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
     .our_mission-whitebox{
-        height: 40vh;
+        background-color: white;
+        border-radius: 3.26vh;
+    
+        position: relative;
+        width: 91.15vw;
+        height: 44.26vh;
     }
-    .our_mission-p{
-        font-size: 1rem;
-
+    
+    .whitebox-quotation {
+        position: absolute;
+        width: 8.8vh;
+        top: 10.93vh;
+        left: 11.6vw;
     }
-
-    .our_mission-text{
-        font-size: 0.8rem;
+    
+    .our_mission-p {
+        position: absolute;
+        top: 4.62vh;
+        left: 33.43vw;
+    
+        height: 7.8vh;
+    
+        display: flex;
+        flex-grow: 1;
+    
+        font-size: 4.375rem;
+        line-height: 7.78vh;
+        font-family: 'Aileron';
+        font-weight: 900;
+    
+        text-align: center;
     }
-
-    .whitebox-quotation{
-        width: 3.3vh;
+    
+    .our_mission-text {
+        position: absolute;
+        top: 16.67vh;
+        left: 15.10vw;
+        font-size: 3.125rem;
+        line-height: 5.56vh;
+        font-family: 'Aileron';
+        font-weight: 600;
+    
+        width: 60.89vw;
+        height: 16.94vh;
+    
+        text-align: center;
     }
-
-    .jack_and_zack{
-        width: 13vh;
+    
+    .text-color{
+        color: #D63A29;
     }
-}
-
-@media screen and (max-width: 500px) {
-    .our_mission-whitebox{
-        height: 39.5vh;
-    }
-    .our_mission-p{
-        font-size: 0.8rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 0.7rem;
-    }
-
-    .whitebox-quotation{
-        width: 3.15vh;
-    }
-
-    .jack_and_zack{
-        width: 13vh;
-    }
-}
-
-@media screen and (max-width: 400px) {
-    .our_mission-whitebox{
-        height: 39.5vh;
-    }
-    .our_mission-p{
-        font-size: 0.70rem;
-
-    }
-
-    .our_mission-text{
-        font-size: 0.5rem;
-    }
-
-    .whitebox-quotation{
-        width: 3vh;
-    }
-
-    .jack_and_zack{
-        width: 10vh;
+    
+    .jack_and_zack {
+        position: absolute;
+        right:9.75vw;
+        bottom: 5vh;
     }
 }
