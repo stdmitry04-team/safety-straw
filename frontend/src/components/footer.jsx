@@ -6,7 +6,7 @@ import tiktok from "../assets/tiktok.svg"
 
 export default function Footer(){
     return(
-        <footer class="footer">
+        <footer class="footer" id="footer">
 
 
             <div className="footer-left">
