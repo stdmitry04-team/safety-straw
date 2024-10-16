@@ -1,5 +1,14 @@
 import "../styles/AboutUs.css";
 export default function AboutUs() {
+
+    
+  const scrollToBottom = () => {
+    
+    const footerElement = document.getElementById('footer'); // Get the footer by ID
+    if (footerElement) {
+      footerElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the footer smoothly
+    }
+  };
     return (
         <div className="about-us">
             <div className="container">
@@ -24,7 +33,7 @@ export default function AboutUs() {
                             </p>
                         </div>
                         <div className="contact">
-                            <button>Contact Us</button>
+                            <button onClick={scrollToBottom}>Contact Us</button>
                         </div>
                     </div>
                 </div>

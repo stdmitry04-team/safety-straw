@@ -23,7 +23,7 @@
 .header{
     height:7.7vh;
     width: 40.18vw;
-    border:1px solid red;
+
 }
 .header h1{
     font-family: 'Aileron', sans-serif;
@@ -36,7 +36,7 @@
     display:flex;
     width:83.39vw;
     height:58.61vh;
-    border:1px solid red;
+    
     flex-direction:column;
     position:relative;
 }
@@ -50,12 +50,12 @@
     position:absolute;
     bottom:0;
     width:100%;
-    border:1px solid green;
+    
 }
 .left{
     width:50.73vw;
     height:46vh;
-    border:1px solid rgb(8, 17, 59);
+    
     position:absolute;
     bottom:0;
     left:0;
@@ -78,7 +78,7 @@
     height:6.296vh;
     line-height:1.875rem;
     font-size:2.5rem;
-    background-color: orange;
+    background-color:#D63A29;
     color:white;
     border:none;
     cursor:pointer;
@@ -95,9 +95,10 @@
     align-items:center;
     width:100vw;
     height:100vh;
+    margin-top:10vw;
 }
 .right .text{
-    border:1px solid blue;
+   
     width:29.27vw;
     height:42.41vh;
     position:absolute;
@@ -127,7 +128,7 @@
 
     .header h1{
         font-size:1.7rem;
-        line-height:3rem;
+        line-height:2rem;
     }
     .right .text p{
         font-size:1.0875rem;
