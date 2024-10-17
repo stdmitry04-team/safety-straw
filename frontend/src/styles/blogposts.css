@@ -13,6 +13,13 @@
     font-weight: 700;
     font-style: normal;
 }
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Regular.otf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+}
 .blog-posts-title {
     font-family: 'Aileron', 'sans-serif';
     font-weight: 900;
@@ -147,6 +154,9 @@
 }
 
 @media screen and (max-width: 568px) {
+    .blog-posts {
+        font-size: 25px;
+    }
     .blog-post-image {
         width: 100px;
         height: 90px;
@@ -154,9 +164,12 @@
 }
 
 @media screen and (max-width: 480px) {
+    .blog-posts-title {
+        font-size: 28px;
+    }
     .blog-post-image {
-        width: 80px;
-        height: 70px;
+        width: 80px; 
+        height: 70px; 
     }
 }
 
