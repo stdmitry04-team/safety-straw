@@ -70,6 +70,29 @@
     justify-content: center;
     gap: 28px;
 }
+
+/* Styling for the blog post dates */
+.blog-post .posts .blog-post-date {
+    font-family: 'Aileron', sans-serif;
+    font-weight: 400;
+    font-size: 18px; 
+    margin-top: 15.27px; /* dist between date and img */
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+/* Styling for the blog post titles */
+.blog-post .posts .blog-post-title {
+    font-family: 'Aileron', sans-serif;
+    font-weight: 700;
+    font-size: 24px; 
+    margin-top: 0;
+    margin-top: 14.95px; /*dist between date and text*/
+    line-height: 1.4;
+}
+
+
+
 @media (max-width: 1500px) {
     .blog-post-image {
         width: 466.39px;
@@ -96,7 +119,15 @@
         height: 290px;
     }
 
+    .blog-post .posts .blog-post-title {
+        font-size: 18px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 14px;
+    }
+    
 }
+
 @media screen and (max-width: 1027px) {
     .blog-posts {
         font-size: 45px;
@@ -104,6 +135,13 @@
     .blog-post-image {
         width: 270px;
         height: 260px;
+    }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 16px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 13px;
     }
 }
 @media screen and (max-width: 950px) {
@@ -114,6 +152,13 @@
         width: 260px;
         height: 250px;
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 15px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 12px;
+    }
 }
 @media screen and (max-width: 828px) {
     .blog-posts {
@@ -122,6 +167,13 @@
     .blog-post-image {
         width: 190px;
         height: 180px;
+    }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 14px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 11px;
     }
 }
 @media screen and (max-width: 800px) {
@@ -132,6 +184,13 @@
         width: 150px;
         height: 140px;
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 13px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 10px;
+    }
 }
 
 @media screen and (max-width: 730px) {
@@ -139,17 +198,38 @@
         width: 160px;
         height: 150px;
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 12px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 9px;
+    }
 }
 @media screen and (max-width: 700px) {
     .blog-post-image {
         width: 150px;
         height: 140px;
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 11px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 8px;
+    }
 }
 @media screen and (max-width: 668px) {
     .blog-post-image {
         width: 130px;
         height: 120px;
+    }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 10px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 8px;
     }
 }
 
@@ -161,6 +241,13 @@
         width: 100px;
         height: 90px;
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 9px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 7px;
+    }
 }
 
 @media screen and (max-width: 480px) {
@@ -170,6 +257,13 @@
     .blog-post-image {
         width: 80px; 
         height: 70px; 
+    }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 8px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 6px;
     }
 }
 
@@ -191,6 +285,13 @@
     .blog-post-item.blog_r_image .blog-post-date {
         display: none; /* Hides the date associated with the right image */
     }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 7px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 6px;
+    }
 }
 
 @media screen and (max-width: 300px) {
@@ -203,5 +304,12 @@
     }
     .blog_r_image {
         display: none;
+    }
+
+    .blog-post .posts .blog-post-title {
+        font-size: 7px;
+    }
+    .blog-post .posts .blog-post-date {
+        font-size: 6px;
     }
 }
