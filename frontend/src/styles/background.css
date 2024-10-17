@@ -1,5 +1,5 @@
 .background {
-    background: linear-gradient(360deg, #DC5647 12.6%, #FCD678 99.99%);
+    /* background: linear-gradient(360deg, #DC5647 12.6%, #FCD678 99.99%); */
     width:100vw;
     height:667vh;
     overflow-y: scroll;

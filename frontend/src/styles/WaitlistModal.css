@@ -11,14 +11,14 @@
 }
 
 .waitlist-modal {
-  width: 1074px;
-  height: 671px;
+  width: 67.125rem;
+  height: 41.938rem;
   background-color: white;
-  border-radius: 50px;
-  border: 10px solid #f7bf70;
+  border-radius: 3.125rem;
+  border: 0.625rem solid #f7bf70;
   display: flex;
   flex-direction: column;
-  row-gap: 14px;
+  row-gap: 0.875rem;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
@@ -32,44 +32,44 @@
 }
 
 .modal-header {
-  font-size: 64px;
-  margin-left: 230px;
-  margin-right: 230px;
+  font-size: 4rem;
+  margin-left: 14.375rem;
+  margin-right: 14.375rem;
   text-align: center;
 }
 
 .modal-header2 {
-  font-size: 30px;
-  width: 576px;
+  font-size: 1.875rem;
+  width: 36rem;
   text-align: center;
 }
 
 .modal-form {
-  width: 576px;
-  height: 234px;
+  width: 36rem;
+  height: fit-content;
   display: flex;
   flex-direction: column;
-  row-gap: 15px;
-  padding-top: 15px;
+  row-gap: 0.938rem;
+  padding-top: 0.938rem;
 }
 
 .modal-input {
-  height: 68px;
+  height: 4.25rem;
   box-sizing: border-box;
-  border: 4px solid #e3e3e3;
-  border-radius: 20px;
+  border: 0.25rem solid #e3e3e3;
+  border-radius: 1.25rem;
   outline: none;
-  font-size: 29px;
+  font-size: 1.813rem;
   padding-left: 1rem;
 }
 
 .modal-button {
-  height: 68px;
+  height: 4.25rem;
   background-color: #d63a29;
-  border-radius: 20px;
+  border-radius: 1.25rem;
   border: none;
   color: white;
-  font-size: 32px;
+  font-size: 2rem;
   font-weight: 700;
   padding: 0;
 }
@@ -79,17 +79,17 @@
 }
 
 .modal-terms {
-  width: 590px;
+  width: 36.875rem;
   text-align: center;
-  font-size: 19px;
+  font-size: 1.188rem;
 }
 
 .modal-close {
   position: absolute;
-  left: 40px;
-  top: 40px;
-  width: 25px;
-  height: 25px;
+  left: 2.5rem;
+  top: 2.5rem;
+  width: 1.563rem;
+  height: 1.563rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,28 +120,37 @@
   visibility: hidden;
 }
 
+.modal-invalid {
+  font-size: 1.25rem;
+  text-align: start;
+  color: #D63A29;
+}
+
 @media only screen and (max-width: 900px) {
   .waitlist-modal {
-    width: 125vw;
+    width: 115vw;
   }
   .modal-header {
     margin: 0;
-    font-size: 50px;
+    font-size: 3.125rem;
   }
   .modal-header2 {
-    font-size: 30px;
+    font-size: 1.875rem;
   }
 }
 
-@media only screen and (max-width: 500px) {
+@media only screen and (max-width: 530px) {
   .modal-form {
-    width: 115vw;
+    width: 105vw;
   }
   .modal-terms {
-    width: 115vw;
+    width: 105vw;
+  }
+  .modal-error {
+    width: 105vw;
   }
   .modal-header2 {
-    font-size: 25px;
-    width: 115vw;
+    font-size: 1.563rem;
+    width: 105vw;
   }
 }

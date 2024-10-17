@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 export default function WaitlistBar(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [validStatus, setValidStatus] = useState(true);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -19,13 +20,14 @@ export default function WaitlistBar(props) {
         const data = await response.json();
 
         if (response.ok) {
-            console.log(data.message); // Waitlist entry added successfully
-            // Optionally, reset the input fields
             setName('');
             setEmail('');
+            setValidStatus(true);
         } else {
-            console.error(data.message); // Error message from the server
+            console.error(data.message);
+            setValidStatus(false);
         }
+        document.getElementById("error-message").textContent = data.message;
     }
 
     return (
@@ -39,6 +41,7 @@ export default function WaitlistBar(props) {
                         <button type="submit"className="waitlist-button">Yes Please!</button>
                     </div>
                 </form>
+                <p id="error-message" className={validStatus ? "waitlist-valid": "waitlist-invalid"}></p>
                 <p className="waitlist-terms">
                     By submitting you agree to receive email marketing from Safety Straw, 
                     as well as to the <span className="term-link"> Terms & Conditions </span>
