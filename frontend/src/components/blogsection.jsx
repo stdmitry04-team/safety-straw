@@ -11,13 +11,11 @@ export default function BlogSection () {
             <img className = "blogpost-background" src={background} alt="" />
             <p className = "blog-posts-title"> BLOG POSTS</p>
             <div className="posts">
-                <BlogPost imageSrc={blog_l_image} title="My First Blog Post" date='1 sep 2000' />
-                <BlogPost imageSrc={blog_m_image} title="My First Blog Post" date='1 sep 2000' />
-                <BlogPost imageSrc={blog_r_image} className = "blog_r_image" title="My First Blog Post" date='1 sep 2000' />
+                <BlogPost imageSrc={blog_l_image} title={ <>How Safety Straw Products Are <br /> Environmental Friendly </>}  date='Aug 20, 2024' />
+                <BlogPost imageSrc={blog_m_image} title={ <>How Do Bars Use Safety Straw <br />Products?</>} date='Aug 23, 2024' />
+                <BlogPost className = "blog_r_image" imageSrc={blog_r_image}  title={ <>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
             </div>
-            {/* <img className = "blog_l_image" src={l_image} alt="" />
-            <img className = "blog_m_image" src={m_image} alt="" />
-            <img className = "blog_r_image" src={r_image} alt="" /> */}
+
         </div>
     )
 }

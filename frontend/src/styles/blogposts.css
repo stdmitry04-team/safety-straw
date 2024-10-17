@@ -172,20 +172,21 @@
     .blog_r_image {
         display: none;
     }
+    .blog_r_image .blog-post-title {
+        display: none; /* Hides the title associated with the right image */
+    }
+    .blog-post-item.blog_r_image .blog-post-date {
+        display: none; /* Hides the date associated with the right image */
+    }
 }
 
 @media screen and (max-width: 300px) {
     .blog-posts-title {
         font-size: 15px;
     }
-    .blog_l_image {
-        width: 100px;
-        height: 90px;  
-    }
-    .blog_m_image {
+    .blog-post-image {
         width: 100px;
         height: 90px;
-        padding: 0px 18.61px;
     }
     .blog_r_image {
         display: none;
