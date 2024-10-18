@@ -4,8 +4,15 @@ import blog_m_image from "../images/blogimagemiddle.png"
 import blog_r_image from "../images/blogimageright.png"
 import BlogPost from "./blogpost"
 import background from "../assets/blogpost_bg.svg"
+import { useNavigate } from 'react-router-dom'; // Import useNavigate from react-router-dom
 
 export default function BlogSection () {
+    const navigate = useNavigate(); // Initialize the navigate function
+
+    const handleButtonClick = () => {
+       // navigate('/view-more'); // Change to the desired path
+    };
+
     return (
         <div className = "blog-post">
             <img className = "blogpost-background" src={background} alt="" />
@@ -15,7 +22,9 @@ export default function BlogSection () {
                 <BlogPost imageSrc={blog_m_image} title={ <>How Do Bars Use Safety Straw <br />Products?</>} date='Aug 23, 2024' />
                 <BlogPost className="blog_r_image" imageSrc={blog_r_image} title={ <>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
             </div>
-
+            <button className="custom-button" onClick={handleButtonClick}>
+                View More
+            </button>
         </div>
     )
 }

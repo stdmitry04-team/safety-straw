@@ -1,6 +1,7 @@
 import React from 'react';
 import "../styles/blogposts.css";
 
+
 export default function BlogPost({ imageSrc, title, date, className }) {
     return (
         <div className={`blog-post-item ${className}`}>
