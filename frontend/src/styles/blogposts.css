@@ -26,6 +26,7 @@
     font-size: 70px;
     line-height: 7.78vh;
     top: 650.37vh;
+    padding-bottom: 17.31vh;
 }
 .blog-post-images {
     display: flex;
@@ -69,7 +70,7 @@ html {
     border-radius: 15px;
     font-size: 2.5rem;
     cursor: pointer;
-    margin-top: 10px; /* Add some space above the button */
+    margin-top: 10vh;
     margin-bottom: 20px;
 }
 
