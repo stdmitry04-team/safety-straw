@@ -15,7 +15,7 @@ export default function BlogSection () {
 
     return (
         <div className = "blog-post">
-            <img className = "blogpost-background" src={background} alt="" />
+            <img className = "blogpost-background" src={background} alt="" /> 
             <p className = "blog-posts-title"> BLOG POSTS</p>
             <div className="posts">
                 <BlogPost imageSrc={blog_l_image} title={ <>How Safety Straw Products Are <br /> Environmental Friendly </>}  date='Aug 20, 2024' />
