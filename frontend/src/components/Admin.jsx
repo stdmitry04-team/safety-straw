@@ -10,16 +10,15 @@ export function Admin() {
   const [contentTemplate, setContentTemplate] = useState("");
   const [subjectTemplate, setSubjectTemplate] = useState("");
   const calendar = useRef(null);
-
+  const token = localStorage.getItem("token");
   const handleSubmit = async (e) => {
     if (subject && header && content) {
-      console.log(subject);
       const response = await fetch("http://localhost:5000/api/update", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ subject, header, content }),
+        body: JSON.stringify({ subject, header, content, token }),
       });
 
       const data = await response.json();
@@ -37,9 +36,12 @@ export function Admin() {
 
   const getData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/api/get-newsletter", {
-        method: "GET",
-      });
+      const response = await fetch(
+        `http://localhost:5000/api/get-newsletter?token=${token}`,
+        {
+          method: "GET",
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
@@ -55,10 +57,30 @@ export function Admin() {
     }
   };
 
+  const confirmRole = async () => {
+    const response = await fetch(
+      `http://localhost:5000/api/get-role?token=${token}`,
+      {
+        method: "GET",
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    let data = await response.json();
+    console.log(data);
+    if (data.result != "Admin") {
+      //window.location = "http://localhost:3000/";
+      console.error("Incorrect credentials");
+    }
+  };
+
   useEffect(() => {
+    confirmRole();
     getData();
     const today = new Date().toISOString().split("T")[0];
-
     document.getElementById("calendar").setAttribute("min", today);
   });
 
@@ -120,7 +142,7 @@ export function Admin() {
               let scheduleTime = calendar.current.value + "T12:00:00";
               await fetch("http://localhost:5000/api/schedule-mail", {
                 method: "POST",
-                body: JSON.stringify({ date: scheduleTime }),
+                body: JSON.stringify({ date: scheduleTime, token: token }),
                 headers: {
                   "Content-Type": "application/json",
                 },
@@ -136,6 +158,10 @@ export function Admin() {
           onClick={async () => {
             await fetch("http://localhost:5000/api/send-mail", {
               method: "POST",
+              body: JSON.stringify({ token: token }),
+              headers: {
+                "Content-Type": "application/json",
+              },
             });
           }}
         >
