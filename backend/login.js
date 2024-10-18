@@ -13,7 +13,6 @@ async function verifyLogin(user, pwd) {
   const collection = db.collection(process.env.ALL_USERS_COLLECTION);
 
   const data = await collection.findOne({ username: user });
-  console.log(data);
   if (data && data.password == pwd) {
     const genToken = generateRandomBase64(32);
     const result = await collection.updateOne(

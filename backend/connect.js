@@ -18,6 +18,7 @@ async function connectClient() {
     await client.connect();
     // Access your database
     return client;
+    return client;
     // You can add more database operations here as needed
   } catch (error) {
     console.error("Error connecting to MongoDB:", error);

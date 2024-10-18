@@ -9,7 +9,6 @@ async function updateEmailContents(header, content, subject) {
     const db = connectDB(client);
     const collection = db.collection(process.env.NEWS_COLLECTION);
     const filter = { name: process.env.MAIN_NEWSLETTER };
-    console.log(collection);
     const updateDoc = {
       $set: {
         header: header,

@@ -70,7 +70,6 @@ export function Admin() {
     }
 
     let data = await response.json();
-    console.log(data);
     if (data.result != "Admin") {
       //window.location = "http://localhost:3000/";
       console.error("Incorrect credentials");

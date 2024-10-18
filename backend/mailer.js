@@ -14,8 +14,6 @@ const transporter = nodemailer.createTransport({
 });
 
 async function scheduleMail(date) {
-  console.log(new Date(date));
-  console.log(date);
   schedule.scheduleJob(new Date(date), async () => {
     // This runs every minute
     console.log("Scheduled mail");
