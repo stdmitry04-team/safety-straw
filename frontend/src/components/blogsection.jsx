@@ -13,7 +13,7 @@ export default function BlogSection () {
             <div className="posts">
                 <BlogPost imageSrc={blog_l_image} title={ <>How Safety Straw Products Are <br /> Environmental Friendly </>}  date='Aug 20, 2024' />
                 <BlogPost imageSrc={blog_m_image} title={ <>How Do Bars Use Safety Straw <br />Products?</>} date='Aug 23, 2024' />
-                <BlogPost className = "blog_r_image" imageSrc={blog_r_image}  title={ <>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                <BlogPost className="blog_r_image" imageSrc={blog_r_image} title={ <>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
             </div>
 
         </div>
