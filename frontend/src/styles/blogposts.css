@@ -62,12 +62,12 @@ html {
 .custom-button {
     padding: 1.2vh 4.9vw;
     background-color: white; /* Change as needed */
-    width: 20.36vw;
-    height: 7.4vh;
+    /* width: 20.36vw;
+    height: 7.4vh; */
     color: #D63A29;
     border: none;
     border-radius: 15px;
-    font-size: 40px;
+    font-size: 2.5rem;
     cursor: pointer;
     margin-top: 10px; /* Add some space above the button */
     margin-bottom: 20px;
@@ -92,13 +92,29 @@ html {
     margin-top: 14.95px; /*dist between date and text*/
     line-height: 1.4;
 }
-
-
+@media (max-width: 1800px) {
+    html {
+        font-size: 15px !important; /* Shrinks all rem units */
+    }
+}
+@media (max-width: 1700px) {
+    html {
+        font-size: 14px !important; /* Shrinks all rem units */
+    }
+}
+@media (max-width: 1600px) {
+    html {
+        font-size: 13px !important; /* Shrinks all rem units */
+    }
+}
 
 @media (max-width: 1500px) {
     .blog-post-image {
         width: 466.39px;
         height: 450.5px;
+    }
+    html {
+        font-size: 12px !important; /* Shrinks all rem units */
     }
 
 }
@@ -109,6 +125,9 @@ html {
     .blog-post-image {
         width: 330px;
         height: 310px;
+    }
+    html {
+        font-size: 11px !important; /* Shrinks all rem units */
     }
 
 }
@@ -127,9 +146,17 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 14px;
     }
+    html {
+        font-size: 10px !important; /* Shrinks all rem units */
+    }
     
 }
-
+@media screen and (max-width: 1100px) {
+    html {
+        font-size: 9px !important; /* Shrinks all rem units */
+    }
+    
+}
 @media screen and (max-width: 1027px) {
     .blog-posts {
         font-size: 45px;
@@ -144,6 +171,9 @@ html {
     }
     .blog-post .posts .blog-post-date {
         font-size: 13px;
+    }
+    html {
+        font-size: 8px !important; /* Shrinks all rem units */
     }
 }
 @media screen and (max-width: 950px) {
@@ -161,6 +191,7 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 12px;
     }
+
 }
 @media screen and (max-width: 828px) {
     .blog-posts {
@@ -177,6 +208,10 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 11px;
     }
+    html {
+        font-size: 7px !important; /* Shrinks all rem units */
+    }
+    
 }
 @media screen and (max-width: 800px) {
     .blog-posts {
@@ -207,6 +242,10 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 9px;
     }
+    html {
+        font-size: 6px !important; /* Shrinks all rem units */
+    }
+    
 }
 @media screen and (max-width: 700px) {
     .blog-post-image {
@@ -220,6 +259,10 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 8px;
     }
+    html {
+        font-size: 5px !important; /* Shrinks all rem units */
+    }
+    
 }
 @media screen and (max-width: 668px) {
     .blog-post-image {
@@ -250,6 +293,10 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 7px;
     }
+    html {
+        font-size: 4px !important; /* Shrinks all rem units */
+    }
+    
 }
 
 @media screen and (max-width: 480px) {
@@ -267,6 +314,12 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 6px;
     }
+}
+@media screen and (max-width: 450px) {
+    html {
+        font-size: 3px !important; /* Shrinks all rem units */
+    }
+    
 }
 
 /* For very small screens or narrow devices */
@@ -294,6 +347,10 @@ html {
     .blog-post .posts .blog-post-date {
         font-size: 6px;
     }
+    html {
+        font-size: 3px !important; /* Shrinks all rem units */
+    }
+    
 }
 
 @media screen and (max-width: 300px) {
