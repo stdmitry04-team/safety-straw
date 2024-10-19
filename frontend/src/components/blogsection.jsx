@@ -12,7 +12,6 @@ export default function BlogSection () {
     const handleButtonClick = () => {
        // navigate('/view-more'); // Change to the desired path
     };
-
     return (
         <div className = "blog-post">
             <img className = "blogpost-background" src={background} alt="" /> 
@@ -28,3 +27,5 @@ export default function BlogSection () {
         </div>
     )
 }
+
+

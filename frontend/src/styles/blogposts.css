@@ -33,12 +33,13 @@
     justify-content: center;
     align-items: center;
 }
+
 .blog-post {
     text-align: center;
     position: relative; 
     padding: 50px 0; 
-    /* overflow: hidden;  */
-    }
+    /* overflow: hidden; */
+}
 
 .blogpost-background {
     position: absolute;
@@ -49,7 +50,8 @@
     height: 100%;
     object-fit: cover;
     z-index: -1;
-}  
+}
+    
 .blog-post-image {
     width: 486.39px;
     height: 470.5px;
@@ -190,9 +192,6 @@ html {
     }
 }
 @media screen and (max-width: 950px) {
-    .blog-posts-title {
-        font-size: 65px;
-    }
     .blog-posts {
         font-size: 40px;
     }
@@ -264,9 +263,6 @@ html {
     
 }
 @media screen and (max-width: 700px) {
-    .blog-posts-title {
-        font-size: 50px;
-    }
     .blog-post-image {
         width: 150px;
         height: 140px;
@@ -323,8 +319,8 @@ html {
         font-size: 28px;
     }
     .blog-post-image {
-        width: 90px; 
-        height: 80px; 
+        width: 80px; 
+        height: 70px; 
     }
 
     .blog-post .posts .blog-post-title {
