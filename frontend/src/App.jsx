@@ -27,7 +27,6 @@ function App() {
       <AboutUs></AboutUs>
       <WaitlistBar/>
       <Footer/> */}
-      <BlogPost></BlogPost>
       <BlogSection></BlogSection>
     </div>
 
