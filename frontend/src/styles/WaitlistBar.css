@@ -12,15 +12,15 @@
 
 .waitlist {
     background-color: #FCD578;
-    width: 125vw;
+    width: 100vw;
     height: 16.373rem;
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     column-gap: 3vw;
     font-family: 'Aileron';
-    padding-left: 5.46vw;
+    padding-left: 3.46vw;
     padding-right: 5.46vw;
     box-sizing: border-box;
     zoom: 0.8;
