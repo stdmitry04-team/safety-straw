@@ -1,4 +1,4 @@
-import "../styles/product.css"
+import "../styles/product-debug.css"
 import back from "../assets/product.svg"
 import straw from "../assets/straw.svg"
 import l_arr from "../assets/left-arrow.svg"
