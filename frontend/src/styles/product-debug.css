@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+
+html{
+    font-size: 16px !important;
+}
+
+*{
+    box-sizing: border-box;
+}
+
+.our-product {
+    padding-top:5vh;
+    background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
+    position: relative;
+    height:100vh;
+    width:100vw;
+
+}
+
+.our-product-background {
+    width: 100%;
+    z-index: 1;
+    width:100%;
+    height: 100%;
+    object-fit:cover;
+}
+
+.straw{ 
+    position: absolute;
+    z-index: 2;
+    width: 13.385vw;
+    height: 62.356vh;
+    top: 8.52vh;
+    left: 20vw;
+}
+
+.l_arr {
+    position: absolute;
+    left: 18.95vw;
+    top: 24.63vh;
+
+}
+
+.r_arr {
+    position: absolute;
+    left: 29.53vw;
+    top: 46.85vh;
+
+}
+
+.l_text, .r_text {
+    font-size: 1.875rem;
+    line-height: 2.78vh;
+    font-family: 'Gantari', 'sans-serif';
+    font-weight: 600;
+}
+
+.l_text {
+    position: absolute;
+    top: 28.33vh;
+    left: 8.594vw; 
+}
+
+.r_text {
+    position: absolute;
+    top: 56.76vh;
+    left: 34.43vw; 
+}
+
+.our-product-paragraph {
+    font-family: 'Aileron', 'sans-serif';
+    font-size: 900;
+    font-size: 4.375rem;
+    line-height: 7.78vh;
+
+    position: absolute;
+    top:14.72vh;
+    right:22.4vw;
+}
+
+.our-product-text-1, .our-product-text-2 {
+    font-size: 3.125rem;
+    line-height: 5.56vh;
+    font-family: 'Aileron', 'sans-serif';
+    font-weight: 700;
+    text-align: center;
+}
+
+.our-product-text-1 {
+    position: absolute;
+    top: 26.2vh;
+    right: 12.6vw;
+}
+
+.our-product-text-2 {
+    position: absolute;
+    top: 39.8vh;
+    right: 14.32vw; 
+}
+
+.text-1-color{
+    color: #D63A29;
+}
+
+.join-waitlist{
+    position: absolute;
+    background: #D63A29;
+    color: white;
+    font-size: 2.5rem;
+    border-radius: 1.85vh;
+    line-height: 4.4vh;
+    font-family: 'Gantari';
+    font-weight: 600;
+    right: 24.58vw;
+    bottom: 37.13vh;
+    border: none;
+    width: 20.36vw;
+    height: 7.4vh;
+}
