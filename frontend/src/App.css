@@ -11,6 +11,7 @@
   flex-grow: 1;
   justify-content: flex-start; /* Ensure items align from the top */
   overflow-y: scroll;
+  overflow-x: hidden; /* Fixs horizontal scrollbar in safari */
 }
 
 html, body {

@@ -1,5 +1,6 @@
 import "../styles/WaitlistModal.css";
 import React, { useState } from 'react';
+const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 export default function WaitlistModal({ isOpen, onClose }) {
     if (!isOpen) return null;
@@ -9,8 +10,8 @@ export default function WaitlistModal({ isOpen, onClose }) {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-
-        const response = await fetch('http://localhost:5000/api/waitlist', {
+        //change this to an environment variable
+        const response = await fetch(`${backendUrl}/waitlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
