@@ -20,6 +20,7 @@
     font-weight: 400;
     font-style: normal;
 }
+
 .blog-posts-title {
     font-family: 'Aileron', 'sans-serif';
     font-weight: 900;
@@ -36,7 +37,7 @@
 }
 
 .blog-post {
-    text-align: center;
+    /* text-align: center; */
     position: relative; 
     padding: 50px 0; 
     /* overflow: hidden; */
@@ -109,6 +110,9 @@ html {
     margin-top: 0;
     margin-top: 14.95px; /*dist between date and text*/
     line-height: 1.4;
+    margin-block-end: 0;
+    margin-block-start: 0;
+
 }
 @media (max-width: 1800px) {
     html {
@@ -402,7 +406,7 @@ html {
 }
 
 /* For very small screens or narrow devices */
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 410px) {
     .blog-posts-title {
         font-size: 25px;
         padding-bottom: 18px; /* Decrease padding to reduce space */
@@ -433,11 +437,13 @@ html {
     .custom-button {
         margin-top: 26.5px; 
         font-size: 4rem;
+        border-radius: 2rem;
+        padding: 2.25rem 8rem
     } 
     html {
         font-size: 3px !important; /* Shrinks all rem units */
     }
-    
+
 }
 
 @media screen and (max-width: 300px) {
