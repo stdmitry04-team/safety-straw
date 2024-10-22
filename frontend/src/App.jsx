@@ -9,6 +9,9 @@ import Product from "./components/product.jsx"
 import WaitlistBar from "./components/WaitlistBar.jsx";
 import WaitlistModal from "./components/WaitlistModal.jsx";
 import AboutUs from "./components/AboutUs.jsx";
+import BlogPost from "./components/blogpost.jsx"
+import BlogSection from "./components/blogsection.jsx"
+
 
 
 
@@ -16,14 +19,15 @@ import AboutUs from "./components/AboutUs.jsx";
 function App() {
   return (
     <div className="app">
-      <Navbar/>
+      {/* <Navbar/>
       <Video/>
       <Product></Product>
       <Background></Background>
       <Mission></Mission>
       <AboutUs></AboutUs>
       <WaitlistBar/>
-      <Footer/>
+      <Footer/> */}
+      <BlogSection></BlogSection>
     </div>
 
   );
