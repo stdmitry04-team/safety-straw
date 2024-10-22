@@ -26,7 +26,8 @@
     font-size: 70px;
     line-height: 7.78vh;
     top: 650.37vh;
-    padding-bottom: 17.31vh;
+    /* padding-bottom: 17.31vh; */
+    padding-bottom: 9.54vh;
 }
 .blog-post-images {
     display: flex;
@@ -170,7 +171,7 @@ html {
 }
 @media screen and (max-width: 1100px) {
     .blog-posts-title {
-        font-size: 55px;
+        font-size: 65px;
         padding-bottom: 60px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
@@ -190,9 +191,11 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 16px;
+        margin-top: 13.5px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 13px;
+        margin-top: 14px;
     }
     html {
         font-size: 8px !important; /* Shrinks all rem units */
@@ -200,7 +203,7 @@ html {
 }
 @media screen and (max-width: 950px) {
     .blog-posts {
-        font-size: 40px;
+        font-size: 43px;
     }
     .blog-post-image {
         width: 260px;
@@ -209,15 +212,20 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 15px;
+        margin-top: 13.5px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 12px;
+        margin-top: 14px;
+    }
+    .custom-button {
+        margin-top: 45px; 
     }
 
 }
 @media screen and (max-width: 828px) {
     .blog-posts-title {
-        font-size: 35px;
+        font-size: 45px;
         padding-bottom: 30px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
@@ -251,12 +259,15 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 13px;
+        margin-top: 11.5px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 10px;
+        margin-top: 13px;
     }
     .custom-button {
-        margin-top: 42px; 
+        margin-top: 40px; 
+        font-size: 2.5rem;
     }
 }
 
@@ -278,6 +289,11 @@ html {
     
 }
 @media screen and (max-width: 700px) {
+    .blog-posts-title {
+        font-size: 38px;
+        padding-bottom: 28px; /* Decrease padding to reduce space */
+        margin-bottom: 0;
+    }
     .blog-post-image {
         width: 150px;
         height: 140px;
@@ -285,15 +301,18 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 11px;
+        margin-top: 11px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 8px;
+        margin-top: 10px;
     }
     html {
         font-size: 5px !important; /* Shrinks all rem units */
     }
     .custom-button {
-        margin-top: 40px; 
+        margin-top: 38px;
+        font-size: 2.5rem; 
     }
     
 }
@@ -305,16 +324,23 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 10px;
+        margin-top: 9px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 8px;
+        margin-top: 8px;
+    }
+
+    .custom-button {
+        margin-top: 36px; 
+        font-size: 2.5rem;
     }
 }
 
 @media screen and (max-width: 568px) {
     .blog-posts-title {
-        font-size: 30px;
-        padding-bottom: 27px; /* Decrease padding to reduce space */
+        font-size: 25px;
+        padding-bottom: 22px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
     .blog-posts {
@@ -328,15 +354,17 @@ html {
 
     .blog-post .posts .blog-post-title {
         font-size: 9px;
+        margin-top: 7px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 7px;
+        margin-top: 6px;
     }
     html {
         font-size: 4px !important; /* Shrinks all rem units */
     }
     .custom-button {
-        margin-top: 38px; 
+        margin-top: 31px; 
     }
     
 }
@@ -344,7 +372,7 @@ html {
 @media screen and (max-width: 480px) {
     .blog-posts-title {
         font-size: 28px;
-        padding-bottom: 25px; /* Decrease padding to reduce space */
+        padding-bottom: 22px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
     .blog-post-image {
@@ -353,13 +381,16 @@ html {
     }
 
     .blog-post .posts .blog-post-title {
-        font-size: 8px;
+        font-size: 7px;
+        margin-top: 5px;
     }
     .blog-post .posts .blog-post-date {
         font-size: 6px;
+        margin-top: 6px;
     }
     .custom-button {
-        margin-top: 34px; 
+        margin-top: 24px; 
+        font-size: 2.5rem;
     } 
 }
 
@@ -374,7 +405,7 @@ html {
 @media screen and (max-width: 390px) {
     .blog-posts-title {
         font-size: 25px;
-        padding-bottom: 25px; /* Decrease padding to reduce space */
+        padding-bottom: 18px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
     .blog-post-image {
@@ -392,11 +423,17 @@ html {
     }
 
     .blog-post .posts .blog-post-title {
-        font-size: 7px;
+        font-size: 9px;
+        margin-top: 4.5px;
     }
     .blog-post .posts .blog-post-date {
-        font-size: 6px;
+        font-size: 8px;
+        margin-top: 6px;
     }
+    .custom-button {
+        margin-top: 26.5px; 
+        font-size: 4rem;
+    } 
     html {
         font-size: 3px !important; /* Shrinks all rem units */
     }
@@ -405,8 +442,8 @@ html {
 
 @media screen and (max-width: 300px) {
     .blog-posts-title {
-        font-size: 15px;
-        padding-bottom: 25px; /* Decrease padding to reduce space */
+        font-size: 20px;
+        padding-bottom: 10px; /* Decrease padding to reduce space */
         margin-bottom: 0;
     }
     .blog-post-image {
@@ -418,12 +455,14 @@ html {
     }
     
     .blog-post .posts .blog-post-title {
-        font-size: 7px;
+        font-size: 8px;
+        margin-top: 3.5px;
     }
     .blog-post .posts .blog-post-date {
-        font-size: 6px;
+        font-size: 7px;
+        margin-top: 3.5px;
     }
     .custom-button {
-        margin-top: 30px; 
+        margin-top: 25px; 
     } 
 }
