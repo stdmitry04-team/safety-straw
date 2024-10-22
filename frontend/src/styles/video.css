@@ -14,6 +14,7 @@
     height: 92vh;
     background: #E89C57;
     position: relative;
+    z-index: 0;
 }
 
 .video iframe {
@@ -42,6 +43,6 @@
 @media screen and (max-width: 440px) {
     .video iframe {
         width: 87.95vw;
-        height: 72.25vh;
+        height: 77.25vh;
     }
 }

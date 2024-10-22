@@ -4,5 +4,5 @@
     height:667vh;
     overflow-y: scroll;
     position: fixed;
-    z-index: -1;
+    z-index: -1000;
 }

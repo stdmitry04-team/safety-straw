@@ -17,6 +17,7 @@
     position: sticky;
     top:0;
     box-sizing: border-box; 
+    z-index: 1;
   }
   
  
@@ -135,7 +136,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 12.5rem; 
     padding: 1.5625rem;
-    z-index: 999;
+    z-index: 99999;
   }
   
   .dropdown-menu .nav-link, .dropdown-menu .btn-link {
@@ -145,10 +146,9 @@
     text-align: left;
     border: none;
     background: none;
-    color: #333;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
-    
   }
   
   .dropdown-menu .nav-link:hover, .dropdown-menu .btn-link:hover {
@@ -174,5 +174,24 @@
         word-break: break-word;
     }
 
-  
+    .profile-icon{
+      width: 7vw;
+    }
+
+    .logo-image{
+      width: 30px;
+      height: 38px;
+      margin-left: 4vw
+    }
+
+    .logo-text{
+      margin-left: 2vw;
+      height:85px;
+      width: 170px;
+    }
+
+    .menu-icon{
+      margin-right: 4vw;
+      margin-left: 2vw;
+    }
   }
