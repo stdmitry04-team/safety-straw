@@ -265,6 +265,7 @@ html {
     .our_mission-text{
         font-size:1.22rem;
         max-width: 252px;
+        padding-bottom: 5.5vh;
     }
     .whitebox-quotation{
         top: 8.81vh;
