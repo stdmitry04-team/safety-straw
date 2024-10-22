@@ -103,23 +103,49 @@ html {
 }
 
 @media screen and (max-width: 1750px){
+    .our_mission-p{
+        font-size: 3.4rem;
+    }
+    .our_mission-text{
+        font-size:2.8rem;
+    }
     .whitebox-quotation{
         left:6%;
+        width: 75px;
+    }
+    .jack_and_zack{
+        bottom: 7%;
+        width: 15%;
     }
 }
 
 @media screen and (max-width: 1500px){
+    .our_mission-p{
+        font-size: 3.2rem;
+    }
+    .our_mission-text{
+        font-size:2.6rem;
+    }
     .whitebox-quotation{
         left:5%;
+        width: 70px;
     }
     .jack_and_zack{
-        bottom: 5%;
+        bottom: 12%;
+        width: 17.5%;
     }
 }
 
 @media screen and (max-width: 1350px){
+    .our_mission-p{
+        font-size: 3rem;
+    }
+    .our_mission-text{
+        font-size:2.4rem;
+    }
     .whitebox-quotation{
         left:3%;
+        width: 65px;
     }
     .jack_and_zack{
         right: 3%;
@@ -127,13 +153,21 @@ html {
 }
 
 @media screen and (max-width: 1100px){
+    .our_mission-p{
+        font-size: 2.8rem;
+    }
+    .our_mission-text{
+        font-size:2.2rem;
+    }
     .whitebox-quotation{
-        left:2%;
+        left:5%;
         top: 20%;
+        width: 60px;
     }
     .jack_and_zack{
-        right: 2%;
-        bottom: 4%;
+        right: 6%;
+        bottom: 6%;
+        width: 23%;
     }
     .our_mission-text{
         margin-left: 3vw;
@@ -142,20 +176,21 @@ html {
 
 @media screen and (max-width: 800px){
     .our_mission-p{
-        font-size: 4rem;
+        font-size: 2.7rem;
     }
     .our_mission-text{
-        font-size: 2.8rem;
+        font-size:2rem;
     }
     .whitebox-quotation{
-        left:5%;
-        top: 20%;
+        left:7.5%;
+        top: 23%;
         width: 10%;
+        width: 50px;
     }
     .jack_and_zack{
-        right: 4%;
-        bottom: 4%;
-        width: 30%;
+        bottom: 7%;
+        right: 5%;
+        width: 25%;
     }
     .our_mission-text{
         margin-left: 5vw;
@@ -164,7 +199,10 @@ html {
 
 @media screen and (max-width: 650px){
     .our_mission-p{
-        font-size: 3.45rem;
+        font-size: 2.5rem;
+    }
+    .our_mission-text{
+        font-size:1.8rem;
     }
     .whitebox-quotation{
         left:5%;
@@ -174,62 +212,78 @@ html {
     .jack_and_zack{
         right: 7%;
         bottom: 5%;
-        width: 35%;
+        width: 30%;
     }
 }
 
 @media screen and (max-width: 550px){
+    .whitebox-quotation{
+        top: 32%;
+        width: 3rem;
+        height: 2.3125rem;
+    }
     .our_mission-p{
-        font-size: 3rem;
+        font-size: 2.3rem;
     }
     .our_mission-text{
-        font-size:2.5rem;
+        font-size:1.6rem;
     }
     .jack_and_zack{
         right: 7%;
         bottom: 6%;
-        width: 35%;
+        width: 30%;
     }
 }
 
 @media screen and (max-width: 480px){
+    .whitebox-quotation{
+        top: 32%;
+        width: 2.5rem;
+        height: 2.3125rem;
+    }
     .our_mission-p{
         font-size: 2.5rem;
     }
     .our_mission-text{
-        font-size:2rem;
+        font-size:1.4rem;
     }
     .jack_and_zack{
         right: 7%;
         bottom: 8%;
-        width: 35%;
+        width: 32%;
     }
 }
 
 @media screen and (max-width: 440px){
-    .our_mission-p{
-        font-size: 2rem;
+    .our_mission-p {
+        top: 3.9vh;
+        left: 0;
+        padding-top: 3.9vh;
+        font-size: 2.1rem;
+        line-height: 3.03vh;
     }
     .our_mission-text{
-        font-size:1.5rem;
+        font-size:1.22rem;
+        max-width: 252px;
     }
     .whitebox-quotation{
-        top: 23%;
-    }
-    .our_mission-p{
-        margin-bottom: 2vh;
+        top: 8.81vh;
+        width: 2.5rem;
+        height: 2.3125rem;
     }
     .jack_and_zack{
         right: 7%;
-        bottom: 8%;
-        width: 35%;
+        bottom: 10%;
+        width: 27.5%;
+        padding: 0;
+    }
+    .our_mission-whitebox{
+        padding: 0;
     }
     .our_mission-whitebox{
         padding-bottom: 0;
-    }
-    .our_mission-whitebox{
-        padding-bottom: 0;
-        min-height: 42vh;
+        min-height: 35.54vh;
+        min-width: 40.76vw;
     }
 }
 
