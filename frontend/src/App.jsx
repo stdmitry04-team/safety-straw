@@ -6,6 +6,8 @@ import Footer from "./components/footer.jsx"
 import Background from "./components/background.jsx"
 import Mission from "./components/our_mission.jsx"
 import Product from "./components/product.jsx"
+import Merchandise from "./components/merchandise.jsx";
+
 
 
 
@@ -17,6 +19,7 @@ function App() {
       <Product></Product>
       <Background></Background>
       <Mission></Mission>
+      <Merchandise></Merchandise>
       <Footer/>
     </div>
 
