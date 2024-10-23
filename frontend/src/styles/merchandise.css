@@ -124,7 +124,7 @@
 }
 
 .product-name {
-  font-size: 1.76rem;
+  font-size: 1.466vw;
   font-weight: 900;
   color: #000000;
   font-family: 'Aileron';
@@ -176,7 +176,7 @@
 }
 
 .add-to-cart {
-  width: 19.38vw;
+  width: 100%;
   height: 8.39vh;
   font-size: 1.76rem;
   background-color: #000000;
@@ -214,7 +214,7 @@
 }
 
 .coming-soon-text {
-  font-size: 3.85rem;
+  font-size: 3.21vw;
   color: #D63A29;
   text-align: center;
   font-weight: 900;
@@ -247,22 +247,40 @@
   top: 46.3vh;
 }
 
+@media only screen and (max-width: 1500px) {
+  .product-box {
+    height: 25vh;
+  }
+
+  .add-to-cart-2 {
+    bottom: 0;
+  }
+
+}
+
+@media only screen and (max-width: 1000px) {
+  .product-box {
+    height: 20vh;
+  }
+
+}
+
 /* Responsive Design */
 @media only screen and (max-width: 500px) {
   .merchandise-section {
-    width: 320px;
-    height: 761px; /* Allow height to adjust to content */
-    margin-top: 5px;
+    width: 82.05vw;
+    height: 90.17vh;
     display: flex;
     flex-direction: column;
     position: relative;
+    background: none;
   }
 
   .merchandise-title {
     width: 204px;
+    height: 33px;
     text-align: center;
     margin: 0 auto;
-    margin-bottom: 29px;
   }
 
   .merchandise-items {
@@ -271,63 +289,105 @@
   }
 
   .product-box-1 {
-    left: 0px;
-    top: 67px;
-    width: 152px;
-    height: 151.98px;
+    left: 0vw;
+    top: 3.44vh;
+    width: 38.97vw;
+    height: 18vh;
+    border-radius: 7.19px;
   }
 
   .product-box-2 {
     position: absolute;
-    left: 168px;
-    top: 37px;
-    width: 152px;
-    height: 151.98px;
+    left: 43.08vw;
+    top: 3.44vh;
+    width: 38.97vw;
+    height: 18vh;
+    border-radius: 7.19px;
   }
 
   .product-box-3 {
-    left: 0px;
-    width: 152px;
-    height: 151.98px;
-    top: 251px;
+    left: 0vw;
+    width: 38.91vw;
+    height: 17.98vh;
+    top: 29.74vh;
+    border-radius: 7.19px;
   }
 
   .product-box-5 {
-    left: 168px;
-    width: 152px;
-    height: 151.98px;
-    top: 251px;
+    left: 43.08vw;
+    width: 38.97vw;
+    height: 18vh;
+    top: 29.74vh;
+    border-radius: 7.19px;
   }
 
   .product-box-6 {
-    left: 0px;
-    width: 152px;
-    height: 151.98px;
-    top: 400px;
+    left: 0vw;
+    width: 38.97vw;
+    height: 18vh;
+    top: 55.92vh;
+    border-radius: 7.19px;
   }
 
   .product-box-4 {
-    left: 168px;
-    width: 152px;
-    height: 151.98px;
-    top: 400px;
+    left: 43.08vw;
+    width: 38.97vw;
+    height: 18vh;
+    top: 55.92vh;
   }
 
   .add-to-cart {
-    width: 151.76px;
+    width: 100%;
     height: 36.95px;
     font-size: 0.7175rem;
-    background-color: #000000;
-    color: #FFFFFF;
-    border: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
     position: absolute;
     font-family: 'Aileron';
     font-weight: 900;
-    border-bottom-left-radius: 17.59px; /* Round bottom-left corner */
-    border-bottom-right-radius: 17.59px; /* Round bottom-right corner */
+    border-bottom-left-radius: 7.19px; /* Round bottom-left corner */
+    border-bottom-right-radius: 7.19px; /* Round bottom-right corner */
     opacity: 65%;
   }
 
+  
+  .add-to-cart-2 {
+    bottom: 0;
+  }
+
+  .product-name {
+    font-size: 0.73rem;
+    font-weight: 900;
+    color: #000000;
+    font-family: 'Aileron';
+    position: relative;
+  }
+
+  .coming-soon-text {
+    font-size: 6.42vw;
+    color: #D63A29;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Aileron';
+    left: 52.98vw;
+    margin-top: 4.7vh;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .view-more-button {
+    background-color: #FFFFFF;
+    width: 36.67vw;
+    height: 3.44vh;
+    border-radius: 1.87vw;
+    color: #D63A29;
+    font-size: 1.1rem;
+    font-family: 'Gantari';
+    font-weight: 600;
+    border: none;
+    line-height: 2.5vh;
+    position: absolute;
+    top: 86.73vh;
+  }
 }
+
