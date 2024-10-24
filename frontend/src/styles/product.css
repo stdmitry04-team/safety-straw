@@ -14,7 +14,28 @@
     font-style: normal;
 }
 
-@media screen and (min-width: 400px) and (max-width: 499px){
+/* @media screen and (max-width: 399px){
+    .our-product-paragraph{
+        font-size: 1.6875rem;
+        line-height: 3vh;
+        top: 10vh;
+    }
+
+    .our-product-text-1, .our-product-text-2{
+        font-size: 1.22rem;
+        line-height: 1.46rem;
+    }
+    .our-product-text-1{
+        top: 20vh;
+    }
+    .our-product{
+        text-align: center;
+    }
+
+
+} */
+
+@media screen and (max-width: 499px){
     html{
         font-size: 5px !important;
     }
@@ -27,62 +48,66 @@
         padding-top:5vh;
         background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
         position: relative;
-        height:100vh;
-        width:100vw;  
-        justify-content: center;  
+        height:75vh;
+        width:100vw;
+
         display: flex;
+        justify-content: center;
+    
     }
     
     .our-product-background {
         width: 100%;
         z-index: 1;
         width:100%;
-        height: 70%;
+        height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
         position: absolute;
         z-index: 2;
-        width: 13.385vw;
-        height: 62.356vh;
-        top: 8.52vh;
-        left: 20vw;
+        width: 135px;
+        height: 357px;
+        top: 30%;
+        left: 30%;
     }
     
     .l_arr {
         position: absolute;
-        left: 14.95vw;
-        top: 25.63vh;
-        width: 12.5%;
-        height: 12.5%;
+        left: 30vw;
+        top: 31vh;
+        width: 17.5%;
+        height: auto;
     }
     
     .r_arr {
         position: absolute;
-        left: 29.53vw;
+        left: 57.53vw;
         top: 43.85vh;
-        width: 10%;
-        height: 10%;
+        width: 14%;
+        height: auto;
     
     }
     
     .l_text, .r_text {
-        font-size: 2.25rem;
-        line-height: 2vh;
+        font-size: 3rem;
+        line-height: 1.5vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
+        max-width: 200px;
     }
     
     .l_text {
         position: absolute;
-        top: 20.33vh;
-        left: 2.594vw; 
+        top: 33vh;
+        left: 5vw; 
     }
     
     .r_text {
         position: absolute;
-        top: 51.76vh;
-        left: 34.43vw; 
+        top: 48.5vh;
+        left: 70vw; 
     }
     
     .our-product-paragraph {
@@ -122,16 +147,17 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 2.5rem;
-        border-radius: 1.85vh;
-        line-height: 4.4vh;
+        font-size: 3.5rem;
+        border-radius: 0.75vh;
+        line-height: 2.4vh;
         font-family: 'Gantari';
         font-weight: 600;
-        right: 24.58vw;
-        top: 19.16vh;
         border: none;
-        width: 20.36vw;
-        height: 2.89vh;
+        width: 35vw;
+        height: 3.2vh;
+        top: 20vh;
+
+        /* padding: 2rem 4rem; */
     }  
 }
 
@@ -158,6 +184,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -280,6 +307,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -402,6 +430,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -524,6 +553,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -646,6 +676,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -765,6 +796,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -884,6 +916,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit: cover;
     }
     
     .straw{ 
@@ -1003,6 +1036,7 @@
         z-index: 1;
         width:100%;
         height: 100%;
+        object-fit:cover;
     }
     
     .straw{ 
