@@ -19,11 +19,14 @@
     
     .footer{
         min-height:44.72vh;
-        width: 100vw;
+        max-width: 100vw;
         display: flex;
         justify-content: space-between;
         align-items: flex-start;
         background-color: white;
+        overflow-y: hidden;
+        padding-bottom: 2.5vh;
+        padding-right: 1vw;;
     }
     
     
@@ -91,25 +94,21 @@
     
     /* --------------------- RIGHT PART ---------------------  */
     
-    /* Customers Section */
     .customers {
         padding-right: 9.635vw;
         text-align: left;
     }
     
-    /* Contact Us Section */
     .contact_us {
         padding-right: 5.99vw;
         text-align: left;
     }
     
-    /* Company Section */
     .company {
         padding-right: 3.072vw;
         text-align: left;
     }
     
-    /* Style for all first-child headings */
     .footer-links ul li:first-child {
         font-family: 'Gantari', sans-serif;
         font-size: 2.5rem;
@@ -118,7 +117,6 @@
         margin-top: 2.5vh;
     }
     
-    /* Style for other list items */
     .footer-links ul li:not(:first-child) {
         font-family: 'Gantari', sans-serif;
         font-size: 2rem;
@@ -129,7 +127,7 @@
     }
     
     .footer-links ul li{
-        width: 125%;
+        width: 100%;
     }    
 }
 
@@ -262,7 +260,8 @@
     }
     
     .footer-links ul li{
-        width: 125%;
+        width: 100
+        %;
     }    
 }
 
@@ -524,7 +523,7 @@
     }
     
     .footer-links ul li{
-        width: 125%;
+        width: 100%;
     }   
 }
 
@@ -613,25 +612,21 @@
     
     /* --------------------- RIGHT PART ---------------------  */
     
-    /* Customers Section */
     .customers {
         padding-right: 9.635vw;
         text-align: left;
     }
     
-    /* Contact Us Section */
     .contact_us {
         padding-right: 5.99vw;
         text-align: left;
     }
     
-    /* Company Section */
     .company {
         padding-right: 8.072vw;
         text-align: left;
     }
     
-    /* Style for all first-child headings */
     .footer-links ul li:first-child {
         font-family: 'Gantari', sans-serif;
         font-size: 2.5rem;
@@ -639,7 +634,6 @@
         line-height: 2.5vh;
     }
     
-    /* Style for other list items */
     .footer-links ul li:not(:first-child) {
         font-family: 'Gantari', sans-serif;
         font-size: 2rem;
@@ -649,6 +643,6 @@
     }
     
     .footer-links ul li{
-        width: 125%;
+        width: 100%;
     }   
 }

@@ -200,57 +200,66 @@ html {
 @media screen and (max-width: 650px){
     .our_mission-p{
         font-size: 2.5rem;
+        margin-bottom: 2vh;
     }
     .our_mission-text{
-        font-size:1.8rem;
+        font-size:2.2rem;
     }
     .whitebox-quotation{
-        left:5%;
-        top: 17.5%;
-        width: 10%;
+        left:6%;
+        top: 31.5%;
+        width: 8%;
     }
     .jack_and_zack{
         right: 7%;
-        bottom: 5%;
+        bottom: 10%;
         width: 30%;
+    }
+    .our_mission-whitebox{
+        min-height: 250px;
     }
 }
 
 @media screen and (max-width: 550px){
     .whitebox-quotation{
         top: 32%;
-        width: 3rem;
-        height: 2.3125rem;
+        width: 9%;
     }
     .our_mission-p{
         font-size: 2.3rem;
     }
     .our_mission-text{
-        font-size:1.6rem;
+        font-size:1.8rem;
     }
     .jack_and_zack{
         right: 7%;
-        bottom: 6%;
+        bottom: 8%;
         width: 30%;
     }
 }
 
 @media screen and (max-width: 480px){
+    .our_mission-p{
+        margin-bottom: 1vh;
+    }
     .whitebox-quotation{
         top: 32%;
-        width: 2.5rem;
-        height: 2.3125rem;
+        width: 9%;
+        left: 5.5%;
     }
     .our_mission-p{
         font-size: 2.5rem;
     }
     .our_mission-text{
-        font-size:1.4rem;
+        font-size:1.8rem;
     }
     .jack_and_zack{
         right: 7%;
-        bottom: 8%;
+        bottom: 10%;
         width: 32%;
+    }
+    .our_mission{
+        height: 600px;
     }
 }
 
@@ -259,232 +268,32 @@ html {
         top: 3.9vh;
         left: 0;
         padding-top: 3.9vh;
-        font-size: 2.1rem;
+        font-size: 2.84rem;
         line-height: 3.03vh;
+        margin-bottom: 3vh;
     }
     .our_mission-text{
-        font-size:1.22rem;
+        font-size:2rem;
         max-width: 252px;
         padding-bottom: 5.5vh;
+        margin-left: 4vw;
     }
     .whitebox-quotation{
-        top: 8.81vh;
-        width: 2.5rem;
-        height: 2.3125rem;
+        top: 6vh;
+        width: 3.75rem;
     }
     .jack_and_zack{
         right: 7%;
-        bottom: 10%;
-        width: 27.5%;
+        bottom: 11%;
+        width: 30.5%;
         padding: 0;
     }
     .our_mission-whitebox{
         padding: 0;
+        min-height: 250px;
     }
-    .our_mission-whitebox{
-        padding-bottom: 0;
-        min-height: 35.54vh;
-        min-width: 40.76vw;
-    }
-}
-
-/* 
-@media screen and (max-width: 390px) {
-    html{
-        font-size: 8px !important;
-    }
-
-    .our_mission-whitebox{
-        height: 39.5vh;
-    }
-
-    .whitebox-quotation{
-        width: 3vh;
-    }
-
-    .jack_and_zack{
-        width: 10vh;
-    }
-}
-
-@media screen and (min-width: 391px) and (max-width: 600px){
-    html{
-        font-size: 10px !important;
-    }
-
-    .our_mission-whitebox{
-        height: 39.5vh;
-    }
-
-    .whitebox-quotation{
-        width: 3vh;
-    }
-
-    .jack_and_zack{
-        width: 10vh;
-    }
-}
-
-@media screen and (min-width: 600px) and (max-width: 1050px) {
-    html{
-        font-size: 12px !important;
-    }
-
-    .our_mission-whitebox{
-        height: 43vh;
-    }
-
-    .whitebox-quotation{
-        width: 4.5vh;
-    }
-
-    .jack_and_zack{
-        width: 16vh;
-    }
-}
-
-@media screen and (min-width: 950px) and (max-width: 1650px) {
-    
-    html {
-        font-size: 8px !important;
-    }
-    
     .our_mission{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+        height: 600px;
     }
-    .our_mission-whitebox{
-        background-color: white;
-        border-radius: 3.26vh;
-    
-        position: relative;
-        width: 91.15vw;
-        height: 44.26vh;
-    }
-    
-    .whitebox-quotation {
-        position: absolute;
-        width: 8.8vh;
-        top: 10.93vh;
-        left: 11.6vw;
-    }
-    
-    .our_mission-p {
-        position: absolute;
-        top: 4.62vh;
-        left: 33.43vw;
-    
-        height: 7.8vh;
-    
-        display: flex;
-        flex-grow: 1;
-    
-        font-size: 4.375rem;
-        line-height: 7.78vh;
-        font-family: 'Aileron';
-        font-weight: 900;
-    
-        text-align: center;
-    }
-    
-    .our_mission-text {
-        position: absolute;
-        top: 16.67vh;
-        left: 15.10vw;
-        font-size: 3.125rem;
-        line-height: 5.56vh;
-        font-family: 'Aileron';
-        font-weight: 600;
-    
-        width: 60.89vw;
-        height: 16.94vh;
-    
-        text-align: center;
-    }
-    
-    .text-color{
-        color: #D63A29;
-    }
-    
-    .jack_and_zack {
-        position: absolute;
-        right:9.75vw;
-        bottom: 5vh;
-    }
+
 }
-
-
-@media screen and (max-width: 1950px) {
-    
-    html {
-        font-size: 16px !important;
-    }
-    
-    .our_mission{
-        height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-    }
-    .our_mission-whitebox{
-        background-color: white;
-        border-radius: 3.26vh;
-    
-        position: relative;
-        width: 91.15vw;
-        min-height: 44.26vh;
-    }
-    
-    .whitebox-quotation {
-        position: absolute;
-        width: 8.8vh;
-        top: 10.93vh;
-        left: 11.6vw;
-    }
-    
-    .our_mission-p {
-        position: absolute;
-        top: 4.62vh;
-        left: 33.43vw;
-    
-        height: 7.8vh;
-    
-        display: flex;
-        flex-grow: 1;
-    
-        font-size: 4.375rem;
-        line-height: 7.78vh;
-        font-family: 'Aileron';
-        font-weight: 900;
-    
-        text-align: center;
-    }
-    
-    .our_mission-text {
-        position: absolute;
-        top: 16.67vh;
-        left: 15.10vw;
-        font-size: 3.125rem;
-        line-height: 5.56vh;
-        font-family: 'Aileron';
-        font-weight: 600;
-    
-        width: 60.89vw;
-        height: 16.94vh;
-    
-        text-align: center;
-    }
-    
-    .text-color{
-        color: #D63A29;
-    }
-    
-    .jack_and_zack {
-        position: absolute;
-        right:9.75vw;
-        bottom: 5vh;
-    }
-} */

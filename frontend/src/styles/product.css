@@ -36,9 +36,9 @@
 } */
 
 @media screen and (max-width: 499px){
-    html{
+    /* html{
         font-size: 5px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -48,7 +48,7 @@
         padding-top:5vh;
         background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
         position: relative;
-        height:75vh;
+        height:100vh;
         width:100vw;
 
         display: flex;
@@ -67,32 +67,32 @@
     .straw{ 
         position: absolute;
         z-index: 2;
-        width: 135px;
-        height: 357px;
-        top: 30%;
-        left: 30%;
+        width: 100px;
+        height: 300px;
+        top: 35%;
+        left: 35%;
     }
     
     .l_arr {
         position: absolute;
         left: 30vw;
-        top: 31vh;
+        top: 42vh;
         width: 17.5%;
         height: auto;
     }
     
     .r_arr {
         position: absolute;
-        left: 57.53vw;
-        top: 43.85vh;
+        left: 55.53vw;
+        top: 55.5vh;
         width: 14%;
         height: auto;
     
     }
     
     .l_text, .r_text {
-        font-size: 3rem;
-        line-height: 1.5vh;
+        font-size: 1.5rem;
+        line-height: 2vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
         max-width: 200px;
@@ -100,20 +100,20 @@
     
     .l_text {
         position: absolute;
-        top: 33vh;
+        top: 45vh;
         left: 5vw; 
     }
     
     .r_text {
         position: absolute;
-        top: 48.5vh;
-        left: 70vw; 
+        top: 62.5vh;
+        left: 68vw; 
     }
     
     .our-product-paragraph {
         font-family: 'Aileron', 'sans-serif';
         font-size: 900;
-        font-size: 5.466rem;
+        font-size: 2.75rem;
         line-height: 6.594vh;
     
         position: absolute;
@@ -121,8 +121,8 @@
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.904rem;
-        /* line-height: 2.3vh; */
+        font-size: 2rem;
+        line-height: 2.3vh;
         height: 4.26vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -131,12 +131,12 @@
     
     .our-product-text-1 {
         position: absolute;
-        top: 8.52vh;
+        top: 12vh;
     }
     
     .our-product-text-2 {
         position: absolute;
-        top: 13.7vh;
+        top: 18vh;
     }
     
     .text-1-color{
@@ -147,147 +147,25 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 3.5rem;
-        border-radius: 0.75vh;
+        font-size: 2rem;
+        border-radius: 1vh;
         line-height: 2.4vh;
         font-family: 'Gantari';
         font-weight: 600;
         border: none;
         width: 35vw;
-        height: 3.2vh;
-        top: 20vh;
+        height: 4.5vh;
+        top: 27.5vh;
 
         /* padding: 2rem 4rem; */
     }  
 }
 
-@media screen and (min-width: 500px) and (max-width: 599px){
-    html{
-        font-size: 5px !important;
-    }
 
-    *{
-        box-sizing: border-box;
-    }
-    
-    .our-product {
-        padding-top:5vh;
-        background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
-        position: relative;
-        height:100vh;
-        width:100vw;
-    
-    }
-    
-    .our-product-background {
-        width: 100%;
-        z-index: 1;
-        width:100%;
-        height: 100%;
-        object-fit: cover;
-    }
-    
-    .straw{ 
-        position: absolute;
-        z-index: 2;
-        width: 13.385vw;
-        height: 62.356vh;
-        top: 2.52vh;
-        left: 22vw;
-    }
-    
-    .l_arr {
-        position: absolute;
-        left: 14.95vw;
-        top: 20.63vh;
-        width: 12.5%;
-        height: 12.5%;
-    }
-    
-    .r_arr {
-        position: absolute;
-        left: 29.53vw;
-        top: 35.85vh;
-        width: 10%;
-        height: 10%;
-    
-    }
-    
-    .l_text, .r_text {
-        font-size: 2.25rem;
-        line-height: 2vh;
-        font-family: 'Gantari', 'sans-serif';
-        font-weight: 600;
-    }
-    
-    .l_text {
-        position: absolute;
-        top: 28.33vh;
-        left: 2.594vw; 
-    }
-    
-    .r_text {
-        position: absolute;
-        top: 43.76vh;
-        left: 34.43vw; 
-    }
-    
-    .our-product-paragraph {
-        font-family: 'Aileron', 'sans-serif';
-        font-size: 900;
-        font-size: 4.375rem;
-        line-height: 7.78vh;
-    
-        position: absolute;
-        top:17.72vh;
-        right:22.4vw;
-    }
-    
-    .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
-        line-height: 3.5vh;
-        font-family: 'Aileron', 'sans-serif';
-        font-weight: 700;
-        text-align: center;
-    }
-    
-    .our-product-text-1 {
-        position: absolute;
-        top: 26.2vh;
-        right: 12.6vw;
-    }
-    
-    .our-product-text-2 {
-        position: absolute;
-        top: 34.8vh;
-        right: 14.32vw; 
-    }
-    
-    .text-1-color{
-        color: #D63A29;
-    }
-    
-    .join-waitlist{
-        position: absolute;
-        background: #D63A29;
-        color: white;
-        font-size: 2.5rem;
-        border-radius: 1.85vh;
-        line-height: 4.4vh;
-        font-family: 'Gantari';
-        font-weight: 600;
-        right: 24.58vw;
-        bottom: 50.13vh;
-        border: none;
-        width: 20.36vw;
-        height: 5.4vh;
-    }  
-}
-
-@media screen and (min-width: 600px) and (max-width: 699px){
-    html{
+@media screen and (min-width: 500px) and (max-width: 699px){
+    /* html{
         font-size: 6px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -337,8 +215,8 @@
     }
     
     .l_text, .r_text {
-        font-size: 2.25rem;
-        line-height: 2vh;
+        font-size: 1.15rem;
+        line-height: 1.5vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
     }
@@ -358,8 +236,8 @@
     .our-product-paragraph {
         font-family: 'Aileron', 'sans-serif';
         font-size: 900;
-        font-size: 4.375rem;
-        line-height: 7.78vh;
+        font-size: 2rem;
+        line-height: 6vh;
     
         position: absolute;
         top:17.72vh;
@@ -367,7 +245,7 @@
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
+        font-size: 1.5rem;
         line-height: 3.5vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -394,23 +272,23 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 2.5rem;
+        font-size: 1.5rem;
         border-radius: 1.85vh;
-        line-height: 4.4vh;
+        line-height: 3vh;
         font-family: 'Gantari';
         font-weight: 600;
-        right: 24.58vw;
-        bottom: 50.13vh;
+        right: 22.58vw;
+        bottom: 52.13vh;
         border: none;
         width: 20.36vw;
-        height: 5.4vh;
+        height: 4vh;
     }  
 }
 
 @media screen and (min-width: 700px) and (max-width: 800px){
-    html{
+    /* html{
         font-size: 7px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -446,6 +324,7 @@
         position: absolute;
         left: 12.95vw;
         top: 27.63vh;
+        width: 12%;
     
     }
     
@@ -459,7 +338,7 @@
     }
     
     .l_text, .r_text {
-        font-size: 2.25rem;
+        font-size: 1.5rem;
         line-height: 2vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
@@ -480,7 +359,7 @@
     .our-product-paragraph {
         font-family: 'Aileron', 'sans-serif';
         font-size: 900;
-        font-size: 4.375rem;
+        font-size: 3rem;
         line-height: 7.78vh;
     
         position: absolute;
@@ -489,7 +368,7 @@
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
+        font-size: 2rem;
         line-height: 3.5vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -516,7 +395,7 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 2.5rem;
+        font-size: 1.75rem;
         border-radius: 1.85vh;
         line-height: 4.4vh;
         font-family: 'Gantari';
@@ -531,9 +410,9 @@
 
 
 @media screen and (min-width: 801px) and (max-width: 999px){
-    html{
+    /* html{
         font-size: 8px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -582,7 +461,7 @@
     }
     
     .l_text, .r_text {
-        font-size: 1.875rem;
+        font-size: 1.4rem;
         line-height: 2.78vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
@@ -603,17 +482,17 @@
     .our-product-paragraph {
         font-family: 'Aileron', 'sans-serif';
         font-size: 900;
-        font-size: 4.375rem;
+        font-size: 3.5rem;
         line-height: 7.78vh;
     
         position: absolute;
         top:14.72vh;
-        right:22.4vw;
+        right:22vw;
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
-        line-height: 5.56vh;
+        font-size: 2.3rem;
+        line-height: 4.5vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
         text-align: center;
@@ -639,7 +518,7 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 2.5rem;
+        font-size: 1.875rem;
         border-radius: 1.85vh;
         line-height: 4.4vh;
         font-family: 'Gantari';
@@ -654,9 +533,9 @@
 
 
 @media screen and (min-width: 1000px) and (max-width: 1199px){
-    html{
+    /* html{
         font-size: 10px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -703,7 +582,7 @@
     }
     
     .l_text, .r_text {
-        font-size: 1.875rem;
+        font-size: 1.4rem;
         line-height: 2.78vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
@@ -729,11 +608,11 @@
     
         position: absolute;
         top:14.72vh;
-        right:22.4vw;
+        right:19.4vw;
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
+        font-size: 2.5rem;
         line-height: 5.56vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -760,7 +639,7 @@
         position: absolute;
         background: #D63A29;
         color: white;
-        font-size: 2.5rem;
+        font-size: 2rem;
         border-radius: 1.85vh;
         line-height: 4.4vh;
         font-family: 'Gantari';
@@ -774,9 +653,9 @@
 }
 
 @media screen and (min-width: 1200px) and (max-width: 1400px){
-    html{
+    /* html{
         font-size: 12px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -823,7 +702,7 @@
     }
     
     .l_text, .r_text {
-        font-size: 1.875rem;
+        font-size: 1.5rem;
         line-height: 2.78vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
@@ -853,7 +732,7 @@
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
+        font-size: 2.8rem;
         line-height: 5.56vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -894,9 +773,9 @@
 }
 
 @media screen and (min-width: 1401px) and (max-width: 1600px){
-    html{
+    /* html{
         font-size: 14px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
@@ -943,7 +822,7 @@
     }
     
     .l_text, .r_text {
-        font-size: 1.875rem;
+        font-size: 1.675rem;
         line-height: 2.78vh;
         font-family: 'Gantari', 'sans-serif';
         font-weight: 600;
@@ -964,7 +843,7 @@
     .our-product-paragraph {
         font-family: 'Aileron', 'sans-serif';
         font-size: 900;
-        font-size: 4.375rem;
+        font-size: 4.175rem;
         line-height: 7.78vh;
     
         position: absolute;
@@ -973,7 +852,7 @@
     }
     
     .our-product-text-1, .our-product-text-2 {
-        font-size: 3.125rem;
+        font-size: 2.9rem;
         line-height: 5.56vh;
         font-family: 'Aileron', 'sans-serif';
         font-weight: 700;
@@ -1014,9 +893,9 @@
 }
 
 @media screen and (min-width: 1601px){
-    html{
+    /* html{
         font-size: 16px !important;
-    }
+    } */
 
     *{
         box-sizing: border-box;
