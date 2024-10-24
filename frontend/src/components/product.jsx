@@ -12,7 +12,7 @@ export default function Product() {
   // Check if screen width is 390px or less
   useEffect(() => {
     const handleResize = () => {
-      setIsSmallScreen(window.innerWidth <= 480);
+      setIsSmallScreen(window.innerWidth <= 430);
     };
 
     // Initial check
