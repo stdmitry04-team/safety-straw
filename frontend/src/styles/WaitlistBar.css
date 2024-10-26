@@ -1,0 +1,195 @@
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-SemiBold.otf') format('opentype');
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 900;
+}
+
+.waitlist {
+    background-color: #FCD578;
+    width: 100vw;
+    height: 16.373rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 3vw;
+    font-family: 'Aileron';
+    padding-left: 3.46vw;
+    padding-right: 5.46vw;
+    box-sizing: border-box;
+    zoom: 0.8;
+}
+
+.waitlist-header {
+    font-size: 1.8rem;
+    color: #D63A29;
+    font-weight: 900;
+}
+
+.waitlist-right {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    row-gap: 0.438rem;
+    width: 65.313rem;
+    height: 100%;
+    position: relative;
+}
+
+.waitlist-form {
+    padding-top: 6.061rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1.75rem;
+    width: 100%;
+}
+
+.waitlist-input {
+    border: none;
+    border-radius: 1.25rem;
+    font-size: 1.813rem;
+    outline: none;
+    height: 4.25rem;
+    box-sizing: border-box;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 1rem;
+}
+
+.waitlist-firstname {
+    width: 14.625rem;
+}
+
+.waitlist-email-wrapper {
+    height: 100%;
+    position: relative;
+    width: 48.938rem;
+    display: flex;
+    align-items: start;
+}
+.waitlist-email {
+    width: 38.438rem;
+}
+
+.waitlist-terms {
+    font-size: 1.25rem;
+    text-align: start;
+}
+
+.waitlist-invalid {
+    position: absolute;
+    top: 4rem;
+    left: 16.5rem;
+    font-size: 1.25rem;
+    text-align: start;
+    color: #D63A29;
+}
+
+.waitlist-valid {
+    position: absolute;
+    top: 4rem;
+    left: 16.5rem;
+    font-size: 1.25rem;
+    text-align: start;
+    color: #00b415;
+}
+
+.waitlist-button {
+    position: absolute;
+    right: 0;
+    background-color: #D63A29;
+    border-radius: 1.25rem;
+    width: 12.313rem; 
+    height: 4.249rem;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    font-weight: 700;
+    padding: 0;
+}
+
+.waitlist-button:hover {
+    cursor: pointer;
+}
+
+.term-link {
+    color: #D63A29;
+    font-weight: 900;
+}
+
+@media only screen and (max-width: 1070px) {
+    .waitlist {
+        flex-direction: column;
+        padding: 0;
+    }
+    .waitlist-right {
+        height: auto;
+        width: 100vw;
+        align-items: start;
+        justify-content: center;
+    }
+    .waitlist-form {
+        flex-direction: column;
+        padding: 0;
+        height: fit-content;
+        row-gap: 0.625rem;
+    }
+    .waitlist-email-wrapper {
+        width: 100vw;
+        height: fit-content;
+    }
+    .waitlist-input {
+        height: 3.438rem;
+    }
+    .waitlist-firstname {
+        width: 100%;
+    }
+    .waitlist-email {
+        width: 90%;
+    }
+    .waitlist-button {
+        height: 3.438rem;
+    }
+    .waitlist-header {
+        text-align: center;
+    }
+    .waitlist-terms {
+        font-size: 1.125rem;
+    }
+    .waitlist-invalid {
+        font-size: 1.125rem;
+        position: static;
+        float: left;
+    }
+    .waitlist-valid {
+        font-size: 1.125rem;
+        position: static;
+        float: left;
+    }
+}
+
+@media only screen and (max-width: 550px) {
+    .waitlist-header {
+        font-size: 1.5rem;
+    }
+    .waitlist-input {
+        font-size: 1.25rem;
+    }
+}
+
+@media only screen and (min-width: 1537px) {
+    .waitlist-header {
+        width: 65.313rem;
+        text-align: center;
+        font-size: 2.188rem;
+    }
+}
