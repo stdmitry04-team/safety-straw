@@ -553,6 +553,7 @@
         justify-content: space-between;
         align-items: flex-start;
         background-color: white;
+        overflow-x:hidden;
     }
     
     
@@ -640,6 +641,9 @@
         font-weight: 700;
         line-height: 1.56vh;
         padding-top: 4.4vh;
+        width: fit-content;
+        display: inline-block;
+        white-space: nowrap;
     }
     
     .footer-links ul li{
