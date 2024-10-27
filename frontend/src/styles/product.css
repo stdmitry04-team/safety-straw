@@ -127,3 +127,11 @@
     width: 20.36vw;
     height: 7.4vh;
 }
+
+.join-waitlist:hover{
+    opacity: 0.7;
+}
+
+.join-waitlist:active{
+    opacity: 0.9;
+}
