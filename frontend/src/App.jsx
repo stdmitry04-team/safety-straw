@@ -19,15 +19,16 @@ import BlogSection from "./components/blogsection.jsx"
 function App() {
   return (
     <div className="app">
-      {/* <Navbar/>
+      <Navbar/>
       <Video/>
       <Product></Product>
       <Background></Background>
       <Mission></Mission>
       <AboutUs></AboutUs>
-      <WaitlistBar/>
-      <Footer/> */}
       <BlogSection></BlogSection>
+      <WaitlistBar/>
+      <Footer/>
+      
     </div>
 
   );
