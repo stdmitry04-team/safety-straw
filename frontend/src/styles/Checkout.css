@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Black.otf') format('opentype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Aileron';
+    src: url('../fonts/Aileron-Bold.otf') format('opentype');
+    font-weight: 700;
+    font-style: normal;
+}
+
+.checkout-top{
+    display: flex;
+    align-items: stretch;
+    margin-top: 8.3vh;
+}
+
+.left-imgs{
+    display: flex;
+    flex-direction: column;
+    row-gap: 2.4vh;
+    /* margin: 8.3vh 2.6vw 0 5.89vw; */
+    margin: 0 2.6vw 0 5.89vw;
+
+}
+
+.left-imgs img{
+    max-width: 100%;
+    height: auto;
+    /* min-height: 16.2vh; */
+}
+
+.straws-img{
+    /* margin-top: 8.3vh; */
+    margin-top: 0vh;
+    margin-right: 5.2vw;
+    border-radius: 1.25em;
+    max-width: 100%;
+    height: auto;
+}
+
+.right-nav{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+}
+
+.straws-title{
+    text-wrap:wrap;
+    font-size: 4rem;
+    line-height: 7vh;
+    max-width: 50vw;
+    height: auto;
+    font-family: 'Aileron', sans-serif;
+    font-weight: 900;
+    letter-spacing: -0.011em;
+    text-align: left;
+    margin-bottom: 2vh;
+}
+
+.price {
+    color: #D63A29;
+    font-family: 'Gantari', sans-serif;
+    font-weight: 600;
+    /* line-height: 8vh; */
+  }
+  
+  .currency {
+    font-size: 6rem; /* Adjust size for the $ symbol */
+  }
+  
+  .amount {
+    font-size: 6rem; /* Larger font size for the main price */
+  }
+  
+  .cents {
+    font-size: 3rem; /* Smaller size for the cents */
+    vertical-align: 2rem;
+  }
+  
+.quantity-dropdown{
+    padding: 0 0.5rem;
+    margin-top: 2vh;
+    background-color: #E3E3E3;
+    border: none;
+    border-radius: 0.75vw;
+    max-width: 11.25vw;
+    min-height: 4.44vh;
+
+    white-space: wrap;
+    text-overflow: ellipsis;
+
+    font-size: 1.25rem;
+    line-height: 2.3rem;
+    font-family: 'Aileron', sans-serif;
+    font-weight: 600;
+}
+
+.continue-purchase {
+    margin-top: 1.5vh;
+    display: flex; /* Use Flexbox for layout */
+    align-items: center; /* Center items vertically */
+    justify-content: center; /* Center items horizontally */
+    margin: 20px 0; /* Add some margin if needed */
+}
+
+.purchase-link {
+    font-size: 2.5rem;
+    line-height: 5.6vh;
+    font-family: 'Gantari', sans-serif;
+    font-weight: 700;
+    font-style: italic;
+    color: black; /* Text color */
+    text-decoration: none; /* Remove underline */
+    margin-right: 8px; /* Space between text and image */
+}
+
+.purchase-link:hover {
+    text-decoration: underline; /* Underline on hover */
+}
+
+.arrow-link img {
+    width: 12px; /* Set desired width for the image */
+    height: auto; /* Maintain aspect ratio */
+    vertical-align: bottom;
+}
