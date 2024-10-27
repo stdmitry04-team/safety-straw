@@ -192,8 +192,13 @@
   opacity: 65%;
 }
 
-.add-to-cart-1, .add-to-cart-4, .add-to-cart-5 {
-  display: none;
+.add-to-cart:hover {
+  background-color: #333333; 
+  opacity: 85%; 
+}
+
+.add-to-cart-1 {
+  bottom: 0;
 }
 
 .add-to-cart-2 {
@@ -202,6 +207,14 @@
 }
 
 .add-to-cart-3 {
+  bottom: 0;
+}
+
+.add-to-cart-4 {
+  bottom: 0;
+}
+
+.add-to-cart-5 {
   bottom: 0;
 }
 
