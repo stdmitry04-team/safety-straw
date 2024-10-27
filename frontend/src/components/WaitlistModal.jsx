@@ -1,16 +1,22 @@
 import "../styles/WaitlistModal.css";
 import React, { useState } from 'react';
+// require("dotenv").config({ path: "../backend/config.env" });
+// const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
 
 export default function WaitlistModal({ isOpen, onClose }) {
     if (!isOpen) return null;
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
+    const [validStatus, setValidStatus] = useState(true);
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
-        const response = await fetch(`${backendUrl}/waitlist`, {
+        // const response = await fetch(`${backendUrl}/api/waitlist`, {
+        const response = await fetch('http://localhost:5000/api/waitlist', {
+
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
@@ -23,13 +29,12 @@ export default function WaitlistModal({ isOpen, onClose }) {
         if (response.ok) {
             setName('');
             setEmail('');
-
-            document.getElementById("modal-error").textContent = '';
-            onClose();
+            setValidStatus(true);
         } else {
             console.error(data.message);
-            document.getElementById("modal-error").textContent = data.message;
+            setValidStatus(false);
         }
+        document.getElementById("error-message").textContent = data.message;
     }
     
     return (
