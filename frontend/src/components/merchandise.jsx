@@ -19,7 +19,7 @@ const products = [
     { id: 4, name: 'NEW ITEM COMING OUT SOON!!', image: ComingSoon },
     { id: 5, name: 'SAFETY STRAW SHIRT (BLUE)', image: Shirt },
     { id: 6, name: 'SAFETY STRAW SWEATSHIRT (BLACK)', image: Hoodie },
-    // Same products for the second page with different IDs
+    //Same products for the second page with different IDs
     { id: 1, name: 'SAFETY STRAW HAT MESH BACK', image: Hat },
     { id: 2, name: 'SAFETY STRAW CAR STICKER', image: Car },
     { id: 3, name: 'SAFETY STRAW VISOR (BLACK)', image: Visor },
@@ -67,7 +67,7 @@ const allProducts = [...products, ...products];
                 <div className="merchandise-items-wrapper">
                     <div
                         className="merchandise-items"
-                        style={{ transform: `translateX(-${currentPage * 100}%)`, transition: 'transform 0.5s ease-in-out' }}
+                        style={{ transform: `translateX(-${currentPage * 100}%)`, transition: 'transform 0.7s ease-in-out' }}
                     >
                         <div className="page">
                             {getVisibleProducts().map((product) => (
@@ -79,8 +79,7 @@ const allProducts = [...products, ...products];
                                             <p className="coming-soon-text">COMING OUT SOON</p>
                                         </div>
                                     )}
-                                    
-                                    {/* Conditionally render the Add to Cart button for product ids 2, 3, and 6 */}
+
                                     <button className={`add-to-cart add-to-cart-${product.id}`}>ADD TO CART</button>
                                     
                                     <div className={`product-description product-description-${product.id}`}>
