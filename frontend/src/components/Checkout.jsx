@@ -11,12 +11,14 @@ import React, {useState, useEffect} from 'react';
 
 export default function Checkout(){
 
-    const [quantity, setQuantity] = useState(100);
+    const [quantity, setQuantity] = useState(1);
     const [checked, setChecked] = useState(false);
     const [companyname, setCompanyName] = useState('');
     const [phonenumber, setPhoneNumber] = useState('');
 
-    
+    const stateTaxRates = {
+        Michigan: 0.06,
+    };
 
     const [payerInfo, setPayerInfo] = useState({
         companyName: '',
@@ -41,7 +43,7 @@ export default function Checkout(){
         address: '',
         apartment: '',
         city: '',
-        state: '',
+        state: 'Michigan',
         zip: '',
     });
 
@@ -49,9 +51,22 @@ export default function Checkout(){
         address: '',
         apartment: '',
         city: '',
-        state: '',
+        state: 'Michigan',
         zip: '',
     });
+
+    // calculate tax based on the selected state
+    const calculateTax = (state) => {
+        return totalPrice * (stateTaxRates[state] || 0);
+    };
+
+    const itemPrice = 10.99;
+    const shippingCost = 2.99;
+    const totalPrice = quantity * itemPrice;
+    const tax = calculateTax(mailingAddress.state);
+    const totalBeforeTax = totalPrice + shippingCost;
+    const totalWithTax = totalPrice + tax;
+    const grandTotal = totalWithTax + shippingCost;
 
     const handleCompanyNameChange = (e) => {
         setCompanyName(e.target.value);
@@ -70,6 +85,7 @@ export default function Checkout(){
         const { name, value } = e.target;
         if (addressType === 'mailing') {
             setMailingAddress(prev => ({ ...prev, [name]: value }));
+            console.log(e.target.value)
         } else {
             setBillingAddress(prev => ({ ...prev, [name]: value }));
         }
@@ -92,36 +108,36 @@ export default function Checkout(){
             }
         };
     
-        // Handle form submission
-        const handleSubmit = async (e) => {
-            e.preventDefault();
+        // // Handle form submission
+        // const handleSubmit = async (e) => {
+        //     e.preventDefault();
             
-            const formData = {
-                quantity,
-                mailingAddress,
-                billingAddress: checked ? mailingAddress : billingAddress,
-                mstate,
-                bstate: checked ? mstate : bstate,
-            };
+        //     const formData = {
+        //         quantity,
+        //         mailingAddress,
+        //         billingAddress: checked ? mailingAddress : billingAddress,
+        //         mstate,
+        //         bstate: checked ? mstate : bstate,
+        //     };
 
-            try {
-                const response = await fetch('https://localhost:5000/api/checkout', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                });
+        //     try {
+        //         const response = await fetch('https://localhost:5000/api/checkout', {
+        //             method: 'POST',
+        //             headers: {
+        //                 'Content-Type': 'application/json',
+        //             },
+        //             body: JSON.stringify(formData),
+        //         });
 
-                if (response.ok) {
-                    alert('Order submitted successfully!');
-                } else {
-                    alert('Failed to submit the order.');
-                }
-            } catch (error) {
-                console.error('Error submitting order:', error);
-            }
-        };
+        //         if (response.ok) {
+        //             alert('Order submitted successfully!');
+        //         } else {
+        //             alert('Failed to submit the order.');
+        //         }
+        //     } catch (error) {
+        //         console.error('Error submitting order:', error);
+        //     }
+        // };
 
 
 
@@ -164,7 +180,7 @@ export default function Checkout(){
 
                     <select className="quantity-dropdown" id="quantity" name="quantity" value={quantity} onChange={handleChange}>
                         {Array.from({ length: 10 }, (_, index) => (
-                        <option key={(index + 1) * 100} value={(index + 1) * 100}>
+                        <option key={index + 1} value={index + 1}>
                             Qty: {(index + 1) * 100} Pack
                         </option>
                         ))}
@@ -406,24 +422,25 @@ export default function Checkout(){
                 <div className="summary">
                     <div className="summary-info">
                         <div className="summary-line items">
-                            <h1>Items {}:</h1>
-                            <h1>${}</h1>
+                            <h1>Items ({quantity}):</h1>
+                            <h1>${totalPrice.toFixed(2)}</h1>
                         </div>
                         <div className="summary-line shipping">
                             <h1>Shipping:</h1>
-                            <h1>${}</h1>
+                            <h1>${shippingCost}</h1>
                         </div>
                         <div className="summary-line before-tax">
                             <h1>Total before tax:</h1>
-                            <h1>${}</h1>
+                            <h1>${totalBeforeTax}</h1>
                         </div>
                         <div className="summary-line tax">
                             <h1>Tax:</h1>
-                            <h1>${}</h1>
+                            <h1>${tax.toFixed(2)}</h1>
                         </div>
+                        <hr className="black-line"/>
                         <div className="summary-line total">
                             <h1>Order total:</h1>
-                            <h1>${}</h1>
+                            <h1>${grandTotal.toFixed(2)}</h1>
                         </div>
                     </div>
                     <button className="place-order">Place Your Order</button>

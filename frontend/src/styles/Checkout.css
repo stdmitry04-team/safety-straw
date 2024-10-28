@@ -418,3 +418,10 @@ input{
 .place-order:active{
     opacity: 0.9;
 }
+
+.black-line{
+    border: none;
+    border-top: 2px solid black;
+    width: 100%;
+    margin-bottom: 1vh;
+}
