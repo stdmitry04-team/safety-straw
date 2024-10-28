@@ -74,6 +74,7 @@ html, body{
     letter-spacing: -0.011em;
     text-align: left;
     margin-bottom: 2vh;
+    line-height: 1em;
 }
 
 .price {
@@ -163,7 +164,7 @@ html, body{
 }
 
 input{
-    min-height: 7.4vh;
+    /* min-height: 7.4vh; */
     width: 100%;
     border: none;
     background-color: white;
@@ -284,7 +285,6 @@ input{
     font-size: 1rem;
     color: #1a1a1a;
     background: white;
-    border: 1px solid #e0e0e0;
     border-radius: 12px;
     outline: none;
     transition: border-color 0.2s ease;
@@ -305,7 +305,7 @@ input{
   
   .select-label {
     position: absolute;
-    top: 8px;
+    top: 0.5em;
     left: 1rem;
     font-size: 0.875rem;
     color: #000;
@@ -314,7 +314,7 @@ input{
   
   .select-field {
     width: 100%;
-    min-height: 7.4vh;
+    /* min-height: 7.4vh; */
     font-size: 1rem;
     color: #1a1a1a;
     background: white;
@@ -324,7 +324,7 @@ input{
     cursor: pointer;
     outline: none;
     transition: border-color 0.2s ease;
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-family: 'Aileron', sans-serif;
     font-weight: 400;
     padding: 1.5rem
@@ -334,12 +334,12 @@ input{
   .select-wrapper::after {
     content: '';
     position: absolute;
-    right: 1rem;
+    right: 1em;
     top: 50%;
-    width: 10px;
-    height: 10px;
-    border-right: 2px solid #757575;
-    border-bottom: 2px solid #757575;
+    width: 0.8em;
+    height: 0.8em;
+    border-right: 0.15em solid #757575;
+    border-bottom: 0.15em solid #757575;
     transform: translateY(-200%) rotate(45deg);
     pointer-events: none;
     transition: transform 0.2s ease;
@@ -360,12 +360,14 @@ input{
 .summary{
     margin-left: 2vw;
     margin-top: 6vh;
+}
+
+.summary-info{
+
     background-color: #F7BF70;
-    border-radius: 0.75rem;
+    border-radius: 1rem;
     width: 31.25vw;
     max-width: 600px;
-    min-height: 503px;
-    height:min-content;
     padding: 3rem 2rem;
 }
 
@@ -394,3 +396,25 @@ input{
         font-family: 'Aileron', sans-serif;
         font-weight: 900;
     }
+
+.place-order{
+    margin-top: 2vw;
+    color: white;
+    background-color: #D63A29;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1.5rem 7rem;
+
+    font-size: 2.5rem;
+    font-family: 'Gantari', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.place-order:hover{
+    opacity: 0.7;
+}
+
+.place-order:active{
+    opacity: 0.9;
+}
