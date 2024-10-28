@@ -10,11 +10,33 @@ import React, {useState} from 'react';
 
 
 export default function Checkout(){
+
     const [quantity, setQuantity] = useState(100);
+    const [checked, setChecked] = useState(false);
+    const [mstate, setMstate] = useState('Michigan');
+    const [bstate, setBstate] = useState('Michigan');
+
+    
+    const smoothScroll = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
+            
+            window.history.pushState('', '', targetId);
+        }
+    };
+
 
     const handleChange = (event) => {
         setQuantity(event.target.value);
     };
+
 
     return(
         <>
@@ -45,9 +67,19 @@ export default function Checkout(){
                     
                     <div className="continue-purchase">
                         <h1>
-                            <a href="#section1" className="purchase-link">Continue to purchase</a>
+                            <a 
+                                href="#checkout" 
+                                className="purchase-link"
+                                onClick={smoothScroll}
+                            >
+                                Continue to purchase
+                            </a>
                         </h1>
-                        <a href="#section2" className="arrow-link">
+                        <a 
+                            href="#checkout" 
+                            className="arrow-link"
+                            onClick={smoothScroll}
+                        >
                             <img src={arrow} alt="continue-arrow" />
                         </a>
                     </div>
@@ -58,7 +90,7 @@ export default function Checkout(){
           
 
 
-            <div className="checkout-bottom">
+            <div className="checkout-bottom" id="checkout">
                 <div className="payment-information">
                     {/* <h1 className="payment-info">Payment Information</h1> */}
                     <form className="checkout-form" action="#">
@@ -76,7 +108,7 @@ export default function Checkout(){
                         <div class="input-group">
                             <input type="text" placeholder="Card Number"></input>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group date-cvv">
                             <div class="half-width">
                                 <input type="text" placeholder="Ex. Date 00/00"></input>
                             </div>
@@ -106,25 +138,38 @@ export default function Checkout(){
                         <div class="input-group">
                             <input type="text" placeholder="Apartment, suite, etc."></input>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group city-state-zip">
                             <div class="half-width">
                                 <input type="text" placeholder="City"></input>
                             </div>
-                            <div class="half-width">
-                                <select>
-                                    <option>State</option>
-                                    <option>Michigan</option>
+
+                            <div className="select-wrapper">
+                                <label className="select-label">State</label>
+                                <select 
+                                value={mstate} 
+                                onChange={(e) => setMstate(e.target.value)}
+                                className="select-field"
+                                >
+                                <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
+                            <div class="input-group">
+                                <input type="text" placeholder="ZIP Code"></input>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <input type="text" placeholder="ZIP Code"></input>
-                        </div>
-                        
+
                         <h3>Billing Address</h3>
-                        <div class="checkbox-group">
-                            <input type="checkbox" id="sameAddress"></input>
-                            <label for="sameAddress">same as mailing address</label>
+                        <div className="checkbox-group">
+                            <button
+                                onClick={() => setChecked(!checked)}
+                                className={`custom-checkbox ${checked ? 'checked' : ''}`}
+                                aria-checked={checked}
+                                role="checkbox"
+                                type="button"
+                            >
+                                {checked && <div className="checkmark" />}
+                            </button>
+                            <span className="same-as-label">same as mailing address</span>
                         </div>
                         <div class="input-group">
                             <input type="text" placeholder="Address"></input>
@@ -132,25 +177,54 @@ export default function Checkout(){
                         <div class="input-group">
                             <input type="text" placeholder="Apartment, suite, etc."></input>
                         </div>
-                        <div class="input-group">
+                        <div class="input-group city-state-zip">
                             <div class="half-width">
                                 <input type="text" placeholder="City"></input>
                             </div>
-                            <div class="half-width">
-                                <select>
-                                    <option>State</option>
-                                    <option>Michigan</option>
+
+                            <div className="select-wrapper">
+                                <label className="select-label">State</label>
+                                <select 
+                                value={bstate} 
+                                onChange={(e) => setBstate(e.target.value)}
+                                className="select-field"
+                                >
+                                <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
-                        </div>
-                        <div class="input-group">
-                            <input type="text" placeholder="ZIP Code"></input>
+                            <div class="input-group">
+                                <input type="text" placeholder="ZIP Code"></input>
+                            </div>
                         </div>
                     </form>
 
                 </div>
                     
-                <div className="summary"></div>
+                <div className="summary">
+                    <div className="summary-info">
+                        <div className="summary-line items">
+                            <h1>Items {}:</h1>
+                            <h1>${}</h1>
+                        </div>
+                        <div className="summary-line shipping">
+                            <h1>Shipping:</h1>
+                            <h1>${}</h1>
+                        </div>
+                        <div className="summary-line before-tax">
+                            <h1>Total before tax:</h1>
+                            <h1>${}</h1>
+                        </div>
+                        <div className="summary-line tax">
+                            <h1>Tax:</h1>
+                            <h1>${}</h1>
+                        </div>
+                        <div className="summary-line total">
+                            <h1>Order total:</h1>
+                            <h1>${}</h1>
+                        </div>
+                    </div>
+                    <button className="place-order"></button>
+                </div>
             </div>
 
 
