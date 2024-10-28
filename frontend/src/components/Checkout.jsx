@@ -58,7 +58,100 @@ export default function Checkout(){
           
 
 
-            <div className="checkout-bottom"></div>
+            <div className="checkout-bottom">
+                <div className="payment-information">
+                    {/* <h1 className="payment-info">Payment Information</h1> */}
+                    <form className="checkout-form" action="#">
+                        <div class="input-group">
+                            <input type="text" placeholder="Company Name (optional)"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Phone Number (optional)"></input>
+                        </div>
+                        
+                        <h3>Pay With Card</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Name on Card"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Card Number"></input>
+                        </div>
+                        <div class="input-group">
+                            <div class="half-width">
+                                <input type="text" placeholder="Ex. Date 00/00"></input>
+                            </div>
+                            <div class="half-width">
+                                <input type="text" placeholder="CVV"></input>
+                            </div>
+                        </div>
+                        
+                        <h3>Pay With Checking Account</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Name on Account"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Routing Number"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Account Number"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Confirm Account Number"></input>
+                        </div>
+                        
+                        <h3>Mailing Address</h3>
+                        <div class="input-group">
+                            <input type="text" placeholder="Address"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Apartment, suite, etc."></input>
+                        </div>
+                        <div class="input-group">
+                            <div class="half-width">
+                                <input type="text" placeholder="City"></input>
+                            </div>
+                            <div class="half-width">
+                                <select>
+                                    <option>State</option>
+                                    <option>Michigan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="ZIP Code"></input>
+                        </div>
+                        
+                        <h3>Billing Address</h3>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="sameAddress"></input>
+                            <label for="sameAddress">same as mailing address</label>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Address"></input>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="Apartment, suite, etc."></input>
+                        </div>
+                        <div class="input-group">
+                            <div class="half-width">
+                                <input type="text" placeholder="City"></input>
+                            </div>
+                            <div class="half-width">
+                                <select>
+                                    <option>State</option>
+                                    <option>Michigan</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="input-group">
+                            <input type="text" placeholder="ZIP Code"></input>
+                        </div>
+                    </form>
+
+                </div>
+                    
+                <div className="summary"></div>
+            </div>
 
 
 
