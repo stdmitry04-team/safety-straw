@@ -1,137 +1,290 @@
-@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap");
 
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-*{
-    box-sizing: border-box;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 .our-product {
-    padding-top:5vh;
-    background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
-    position: relative;
-    height:100vh;
-    width:100vw;
-
+  padding-top: 5vh;
+  background: linear-gradient(180deg, #e79b56 0%, #f9c673 30.52%, #ffffff 100%);
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  min-height: 800px;
 }
 
 .our-product-background {
-    width: 100%;
-    z-index: 1;
-    width:100%;
-    height: 100%;
+  width: 100%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.straw{ 
-    position: absolute;
-    z-index: 2;
-    width: 13.385vw;
-    height: 62.356vh;
-    top: 8.52vh;
-    left: 20vw;
+.straw {
+  position: absolute;
+  z-index: 2;
+  width: 13.385vw;
+  height: 62.356vh;
+  top: 8.52vh;
+  left: 20vw;
 }
 
-.l_arr {
-    position: absolute;
-    left: 18.95vw;
-    top: 24.63vh;
-
-}
-
-.r_arr {
-    position: absolute;
-    left: 29.53vw;
-    top: 46.85vh;
-
-}
-
-.l_text, .r_text {
-    font-size: 1.875rem;
-    line-height: 2.78vh;
-    font-family: 'Gantari', 'sans-serif';
-    font-weight: 600;
-}
-
-.l_text {
-    position: absolute;
-    top: 28.33vh;
-    left: 8.594vw; 
-}
-
+.l_text,
 .r_text {
-    position: absolute;
-    top: 56.76vh;
-    left: 34.43vw; 
+  font-size: 1.5rem;
+  line-height: 2.78vh;
+  font-family: "Gantari", "sans-serif";
+  font-weight: 600;
 }
 
 .our-product-paragraph {
-    font-family: 'Aileron', 'sans-serif';
-    font-size: 900;
-    font-size: 4.375rem;
-    line-height: 7.78vh;
-
-    position: absolute;
-    top:14.72vh;
-    right:22.4vw;
+  font-family: "Aileron", "sans-serif";
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
 }
 
-.our-product-text-1, .our-product-text-2 {
-    font-size: 3.125rem;
-    line-height: 5.56vh;
-    font-family: 'Aileron', 'sans-serif';
-    font-weight: 700;
-    text-align: center;
-}
-
-.our-product-text-1 {
-    position: absolute;
-    top: 26.2vh;
-    right: 12.6vw;
-}
-
+.our-product-text-1,
 .our-product-text-2 {
-    position: absolute;
-    top: 39.8vh;
-    right: 14.32vw; 
+  font-family: "Aileron", "sans-serif";
 }
 
-.text-1-color{
-    color: #D63A29;
+.our-product-text {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.join-waitlist{
+.text-1-color {
+  color: #d63a29;
+}
+
+.join-waitlist {
+  background: #d63a29;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 1.85vh;
+  font-family: "Gantari";
+  font-weight: 600;
+  border: none;
+  width: 30rem;
+  height: 4rem;
+  margin-top: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.l_arr {
+  position: absolute;
+  left: 18.95vw;
+  top: 24.63vh;
+}
+
+.r_arr {
+  position: absolute;
+  left: 29.53vw;
+  top: 46.85vh;
+}
+
+.l_text {
+  position: absolute;
+  top: 28.33vh;
+  left: 8.594vw;
+}
+
+.r_text {
+  position: absolute;
+  top: 56.76vh;
+  left: 34.43vw;
+}
+
+.product-text-container {
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+@media (max-width: 1500px) {
+  .product-text-container {
+    top: 25%;
+  }
+}
+
+@media (max-width: 1400px) {
+  .l_arr {
+    width: 10rem;
+    top: 28vh;
+    left: 16vw;
+  }
+
+  .r_arr {
+    width: 8rem;
+  }
+  .l_text {
     position: absolute;
-    background: #D63A29;
-    color: white;
-    font-size: 2.5rem;
-    border-radius: 1.85vh;
-    line-height: 4.4vh;
-    font-family: 'Gantari';
+    top: 32vh;
+    left: 6vw;
+  }
+  .r_text {
+    top: 55vh;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .straw {
+    position: absolute;
+    z-index: 2;
+    width: 100px;
+    height: 300px;
+    top: 38%;
+    left: 44%;
+  }
+
+  .l_arr {
+    position: absolute;
+    left: 35vw;
+    top: 45vh;
+    width: 14%;
+    height: auto;
+  }
+
+  .r_arr {
+    position: absolute;
+    left: 58vw;
+    top: 52vh;
+    width: 12%;
+    height: auto;
+  }
+
+  .l_text,
+  .r_text {
+    font-size: 1.5rem;
+    line-height: 2vh;
+    font-family: "Gantari", "sans-serif";
     font-weight: 600;
-    right: 24.58vw;
-    bottom: 37.13vh;
-    border: none;
-    width: 20.36vw;
-    height: 7.4vh;
+    max-width: 200px;
+  }
+
+  .l_text {
+    position: absolute;
+    top: 50vh;
+    left: 20vw;
+    font-size: 2rem;
+  }
+
+  .r_text {
+    position: absolute;
+    top: 60vh;
+    left: 73vw;
+    font-size: 2rem;
+  }
+
+  .product-text-container {
+    top: 10%;
+    right: 24%;
+  }
 }
 
-.join-waitlist:hover{
-    opacity: 0.7;
+@media (max-width: 900px) {
+  .product-text-container {
+    right: 22%;
+  }
 }
 
-.join-waitlist:active{
-    opacity: 0.9;
+@media (max-width: 829px) {
+  .our-product-text {
+    font-size: 4rem;
+  }
+  .product-text-container {
+    right: 18%;
+  }
+  .our-product-paragraph {
+    font-size: 5rem;
+  }
+
+  .join-waitlist {
+    width: 35rem;
+    height: 5rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .l_arr {
+    left: 35vw;
+  }
+  .r_arr {
+    left: 58vw;
+  }
+  .our-product-text {
+    font-size: 5rem;
+  }
+  .product-text-container {
+    right: 18%;
+  }
+  .our-product-paragraph {
+    font-size: 6rem;
+  }
+  .join-waitlist {
+    width: 40rem;
+    height: 6rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .product-text-container {
+    right: 13%;
+  }
+}
+
+@media (max-width: 565px) {
+  .r_arr {
+    left: 65vw;
+  }
+  .l_text {
+    font-size: 3rem;
+  }
+  .r_text {
+    font-size: 3rem;
+  }
+  .our-product-text {
+    font-size: 7.2rem;
+  }
+  .product-text-container {
+    right: 4%;
+  }
+  .our-product-paragraph {
+    font-size: 9rem;
+  }
+}
+
+@media (max-width: 450px) {
+  .straw {
+    left: 38%;
+  }
+
+  .product-text-container {
+    right: 9%;
+  }
+}
+
+@media (max-width: 415px) {
+  .product-text-container {
+    right: 4%;
+  }
 }
