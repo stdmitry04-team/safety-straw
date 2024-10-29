@@ -392,7 +392,7 @@ export default function Checkout(){
                                 value={billingAddress.apartment}
                             ></input>
                         </div>
-                        <div className="checkout-input-group city-state-zip">
+                        <div className="checkout-input-group city-state-zip checkout-form-bottom-input">
                             <div className="half-width">
                                 <input
                                     type="text"
