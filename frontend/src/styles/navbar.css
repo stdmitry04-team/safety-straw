@@ -13,11 +13,11 @@
     background-color: #ffffff; 
     border-bottom: 1px solid #e0e0e0; 
     width: 100%; 
-    height: 9.259vh;
-    position: fixed;
+    height: 9.26vh;
+    position: sticky;
     top:0;
     box-sizing: border-box; 
-    z-index: 1000;
+    z-index: 1;
   }
   
  
@@ -39,14 +39,10 @@
     align-items: center;
   }
 
-  .desktop-logo-text{
+  .logo-text{
     margin-left: 1.46vw;
     width: 16.5625vw;
     height: 3.15vh;
-  }
-
-  .mobile-logo-text {
-    display: none;
   }
   
   .navbar-right {
@@ -123,6 +119,11 @@
     border: none;
     cursor: pointer;
   }
+
+  .menu-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
   
   .dropdown-menu {
     display: none; 
@@ -135,8 +136,7 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 12.5rem; 
     padding: 1.5625rem;
-    font-family: 'Gantari', sans-serif;
-    z-index: 999;
+    z-index: 99999;
   }
   
   .dropdown-menu .nav-link, .dropdown-menu .btn-link {
@@ -146,10 +146,9 @@
     text-align: left;
     border: none;
     background: none;
-    color: #333;
+    color: #000;
     text-decoration: none;
     cursor: pointer;
-    
   }
   
   .dropdown-menu .nav-link:hover, .dropdown-menu .btn-link:hover {
@@ -157,37 +156,13 @@
   }
   
 
-  @media only screen and (max-width: 1750px) {
-    .navbar-right .nav-link {
-      font-size: 1.7rem;
-    }
-
-    .join-btn {
-      font-size: 1.2rem;
-      width: 10rem;
-      height: 2.75rem;
-      text-align: center;
-      line-height: 2rem;
-    }
-  }
-
-  @media only screen and (max-width: 1150px) {
-    .navbar {
-      height: 6.754vh;
-    }
-    
+  @media only screen and (max-width: 650px) {
     .desktop-links {
       display: none;
     }
     
     .menu-toggle-btn {
       display: block;
-    }
-
-    .menu-icon {
-      width: 6.923vw;
-      max-width: 2rem;
-      margin-right: 4.58vw;
     }
   
     .dropdown-menu {
@@ -199,28 +174,24 @@
         word-break: break-word;
     }
 
-    .desktop-logo-text {
-      display: none;
+    .profile-icon{
+      width: 7vw;
     }
 
-    .mobile-logo-text {
-      display: block;
-      width: 15.656vw;
-      height: 3.368vh;
-      margin-left: 1.78vw;
+    .logo-image{
+      width: 30px;
+      height: 38px;
+      margin-left: 4vw
     }
 
-    .logo-image {
-      width: 7.692vw;
-      height: 5.502vh;
-      margin-left: 3.84vw;
+    .logo-text{
+      margin-left: 2vw;
+      height:85px;
+      width: 170px;
     }
 
-    .profile-icon {
-      width: 7.628vw;
-      height: 7.757vh;
-      margin-right: 3.11vw;
-      max-width: 2rem;
+    .menu-icon{
+      margin-right: 4vw;
+      margin-left: 2vw;
     }
-  
   }

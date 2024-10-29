@@ -9,6 +9,7 @@ export default function AboutUs() {
       footerElement.scrollIntoView({ behavior: 'smooth' }); // Scroll to the footer smoothly
     }
   };
+
     return (
         <div className="about-us">
             <div className="container">

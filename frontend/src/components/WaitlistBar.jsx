@@ -1,5 +1,8 @@
 import "../styles/WaitlistBar.css"
 import React, { useState } from 'react';
+// require("dotenv").config({ path: "../backend/config.env" });
+// const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
 
 export default function WaitlistBar(props) {
     const [name, setName] = useState('');
@@ -9,6 +12,7 @@ export default function WaitlistBar(props) {
     const handleSubmit = async (e) => {
         e.preventDefault();
 
+        // const response = await fetch(`${backendUrl}/api/waitlist`, {
         const response = await fetch('http://localhost:5000/api/waitlist', {
             method: 'POST',
             headers: {
