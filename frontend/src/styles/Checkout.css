@@ -119,9 +119,10 @@ html, body{
 
 .continue-purchase {
     margin-top: 1.4em;
-    display: flex; /* Use Flexbox for layout */
-    align-items: center; /* Center items vertically */
-    justify-content: center; /* Center items horizontally */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-wrap:nowrap;
 }
 
 .purchase-link {
@@ -231,16 +232,15 @@ input{
 
 .checkbox-group {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 1rem;
     margin-bottom: 2em;
   }
   
   .custom-checkbox {
-    width: 20px;
-    height: 20px;
-    border: 2px solid #555;
+    width: 1.75rem;
+    height: 1.75rem;
+    border: 0.3rem solid #555;
     border-radius: 50%;
     background-color: #fff;
     cursor: pointer;
@@ -350,8 +350,8 @@ input{
   }
 
 .summary{
-    margin-left: 2vw;
-    margin-top: 6vh;
+    margin-left: 2.5em;
+    margin-top: 8em;
 }
 
 .summary-info{
@@ -360,7 +360,7 @@ input{
     border-radius: 1rem;
     width: 31.25vw;
     max-width: 600px;
-    padding: 3rem 2rem;
+    padding: 3em 2rem;
 }
 
     .summary-line{
@@ -369,12 +369,12 @@ input{
     }
 
     .items, .before-tax{
-        margin-bottom: 2rem;
+        margin-bottom: 2em;
 
     }
 
     .shipping, .tax{
-        margin-bottom: 2.5rem;
+        margin-bottom: 2.5em;
     }
 
 .summary h1{
@@ -390,13 +390,12 @@ input{
     }
 
 .place-order{
-    margin-top: 2vw;
+    margin-top: 1em;
     color: white;
     background-color: #D63A29;
     border: none;
     border-radius: 1.5rem;
-    padding: 1.5rem 7rem;
-
+    padding: 0.5em 2em;
     font-size: 2.5rem;
     font-family: 'Gantari', sans-serif;
     font-weight: 600;
