@@ -32,95 +32,96 @@ html, body{
 .checkout-top{
     display: flex;
     align-items: stretch;
-    margin-top: 8.3vh;
+    margin-top: 8.5em;
 }
 
-.left-imgs{
+.checkout-left-imgs{
     display: flex;
     flex-direction: column;
-    row-gap: 2.4vh;
-    margin: 0 2.6vw 0 5.89vw;
+    row-gap: 1.6em;
+    margin: 0 4em 0 7em;
 }
 
-.left-imgs img{
+.checkout-left-imgs img{
     max-width: 100%;
     height: auto;
     /* min-height: 16.2vh; */
 }
 
-.straws-img{
+.checkout-straws-img{
     /* margin-top: 8.3vh; */
     margin-top: 0vh;
-    margin-right: 2vw;
+    margin-right: 2.5em;
     border-radius: 1.25em;
     max-width: 100%;
     height: auto;
 }
 
-.right-nav{
+.checkout-right-nav{
     display: flex;
     flex-direction: column;
     align-items: start;
 }
 
-.straws-title{
+.checkout-straws-title{
     text-wrap:wrap;
     font-size: 4rem;
-    line-height: 7vh;
     max-width: 50vw;
     height: auto;
     font-family: 'Aileron', sans-serif;
     font-weight: 900;
     letter-spacing: -0.011em;
     text-align: left;
-    margin-bottom: 2vh;
+    margin-bottom: 0.5em;
     line-height: 1em;
 }
 
-.price {
+.checkout-price {
     color: #D63A29;
     font-family: 'Gantari', sans-serif;
     font-weight: 600;
     /* line-height: 8vh; */
   }
   
-  .currency {
+  .checkout-currency {
     font-size: 6rem; /* Adjust size for the $ symbol */
   }
   
-  .amount {
+  .checkout-amount {
     font-size: 6rem; /* Larger font size for the main price */
   }
   
-  .cents {
+  .checkout-cents {
     font-size: 3rem; /* Smaller size for the cents */
     vertical-align: 2rem;
   }
   
-.quantity-dropdown{
-    padding: 0 0.5rem;
-    margin-top: 2vh;
+.checkout-quantity-dropdown{
+    padding: 0 0.5em;
+    margin-top: 1em;
     background-color: #E3E3E3;
     border: none;
     border-radius: 0.75vw;
-    max-width: 11.25vw;
-    min-height: 4.44vh;
+    max-width: 10em;
+    min-height: 3.44em;
 
     white-space: wrap;
     text-overflow: ellipsis;
 
-    font-size: 1.25rem;
-    line-height: 2.3rem;
+    font-size: 1.5em;
     font-family: 'Aileron', sans-serif;
     font-weight: 600;
 }
 
+.checkout-quantity-dropdown option{
+    font-size: 0.6em;
+}
+
 .continue-purchase {
-    margin-top: 1.5vh;
+    margin-top: 1.4em;
     display: flex; /* Use Flexbox for layout */
     align-items: center; /* Center items vertically */
     justify-content: center; /* Center items horizontally */
-    margin: 20px 0; /* Add some margin if needed */
 }
 
 .purchase-link {
@@ -159,7 +160,7 @@ html, body{
     margin-left: 8vw;
 }
 
-.input-group{
+.checkout-input-group{
     width: 100%;
 }
 
@@ -276,19 +277,6 @@ input{
     color: #D63A29;
 }
 
-
-  
-  .input-field {
-    flex: 1;
-    min-height: 3rem;
-    padding: 0 1rem;
-    font-size: 1rem;
-    color: #1a1a1a;
-    background: white;
-    border-radius: 12px;
-    outline: none;
-    transition: border-color 0.2s ease;
-  }
   
   .input-field::placeholder {
     color: #757575;
@@ -349,7 +337,7 @@ input{
     flex: 1;
   }
 
-  .input-group input,
+  .checkout-input-group input,
   .select-wrapper select {
       width: 100%;
       border: none;

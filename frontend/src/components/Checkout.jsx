@@ -169,25 +169,25 @@ export default function Checkout(){
         <>
             <Navbar></Navbar>
             <div className="checkout-top">
-                <div className="left-imgs">
+                <div className="checkout-left-imgs">
                     <img src={img_top} alt="straw-img-top" />
                     <img src={img_mid} alt="straw-img-mid" />
                     <img src={img_bottom} alt="straw-img-bottom" />
                     <img src={img_bottom} alt="straw-img-bottom" />
                 </div>
-                <div className="straws-img">
-                    <img className="straws-img" src={straws_img} alt="straw-img-main" />
+                <div className="checkout-straws-img">
+                    <img className="checkout-straws-img" src={straws_img} alt="straw-img-main" />
 
                 </div>
-                <div className="right-nav">
-                    <p className="straws-title">Safety Straw (Color-Changing Drug Detection Straws)</p>
-                    <div className="price">
-                        <span class="currency">$</span>
-                        <span class="amount">10</span>
-                        <span class="cents">99</span>   
+                <div className="checkout-right-nav">
+                    <p className="checkout-straws-title">Safety Straw (Color-Changing Drug Detection Straws)</p>
+                    <div className="checkout-price">
+                        <span class="checkout-currency">$</span>
+                        <span class="checkout-amount">10</span>
+                        <span class="checkout-cents">99</span>   
                     </div>
 
-                    <select className="quantity-dropdown" id="quantity" name="quantity" value={quantity} onChange={handleChange}>
+                    <select className="checkout-quantity-dropdown" id="quantity" name="quantity" value={quantity} onChange={handleChange}>
                         {Array.from({ length: 10 }, (_, index) => (
                         <option key={index + 1} value={index + 1}>
                             Qty: {(index + 1) * 100} Pack
@@ -227,12 +227,12 @@ export default function Checkout(){
                         <div className="input-group">
                             <input type="text" placeholder="Company Name (optional)"></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input type="text" placeholder="Phone Number (optional)"></input>
                         </div>
                         
                         <h3>Pay With Card</h3>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Name on Card"
@@ -241,7 +241,7 @@ export default function Checkout(){
                                 value={cardInfo.nameOnCard}
                                 ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Card Number"
@@ -250,7 +250,7 @@ export default function Checkout(){
                                 value={cardInfo.cardNumber}
                             ></input>
                         </div>
-                        <div className="input-group date-cvv">
+                        <div className="checkout-input-group date-cvv">
                             <div className="half-width">
                                 <input 
                                     type="text"
@@ -260,7 +260,7 @@ export default function Checkout(){
                                     value={cardInfo.expiryDate}
                                 ></input>
                             </div>
-                            <div className="half-width">
+                            <div className="checkout-half-width">
                                 <input
                                     type="text"
                                     placeholder="CVV"
@@ -272,7 +272,7 @@ export default function Checkout(){
                         </div>
                         
                         <h3>Pay With Checking Account</h3>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Name on Account"
@@ -281,7 +281,7 @@ export default function Checkout(){
                                 value={checkingInfo.nameOnAccount}
                             ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Routing Number"
@@ -290,7 +290,7 @@ export default function Checkout(){
                                 value={checkingInfo.routingNumber}
                             ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Account Number"
@@ -299,7 +299,7 @@ export default function Checkout(){
                                 value={checkingInfo.accountNumber}
                             ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Confirm Account Number"
@@ -310,7 +310,7 @@ export default function Checkout(){
                         </div>
                         
                         <h3>Mailing Address</h3>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Address"
@@ -319,7 +319,7 @@ export default function Checkout(){
                                 value={mailingAddress.address}
                             ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Apartment, suite, etc."
@@ -328,7 +328,7 @@ export default function Checkout(){
                                 value={mailingAddress.apartment}
                             ></input>
                         </div>
-                        <div className="input-group city-state-zip">
+                        <div className="checkout-input-group city-state-zip">
                             <div className="half-width">
                                 <input
                                     type="text"
@@ -350,7 +350,7 @@ export default function Checkout(){
                                 <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
-                            <div className="input-group">
+                            <div className="checkout-input-group">
                                 <input
                                     type="text"
                                     placeholder="ZIP Code"
@@ -374,7 +374,7 @@ export default function Checkout(){
                             </button>
                             <span className="same-as-label">same as mailing address</span>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Address"
@@ -383,7 +383,7 @@ export default function Checkout(){
                                 value={billingAddress.address}
                             ></input>
                         </div>
-                        <div className="input-group">
+                        <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Apartment, suite, etc."
@@ -392,7 +392,7 @@ export default function Checkout(){
                                 value={billingAddress.apartment}
                             ></input>
                         </div>
-                        <div className="input-group city-state-zip">
+                        <div className="checkout-input-group city-state-zip">
                             <div className="half-width">
                                 <input
                                     type="text"
@@ -414,7 +414,7 @@ export default function Checkout(){
                                 <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
-                            <div className="input-group">
+                            <div className="checkout-input-group">
                                 <input
                                     type="text"
                                     placeholder="ZIP Code"
