@@ -12,18 +12,18 @@ export default function AboutUs() {
     return (
         <div className="about-us">
             <div className="container">
-                <div className="top">
+                <div className="about-us-top">
                     <div className="header">
                         <h1>
                             ABOUT US
                         </h1>
                     </div>
                 </div>
-                <div className="bottom">
-                    <div className="left">
+                <div className="about-us-bottom">
+                    <div className="about-us-left">
                         <iframe src="https://www.youtube.com/embed/hC4Tc3nyhLg"></iframe>
                     </div>
-                    <div className="right">
+                    <div className="about-us-right">
                         <div className="text">
                             <p>
                                 We're Jack & Zak, childhood friends and co-founders of Safety Straw.

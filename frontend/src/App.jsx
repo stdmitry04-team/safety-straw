@@ -10,20 +10,15 @@ import WaitlistBar from "./components/WaitlistBar.jsx";
 import WaitlistModal from "./components/WaitlistModal.jsx";
 import AboutUs from "./components/AboutUs.jsx";
 
+import BarLocator from "./components/BarLocator.jsx";
 
 
 
 function App() {
   return (
     <div className="app">
-      <Navbar/>
-      <Video/>
-      <Product></Product>
-      <Background></Background>
-      <Mission></Mission>
-      <AboutUs></AboutUs>
-      <WaitlistBar/>
-      <Footer/>
+      
+      <BarLocator />
     </div>
 
   );
