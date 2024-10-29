@@ -6,11 +6,11 @@ import img_top from '../images/checkout-pic-top.png';
 import img_mid from '../images/checkout-pic-mid.png';
 import img_bottom from '../images/checkout-pic-bottom.png';
 import straws_img from '../images/checkout-straws.png';
-import React, {useState, useEffect} from 'react';
-
+import React, {useState, useEffect, useRef} from 'react';
 
 export default function Checkout(){
 
+    const formRef = useRef(null);
     const [quantity, setQuantity] = useState(1);
     const [checked, setChecked] = useState(false);
     const [companyname, setCompanyName] = useState('');
@@ -60,6 +60,7 @@ export default function Checkout(){
         return totalPrice * (stateTaxRates[state] || 0);
     };
 
+    const apiUrl = process.env.REACT_APP_BACKEND_URL || 'https://localhost:5000/api';
     const itemPrice = 10.99;
     const shippingCost = 2.99;
     const totalPrice = quantity * itemPrice;
@@ -80,7 +81,14 @@ export default function Checkout(){
         setQuantity(event.target.value);
     };
 
-    // Main address change handler
+    // function to handle button click and trigger form submission
+    const handleButtonClick = () => {
+        if (formRef.current) {
+            formRef.current.dispatchEvent(new Event('submit', { bubbles: true })); // trigger form submission
+        }
+    };
+
+    // main address change handler
     const handleAddressChange = (e, addressType) => {
         const { name, value } = e.target;
         if (addressType === 'mailing') {
@@ -108,36 +116,37 @@ export default function Checkout(){
             }
         };
     
-        // // Handle form submission
-        // const handleSubmit = async (e) => {
-        //     e.preventDefault();
+        // Handle form submission
+        const handleSubmit = async (e) => {
+            e.preventDefault();
             
-        //     const formData = {
-        //         quantity,
-        //         mailingAddress,
-        //         billingAddress: checked ? mailingAddress : billingAddress,
-        //         mstate,
-        //         bstate: checked ? mstate : bstate,
-        //     };
+            const formData = {
+                payerInfo,
+                quantity,
+                cardInfo,
+                checkingInfo,
+                mailingAddress,
+                billingAddress: checked ? mailingAddress : billingAddress,
+            };
 
-        //     try {
-        //         const response = await fetch('https://localhost:5000/api/checkout', {
-        //             method: 'POST',
-        //             headers: {
-        //                 'Content-Type': 'application/json',
-        //             },
-        //             body: JSON.stringify(formData),
-        //         });
+            try {
+                const response = await fetch(`${apiUrl}/checkout`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(formData),
+                });
 
-        //         if (response.ok) {
-        //             alert('Order submitted successfully!');
-        //         } else {
-        //             alert('Failed to submit the order.');
-        //         }
-        //     } catch (error) {
-        //         console.error('Error submitting order:', error);
-        //     }
-        // };
+                if (response.ok) {
+                    alert('Order submitted successfully!');
+                } else {
+                    alert('Failed to submit the order.');
+                }
+            } catch (error) {
+                console.error('Error submitting order:', error);
+            }
+        };
 
 
 
@@ -214,16 +223,16 @@ export default function Checkout(){
             <div className="checkout-bottom" id="checkout">
                 <div className="payment-information">
                     {/* <h1 className="payment-info">Payment Information</h1> */}
-                    <form className="checkout-form" action="#">
-                        <div class="input-group">
+                    <form className="checkout-form" ref={formRef} onSubmit={handleSubmit} action="#">
+                        <div className="input-group">
                             <input type="text" placeholder="Company Name (optional)"></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input type="text" placeholder="Phone Number (optional)"></input>
                         </div>
                         
                         <h3>Pay With Card</h3>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Name on Card"
@@ -232,7 +241,7 @@ export default function Checkout(){
                                 value={cardInfo.nameOnCard}
                                 ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Card Number"
@@ -241,8 +250,8 @@ export default function Checkout(){
                                 value={cardInfo.cardNumber}
                             ></input>
                         </div>
-                        <div class="input-group date-cvv">
-                            <div class="half-width">
+                        <div className="input-group date-cvv">
+                            <div className="half-width">
                                 <input 
                                     type="text"
                                     placeholder="Ex. Date 00/00"
@@ -251,7 +260,7 @@ export default function Checkout(){
                                     value={cardInfo.expiryDate}
                                 ></input>
                             </div>
-                            <div class="half-width">
+                            <div className="half-width">
                                 <input
                                     type="text"
                                     placeholder="CVV"
@@ -263,7 +272,7 @@ export default function Checkout(){
                         </div>
                         
                         <h3>Pay With Checking Account</h3>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Name on Account"
@@ -272,7 +281,7 @@ export default function Checkout(){
                                 value={checkingInfo.nameOnAccount}
                             ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Routing Number"
@@ -281,7 +290,7 @@ export default function Checkout(){
                                 value={checkingInfo.routingNumber}
                             ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Account Number"
@@ -290,7 +299,7 @@ export default function Checkout(){
                                 value={checkingInfo.accountNumber}
                             ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Confirm Account Number"
@@ -301,7 +310,7 @@ export default function Checkout(){
                         </div>
                         
                         <h3>Mailing Address</h3>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Address"
@@ -310,7 +319,7 @@ export default function Checkout(){
                                 value={mailingAddress.address}
                             ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Apartment, suite, etc."
@@ -319,8 +328,8 @@ export default function Checkout(){
                                 value={mailingAddress.apartment}
                             ></input>
                         </div>
-                        <div class="input-group city-state-zip">
-                            <div class="half-width">
+                        <div className="input-group city-state-zip">
+                            <div className="half-width">
                                 <input
                                     type="text"
                                     placeholder="City"
@@ -341,7 +350,7 @@ export default function Checkout(){
                                 <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <input
                                     type="text"
                                     placeholder="ZIP Code"
@@ -365,7 +374,7 @@ export default function Checkout(){
                             </button>
                             <span className="same-as-label">same as mailing address</span>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Address"
@@ -374,7 +383,7 @@ export default function Checkout(){
                                 value={billingAddress.address}
                             ></input>
                         </div>
-                        <div class="input-group">
+                        <div className="input-group">
                             <input
                                 type="text"
                                 placeholder="Apartment, suite, etc."
@@ -383,8 +392,8 @@ export default function Checkout(){
                                 value={billingAddress.apartment}
                             ></input>
                         </div>
-                        <div class="input-group city-state-zip">
-                            <div class="half-width">
+                        <div className="input-group city-state-zip">
+                            <div className="half-width">
                                 <input
                                     type="text"
                                     placeholder="City"
@@ -405,7 +414,7 @@ export default function Checkout(){
                                 <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
-                            <div class="input-group">
+                            <div className="input-group">
                                 <input
                                     type="text"
                                     placeholder="ZIP Code"
@@ -443,7 +452,7 @@ export default function Checkout(){
                             <h1>${grandTotal.toFixed(2)}</h1>
                         </div>
                     </div>
-                    <button className="place-order">Place Your Order</button>
+                    <button className="place-order" onClick={handleButtonClick}>Place Your Order</button>
 
                 </div>
 

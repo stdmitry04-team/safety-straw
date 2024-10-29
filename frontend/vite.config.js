@@ -11,4 +11,7 @@ export default defineConfig({
   server: {
     port: process.env.VITE_PORT ? Number(process.env.VITE_PORT) : 3000, // Use the port from .env or default to 3000
   },
+  define: {
+    'process.env': {}, // Optional: to use process.env if necessary
+  },
 });
