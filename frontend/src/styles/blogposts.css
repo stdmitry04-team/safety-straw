@@ -116,17 +116,17 @@ html {
 }
 @media (max-width: 1800px) {
     html {
-        font-size: 15px !important; /* Shrinks all rem units */
+        /* font-size: 15px !important; */
     }
 }
 @media (max-width: 1700px) {
     html {
-        font-size: 14px !important; /* Shrinks all rem units */
+        /* font-size: 14px !important; */
     }
 }
 @media (max-width: 1600px) {
     html {
-        font-size: 13px !important; /* Shrinks all rem units */
+        /* font-size: 13px !important; */
     }
 }
 
@@ -136,7 +136,7 @@ html {
         height: 450.5px;
     }
     html {
-        font-size: 12px !important; /* Shrinks all rem units */
+        /* font-size: 12px !important; */
     }
 
 }
@@ -149,7 +149,7 @@ html {
         height: 310px;
     }
     html {
-        font-size: 11px !important; /* Shrinks all rem units */
+        /* font-size: 11px !important; */
     }
 
 }
@@ -169,7 +169,7 @@ html {
         font-size: 14px;
     }
     html {
-        font-size: 10px !important; /* Shrinks all rem units */
+        /* font-size: 10px !important;  */
     }
     
 }
@@ -180,7 +180,7 @@ html {
         margin-bottom: 0;
     }
     html {
-        font-size: 9px !important; /* Shrinks all rem units */
+        /* font-size: 9px !important;  */
     }
     
 }
@@ -202,7 +202,7 @@ html {
         margin-top: 14px;
     }
     html {
-        font-size: 8px !important; /* Shrinks all rem units */
+        /* font-size: 8px !important; */
     }
 }
 @media screen and (max-width: 950px) {
@@ -248,7 +248,7 @@ html {
         font-size: 11px;
     }
     html {
-        font-size: 7px !important; /* Shrinks all rem units */
+        /* font-size: 7px !important; */
     }
     
 }
@@ -288,7 +288,7 @@ html {
         font-size: 9px;
     }
     html {
-        font-size: 6px !important; /* Shrinks all rem units */
+        /* font-size: 6px !important; */
     }
     
 }
@@ -312,7 +312,7 @@ html {
         margin-top: 10px;
     }
     html {
-        font-size: 5px !important; /* Shrinks all rem units */
+        /* font-size: 5px !important; */
     }
     .custom-button {
         margin-top: 38px;
@@ -365,7 +365,7 @@ html {
         margin-top: 6px;
     }
     html {
-        font-size: 4px !important; /* Shrinks all rem units */
+        /* font-size: 4px !important; */
     }
     .custom-button {
         margin-top: 31px; 
@@ -400,7 +400,7 @@ html {
 
 @media screen and (max-width: 450px) {
     html {
-        font-size: 3px !important; /* Shrinks all rem units */
+        /* font-size: 3px !important; */
     }
     
 }
@@ -441,7 +441,7 @@ html {
         padding: 2.25rem 8rem
     } 
     html {
-        font-size: 3px !important; /* Shrinks all rem units */
+        /* font-size: 3px !important; */
     }
 
 }

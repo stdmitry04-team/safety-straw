@@ -25,6 +25,24 @@ html, body{
     box-sizing: border-box;
 }
 
+html{
+    font-size: 16px;
+}
+
+.place-order-mobile{
+    display:none;
+    margin-top: 1em;
+    color: white;
+    background-color: #D63A29;
+    border: none;
+    border-radius: 1.5rem;
+    padding: 1rem 6rem;
+    font-size: 2.5rem;
+    font-family: 'Gantari', sans-serif;
+    font-weight: 600;
+    cursor: pointer;
+}
+
 .continue-purchase a{
     transition: all 0.3 ease;
 }
@@ -108,9 +126,10 @@ html, body{
     white-space: wrap;
     text-overflow: ellipsis;
 
-    font-size: 1.5em;
+    font-size: 1.5rem;
     font-family: 'Aileron', sans-serif;
     font-weight: 600;
+    color: black;
 }
 
 .checkout-quantity-dropdown option{
@@ -156,8 +175,9 @@ html, body{
     background-color: #E3E3E3;
     max-width: 53vw;
     width: 53vw;
-    border-radius: 3.125em;
-    padding: 8em 7em;
+    border-radius: 3.125rem;
+    /* padding: 8em 7em; */
+    padding: 8rem 7rem 7rem 7rem;
     margin-left: 9em;
 }
 
@@ -187,9 +207,9 @@ input{
     text-align: left;
 }
 
-.checkout-form-bottom-input input{
+/* .checkout-form-bottom-input input{
     margin-bottom: 0;
-}
+} */
 
 .date-cvv{
     display: flex;
@@ -238,9 +258,9 @@ input{
   }
   
   .custom-checkbox {
-    width: 1.75rem;
-    height: 1.75rem;
-    border: 0.3rem solid #555;
+    width: 1.75em;
+    height: 1.75em;
+    border: 0.3em solid #555;
     border-radius: 50%;
     background-color: #fff;
     cursor: pointer;
@@ -307,7 +327,6 @@ input{
   .select-field {
     width: 100%;
     /* min-height: 7.4vh; */
-    font-size: 1rem;
     color: #1a1a1a;
     background: white;
     border: 0;
@@ -352,6 +371,7 @@ input{
 .summary{
     margin-left: 2.5em;
     margin-top: 8em;
+    /* word-wrap: break-word; */
 }
 
 .summary-info{
@@ -361,6 +381,7 @@ input{
     width: 31.25vw;
     max-width: 600px;
     padding: 3em 2rem;
+
 }
 
     .summary-line{
@@ -381,7 +402,17 @@ input{
     font-size: 2.5rem;
     font-family: 'Aileron', sans-serif;
     font-weight: 400;
+
+
 }
+
+.summary-line h1{
+    overflow: hidden;    
+    text-overflow: ellipsis;   
+    white-space: nowrap;
+}
+
+
 
     .total h1{
         font-size: 2.5rem;
@@ -395,7 +426,7 @@ input{
     background-color: #D63A29;
     border: none;
     border-radius: 1.5rem;
-    padding: 0.5em 2em;
+    padding: 1rem 6rem;
     font-size: 2.5rem;
     font-family: 'Gantari', sans-serif;
     font-weight: 600;
@@ -415,4 +446,193 @@ input{
     border-top: 2px solid black;
     width: 100%;
     margin-bottom: 1vh;
+}
+
+@media screen and (max-width: 440px){
+    .checkout-left-imgs{
+        display: none;
+    }
+
+    .checkout-top{
+        flex-direction: column;
+        align-items: center;
+        margin-top: 10%;
+    }
+    
+    .checkout-straws-img{
+        width: 90%;
+        margin: 0;
+        margin-bottom: 3em;
+    }
+
+    .checkout-straws-img img{
+        margin-bottom: 0;
+    }
+
+    .checkout-right-nav{
+        justify-content:flex-start;
+        width: 80%;
+    }
+
+    .checkout-straws-title{
+        width: 100%;
+        max-width: none;
+        font-size: 1.5rem;
+    }
+
+    .continue-purchase{
+        margin-top: 0;
+    }
+
+    .continue-purchase h1 a{
+        font-size: 1.25rem;
+    }
+
+    .continue-purchase img{
+        height: 1em;
+    }
+
+    .checkout-quantity-dropdown{
+        font-size: 1rem;
+        padding: 0.5em 0.5em;
+        min-height: 4.4vh;
+        border-radius: 0.6em;
+    }
+
+    .checkout-quantity-dropdown option{
+        font-size: 1rem;
+    }
+
+    .checkout-currency {
+    font-size: 2rem;
+    }
+    
+    .checkout-amount {
+    font-size: 2rem;
+    }
+    
+    .checkout-cents {
+    font-size: 0.8rem;
+    vertical-align: 0.8rem;
+    }
+
+    .checkout-bottom{
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+        margin-top: 5em;
+    }
+
+    .summary{
+        margin: 0;
+        width: 80%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .payment-information{
+        /* display: none;  */
+        width: 80%;
+        max-width: none;
+        margin: 0;
+    }
+
+    .summary-info{
+        order: 1;
+        width: 100%;
+        padding: 1em 2em
+    }
+    .payment-information{
+        order: 2;
+        padding: 1.75rem 1.5rem 0.75rem 1.5rem;
+        border-radius: 1rem;
+        margin-top: 1.25em;
+    }
+    
+    .place-order{
+        display: none;
+    }
+
+    .place-order-mobile{
+        display: block;
+        width: 80%;
+        order: 2;
+        margin: 0;
+        font-size: 1.25rem;
+        text-wrap: nowrap;
+        border-radius: 1rem;
+        letter-spacing: 0.05rem;
+        padding: 0.5em 0;
+        margin-top: 1em;
+        
+    }
+
+    .summary h1{
+        font-size: 1rem;
+    }
+
+    .items, .before-tax{
+        margin-bottom: 0.5em;
+
+    }
+
+    .shipping, .tax{
+        margin-bottom: 0.625em;
+    }
+
+    input{
+        font-size: 0.7rem;
+        min-height: 32px;
+        height: 2rem;
+    }
+
+    .checkout-form h3{
+        font-size: 1rem;
+        text-wrap: nowrap;
+    }
+
+    .select-field{
+        padding: 0rem 0.25rem;
+        font-size: 0.75rem;
+    }
+
+    .same-as-label{
+        text-wrap: nowrap;
+        font-size: 0.75rem;
+        margin-left: 0;
+    }
+
+    .select-wrapper::after{
+        right: 1em;
+        top: 50%;
+        width: 0.35rem;
+        height: 0.35rem;
+        border-right: 0.15em solid #757575;
+        border-bottom: 0.15em solid #757575;
+        transform: translateY(-140%) translateX(50%) rotate(45deg);
+
+    }
+
+    .select-wrapper select{
+        max-height: 46px;
+        height: clamp(32px, 2rem, 46px);
+        display: flex;
+    }
+
+    .city-state-zip{
+        gap: 1rem;
+    }
+
+    .select-label{
+        font-size: 0.5rem;
+        left: 0.25rem;
+        top: 0.125rem;
+    }
+
+    .custom-checkbox {
+        width: 1em;
+        height: 1em;
+        border: 0.25em solid #555;
+    }
 }

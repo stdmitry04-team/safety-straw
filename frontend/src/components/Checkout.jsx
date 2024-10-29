@@ -425,9 +425,9 @@ export default function Checkout(){
                             </div>
                         </div>
                     </form>
-
                 </div>
-                    
+                <button className="place-order-mobile" onClick={handleButtonClick}>Place Your Order</button>
+                
                 <div className="summary">
                     <div className="summary-info">
                         <div className="summary-line items">
@@ -455,6 +455,7 @@ export default function Checkout(){
                     <button className="place-order" onClick={handleButtonClick}>Place Your Order</button>
 
                 </div>
+
 
             </div>
 
