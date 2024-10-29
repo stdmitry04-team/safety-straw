@@ -49,25 +49,27 @@ export default function Product() {
         <button className="join-waitlist">Join Waitlist</button>
       </div>
 
-      <img className="l_arr" src={l_arr} alt="" />
-      <p className="l_text">
-        Color changes from
-        <br />
-        yellow to red when
-        <br />
-        the straw comes
-        <br />
-        into contact with a
-        <br />
-        drugged liquid
-      </p>
-      <img className="straw" src={straw} alt="" />
-      <p className="r_text">
-        Made from
-        <br />
-        material...
-      </p>
-      <img className="r_arr" src={r_arr} alt="" />
+      <div className="diagram-container">
+        <img className="l_arr" src={l_arr} alt="" />
+        <p className="l_text">
+          Color changes from
+          <br />
+          yellow to red when
+          <br />
+          the straw comes
+          <br />
+          into contact with a
+          <br />
+          drugged liquid
+        </p>
+        <img className="straw" src={straw} alt="" />
+        <p className="r_text">
+          Made from
+          <br />
+          material...
+        </p>
+        <img className="r_arr" src={r_arr} alt="" />
+      </div>
     </div>
   );
 }

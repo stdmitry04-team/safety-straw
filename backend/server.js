@@ -1,3 +1,5 @@
+require("dotenv").config({ path: "./database.env" });
+require("dotenv").config({ path: "./config.env" });
 const express = require("express");
 const cors = require("cors");
 const { updateEmailContents } = require("./admin_dash.js");
@@ -8,11 +10,9 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
-require("dotenv").config({ path: "./config.env" });
-require("dotenv").config({ path: "./database.env" });
 
 const app = express();
-const PORT = process.env.PORT || 5000;  //in deployment process.env.PORT should be 3000
+const PORT = process.env.PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 const crypto = require("crypto");
@@ -157,13 +157,13 @@ app.post("/api/waitlist", async (req, res) => {
         pass: process.env.EMAIL_PASS,
       },
     });
-    
+
     const verificationLink = `${baseUrl}/api/waitlist/confirm?token=${token}`;
     let mailOptions = {
       from: process.env.EMAIL_USER,
       to: email,
       subject: "Safety Straw Waitlist Email Verification",
-      html: `<p>Please verify your email by clicking <a href="${verificationLink}">here</a>.</p>`
+      html: `<p>Please verify your email by clicking <a href="${verificationLink}">here</a>.</p>`,
     };
 
     transporter.sendMail(mailOptions);
@@ -196,14 +196,14 @@ app.get("/api/waitlist/confirm", async (req, res) => {
 });
 
 // Serve static files from the public directory (serves the built react files in deployment)
-app.use(express.static('public'));
+app.use(express.static("public"));
 
 // Handle React routing, return all other requests to React app
-app.get('*', (req, res) => {
-    // exclude all routes that begin with '/api/', those will be handled by express.js
-    if (!req.path.startsWith('/api/')) {
-        res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    }
+app.get("*", (req, res) => {
+  // exclude all routes that begin with '/api/', those will be handled by express.js
+  if (!req.path.startsWith("/api/")) {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+  }
 });
 
 app.listen(PORT, async () => {});

@@ -1,12 +1,15 @@
 import { useState } from "react";
+import dotenv from "dotenv";
 
 function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-
+  //figure out env later
+  const PORT = 5000;
+  const baseUrl = `http://localhost:${PORT}`;
   const handleSubmit = async (e) => {
     if (username && password) {
-      const response = await fetch("http://localhost:5000/api/verify-login", {
+      const response = await fetch(`${baseUrl}/api/verify-login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -17,9 +20,9 @@ function Login() {
       const { token } = await response.json();
       if (response.ok && token != "ERROR") {
         localStorage.setItem("token", token);
-        window.location = "http://localhost:3000/admin";
+        window.location = `${baseUrl}/admin`;
       } else {
-        window.location = "http://localhost:3000/";
+        window.location = `baseUrl`;
         console.error(data.message);
       }
     }

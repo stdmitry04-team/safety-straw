@@ -32,12 +32,9 @@
 }
 
 .straw {
-  position: absolute;
   z-index: 2;
   width: 13.385vw;
   height: 62.356vh;
-  top: 8.52vh;
-  left: 20vw;
 }
 
 .l_text,
@@ -88,26 +85,26 @@
 
 .l_arr {
   position: absolute;
-  left: 18.95vw;
-  top: 24.63vh;
+  top: 25%;
+  left: 27%;
 }
 
 .r_arr {
   position: absolute;
-  left: 29.53vw;
-  top: 46.85vh;
+  top: 50%;
+  right: 15%;
 }
 
 .l_text {
   position: absolute;
-  top: 28.33vh;
-  left: 8.594vw;
+  top: 35%;
+  left: 0%;
 }
 
 .r_text {
   position: absolute;
-  top: 56.76vh;
-  left: 34.43vw;
+  top: 67%;
+  right: 0;
 }
 
 .product-text-container {
@@ -120,84 +117,67 @@
   right: 10%;
 }
 
+.diagram-container {
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
 @media (max-width: 1500px) {
   .product-text-container {
     top: 25%;
+  }
+
+  .l_arr {
+    left: 20%;
+    top: 30%;
+  }
+  .l_text {
+    left: -10%;
+    font-size: 2rem;
+  }
+  .r_text {
+    font-size: 2rem;
   }
 }
 
 @media (max-width: 1400px) {
   .l_arr {
+    left: 15%;
+    top: 30%;
     width: 10rem;
-    top: 28vh;
-    left: 16vw;
-  }
-
-  .r_arr {
-    width: 8rem;
   }
   .l_text {
-    position: absolute;
-    top: 32vh;
-    left: 6vw;
+    left: -10%;
+    font-size: 2rem;
   }
   .r_text {
-    top: 55vh;
+    font-size: 2rem;
+    top: 63%;
+  }
+  .r_arr {
+    width: 8rem;
   }
 }
 
 @media screen and (max-width: 1100px) {
-  .straw {
-    position: absolute;
-    z-index: 2;
-    width: 100px;
-    height: 300px;
-    top: 38%;
-    left: 44%;
+  .product-text-container {
+    top: 5%;
+    right: 24%;
   }
 
-  .l_arr {
-    position: absolute;
-    left: 35vw;
-    top: 45vh;
-    width: 14%;
-    height: auto;
-  }
-
-  .r_arr {
-    position: absolute;
-    left: 58vw;
-    top: 52vh;
-    width: 12%;
-    height: auto;
-  }
-
-  .l_text,
-  .r_text {
-    font-size: 1.5rem;
-    line-height: 2vh;
-    font-family: "Gantari", "sans-serif";
-    font-weight: 600;
-    max-width: 200px;
+  .diagram-container {
+    top: 20%;
+    left: 35%;
   }
 
   .l_text {
-    position: absolute;
-    top: 50vh;
-    left: 20vw;
-    font-size: 2rem;
+    left: -30%;
+    top: 40%;
   }
-
-  .r_text {
-    position: absolute;
-    top: 60vh;
-    left: 73vw;
-    font-size: 2rem;
-  }
-
-  .product-text-container {
-    top: 10%;
-    right: 24%;
+  .l_arr {
+    top: 35%;
   }
 }
 
@@ -222,15 +202,39 @@
     width: 35rem;
     height: 5rem;
   }
+
+  .l_text {
+    font-size: 2.25rem;
+  }
+  .r_text {
+    font-size: 2.25rem;
+    top: 60%;
+    right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .l_arr {
+    left: 15%;
+    top: 40%;
+    width: 10rem;
+  }
+  .l_text {
+    left: -35%;
+    top: 45%;
+    font-size: 2rem;
+  }
+  .r_text {
+    font-size: 2rem;
+    top: 58%;
+  }
+
+  .straw {
+    width: 18vw;
+  }
 }
 
 @media (max-width: 700px) {
-  .l_arr {
-    left: 35vw;
-  }
-  .r_arr {
-    left: 58vw;
-  }
   .our-product-text {
     font-size: 5rem;
   }
@@ -244,24 +248,36 @@
     width: 40rem;
     height: 6rem;
   }
-}
-
-@media (max-width: 650px) {
-  .product-text-container {
-    right: 13%;
-  }
-}
-
-@media (max-width: 565px) {
-  .r_arr {
-    left: 65vw;
-  }
   .l_text {
     font-size: 3rem;
+    left: -50%;
   }
   .r_text {
     font-size: 3rem;
   }
+}
+
+@media (max-width: 650px) {
+  .product-text-container {
+    right: 16%;
+  }
+
+  .straw {
+    width: 25vw;
+  }
+  .l_arr {
+    width: 12rem;
+  }
+  .r_arr {
+    width: 10rem;
+    right: 5%;
+  }
+  .r_text {
+    right: -10%;
+  }
+}
+
+@media (max-width: 565px) {
   .our-product-text {
     font-size: 7.2rem;
   }
@@ -270,6 +286,15 @@
   }
   .our-product-paragraph {
     font-size: 9rem;
+  }
+  .l_arr {
+    top: 43%;
+  }
+}
+
+@media (max-width: 500px) {
+  .l_text {
+    left: -60%;
   }
 }
 
@@ -281,10 +306,25 @@
   .product-text-container {
     right: 9%;
   }
+  .l_text {
+    font-size: 4rem;
+    left: -70%;
+  }
+  .r_text {
+    font-size: 4rem;
+  }
 }
 
 @media (max-width: 415px) {
   .product-text-container {
     right: 4%;
+  }
+
+  .l_text {
+    left: -90%;
+  }
+  .r_text {
+    right: -15%;
+    top: 55%;
   }
 }
