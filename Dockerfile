@@ -1,7 +1,7 @@
-# Stage 1: Build the frontend
+# Stage 1: Build the Frontend
 FROM node:18-alpine AS frontend-build
 
-# Set working directory for the frontend
+# Set working directory for frontend
 WORKDIR /app/frontend
 
 # Copy frontend package files
@@ -10,16 +10,16 @@ COPY frontend/package*.json ./
 # Install frontend dependencies
 RUN npm install
 
-# Copy the rest of the frontend files
-COPY frontend/ .
+# Copy frontend source code
+COPY frontend/ ./
 
-# Build the frontend application
+# Build the frontend for production
 RUN npm run build
 
-# Stage 2: Build the backend
-FROM node:18-alpine AS backend-build
+# Stage 2: Setup the Backend
+FROM node:18-alpine
 
-# Set working directory for the backend
+# Set working directory for backend
 WORKDIR /app/backend
 
 # Copy backend package files
@@ -28,23 +28,17 @@ COPY backend/package*.json ./
 # Install backend dependencies
 RUN npm install
 
-# Copy the rest of the backend files
-COPY backend/ .
+# Copy backend source code
+COPY backend/ ./
 
-# Stage 3: Final image
-FROM node:18-alpine
+# Copy the built frontend from the previous stage into the backend's 'public' directory
+COPY --from=frontend-build /app/frontend/dist ./public
 
-# Set environment variables
+# Set the environment to production
 ENV NODE_ENV=production
 
-# Copy built frontend from the previous stage
-COPY --from=frontend-build /app/frontend/dist /app/frontend/dist
-
-# Copy backend files from the previous stage
-COPY --from=backend-build /app/backend .
-
-# Expose the port your app runs on
+# Expose the port the app runs on
 EXPOSE 5000
 
 # Start the backend server
-CMD ["node", "server.js"] # Adjust this based on your entry point for the backend
+CMD ["node", "server.js"]
