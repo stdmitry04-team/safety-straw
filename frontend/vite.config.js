@@ -14,4 +14,9 @@ export default defineConfig({
   define: {
     "process.env": {},
   },
+  build: {
+    rollupOptions: {
+      external: ['react-hook-form']
+    }
+  }
 });
