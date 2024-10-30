@@ -1,6 +1,5 @@
 import "../styles/WaitlistModal.css";
 import React, { useState } from 'react';
-import cross from '../assets/close-button.svg';
 // require("dotenv").config({ path: "../backend/config.env" });
 // const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
@@ -11,7 +10,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [validStatus, setValidStatus] = useState(true);
-    const baseUrl = process.env.BASE_URL;
+    const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
 
 
     const handleSubmit = async (e) => {
@@ -62,7 +61,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
              & <span className="highlighted-text"> Privacy Policy</span>.
             </p>
             <button className="modal-close" onClick={onClose}>
-                <img src={cross} width="16" height="16" />
+                <img src="\src\assets\close-button.png" width="16" height="16" />
             </button>
         </div>
         </div>
