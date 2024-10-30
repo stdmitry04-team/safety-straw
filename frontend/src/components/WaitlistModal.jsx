@@ -10,12 +10,14 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [validStatus, setValidStatus] = useState(true);
+    const baseUrl = provess.env.BASE_URL;
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // const response = await fetch(`${backendUrl}/api/waitlist`, {
-        const response = await fetch('http://localhost:5000/api/waitlist', {
+        const response = await fetch(`${baseUrl}/api/waitlist`, {
 
             method: 'POST',
             headers: {
