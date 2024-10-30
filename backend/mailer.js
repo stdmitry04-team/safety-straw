@@ -2,7 +2,10 @@ const nodemailer = require("nodemailer");
 const schedule = require("node-schedule");
 require("dotenv").config({ path: "./config.env" });
 require("dotenv").config({ path: "./database.env" });
+<<<<<<< HEAD
 const { connectDB, connectClient } = require("./connect.js");
+=======
+>>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com", //define mailer service, this one is gmail
@@ -13,6 +16,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, //email needs a "app password" which is created in the gmail settings
   },
 });
+<<<<<<< HEAD
 
 async function main() {
   await sendNewsLetter();
@@ -28,6 +32,37 @@ async function sendNewsLetter() {
   const emails = await waitlistCollection.find({}).toArray();
   let recipients = emails.map((item) => item.email).join(", ");
   const newsletter_content = await fetchNewsLetterContent(db);
+=======
+const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
+const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
+
+async function scheduleMail(date) {
+  schedule.scheduleJob(new Date(date), async () => {
+    // This runs every minute
+    console.log("Scheduled mail");
+    await sendNewsLetter();
+  });
+}
+
+async function sendNewsLetter(token) {
+  let response = await fetch(`${baseUrl}/api/get-recipients?token=${token}`, {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+  let recipients = await response.json();
+  response = await fetch(`${baseUrl}/api/get-newsletter`, {
+    method: "GET",
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+  let newsletter_content = await response.json();
+>>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
   const info = await transporter.sendMail({
     from: `${process.env.MAILING_EMAIL}`,
@@ -36,8 +71,11 @@ async function sendNewsLetter() {
     html: newsletter_content[1],
     attachments: [newsletter_content[2]],
   });
+<<<<<<< HEAD
 
   client.close();
+=======
+>>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 }
 
 /**
@@ -104,6 +142,7 @@ async function fetchNewsLetterContent(db) {
   ];
 }
 
+<<<<<<< HEAD
 // schedule.scheduleJob("* * * * *", () => {
 //   // This runs every minute
 //   console.log("Running job every minute.");
@@ -111,3 +150,6 @@ async function fetchNewsLetterContent(db) {
 // });
 
 module.exports = { fetchNewsLetterContent };
+=======
+module.exports = { fetchNewsLetterContent, sendNewsLetter, scheduleMail };
+>>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f

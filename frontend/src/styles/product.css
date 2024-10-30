@@ -1,129 +1,353 @@
-@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Gantari:wght@600;900&display=swap");
 
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-*{
-    box-sizing: border-box;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 
 .our-product {
-    padding-top:5vh;
-    background: linear-gradient(180deg, #E79B56 0%, #F9C673 30.52%, #FFFFFF 100%);
-    position: relative;
-    height:100vh;
-    width:100vw;
-
+  padding-top: 5vh;
+  background: linear-gradient(180deg, #e79b56 0%, #f9c673 30.52%, #ffffff 100%);
+  position: relative;
+  height: 100vh;
+  width: 100vw;
+  min-height: 800px;
 }
 
 .our-product-background {
-    width: 100%;
-    z-index: 1;
-    width:100%;
-    height: 100%;
+  width: 100%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-.straw{ 
-    position: absolute;
-    z-index: 2;
-    width: 13.385vw;
-    height: 62.356vh;
-    top: 8.52vh;
-    left: 20vw;
+.straw {
+  z-index: 2;
+  width: 13.385vw;
+  height: 62.356vh;
 }
 
-.l_arr {
-    position: absolute;
-    left: 18.95vw;
-    top: 24.63vh;
-
-}
-
-.r_arr {
-    position: absolute;
-    left: 29.53vw;
-    top: 46.85vh;
-
-}
-
-.l_text, .r_text {
-    font-size: 1.875rem;
-    line-height: 2.78vh;
-    font-family: 'Gantari', 'sans-serif';
-    font-weight: 600;
-}
-
-.l_text {
-    position: absolute;
-    top: 28.33vh;
-    left: 8.594vw; 
-}
-
+.l_text,
 .r_text {
-    position: absolute;
-    top: 56.76vh;
-    left: 34.43vw; 
+  font-size: 1.5rem;
+  font-family: "Gantari", "sans-serif";
+  font-weight: 600;
 }
 
 .our-product-paragraph {
-    font-family: 'Aileron', 'sans-serif';
-    font-size: 900;
-    font-size: 4.375rem;
-    line-height: 7.78vh;
-
-    position: absolute;
-    top:14.72vh;
-    right:22.4vw;
+  font-family: "Aileron", "sans-serif";
+  font-size: 4rem;
+  margin-bottom: 1.5rem;
 }
 
-.our-product-text-1, .our-product-text-2 {
-    font-size: 3.125rem;
-    line-height: 5.56vh;
-    font-family: 'Aileron', 'sans-serif';
-    font-weight: 700;
-    text-align: center;
-}
-
-.our-product-text-1 {
-    position: absolute;
-    top: 26.2vh;
-    right: 12.6vw;
-}
-
+.our-product-text-1,
 .our-product-text-2 {
-    position: absolute;
-    top: 39.8vh;
-    right: 14.32vw; 
+  font-family: "Aileron", "sans-serif";
 }
 
-.text-1-color{
-    color: #D63A29;
+.our-product-text {
+  font-size: 3.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
 }
 
-.join-waitlist{
-    position: absolute;
-    background: #D63A29;
-    color: white;
-    font-size: 2.5rem;
-    border-radius: 1.85vh;
-    line-height: 4.4vh;
-    font-family: 'Gantari';
-    font-weight: 600;
-    right: 24.58vw;
-    bottom: 37.13vh;
-    border: none;
-    width: 20.36vw;
-    height: 7.4vh;
+.text-1-color {
+  color: #d63a29;
+}
+
+.join-waitlist {
+  background: #d63a29;
+  color: white;
+  font-size: 2.5rem;
+  border-radius: 1.85vh;
+  font-family: "Gantari";
+  font-weight: 600;
+  border: none;
+  width: 30rem;
+  height: 4rem;
+  margin-top: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.l_arr {
+  position: absolute;
+  top: 25%;
+  left: 27%;
+}
+
+.r_arr {
+  position: absolute;
+  top: 50%;
+  right: 15%;
+}
+
+.l_text {
+  position: absolute;
+  top: 35%;
+  left: 0%;
+}
+
+.r_text {
+  position: absolute;
+  top: 67%;
+  right: 0;
+}
+
+.product-text-container {
+  width: fit-content;
+  height: fit-content;
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+.diagram-container {
+  width: 30%;
+  position: absolute;
+  top: 10%;
+  left: 10%;
+}
+
+@media (max-width: 1500px) {
+  .product-text-container {
+    top: 25%;
+  }
+
+  .l_arr {
+    left: 20%;
+    top: 30%;
+  }
+  .l_text {
+    left: -10%;
+    font-size: 2rem;
+  }
+  .r_text {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 1400px) {
+  .l_arr {
+    left: 15%;
+    top: 30%;
+    width: 10rem;
+  }
+  .l_text {
+    left: -10%;
+    font-size: 2rem;
+  }
+  .r_text {
+    font-size: 2rem;
+    top: 63%;
+  }
+  .r_arr {
+    width: 8rem;
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .product-text-container {
+    top: 5%;
+    right: 24%;
+  }
+
+  .diagram-container {
+    top: 20%;
+    left: 35%;
+  }
+
+  .l_text {
+    left: -30%;
+    top: 40%;
+  }
+  .l_arr {
+    top: 35%;
+  }
+}
+
+@media (max-width: 900px) {
+  .product-text-container {
+    right: 22%;
+  }
+}
+
+@media (max-width: 829px) {
+  .our-product-text {
+    font-size: 4rem;
+  }
+  .product-text-container {
+    right: 18%;
+  }
+  .our-product-paragraph {
+    font-size: 5rem;
+  }
+
+  .join-waitlist {
+    width: 35rem;
+    height: 5rem;
+  }
+
+  .l_text {
+    font-size: 2.25rem;
+  }
+  .r_text {
+    font-size: 2.25rem;
+    top: 60%;
+    right: 0;
+  }
+}
+
+@media (max-width: 800px) {
+  .l_arr {
+    left: 15%;
+    top: 40%;
+    width: 10rem;
+  }
+  .l_text {
+    left: -35%;
+    top: 45%;
+    font-size: 2rem;
+  }
+  .r_text {
+    font-size: 2rem;
+    top: 58%;
+  }
+
+  .straw {
+    width: 18vw;
+  }
+}
+
+@media (max-width: 700px) {
+  .our-product-text {
+    font-size: 5rem;
+  }
+  .product-text-container {
+    right: 18%;
+  }
+  .our-product-paragraph {
+    font-size: 6rem;
+  }
+  .join-waitlist {
+    width: 40rem;
+    height: 6rem;
+  }
+  .l_text {
+    font-size: 3rem;
+    left: -50%;
+  }
+  .r_text {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 650px) {
+  .product-text-container {
+    right: 16%;
+  }
+
+  .straw {
+    width: 25vw;
+  }
+  .l_arr {
+    width: 12rem;
+  }
+  .r_arr {
+    width: 10rem;
+    right: 5%;
+  }
+  .r_text {
+    right: -10%;
+  }
+}
+
+@media (max-width: 565px) {
+  .our-product-text {
+    font-size: 5rem;
+  }
+  .product-text-container {
+    right: 11%;
+  }
+  .our-product-paragraph {
+    font-size: 6rem;
+  }
+  .l_arr {
+    top: 43%;
+  }
+}
+
+@media (max-width: 500px) {
+  .l_text {
+    left: -60%;
+  }
+  .our-product-text {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .straw {
+    left: 38%;
+  }
+
+  .product-text-container {
+    right: 10%;
+    top: 15%;
+  }
+  .l_text {
+    font-size: 4rem;
+    left: -70%;
+  }
+  .r_text {
+    font-size: 4rem;
+  }
+  .our-product-text {
+    font-size: 7rem;
+  }
+}
+
+@media (max-width: 415px) {
+  .product-text-container {
+    right: 8%;
+  }
+
+  .l_text {
+    left: -90%;
+  }
+  .r_text {
+    right: -15%;
+    top: 55%;
+  }
+}
+
+@media (max-height: 950px) and (max-width: 1100px) {
+  .straw {
+    height: 20vw !important;
+  }
+  .diagram-container {
+    top: 40%;
+  }
+  .l_text {
+    left: -40% !important;
+    top: 60%;
+  }
+  .r_text {
+    right: -20%;
+    top: 90%;
+  }
 }
