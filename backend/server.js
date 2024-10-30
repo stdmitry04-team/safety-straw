@@ -10,7 +10,7 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
-
+const path = require('path');
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
