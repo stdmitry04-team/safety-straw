@@ -5,8 +5,11 @@ function Login() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   //figure out env later
-  const PORT = 5000;
-  const baseUrl = `http://localhost:${PORT}`;
+
+  const API_PORT = process.env.API_PORT || 5000;
+  const REG_PORT = process.env.REG_PORT || 3000;
+  const baseUrl = process.env.BASE_URL || `http://localhost:${API_PORT}`;
+  const REG_URL = process.env.REG_URL || `http://localhost:${REG_PORT}`;
   const handleSubmit = async (e) => {
     if (username && password) {
       const response = await fetch(`${baseUrl}/api/verify-login`, {
@@ -20,7 +23,7 @@ function Login() {
       const { token } = await response.json();
       if (response.ok && token != "ERROR") {
         localStorage.setItem("token", token);
-        window.location = `${baseUrl}/admin`;
+        window.location = `${REG_URL}/admin`;
       } else {
         window.location = `baseUrl`;
         console.error(data.message);

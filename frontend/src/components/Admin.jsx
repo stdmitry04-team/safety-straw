@@ -11,13 +11,13 @@ export function Admin() {
   const [subjectTemplate, setSubjectTemplate] = useState("");
   const calendar = useRef(null);
   const token = localStorage.getItem("token");
-  const PORT = process.env.PORT || 5000; // Make sure PORT is defined here
+  const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 
   const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
   const handleSubmit = async (e) => {
     if (subject && header && content) {
-      const response = await fetch(`${baseURL}/api/update`, {
+      const response = await fetch(`${baseUrl}/api/update`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -41,7 +41,7 @@ export function Admin() {
   const getData = async () => {
     try {
       const response = await fetch(
-        `${baseURL}/api/get-newsletter?token=${token}`,
+        `${baseUrl}/api/get-newsletter?token=${token}`,
         {
           method: "GET",
         }
@@ -62,7 +62,7 @@ export function Admin() {
   };
 
   const confirmRole = async () => {
-    const response = await fetch(`${baseURL}/api/get-role?token=${token}`, {
+    const response = await fetch(`${baseUrl}/api/get-role?token=${token}`, {
       method: "GET",
     });
 
@@ -140,7 +140,7 @@ export function Admin() {
           onClick={async () => {
             if (calendar.current.value) {
               let scheduleTime = calendar.current.value + "T12:00:00";
-              await fetch(`${baseURL}/api/schedule-mail`, {
+              await fetch(`${baseUrl}/api/schedule-mail`, {
                 method: "POST",
                 body: JSON.stringify({ date: scheduleTime, token: token }),
                 headers: {
@@ -156,7 +156,7 @@ export function Admin() {
           className="dash-buttons"
           id="send-mail"
           onClick={async () => {
-            await fetch(`${baseURL}/api/send-mail`, {
+            await fetch(`${baseUrl}/api/send-mail`, {
               method: "POST",
               body: JSON.stringify({ token: token }),
               headers: {

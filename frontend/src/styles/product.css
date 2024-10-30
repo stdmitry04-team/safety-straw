@@ -40,7 +40,6 @@
 .l_text,
 .r_text {
   font-size: 1.5rem;
-  line-height: 2.78vh;
   font-family: "Gantari", "sans-serif";
   font-weight: 600;
 }
@@ -279,13 +278,13 @@
 
 @media (max-width: 565px) {
   .our-product-text {
-    font-size: 7.2rem;
+    font-size: 5rem;
   }
   .product-text-container {
-    right: 4%;
+    right: 11%;
   }
   .our-product-paragraph {
-    font-size: 9rem;
+    font-size: 6rem;
   }
   .l_arr {
     top: 43%;
@@ -296,15 +295,19 @@
   .l_text {
     left: -60%;
   }
+  .our-product-text {
+    font-size: 5rem;
+  }
 }
 
-@media (max-width: 450px) {
+@media (max-width: 480px) {
   .straw {
     left: 38%;
   }
 
   .product-text-container {
-    right: 9%;
+    right: 10%;
+    top: 15%;
   }
   .l_text {
     font-size: 4rem;
@@ -313,11 +316,14 @@
   .r_text {
     font-size: 4rem;
   }
+  .our-product-text {
+    font-size: 7rem;
+  }
 }
 
 @media (max-width: 415px) {
   .product-text-container {
-    right: 4%;
+    right: 8%;
   }
 
   .l_text {
@@ -326,5 +332,22 @@
   .r_text {
     right: -15%;
     top: 55%;
+  }
+}
+
+@media (max-height: 950px) and (max-width: 1100px) {
+  .straw {
+    height: 20vw !important;
+  }
+  .diagram-container {
+    top: 40%;
+  }
+  .l_text {
+    left: -40% !important;
+    top: 60%;
+  }
+  .r_text {
+    right: -20%;
+    top: 90%;
   }
 }

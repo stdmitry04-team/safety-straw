@@ -12,7 +12,7 @@ const {
 const { connectDB, connectClient } = require("./connect.js");
 
 const app = express();
-const PORT = process.env.PORT || 5000; // Make sure PORT is defined here
+const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 const crypto = require("crypto");

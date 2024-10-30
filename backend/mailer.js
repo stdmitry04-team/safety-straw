@@ -12,7 +12,7 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, //email needs a "app password" which is created in the gmail settings
   },
 });
-const PORT = process.env.PORT || 5000; // Make sure PORT is defined here
+const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 async function scheduleMail(date) {
