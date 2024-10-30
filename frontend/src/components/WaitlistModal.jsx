@@ -10,7 +10,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [validStatus, setValidStatus] = useState(true);
-    const baseUrl = provess.env.BASE_URL;
+    const baseUrl = process.env.BASE_URL;
 
 
     const handleSubmit = async (e) => {
