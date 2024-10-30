@@ -44,7 +44,7 @@ COPY --from=frontend-build /app/frontend/dist /app/frontend/dist
 COPY --from=backend-build /app/backend .
 
 # Expose the port your app runs on
-EXPOSE 3000
+EXPOSE 5000
 
 # Start the backend server
 CMD ["node", "server.js"] # Adjust this based on your entry point for the backend
