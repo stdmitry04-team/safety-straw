@@ -2,10 +2,6 @@ const nodemailer = require("nodemailer");
 const schedule = require("node-schedule");
 require("dotenv").config({ path: "./config.env" });
 require("dotenv").config({ path: "./database.env" });
-<<<<<<< HEAD
-const { connectDB, connectClient } = require("./connect.js");
-=======
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com", //define mailer service, this one is gmail
@@ -16,23 +12,6 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, //email needs a "app password" which is created in the gmail settings
   },
 });
-<<<<<<< HEAD
-
-async function main() {
-  await sendNewsLetter();
-}
-
-/**
- * Main driver function to send emails
- */
-async function sendNewsLetter() {
-  const client = await connectClient();
-  const db = connectDB(client);
-  const waitlistCollection = db.collection(process.env.WAITLIST_COLLECTION);
-  const emails = await waitlistCollection.find({}).toArray();
-  let recipients = emails.map((item) => item.email).join(", ");
-  const newsletter_content = await fetchNewsLetterContent(db);
-=======
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
@@ -62,7 +41,6 @@ async function sendNewsLetter(token) {
   }
 
   let newsletter_content = await response.json();
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
   const info = await transporter.sendMail({
     from: `${process.env.MAILING_EMAIL}`,
@@ -71,11 +49,6 @@ async function sendNewsLetter(token) {
     html: newsletter_content[1],
     attachments: [newsletter_content[2]],
   });
-<<<<<<< HEAD
-
-  client.close();
-=======
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 }
 
 /**
@@ -142,14 +115,4 @@ async function fetchNewsLetterContent(db) {
   ];
 }
 
-<<<<<<< HEAD
-// schedule.scheduleJob("* * * * *", () => {
-//   // This runs every minute
-//   console.log("Running job every minute.");
-//   main();
-// });
-
-module.exports = { fetchNewsLetterContent };
-=======
 module.exports = { fetchNewsLetterContent, sendNewsLetter, scheduleMail };
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f

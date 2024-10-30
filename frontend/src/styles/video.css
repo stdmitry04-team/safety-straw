@@ -11,9 +11,6 @@
 }
 
 .video {
-<<<<<<< HEAD
-    height: 92vh;
-=======
   height: 92vh;
   background: #e89c57;
   position: relative;
@@ -48,5 +45,4 @@
     width: 87.95vw;
     height: 77.25vh;
   }
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 }
