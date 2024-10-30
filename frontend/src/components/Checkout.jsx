@@ -6,168 +6,124 @@ import img_top from '../images/checkout-pic-top.png';
 import img_mid from '../images/checkout-pic-mid.png';
 import img_bottom from '../images/checkout-pic-bottom.png';
 import straws_img from '../images/checkout-straws.png';
-import React, {useState, useEffect, useRef} from 'react';
+import React, { useState, useEffect } from 'react';
+import { useForm } from "react-hook-form";
 
-export default function Checkout(){
-
-    const formRef = useRef(null);
+export default function Checkout() {
     const [quantity, setQuantity] = useState(1);
     const [checked, setChecked] = useState(false);
-    const [companyname, setCompanyName] = useState('');
-    const [phonenumber, setPhoneNumber] = useState('');
+
+    const {
+        register,
+        handleSubmit,
+        watch,
+        setValue,
+        formState: { errors }
+    } = useForm({
+        defaultValues: {
+            companyName: '',
+            phoneNumber: '',
+            card: {
+                nameOnCard: '',
+                cardNumber: '',
+                expiryDate: '',
+                cvv: ''
+            },
+            checking: {
+                nameOnAccount: '',
+                routingNumber: '',
+                accountNumber: '',
+                confirmAccountNumber: ''
+            },
+            mailingAddress: {
+                address: '',
+                apartment: '',
+                city: '',
+                state: 'Michigan',
+                zip: ''
+            },
+            billingAddress: {
+                address: '',
+                apartment: '',
+                city: '',
+                state: 'Michigan',
+                zip: ''
+            }
+        }
+    });
 
     const stateTaxRates = {
         Michigan: 0.06,
-    };
-
-    const [payerInfo, setPayerInfo] = useState({
-        companyName: '',
-        phoneNumber: ''
-    });
-
-    const [cardInfo, setCardInfo] = useState({
-        nameOnCard: '',
-        cardNumber: '',
-        expiryDate: '',
-        cvv: ''
-    });
-
-    const [checkingInfo, setCheckingInfo] = useState({
-        nameOnAccount: '',
-        routingNumber: '',
-        accountNumber: '',
-        confirmAccountNumber: ''
-    });
-
-    const [mailingAddress, setMailingAddress] = useState({
-        address: '',
-        apartment: '',
-        city: '',
-        state: 'Michigan',
-        zip: '',
-    });
-
-    const [billingAddress, setBillingAddress] = useState({
-        address: '',
-        apartment: '',
-        city: '',
-        state: 'Michigan',
-        zip: '',
-    });
-
-    // calculate tax based on the selected state
-    const calculateTax = (state) => {
-        return totalPrice * (stateTaxRates[state] || 0);
     };
 
     const apiUrl = process.env.REACT_APP_BACKEND_URL || 'https://localhost:5000/api';
     const itemPrice = 10.99;
     const shippingCost = 2.99;
     const totalPrice = quantity * itemPrice;
-    const tax = calculateTax(mailingAddress.state);
+    const tax = totalPrice * (stateTaxRates[watch('mailingAddress.state')] || 0);
     const totalBeforeTax = totalPrice + shippingCost;
     const totalWithTax = totalPrice + tax;
     const grandTotal = totalWithTax + shippingCost;
 
-    const handleCompanyNameChange = (e) => {
-        setCompanyName(e.target.value);
-    };
-    
-    const handlePhoneNumberChange = (e) => {
-        setPhoneNumber(e.target.value);
-    };
-
     const handleChange = (event) => {
-        setQuantity(event.target.value);
+        setQuantity(parseInt(event.target.value));
     };
 
-    // function to handle button click and trigger form submission
-    const handleButtonClick = () => {
-        if (formRef.current) {
-            formRef.current.dispatchEvent(new Event('submit', { bubbles: true })); // trigger form submission
-        }
-    };
+    // Watch mailing address for syncing with billing address
+    const mailingAddress = watch('mailingAddress');
 
-    // main address change handler
-    const handleAddressChange = (e, addressType) => {
-        const { name, value } = e.target;
-        if (addressType === 'mailing') {
-            setMailingAddress(prev => ({ ...prev, [name]: value }));
-            console.log(e.target.value)
-        } else {
-            setBillingAddress(prev => ({ ...prev, [name]: value }));
-        }
-    };
-
-    // useEffect to sync billingAddress with mailingAddress if checked is true
     useEffect(() => {
         if (checked) {
-            setBillingAddress(mailingAddress);
+            Object.keys(mailingAddress).forEach(key => {
+                setValue(`billingAddress.${key}`, mailingAddress[key]);
+            });
         }
-    }, [mailingAddress, checked]);  // Re-run when mailingAddress or checked changes
+    }, [checked, mailingAddress, setValue]);
 
-        // Card and Checking info updates
-        const handleInputChange = (e, section) => {
-            const { name, value } = e.target;
-            if (section === 'card') {
-                setCardInfo(prev => ({ ...prev, [name]: value }));
-            } else if (section === 'checking') {
-                setCheckingInfo(prev => ({ ...prev, [name]: value }));
-            }
+    const onSubmit = async (data) => {
+        const formData = {
+            ...data,
+            quantity,
+            billingAddress: checked ? mailingAddress : data.billingAddress,
         };
-    
-        // Handle form submission
-        const handleSubmit = async (e) => {
-            e.preventDefault();
+
+        try {
+            const response = await fetch(`${apiUrl}/checkout`, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            });
+
+            if (response.ok) {
+                alert('Order submitted successfully!');
+            } else {
+                alert('Failed to submit the order.');
+            }
+        } catch (error) {
+            console.error('Error submitting order:', error);
+        }
+    };
+
+    const smoothScroll = (e) => {
+        e.preventDefault();
+        const targetId = e.currentTarget.getAttribute('href');
+        const targetElement = document.querySelector(targetId);
+        
+        if (targetElement) {
+            targetElement.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start',
+            });
             
-            const formData = {
-                payerInfo,
-                quantity,
-                cardInfo,
-                checkingInfo,
-                mailingAddress,
-                billingAddress: checked ? mailingAddress : billingAddress,
-            };
+            window.history.pushState('', '', targetId);
+        }
+    };
 
-            try {
-                const response = await fetch(`${apiUrl}/checkout`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify(formData),
-                });
-
-                if (response.ok) {
-                    alert('Order submitted successfully!');
-                } else {
-                    alert('Failed to submit the order.');
-                }
-            } catch (error) {
-                console.error('Error submitting order:', error);
-            }
-        };
-
-
-
-        const smoothScroll = (e) => {
-            e.preventDefault();
-            const targetId = e.currentTarget.getAttribute('href');
-            const targetElement = document.querySelector(targetId);
-            
-            if (targetElement) {
-                targetElement.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start',
-                });
-                
-                window.history.pushState('', '', targetId);
-            }
-        };
-
-    return(
+    return (
         <>
-            <Navbar></Navbar>
+            <Navbar />
             <div className="checkout-top">
                 <div className="checkout-left-imgs">
                     <img src={img_top} alt="straw-img-top" />
@@ -177,58 +133,58 @@ export default function Checkout(){
                 </div>
                 <div className="checkout-straws-img">
                     <img className="checkout-straws-img" src={straws_img} alt="straw-img-main" />
-
                 </div>
                 <div className="checkout-right-nav">
                     <p className="checkout-straws-title">Safety Straw (Color-Changing Drug Detection Straws)</p>
                     <div className="checkout-price">
-                        <span class="checkout-currency">$</span>
-                        <span class="checkout-amount">10</span>
-                        <span class="checkout-cents">99</span>   
+                        <span className="checkout-currency">$</span>
+                        <span className="checkout-amount">10</span>
+                        <span className="checkout-cents">99</span>   
                     </div>
 
-                    <select className="checkout-quantity-dropdown" id="quantity" name="quantity" value={quantity} onChange={handleChange}>
+                    <select 
+                        className="checkout-quantity-dropdown" 
+                        id="quantity" 
+                        name="quantity" 
+                        value={quantity} 
+                        onChange={handleChange}
+                    >
                         {Array.from({ length: 10 }, (_, index) => (
-                        <option key={index + 1} value={index + 1}>
-                            Qty: {(index + 1) * 100} Pack
-                        </option>
+                            <option key={index + 1} value={index + 1}>
+                                Qty: {(index + 1) * 100} Pack
+                            </option>
                         ))}
                     </select>
                     
                     <div className="continue-purchase">
                         <h1>
-                            <a 
-                                href="#checkout" 
-                                className="purchase-link"
-                                onClick={smoothScroll}
-                            >
+                            <a href="#checkout" className="purchase-link" onClick={smoothScroll}>
                                 Continue to purchase
                             </a>
                         </h1>
-                        <a 
-                            href="#checkout" 
-                            className="arrow-link"
-                            onClick={smoothScroll}
-                        >
+                        <a href="#checkout" className="arrow-link" onClick={smoothScroll}>
                             <img src={arrow} alt="continue-arrow" />
                         </a>
                     </div>
-                
                 </div>
-
             </div>
-          
-
 
             <div className="checkout-bottom" id="checkout">
                 <div className="payment-information">
-                    {/* <h1 className="payment-info">Payment Information</h1> */}
-                    <form className="checkout-form" ref={formRef} onSubmit={handleSubmit} action="#">
+                    <form className="checkout-form" onSubmit={handleSubmit(onSubmit)}>
                         <div className="input-group">
-                            <input type="text" placeholder="Company Name (optional)"></input>
+                            <input 
+                                type="text" 
+                                placeholder="Company Name (optional)"
+                                {...register("companyName")}
+                            />
                         </div>
                         <div className="checkout-input-group">
-                            <input type="text" placeholder="Phone Number (optional)"></input>
+                            <input 
+                                type="text" 
+                                placeholder="Phone Number (optional)"
+                                {...register("phoneNumber")}
+                            />
                         </div>
                         
                         <h3>Pay With Card</h3>
@@ -236,38 +192,52 @@ export default function Checkout(){
                             <input
                                 type="text"
                                 placeholder="Name on Card"
-                                name='nameOnCard'
-                                onChange={(e) => handleInputChange(e, 'card')}
-                                value={cardInfo.nameOnCard}
-                                ></input>
+                                {...register("card.nameOnCard", { required: "Name on card is required" })}
+                            />
+                            {errors.card?.nameOnCard && <span className="error">{errors.card.nameOnCard.message}</span>}
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Card Number"
-                                name='cardNumber'
-                                onChange={(e) => handleInputChange(e, 'card')}
-                                value={cardInfo.cardNumber}
-                            ></input>
+                                {...register("card.cardNumber", { 
+                                    required: "Card number is required",
+                                    pattern: {
+                                        value: /^[0-9]{16}$/,
+                                        message: "Please enter a valid 16-digit card number"
+                                    }
+                                })}
+                            />
+                            {errors.card?.cardNumber && <span className="error">{errors.card.cardNumber.message}</span>}
                         </div>
                         <div className="checkout-input-group date-cvv">
                             <div className="half-width">
                                 <input 
                                     type="text"
                                     placeholder="Ex. Date 00/00"
-                                    name='expiryDate'
-                                    onChange={(e) => handleInputChange(e, 'card')}
-                                    value={cardInfo.expiryDate}
-                                ></input>
+                                    {...register("card.expiryDate", {
+                                        required: "Expiry date is required",
+                                        pattern: {
+                                            value: /^(0[1-9]|1[0-2])\/([0-9]{2})$/,
+                                            message: "Please enter a valid date (MM/YY)"
+                                        }
+                                    })}
+                                />
+                                {errors.card?.expiryDate && <span className="error">{errors.card.expiryDate.message}</span>}
                             </div>
                             <div className="checkout-half-width">
                                 <input
                                     type="text"
                                     placeholder="CVV"
-                                    name='cvv'
-                                    onChange={(e) => handleInputChange(e, 'card')}
-                                    value={cardInfo.cvv}
-                                ></input>
+                                    {...register("card.cvv", {
+                                        required: "CVV is required",
+                                        pattern: {
+                                            value: /^[0-9]{3,4}$/,
+                                            message: "Please enter a valid CVV"
+                                        }
+                                    })}
+                                />
+                                {errors.card?.cvv && <span className="error">{errors.card.cvv.message}</span>}
                             </div>
                         </div>
                         
@@ -276,37 +246,40 @@ export default function Checkout(){
                             <input
                                 type="text"
                                 placeholder="Name on Account"
-                                name='nameOnAccount'
-                                onChange={(e) => handleInputChange(e, 'checking')}
-                                value={checkingInfo.nameOnAccount}
-                            ></input>
+                                {...register("checking.nameOnAccount")}
+                            />
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Routing Number"
-                                name='routingNumber'
-                                onChange={(e) => handleInputChange(e, 'checking')}
-                                value={checkingInfo.routingNumber}
-                            ></input>
+                                {...register("checking.routingNumber", {
+                                    pattern: {
+                                        value: /^[0-9]{9}$/,
+                                        message: "Please enter a valid 9-digit routing number"
+                                    }
+                                })}
+                            />
+                            {errors.checking?.routingNumber && <span className="error">{errors.checking.routingNumber.message}</span>}
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Account Number"
-                                name='accountNumber'
-                                onChange={(e) => handleInputChange(e, 'checking')}
-                                value={checkingInfo.accountNumber}
-                            ></input>
+                                {...register("checking.accountNumber")}
+                            />
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Confirm Account Number"
-                                name='confirmAccountNumber'
-                                onChange={(e) => handleInputChange(e, 'checking')}
-                                value={checkingInfo.confirmAccountNumber}
-                            ></input>
+                                {...register("checking.confirmAccountNumber", {
+                                    validate: value => 
+                                        value === watch("checking.accountNumber") || 
+                                        "Account numbers do not match"
+                                })}
+                            />
+                            {errors.checking?.confirmAccountNumber && <span className="error">{errors.checking.confirmAccountNumber.message}</span>}
                         </div>
                         
                         <h3>Mailing Address</h3>
@@ -314,50 +287,49 @@ export default function Checkout(){
                             <input
                                 type="text"
                                 placeholder="Address"
-                                name='address'
-                                onChange={(e) => handleAddressChange(e, 'mailing')}
-                                value={mailingAddress.address}
-                            ></input>
+                                {...register("mailingAddress.address", { required: "Address is required" })}
+                            />
+                            {errors.mailingAddress?.address && <span className="error">{errors.mailingAddress.address.message}</span>}
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Apartment, suite, etc."
-                                name='apartment'
-                                onChange={(e) => handleAddressChange(e, 'mailing')}
-                                value={mailingAddress.apartment}
-                            ></input>
+                                {...register("mailingAddress.apartment")}
+                            />
                         </div>
                         <div className="checkout-input-group city-state-zip">
                             <div className="half-width">
                                 <input
                                     type="text"
                                     placeholder="City"
-                                    name='city'
-                                    onChange={(e) => handleAddressChange(e, 'mailing')}
-                                    value={mailingAddress.city}
-                                ></input>
+                                    {...register("mailingAddress.city", { required: "City is required" })}
+                                />
+                                {errors.mailingAddress?.city && <span className="error">{errors.mailingAddress.city.message}</span>}
                             </div>
 
                             <div className="select-wrapper">
                                 <label className="select-label">State</label>
                                 <select 
-                                value={mailingAddress.state} 
-                                name='state'
-                                onChange={(e) => handleAddressChange(e, 'mailing')}
-                                className="select-field"
+                                    {...register("mailingAddress.state")}
+                                    className="select-field"
                                 >
-                                <option value="Michigan">Michigan</option>
+                                    <option value="Michigan">Michigan</option>
                                 </select>
                             </div>
                             <div className="checkout-input-group">
                                 <input
                                     type="text"
                                     placeholder="ZIP Code"
-                                    name='zip'
-                                    onChange={(e) => handleAddressChange(e, 'mailing')}
-                                    value={mailingAddress.zip}
-                                ></input>
+                                    {...register("mailingAddress.zip", {
+                                        required: "ZIP code is required",
+                                        pattern: {
+                                            value: /^[0-9]{5}(-[0-9]{4})?$/,
+                                            message: "Please enter a valid ZIP code"
+                                        }
+                                    })}
+                                />
+                                {errors.mailingAddress?.zip && <span className="error">{errors.mailingAddress.zip.message}</span>}
                             </div>
                         </div>
 
@@ -374,59 +346,66 @@ export default function Checkout(){
                             </button>
                             <span className="same-as-label">same as mailing address</span>
                         </div>
-                        <div className="checkout-input-group">
-                            <input
-                                type="text"
-                                placeholder="Address"
-                                name='address'
-                                onChange={(e) => handleAddressChange(e, 'billing')}
-                                value={billingAddress.address}
-                            ></input>
-                        </div>
-                        <div className="checkout-input-group">
-                            <input
-                                type="text"
-                                placeholder="Apartment, suite, etc."
-                                name='apartment'
-                                onChange={(e) => handleAddressChange(e, 'billing')}
-                                value={billingAddress.apartment}
-                            ></input>
-                        </div>
-                        <div className="checkout-input-group city-state-zip checkout-form-bottom-input">
-                            <div className="half-width">
-                                <input
-                                    type="text"
-                                    placeholder="City"
-                                    name='city'
-                                    onChange={(e) => handleAddressChange(e, 'billing')}
-                                    value={billingAddress.city}
-                                ></input>
-                            </div>
+                        
+                        {!checked && (
+                            <>
+                                <div className="checkout-input-group">
+                                    <input
+                                        type="text"
+                                        placeholder="Address"
+                                        {...register("billingAddress.address", { required: "Address is required" })}
+                                    />
+                                    {errors.billingAddress?.address && <span className="error">{errors.billingAddress.address.message}</span>}
+                                </div>
+                                <div className="checkout-input-group">
+                                    <input
+                                        type="text"
+                                        placeholder="Apartment, suite, etc."
+                                        {...register("billingAddress.apartment")}
+                                    />
+                                </div>
+                                <div className="checkout-input-group city-state-zip checkout-form-bottom-input">
+                                    <div className="half-width">
+                                        <input
+                                            type="text"
+                                            placeholder="City"
+                                            {...register("billingAddress.city", { required: "City is required" })}
+                                        />
+                                        {errors.billingAddress?.city && <span className="error">{errors.billingAddress.city.message}</span>}
+                                    </div>
 
-                            <div className="select-wrapper">
-                                <label className="select-label">State</label>
-                                <select 
-                                value={billingAddress.state}
-                                name='state' 
-                                onChange={(e) => handleAddressChange(e, 'billing')}
-                                className="select-field"
-                                >
-                                <option value="Michigan">Michigan</option>
-                                </select>
-                            </div>
-                            <div className="checkout-input-group">
-                                <input
-                                    type="text"
-                                    placeholder="ZIP Code"
-                                    name='zip'
-                                    onChange={(e) => handleAddressChange(e, 'billing')}
-                                    value={billingAddress.zip}
-                                ></input>
-                            </div>
-                        </div>
+                                    <div className="select-wrapper">
+                                        <label className="select-label">State</label>
+                                        <select 
+                                            {...register("billingAddress.state")}
+                                            className="select-field"
+                                        >
+                                            <option value="Michigan">Michigan</option>
+                                        </select>
+                                    </div>
+                                    <div className="checkout-input-group">
+                                        <input
+                                            type="text"
+                                            placeholder="ZIP Code"
+                                            {...register("billingAddress.zip", {
+                                                required: "ZIP code is required",
+                                                pattern: {
+                                                    value: /^[0-9]{5}(-[0-9]{4})?$/,
+                                                    message: "Please enter a valid ZIP code"
+                                                }
+                                            })}
+                                        />
+                                        {errors.billingAddress?.zip && <span className="error">{errors.billingAddress.zip.message}</span>}
+                                    </div>
+                                </div>
+                            </>
+                        )}
                     </form>
                 </div>
-                <button className="place-order-mobile" onClick={handleButtonClick}>Place Your Order</button>
+                <button className="place-order-mobile" type="submit" onClick={handleSubmit(onSubmit)}>
+                        Place Your Order
+                </button>
+                {/* <button className="place-order-mobile" onClick={handleButtonClick}>Place Your Order</button> */}
                 
                 <div className="summary">
                     <div className="summary-info">
@@ -452,7 +431,10 @@ export default function Checkout(){
                             <h1>${grandTotal.toFixed(2)}</h1>
                         </div>
                     </div>
-                    <button className="place-order" onClick={handleButtonClick}>Place Your Order</button>
+                    <button className="place-order" type="submit" onClick={handleSubmit(onSubmit)}>
+                        Place Your Order
+                    </button>
+                    {/* <button className="place-order" onClick={handleButtonClick}>Place Your Order</button> */}
 
                 </div>
 

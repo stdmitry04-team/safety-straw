@@ -431,6 +431,7 @@ input{
     font-family: 'Gantari', sans-serif;
     font-weight: 600;
     cursor: pointer;
+    letter-spacing: 0.1rem;
 }
 
 .place-order:hover{
@@ -446,6 +447,14 @@ input{
     border-top: 2px solid black;
     width: 100%;
     margin-bottom: 1vh;
+}
+
+.error{
+    color: #cc0000;
+    font-family: 'Gantari', sans-serif;
+    font-size: 1.5rem;
+    position: relative;
+    top: -2vh;
 }
 
 @media screen and (max-width: 440px){
