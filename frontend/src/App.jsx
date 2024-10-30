@@ -19,7 +19,7 @@ import Checkout from "./components/Checkout.jsx";
 function App() {
   return (
     <div className="app">
-      {/* <Navbar/>
+      <Navbar/>
       <Video/>
       <Product></Product>
       <Background></Background>
@@ -27,8 +27,7 @@ function App() {
       <AboutUs></AboutUs>
       <Blogsection></Blogsection>
       <WaitlistBar/>
-      <Footer/> */}
-      <Checkout></Checkout>
+      <Footer/>
     </div>
 
   );
