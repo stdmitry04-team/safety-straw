@@ -1,0 +1,5 @@
+NEWS_COLLECTION = <newsletter_collection_name>
+WAITLIST_COLLECTION = <waitlist_collection_name>
+MAIN_NEWSLETTER = <value of 'name' for the newsletter in the collection>
+DATABASE_NAME = <db name>
+MAILING_EMAIL = <From email for the newsletter>
