@@ -84,7 +84,6 @@ app.get("/api/get-recipients", async (req, res) => {
 
 app.post("/api/send-mail", async (req, res) => {
   const { token } = req.body;
-  console.log(token);
   if (verifyAdmin(token)) {
     await sendNewsLetter(token);
   } else {
@@ -103,7 +102,6 @@ app.post("/api/schedule-mail", async (req, res) => {
 
 app.post("/api/verify-login", async (req, res) => {
   const { user, pwd } = req.body;
-  console.log(user, pwd);
   res.json({ token: await verifyLogin(user, pwd) });
 });
 
@@ -198,12 +196,12 @@ app.get("/api/waitlist/confirm", async (req, res) => {
 // Serve static files from the public directory (serves the built react files in deployment)
 app.use(express.static("public"));
 
-// Handle React routing, return all other requests to React app
-app.get("*", (req, res) => {
-  // exclude all routes that begin with '/api/', those will be handled by express.js
-  if (!req.path.startsWith("/api/")) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-  }
-});
+//Handle React routing, return all other requests to React app
+// app.get("*", (req, res) => {
+//   // exclude all routes that begin with '/api/', those will be handled by express.js
+//   if (!req.path.startsWith("/api/")) {
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
+//   }
+// });
 
 app.listen(PORT, async () => {});
