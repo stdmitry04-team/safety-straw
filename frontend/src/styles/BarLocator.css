@@ -14,12 +14,11 @@
 .bar-locator{
     width:78.8vw;
     height:97.22vh;
-    margin-left:10.57vw;
-    margin-right:auto;
+    margin-left:10.57vw !important;
+    margin-right:auto !important;
     margin:0;
     padding:0;
     box-sizing:border-box;
-    
 }
 
 .bar-locator-container{
@@ -27,10 +26,10 @@
     width:78.8vw;
     border-radius:2.75rem;
     border: 4px solid #E3E3E3;
-
+    background-color:white;
     position:relative;
 }
-.bar-locator h1{
+.bar-locator-title{
     width:26.56vw;
     height:9.35vh;
     margin-left:27.03vw;
@@ -64,10 +63,12 @@
     margin-left:2.083vw;
     margin-right:auto;
     margin-top:3.66vh;
+    display:flex;
+    flex-direction:row;
 
 }
 .bar-locator-map{
-    border:1px solid green;
+
     width:43.9vw;
     height:69.37vh;
     margin-left:33.39vw;
@@ -79,6 +80,39 @@
     bottom:2.315vh;
     
 }
-.bar-locator-search input{
-
+.bar-locator-addresses{
+    margin-left:2.083vw;
+    width:29.73vw;
+    height:63.84vh;
+    border-right: 2.64px solid #E3E3E3;
+    max-height: 100%; /* Set a specific height or max-height */
+    overflow-y: auto;
+    
 }
+.bar-locator-search input{
+    width:23.41vw;
+    height:3.013vh;
+    font-size:1.76rem;
+    font-weight:400;
+    font-family: 'Aileron', sans-serif;
+    color:#000000;
+    line-height:2.11rem;
+    border:none;
+    margin-top:1.2vh;
+    margin-bottom:auto;
+    outline:none;
+}
+.bar-locator-search img{
+    border:none;
+    background-color:white;
+    width:1.458vw;
+    height:2.685vh;
+    margin-left:0.73vw;
+    margin-right:0.885vw;
+    margin-top:1.3vh;
+    margin-bottom:auto;
+}
+.map-container{
+    border-radius:2.75rem;
+}
+
