@@ -7,10 +7,7 @@ import img_mid from '../images/checkout-pic-mid.png';
 import img_bottom from '../images/checkout-pic-bottom.png';
 import straws_img from '../images/checkout-straws.png';
 import React, { useState, useEffect } from 'react';
-// import { useForm } from "react-hook-form";
-import {
-     useForm, FormProvider 
-  } from 'https://npm.reversehttp.com/preact,react:preact/compat,htm/preact,react-hook-form';
+import { useForm } from "react-hook-form";
 
 export default function Checkout() {
     const [quantity, setQuantity] = useState(1);
