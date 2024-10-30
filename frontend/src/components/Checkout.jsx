@@ -9,8 +9,7 @@ import straws_img from '../images/checkout-straws.png';
 import React, { useState, useEffect } from 'react';
 // import { useForm } from "react-hook-form";
 import {
-    html, render,  // these are from preact & htm
-    useForm, FormProvider   // these are from react-hook-form
+     useForm, FormProvider 
   } from 'https://npm.reversehttp.com/preact,react:preact/compat,htm/preact,react-hook-form';
 
 export default function Checkout() {
