@@ -6,6 +6,8 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import { BlogPage } from "./components/blogpage.jsx";
 import Login from "./components/Login.jsx";
 import { Admin } from "./components/Admin.jsx";
+import Checkout from "./components/Checkout.jsx";
+
 //change elements as we develop pages
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -14,6 +16,7 @@ const router = createBrowserRouter([
   { path: "/blog", element: <BlogPage /> },
   { path: "/admin", element: <Admin /> },
   { path: "/login", element: <Login /> },
+  { path: "/checkout", element: <Checkout /> },
 ]);
 
 createRoot(document.getElementById("root")).render(

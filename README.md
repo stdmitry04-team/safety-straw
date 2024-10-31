@@ -21,7 +21,7 @@
 ### Frontend
 
  - cd into 'frontend'
- - Create .env file inside of the backend folder
+ - Create .env file inside of the folder
  - Copy insides of .env.example to .env and put your variables there. For PORT, use 3000; For REACT_APP_BACKEND_URL, use http://localhost:5000
 
 ### How to Run Local Host

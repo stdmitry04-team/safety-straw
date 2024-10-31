@@ -9,6 +9,9 @@ import Product from "./components/product.jsx"
 import WaitlistBar from "./components/WaitlistBar.jsx";
 import WaitlistModal from "./components/WaitlistModal.jsx";
 import AboutUs from "./components/AboutUs.jsx";
+import Blogsection from "./components/blogsection.jsx";
+import Checkout from "./components/Checkout.jsx";
+
 import BlogSection from "./components/blogsection.jsx";
 
 

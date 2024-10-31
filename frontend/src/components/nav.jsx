@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from '../assets/logo.svg'
 import logo_text from '../assets/logo-text.svg'
 import mobileLogoText from '../assets/mobile-logo-text.svg'
@@ -32,18 +33,18 @@ function Navbar() {
     return (
         <nav className="navbar">
           <div className="navbar-left">
-            <a href="#" className="navbar-logo" onClick={topFunction}>
+            <Link to="/" className="navbar-logo" onClick={topFunction}>
               <img src={logo} alt="Safety Straw Logo" className="logo-image" />
               <img src={logo_text} alt="Safety Straw Logo" className="logo-text desktop-logo-text"/>
               <img src={mobileLogoText} alt="Safety Straw Logo" className="logo-text mobile-logo-text" />
-            </a>
+            </Link>
           </div>
     
     
           <div className="navbar-right">
             <div className="desktop-links">
-                <a href="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</a>
-                <a href="#" className="nav-link">Merchandise</a>
+                <Link to="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</Link>
+                <Link to="#" className="nav-link">Merchandise</Link>
                 <button className="nav-link btn-link">Bar Locator</button>
                 <button className="nav-link btn-link">Blog</button>
                 <button onClick={openModal} className="join-btn">Join Waitlist</button>
@@ -60,9 +61,9 @@ function Navbar() {
 
           {isDropdownOpen && (
           <div className="dropdown-menu">
-            <a href="#" className="nav-link" onClick={topFunction}>SAFETY STRAW</a>
-            <a href="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</a>
-            <a href="#" className="nav-link" onClick={() => setDropdownOpen(false)}>Merchandise</a>
+            <Link to="/" className="nav-link" onClick={topFunction}>SAFETY STRAW</Link>
+            <Link to="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</Link>
+            <Link to="#" className="nav-link" onClick={() => setDropdownOpen(false)}>Merchandise</Link>
             <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Bar Locator</button>
             <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Blog</button>
           </div>

@@ -12,6 +12,8 @@ const transporter = nodemailer.createTransport({
     pass: process.env.EMAIL_PASS, //email needs a "app password" which is created in the gmail settings
   },
 });
+const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
+const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 async function scheduleMail(date) {
   schedule.scheduleJob(new Date(date), async () => {
@@ -22,19 +24,15 @@ async function scheduleMail(date) {
 }
 
 async function sendNewsLetter(token) {
-  let response = await fetch(
-    `http://localhost:5000/api/get-recipients?token=${token}`,
-    {
-      method: "GET",
-    }
-  );
+  let response = await fetch(`${baseUrl}/api/get-recipients?token=${token}`, {
+    method: "GET",
+  });
 
   if (!response.ok) {
     throw new Error(`HTTP error! Status: ${response.status}`);
   }
   let recipients = await response.json();
-
-  response = await fetch("http://localhost:5000/api/get-newsletter", {
+  response = await fetch(`${baseUrl}/api/get-newsletter`, {
     method: "GET",
   });
 

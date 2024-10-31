@@ -38,7 +38,7 @@ COPY --from=frontend-build /app/frontend/dist ./public
 ENV NODE_ENV=production
 
 # Expose the port the app runs on
-EXPOSE 3000
+EXPOSE 5000
 
 # Start the backend server
 CMD ["node", "server.js"]

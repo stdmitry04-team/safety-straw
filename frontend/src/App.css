@@ -1,8 +1,6 @@
 #root {
   display: flex;
   flex-direction: column;
-  height:100vh;
-  width:100vw;
 }
 
 .app {
@@ -13,7 +11,8 @@
   overflow-y: scroll;
 }
 
-html, body {
+html,
+body {
   margin: 0;
   padding: 0;
   height: fit-content;
