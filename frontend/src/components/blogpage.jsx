@@ -3,6 +3,7 @@ import blog_l_image from "../images/blogimageleft.png"
 import blog_r_image from "../images/blogimageright.png"
 import carrot_2 from "../assets/blogcarrot2.svg"
 import blog_page_image from "../assets/blogpagemainimg.svg"
+import blog_page_article from "../assets/blogpage-article.svg"
 import "../styles/blogpage.css";
 
 export function BlogPage() {
@@ -10,6 +11,9 @@ export function BlogPage() {
         <div className = "blog_page">
             <div className = "blog_page_left">
                 <img className = "blog_page_image" src={blog_page_image} alt="" />
+                <img className = "blog_page_article" src={blog_page_article} alt="" />
+                
+                
             </div>
             <div className="sidebar_posts">
                 <div className = "right_title">
