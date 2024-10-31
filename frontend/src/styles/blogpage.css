@@ -18,16 +18,16 @@
     font-weight: 400;
     font-style: normal;
 }
-.blog-post-image {
+.blog_post_image {
     width: 15.199vw;
     height: 26.139vh;
 }
-.side-bar-posts {
+.sidebar_posts {
     padding-top: 21.944vh;
     padding-left: 77.97vw;
     margin-bottom: 20px;
 }
-.right-title {
+.right_title {
     font-family: 'Aileron', 'sans-serif';
     font-weight: 700;
     font-size: 25px;
@@ -43,11 +43,11 @@
     top: 14.907vh;
     object-fit: contain;
 }
-.carrot-label {
+.carrot_label {
     padding-bottom: 5.184vh;
 }
 /* Styling for the blog post dates */
-.blog-post .side-bar-posts .blog-post-date {
+.blog-post .sidebar_posts .blog_post_date {
     font-family: 'Aileron-l', sans-serif;
     font-weight: 400;
     font-size: 18px; 
@@ -57,7 +57,7 @@
 }
 
 /* Styling for the blog post titles */
-.blog-post .side-bar-posts .blog-post-title {
+.blog_post .sidebar_posts .blog_post_title {
     font-family: 'Aileron', sans-serif;
     font-weight: 700;
     font-size: 24px; 
