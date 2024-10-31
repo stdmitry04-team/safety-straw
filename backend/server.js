@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-const express = require("express");
-const cors = require("cors");
-const { updateEmailContents } = require("./admin_dash.js");
-const { fetchNewsLetterContent } = require("./mailer.js");
-const { connectDB, connectClient } = require("./connect.js");
-require("dotenv").config({ path: "./config.env" });
-=======
 require("dotenv").config({ path: "./database.env" });
 require("dotenv").config({ path: "./config.env" });
 const express = require("express");
@@ -18,7 +10,6 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
@@ -30,13 +21,8 @@ const nodemailer = require("nodemailer");
 app.use(cors());
 app.use(express.json());
 
-<<<<<<< HEAD
-app.post("/api/waitlist", async (req, res) => {
-  const { name, email } = req.body;
-=======
 app.use(cors());
 app.use(express.json());
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
 async function verifyAdmin(token) {
   const client = await connectClient();

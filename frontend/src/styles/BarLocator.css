@@ -1,118 +1,101 @@
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Bold.otf') format('opentype');
-    font-weight: 700;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
 }
 
-.bar-locator{
-    width:78.8vw;
-    height:97.22vh;
-    margin-left:10.57vw !important;
-    margin-right:auto !important;
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+.bar-locator {
+  width: 80vw;
+  height: fit-content;
+  margin: 0 auto 0 auto;
+  box-sizing: border-box;
 }
 
-.bar-locator-container{
-    height:84.53vh;
-    width:78.8vw;
-    border-radius:2.75rem;
-    border: 4px solid #E3E3E3;
-    background-color:white;
-    position:relative;
-}
-.bar-locator-title{
-    width:26.56vw;
-    height:9.35vh;
-    margin-left:27.03vw;
-    margin-right:auto;
-    line-height:5.25rem;
-    font-size:4.375rem;
-    font-weight:900;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    margin-bottom:3.24vh;
-}
-.bar-locator-text{
-    width:49.69vw;
-    height:4.72vh;
-    margin-left:2.083vw;
-    margin-right:auto;
-    margin-top:3.45vh;
-}
-.bar-locator-text p{
-    font-size:2.63rem;
-    font-weight:700;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    line-height:3.166rem;
-}
-.bar-locator-search{
-    border: 2.64px solid #E3E3E3;
-    border-radius:1.1rem;
-    width:27.76vw;
-    height:5.537vh;
-    margin-left:2.083vw;
-    margin-right:auto;
-    margin-top:3.66vh;
-    display:flex;
-    flex-direction:row;
-
-}
-.bar-locator-map{
-
-    width:43.9vw;
-    height:69.37vh;
-    margin-left:33.39vw;
-    margin-right:auto;
-    margin-top:12.95vh;
-    margin-bottom:auto;
-    border-radius:2.75rem;
-    position:absolute;
-    bottom:2.315vh;
-    
-}
-.bar-locator-addresses{
-    margin-left:2.083vw;
-    width:29.73vw;
-    height:63.84vh;
-    border-right: 2.64px solid #E3E3E3;
-    max-height: 100%; /* Set a specific height or max-height */
-    overflow-y: auto;
-    
-}
-.bar-locator-search input{
-    width:23.41vw;
-    height:3.013vh;
-    font-size:1.76rem;
-    font-weight:400;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    line-height:2.11rem;
-    border:none;
-    margin-top:1.2vh;
-    margin-bottom:auto;
-    outline:none;
-}
-.bar-locator-search img{
-    border:none;
-    background-color:white;
-    width:1.458vw;
-    height:2.685vh;
-    margin-left:0.73vw;
-    margin-right:0.885vw;
-    margin-top:1.3vh;
-    margin-bottom:auto;
-}
-.map-container{
-    border-radius:2.75rem;
+.bar-locator-container {
+  height: 60rem;
+  width: 100%;
+  border-radius: 2.75rem;
+  border: 4px solid #e3e3e3;
+  background-color: white;
 }
 
+.bar-locator-columns {
+  display: grid;
+  grid-template-columns: 40% 60%;
+}
+.bar-locator-title {
+  text-align: center;
+  width: fit-content;
+  margin: 0 auto 3rem auto;
+  font-size: 4.375rem;
+  font-weight: 900;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+}
+.bar-locator-text {
+  width: fit-content;
+  margin-left: 5%;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.bar-locator-text p {
+  font-size: 2.63rem;
+  font-weight: 700;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  line-height: 3.166rem;
+}
+.bar-locator-search {
+  border: 2.64px solid #e3e3e3;
+  border-radius: 1.1rem;
+  width: 95%;
+  height: 4rem;
+  margin: 0 auto 0 5%;
+  display: flex;
+  flex-direction: row;
+}
+.bar-locator-map {
+  width: 90%;
+  height: 45rem;
+  margin: 5% 0 5% 6%;
+  border-radius: 2.75rem;
+}
+.bar-locator-addresses {
+  margin-left: 5%;
+  width: 100%;
+  border-right: 2.64px solid #e3e3e3;
+  overflow-y: auto;
+  height: 45rem;
+}
+.bar-locator-search input {
+  width: 100%;
+  height: 100%;
+  font-size: 1.76rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  padding: 0;
+  line-height: normal;
+  margin: 0 0 0 1rem;
+  min-height: none;
+}
+.bar-locator-search img {
+  border: none;
+  background-color: white;
+  width: 2rem;
+  margin: auto 0 auto 1rem;
+}
+.map-container {
+  border-radius: 2.75rem;
+}
+
+.bar-locator-left-col {
+  height: 100%;
+}

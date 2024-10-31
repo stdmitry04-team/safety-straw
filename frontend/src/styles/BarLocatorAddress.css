@@ -1,67 +1,55 @@
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
 }
 @font-face {
-    font-family: 'Aileron';
-    src: url('../fonts/Aileron-Regular.otf') format('opentype');
-    font-weight: 400;
-    font-style: normal;
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
 }
 
-.bar-locator-address{
-    height:25.27vh;
-    width:27.76vw;
-    border-bottom: 2.64px solid #E3E3E3;
-    display:flex;
-    flex-direction:column;
-    text-align:left;
-    margin-left:2.083vw;
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+.bar-locator-address {
+  height: 35%;
+  width: 90%;
+  border-bottom: 2.64px solid #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 2.083vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.bar-name{
-    font-size:1.76rem;
-    font-weight:900;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    line-height:2.11rem;
-    height:3.09vh;
-    width:17.5vw;
-    margin-top:1.68rem;
+.bar-name {
+  font-size: 1.76rem;
+  font-weight: 900;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 1.68rem;
 }
-.bar-number{
-    font-size:1.76rem;
-    font-weight:400;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    line-height:2.11rem;
-    height:3.09vh;
-    width:10.17vw;
-    margin-top:1.8125rem;
+.bar-number {
+  font-size: 1.76rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 1.8125rem;
 }
-.bar-address{
-    font-size:1.76rem;
-    font-weight:400;
-    font-family: 'Aileron', sans-serif;
-    color:#000000;
-    line-height:2.11rem;
-    height:6.19vh;
-    width:27.76vw;
-    margin-top:0.875rem;
+.bar-address {
+  font-size: 1.76rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 0.875rem;
 }
-.bar-distance{
-    width:5vw;
-    height:2.36vh;
-    font-size:1.32rem;
-    font-weight:400;
-    font-family: 'Aileron', sans-serif;
-    color:#D63A29;
-    line-height:1.58rem;
-    margin-top:0.875rem;
-    margin-bottom:1.8rem;
+.bar-distance {
+  font-size: 1.32rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #d63a29;
+  margin-top: 0.875rem;
+  margin-bottom: 1.8rem;
 }

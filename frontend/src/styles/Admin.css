@@ -18,12 +18,6 @@
   text-align: center;
 }
 
-<<<<<<< HEAD
-.dash-example-container {
-}
-
-=======
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 .example-header {
   text-align: center;
   font-size: 2rem;
@@ -59,11 +53,7 @@
   background-color: rgb(250, 233, 207);
 }
 
-<<<<<<< HEAD
-#submit-newsletter {
-=======
 .dash-buttons {
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
   width: 14rem;
   height: 2.5rem;
   border-radius: 0.3rem;
@@ -78,14 +68,6 @@
 .email-header {
   text-align: center;
 }
-<<<<<<< HEAD
-body {
-  background: linear-gradient(#f7c170, #df614b);
-  height: 100vh;
-}
-=======
-
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 .content-container {
   margin: 1vh 2.5vw 5vh 2.5vw;
 }
@@ -94,11 +76,6 @@ body {
   width: 5rem;
   padding: 1rem 2rem 1rem 1rem;
 }
-<<<<<<< HEAD
-footer {
-  text-align: center;
-  margin: 5vh 2.5vw 5vh 2.5vw;
-=======
 
 .settings-container {
   display: flex;
@@ -109,5 +86,4 @@ footer {
 #calendar {
   width: 10rem;
   margin: 0 auto 0 auto;
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 }
