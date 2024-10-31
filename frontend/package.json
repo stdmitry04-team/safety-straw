@@ -10,10 +10,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-<<<<<<< HEAD
-    "@react-google-maps/api": "^2.20.3",
-=======
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
     "axios": "^1.4.0",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",

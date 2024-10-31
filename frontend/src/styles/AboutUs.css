@@ -14,15 +14,11 @@
   font-style: normal;
 }
 
-<<<<<<< HEAD
-
-=======
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
 .about-us-header {
   font-family: "Aileron", sans-serif;
@@ -50,88 +46,6 @@
   width: 50.73vw;
   height: 46vh;
 }
-<<<<<<< HEAD
-.container{
-    display:flex;
-    width:83.39vw;
-    height:58.61vh;
-    
-    flex-direction:column;
-    position:relative;
-}
-.about-us-top{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-}
-.about-us-bottom{
-    display:flex;
-    position:absolute;
-    bottom:0;
-    width:100%;
-    
-}
-.about-us-left{
-    width:50.73vw;
-    height:46vh;
-    
-    position:absolute;
-    bottom:0;
-    left:0;
-}
-.about-us-right{
-    width:40%;
-    height:46vh;
-    display:flex;
-    flex-direction:column;
-    padding:2rem;
-}
-.about-us-left iframe{
-    width:100%;
-    height:100%;
-}
-.contact button{
-    border-radius:1.25rem;
-    padding:0.5rem;
-    width:29.3vw;
-    height:6.296vh;
-    line-height:1.875rem;
-    font-size:2.5rem;
-    background-color:#D63A29;
-    color:white;
-    border:none;
-    cursor:pointer;
-    position:absolute;
-    bottom:0;
-    right:0;
-    font-family: 'Gantari', 'sans-serif';
-    font-weight:600;
-    
-}
-.about-us{
-    display:flex;
-    justify-content:center;
-    /* align-items:center; */
-    width:100vw;
-    height:100vh;
-}
-.about-us-right .text{
-   
-    width:29.27vw;
-    height:42.41vh;
-    position:absolute;
-    right:0;
-    top:0;
-    line-height:3.075rem;
-    text-align:left;
-}
-.about-us-right .text p{
-    font-family: 'Aileron', sans-serif;
-    font-size:2.5625rem;
-    font-weight:400;
-    margin-bottom:5%;
-    color:#000000;
-=======
 .about-us-right {
   width: 30%;
   display: flex;
@@ -140,136 +54,10 @@
   font-family: "Aileron", sans-serif;
   font-size: 2.25rem;
   font-weight: 400;
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f
 
   color: #000000;
   text-align: left;
 }
-<<<<<<< HEAD
-@media screen and (max-width:390px){
-    .container{
-        display:flex;
-        flex-direction:column;
-    }
-    .about-us-bottom{
-        display:flex;
-        height:50vh;
-        justify-content:center;
-    }
-
-    .header h1{
-        font-size:1.7rem;
-        line-height:2rem;
-    }
-    .about-us-right .text p{
-        font-size:1.0875rem;
-        line-height:1.305rem;
-    }
-    .contact button{
-        font-size:1.1rem;
-        border-radius:0.55rem;
-        height:3.79vh;
-        width:100%;
-        line-height:0.8225rem;
-        margin-bottom:1.875vh;
-        
-    }
-    .about-us-right{
-        width:90%;
-        height:24.37vh;
-        bottom:0;
-        position:absolute;
-        
-    }
-    .about-us-left{
-        width:100%;
-        height:22.1vh;
-        bottom:28vh;
-    }
-    .about-us-right .text{
-        width:100%;
-        text-align:center;
-        height:24.37vh;
-
-        
-    }
-}
-@media screen and (min-width:391px) and (max-width:768px){
-    .header h1{
-        font-size:1.7rem;
-        line-height:3rem;
-    }
-    .about-us-right .text P{
-        font-size:1rem;
-        line-height:1.1rem;
-    }
-    .contact button{
-        font-size:1rem;
-        line-height:1.875rem;
-        padding:0rem;;
-    }
-    }
-@media screen and (min-width:769px)and (max-width:1024px){
-    .header h1{
-        font-size:2.5rem;
-        line-height:3.5rem;
-    }
-    .about-us-right .text p{
-        font-size:1rem;
-        line-height:1.8rem;
-    }
-    .contact button{
-        font-size:1.1rem;
-        line-height:1.875rem;
-        padding:0rem;
-    }
-    }
-@media screen and (min-width:1025px) and (max-width:1280px){
-    .header h1{
-        font-size:2.5rem;
-        line-height:4rem;
-    }
-    .about-us-right .text p{
-        font-size:1.6rem;
-        line-height:2rem;
-    }
-    .contact button{
-        font-size:1.3rem;
-        line-height:2.5rem;
-        padding:0rem;
-    }
-    }
-@media screen and (min-width:1281px) and (max-width:1440px){
-    .header h1{
-        font-size:3.5rem;
-        line-height:4.5rem;
-    }
-    .about-us-right .text p{
-        font-size:2rem;
-        line-height:2.2rem;
-    }
-    .contact button{
-        font-size:2.2rem;
-        line-height:3rem;
-        padding:0rem;
-    }
-    }
-@media screen and (min-width:1441px) and (max-width:1919px){
-    .header h1{
-        font-size:4.375rem;
-        line-height:5.25rem;
-    }
-    .about-us-right .text p{
-        font-size:2.2rem;
-        line-height:2.3rem;
-    }
-    .contact button{
-        font-size:2.5rem;
-        line-height:3rem;
-        padding:0.5rem;
-    }
-    }
-=======
 .about-us-left iframe {
   width: 100%;
   height: 100%;
@@ -378,4 +166,3 @@
     font-size: 7rem;
   }
 }
->>>>>>> a9e5dc1b0e67f6ad170607d6e5c1ad2ce212d42f

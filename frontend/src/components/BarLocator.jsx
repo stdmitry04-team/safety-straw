@@ -52,7 +52,7 @@ export default function BarLocator(){
 
 
                 <div className="bar-locator-map">
-                    <LoadScript googleMapsApiKey="AIzaSyDU3h2yXSmgBHi8SfXvakNLPqP5sVhQ-aA" libraries={['places']}>
+                    <LoadScript googleMapsApiKey={process.env.REACT_APP_GOOGLE_MAPS_API_KEY} libraries={['places']}>
                         <GoogleMap
                             mapContainerStyle={{ height: "100%", width: "100%" }} 
                             center={center}
