@@ -12,6 +12,8 @@ import { useForm } from "react-hook-form";
 export default function Checkout() {
     const [quantity, setQuantity] = useState(1);
     const [checked, setChecked] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState('');
+    const [paymentError, setPaymentError] = useState('');
 
     const {
         register,
@@ -52,6 +54,53 @@ export default function Checkout() {
         }
     });
 
+    // Watch for changes in payment fields
+    const cardFields = watch(['card.nameOnCard', 'card.cardNumber', 'card.expiryDate', 'card.cvv']);
+    const checkingFields = watch(['checking.nameOnAccount', 'checking.routingNumber', 'checking.accountNumber', 'checking.confirmAccountNumber']);
+
+    // Update payment method when fields change
+    useEffect(() => {
+        const hasCardInfo = cardFields.some(field => field);
+        const hasCheckingInfo = checkingFields.some(field => field);
+
+        if (hasCardInfo && !hasCheckingInfo) {
+            setPaymentMethod('card');
+            setPaymentError('');
+            // Clear checking account fields
+            Object.keys(watch('checking')).forEach(key => {
+                setValue(`checking.${key}`, '');
+            });
+        } else if (hasCheckingInfo && !hasCardInfo) {
+            setPaymentMethod('checking');
+            setPaymentError('');
+            // Clear card fields
+            Object.keys(watch('card')).forEach(key => {
+                setValue(`card.${key}`, '');
+            });
+        } else if (!hasCardInfo && !hasCheckingInfo) {
+            setPaymentMethod('');
+        }
+    }, [...cardFields, ...checkingFields]);
+
+    // Validate that at least one payment method is fully filled out
+    const validatePaymentMethod = () => {
+        const hasCompleteCardInfo = cardFields.every(field => field);
+        const hasCompleteCheckingInfo = checkingFields.every(field => field);
+
+        if (!hasCompleteCardInfo && !hasCompleteCheckingInfo) {
+            setPaymentError('Please complete either card information or checking account information');
+            return false;
+        }
+        
+        if (hasCompleteCardInfo && hasCompleteCheckingInfo) {
+            setPaymentError('Please provide only one payment method');
+            return false;
+        }
+
+        setPaymentError('');
+        return true;
+    };
+
     const stateTaxRates = {
         Michigan: 0.06,
     };
@@ -81,10 +130,22 @@ export default function Checkout() {
     }, [checked, mailingAddress, setValue]);
 
     const onSubmit = async (data) => {
+        // Validate payment method before submission
+        if (!validatePaymentMethod()) {
+            return;
+        }
+
+        // Trigger form validation
+        const isValid = await trigger();
+        if (!isValid) {
+            return;
+        }
+
         const formData = {
             ...data,
             quantity,
             billingAddress: checked ? mailingAddress : data.billingAddress,
+            paymentMethod,
         };
 
         try {
@@ -119,6 +180,35 @@ export default function Checkout() {
             
             window.history.pushState('', '', targetId);
         }
+    };
+
+    // Modified register functions for payment fields
+    const registerCardField = (fieldName, validation = {}) => {
+        return register(`card.${fieldName}`, {
+            ...validation,
+            onChange: (e) => {
+                if (paymentMethod === 'checking') {
+                    // Clear checking account fields when card info is entered
+                    Object.keys(watch('checking')).forEach(key => {
+                        setValue(`checking.${key}`, '');
+                    });
+                }
+            }
+        });
+    };
+
+    const registerCheckingField = (fieldName, validation = {}) => {
+        return register(`checking.${fieldName}`, {
+            ...validation,
+            onChange: (e) => {
+                if (paymentMethod === 'card') {
+                    // Clear card fields when checking info is entered
+                    Object.keys(watch('card')).forEach(key => {
+                        setValue(`card.${key}`, '');
+                    });
+                }
+            }
+        });
     };
 
     return (
@@ -192,7 +282,9 @@ export default function Checkout() {
                             <input
                                 type="text"
                                 placeholder="Name on Card"
-                                {...register("card.nameOnCard", { required: "Name on card is required" })}
+                                {...registerCardField("nameOnCard", {
+                                    required: paymentMethod === 'card' ? "Name on card is required" : false
+                                })}
                             />
                             {errors.card?.nameOnCard && <span className="error">{errors.card.nameOnCard.message}</span>}
                         </div>
@@ -200,8 +292,8 @@ export default function Checkout() {
                             <input
                                 type="text"
                                 placeholder="Card Number"
-                                {...register("card.cardNumber", { 
-                                    required: "Card number is required",
+                                {...registerCardField("cardNumber", {
+                                    required: paymentMethod === 'card' ? "Card number is required" : false,
                                     pattern: {
                                         value: /^[0-9]{16}$/,
                                         message: "Please enter a valid 16-digit card number"
@@ -212,11 +304,12 @@ export default function Checkout() {
                         </div>
                         <div className="checkout-input-group date-cvv">
                             <div className="half-width">
-                                <input className="checkout-expiry"
+                                <input
+                                    className="checkout-expiry"
                                     type="text"
                                     placeholder="Ex. Date 00/00"
-                                    {...register("card.expiryDate", {
-                                        required: "Expiry date is required",
+                                    {...registerCardField("expiryDate", {
+                                        required: paymentMethod === 'card' ? "Expiry date is required" : false,
                                         pattern: {
                                             value: /^(0[1-9]|1[0-2])\/([0-9]{2})$/,
                                             message: "Please enter a valid date (MM/YY)"
@@ -226,11 +319,12 @@ export default function Checkout() {
                                 {errors.card?.expiryDate && <span className="error">{errors.card.expiryDate.message}</span>}
                             </div>
                             <div className="checkout-half-width checkout-cvv-div">
-                                <input className="checkout-cvv"
+                                <input
+                                    className="checkout-cvv"
                                     type="text"
                                     placeholder="CVV"
-                                    {...register("card.cvv", {
-                                        required: "CVV is required",
+                                    {...registerCardField("cvv", {
+                                        required: paymentMethod === 'card' ? "CVV is required" : false,
                                         pattern: {
                                             value: /^[0-9]{3,4}$/,
                                             message: "Please enter a valid CVV"
@@ -246,14 +340,18 @@ export default function Checkout() {
                             <input
                                 type="text"
                                 placeholder="Name on Account"
-                                {...register("checking.nameOnAccount")}
+                                {...registerCheckingField("nameOnAccount", {
+                                    required: paymentMethod === 'checking' ? "Name on account is required" : false
+                                })}
                             />
+                            {errors.checking?.nameOnAccount && <span className="error">{errors.checking.nameOnAccount.message}</span>}
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Routing Number"
-                                {...register("checking.routingNumber", {
+                                {...registerCheckingField("routingNumber", {
+                                    required: paymentMethod === 'checking' ? "Routing number is required" : false,
                                     pattern: {
                                         value: /^[0-9]{9}$/,
                                         message: "Please enter a valid 9-digit routing number"
@@ -266,16 +364,27 @@ export default function Checkout() {
                             <input
                                 type="text"
                                 placeholder="Account Number"
-                                {...register("checking.accountNumber")}
+                                // {...registerCheckingField("accountNumber", {
+                                //     required: paymentMethod === 'checking' ? "Account number is required" : false
+                                // })}
+                                {...registerCheckingField("accountNumber", {
+                                    required: paymentMethod === 'checking' ? "Routing number is required" : false,
+                                    pattern: {
+                                        value: /^[0-9]+$/,
+                                        message: "Account numbers should consist only of digits"
+                                    }
+                                })}
                             />
+                            {errors.checking?.accountNumber && <span className="error">{errors.checking.accountNumber.message}</span>}
                         </div>
                         <div className="checkout-input-group">
                             <input
                                 type="text"
                                 placeholder="Confirm Account Number"
-                                {...register("checking.confirmAccountNumber", {
+                                {...registerCheckingField("confirmAccountNumber", {
+                                    required: paymentMethod === 'checking' ? "Please confirm account number" : false,
                                     validate: value => 
-                                        value === watch("checking.accountNumber") || 
+                                        !value || value === watch("checking.accountNumber") || 
                                         "Account numbers do not match"
                                 })}
                             />
