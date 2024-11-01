@@ -212,7 +212,7 @@ export default function Checkout() {
                         </div>
                         <div className="checkout-input-group date-cvv">
                             <div className="half-width">
-                                <input 
+                                <input className="checkout-expiry"
                                     type="text"
                                     placeholder="Ex. Date 00/00"
                                     {...register("card.expiryDate", {
@@ -225,8 +225,8 @@ export default function Checkout() {
                                 />
                                 {errors.card?.expiryDate && <span className="error">{errors.card.expiryDate.message}</span>}
                             </div>
-                            <div className="checkout-half-width">
-                                <input
+                            <div className="checkout-half-width checkout-cvv-div">
+                                <input className="checkout-cvv"
                                     type="text"
                                     placeholder="CVV"
                                     {...register("card.cvv", {
@@ -333,7 +333,7 @@ export default function Checkout() {
                             </div>
                         </div>
 
-                        <h3>Billing Address</h3>
+                        <h3 className="checkout-billing">Billing Address</h3>
                         <div className="checkbox-group">
                             <button
                                 onClick={() => setChecked(!checked)}

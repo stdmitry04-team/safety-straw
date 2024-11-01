@@ -24,9 +24,9 @@
         justify-content: space-between;
         align-items: flex-start;
         background-color: white;
-        overflow-y: hidden;
+        overflow-x: hidden;
         padding-bottom: 2.5vh;
-        padding-right: 1vw;;
+        padding-right: 1vw;        
     }
     
     
