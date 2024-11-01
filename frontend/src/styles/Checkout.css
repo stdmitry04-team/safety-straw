@@ -432,6 +432,7 @@ input{
     font-weight: 600;
     cursor: pointer;
     letter-spacing: 0.1rem;
+    width: 90%;
 }
 
 .place-order:hover{
@@ -645,3 +646,20 @@ input{
         border: 0.25em solid #555;
     }
 }
+
+@media screen and (max-width: 1860px){
+    .place-order{
+        /* font-size: 2rem;  */
+        padding: 1rem 3rem;
+        
+    }
+}
+
+@media screen and (max-width: 1530px){
+    .place-order{
+        font-size: 2.25rem; 
+        padding: 1rem 2rem;
+        
+    }
+}
+
