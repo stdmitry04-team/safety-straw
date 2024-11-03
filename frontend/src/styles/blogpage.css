@@ -18,41 +18,65 @@
     font-weight: 400;
     font-style: normal;
 }
+
 .sidebar_posts {
     position: relative;
     padding-top: 13.88vh;
     padding-left: 18.48vw;
     margin-bottom: 20px;
 }
+
 .right_title {
     font-family: 'Aileron', 'sans-serif';
     font-weight: 700;
     font-size: 25px;
     display: flex;
+    position: relative;
     gap: 1.25vw;
-    padding-left: 3.4vw;
-    /* padding-bottom: 3.52vh; */
+    padding-left: 1.8vw;
     line-height: 1;
 }
+
 .carrot_2 {
-    width: 0.55vw;
-    height: 1.853vh;
-    top: 14.907vh;
+    width: 1.04vw;
+    height: 2.453vh;
     object-fit: contain;
+    position: relative; /* Ensures you can move it with top, left, etc. */
+    top: 0.45vh; /* Adjust this value to move it down */
+    left: 3px; /* Adjust this value to move it right, if needed */
 }
+
 .carrot_label {
+    top: 14.907vh;
     padding-bottom: 5.184vh;
 }
+
+.carrot {
+    width: 2.917vw;
+    top: 13.15vh;
+    left: 93.18vw;
+    transition: transform 0.3s ease;
+    cursor: pointer;
+}
+
 .blog_page {
     display: flex;
+    transition: transform 0.3s ease; /* Ensure smooth transition */
 }
+
+.blog_page.shifted {
+    transform: translateX(50%); /* Shift the entire blog_page */
+}
+
 .blog_page_image {
     position: absolute;
     width: 68.59vw;
     height: 42.22vh;
     left: 3.89vw;
     top: 12.5vh;
+    cursor: pointer; /* Ensure pointer cursor on image */
 }
+
 .blog_page_article {
     position: relative;
     width: 58.16vw;
@@ -60,7 +84,12 @@
     top: 40.09vh;
     left: 10.10vw;
 }
+
+/* .blog_page_article.shifted {
+    transform: translateX(-50px); // This might not be needed */
+
+
 .blog-post-image {
     width: 15.199vw;
-    height: 26.139vh;   
+    height: 26.139vh;
 }
