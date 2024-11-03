@@ -1,4 +1,9 @@
 # ignore env files
 .env
 config.env
+<<<<<<< HEAD
 database.env
+=======
+node_modules/
+backend/node_modules/
+>>>>>>> 028390825b99a3eb6de46461f5df2dfc4301332c

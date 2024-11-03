@@ -10,7 +10,7 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
-
+const path = require('path');
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
@@ -197,11 +197,10 @@ app.get("/api/waitlist/confirm", async (req, res) => {
 app.use(express.static("public"));
 
 //Handle React routing, return all other requests to React app
-// app.get("*", (req, res) => {
-//   // exclude all routes that begin with '/api/', those will be handled by express.js
-//   if (!req.path.startsWith("/api/")) {
-//     res.sendFile(path.join(__dirname, "public", "index.html"));
-//   }
-// });
+app.get("*", (req, res) => {
+  if (!req.path.startsWith("/api/")) {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+  }
+});
 
 app.listen(PORT, async () => {});

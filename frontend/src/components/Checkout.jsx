@@ -56,7 +56,7 @@ export default function Checkout() {
         Michigan: 0.06,
     };
 
-    const apiUrl = process.env.REACT_APP_BACKEND_URL || 'https://localhost:5000/api';
+    const baseUrl = process.env.BASE_URL || 'https://localhost:5000';
     const itemPrice = 10.99;
     const shippingCost = 2.99;
     const totalPrice = quantity * itemPrice;
@@ -88,7 +88,7 @@ export default function Checkout() {
         };
 
         try {
-            const response = await fetch(`${apiUrl}/checkout`, {
+            const response = await fetch(`${baseUrl}/api/checkout`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
