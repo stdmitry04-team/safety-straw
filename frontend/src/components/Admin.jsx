@@ -10,6 +10,7 @@ export function Admin() {
   const [contentTemplate, setContentTemplate] = useState("");
   const [subjectTemplate, setSubjectTemplate] = useState("");
   const calendar = useRef(null);
+  const time = useRef(null);
   const token = localStorage.getItem("token");
   const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 
@@ -73,6 +74,7 @@ export function Admin() {
     let data = await response.json();
     if (data.result != "Admin") {
       //window.location = "http://localhost:3000/";
+      console.log(data);
       console.error("Incorrect credentials");
     }
   };
@@ -134,12 +136,14 @@ export function Admin() {
       <div className="settings-container">
         <h1>Schedule your email</h1>
         <input type="date" id="calendar" name="scheduled-time" ref={calendar} />
+        <input id="mailer-time" type="time" name="mailer-time" ref={time} />
         <button
           className="dash-buttons"
           id="schedule-button"
           onClick={async () => {
             if (calendar.current.value) {
-              let scheduleTime = calendar.current.value + "T12:00:00";
+              let scheduleTime =
+                calendar.current.value + `T${time.current.value}`;
               await fetch(`${baseUrl}/api/schedule-mail`, {
                 method: "POST",
                 body: JSON.stringify({ date: scheduleTime, token: token }),
