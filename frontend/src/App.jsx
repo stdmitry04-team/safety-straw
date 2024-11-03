@@ -17,17 +17,9 @@ import BarLocator from "./components/BarLocator.jsx";
 function App() {
   return (
     <div className="app">
-      <Navbar />
-      <Video />
-      <Product></Product>
-      <Background></Background>
-      <Mission></Mission>
+     
       <BarLocator />
-
-      <AboutUs></AboutUs>
-      <Blogsection></Blogsection>
-      <WaitlistBar />
-      <Footer />
+      
     </div>
   );
 }

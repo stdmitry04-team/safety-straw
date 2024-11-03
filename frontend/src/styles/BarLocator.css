@@ -99,3 +99,133 @@
 .bar-locator-left-col {
   height: 100%;
 }
+@media screen and (max-width:1440px){
+  .bar-locator-title{
+    font-size:3.5rem;
+    line-height:5rem;
+    margin-bottom:1rem;
+  }
+  .bar-locator-text p{
+    font-size: 2.5rem;
+    line-height:4rem;
+  }
+  .bar-locator-search input{
+    font-size:2rem;
+    line-height:2.5rem;
+  }
+}
+@media screen and (max-width: 1024px){
+  .bar-locator-title{
+    font-size:3rem;
+    line-height:4rem;
+    margin-bottom:1rem;
+  }
+  .bar-locator-text p{
+    font-size: 2rem;
+    line-height:3rem;
+  }
+  .bar-locator-search input{
+    font-size:1.4rem;
+    line-height:2rem;
+  }
+}
+@media screen and (max-width: 768px){
+  .bar-locator-title{
+    font-size:2.5rem;
+    line-height:3rem;
+    margin-bottom:1rem;
+  }
+  .bar-locator-text p{
+    font-size: 1.5rem;
+    line-height:1.8rem;
+  }
+  .bar-locator-search input{
+    font-size:1.2rem;
+    line-height:1.4rem;
+  }
+
+}
+@media screen and (max-width: 390px) {
+    .bar-locator-title{
+        font-size:1.7rem;
+        line-height:2rem;
+        margin-bottom:1rem;
+    }
+    .bar-locator-text p{
+        font-size: 1rem;
+        line-height:1.2rem;
+    }
+    .bar-locator-text{
+        margin-top:0rem;
+    }
+    .bar-locator-search input{
+        font-size:0.9rem;
+        line-height:1.1rem;
+    }
+    .bar-locator-container{
+        border:none;
+    }
+    .bar-locator-addresses{
+        border-radius: 1.2rem;
+        border: 2px solid #E3E3E3
+    }
+    .bar-locator {
+        display: flex;
+        flex-direction: column; 
+        align-items: center; 
+        width: 100%;
+        position:relative;
+        height:100vh;
+      }
+    
+      .bar-locator-container {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+      }
+      .bar-locator-search{
+        width:75%;
+        height:2.2rem;
+        margin:0 auto;
+        
+      }
+
+      .bar-locator-columns {
+        display: flex;
+        flex-direction: column; 
+        width: 100%;
+      }
+      
+      .bar-locator-left-col {
+        margin-bottom: 16px; 
+        
+      }
+    
+      .bar-locator-search {
+        display: flex;
+        align-items: center; 
+      }
+      
+      .bar-locator-addresses {
+        margin-top: 1rem; 
+        position:absolute;
+        bottom:5%;
+        width:90%;
+        height:49vh;
+        padding-left:1.5rem;
+        padding-right:1rem;
+
+      }
+      .bar-locator-map{
+        width:90%;
+        height:29.2vh;;
+        margin:0 auto;
+      }
+
+}
+
+
+
+
+
+  

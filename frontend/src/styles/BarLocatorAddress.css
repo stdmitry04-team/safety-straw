@@ -53,3 +53,47 @@
   margin-top: 0.875rem;
   margin-bottom: 1.8rem;
 }
+@media screen and (max-width:1440px){
+    
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.6rem;
+      line-height:1.8rem;
+  }
+  .bar-distance {
+      font-size:1.4rem;
+      line-height:1.6rem;
+  }
+}
+@media screen and (max-width:1024px){
+  
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.4rem;
+      line-height:1.6rem;
+  }
+  .bar-distance {
+      font-size:1.2rem;
+      line-height:1.4rem;
+  }
+}
+@media screen and (max-width:768px){
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.2rem;
+      line-height:1.4rem;
+  }
+  .bar-distance {
+      font-size:1rem;
+      line-height:1.2rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+    .bar-name, .bar-number, .bar-address {
+        font-size:0.9rem;
+        line-height:1.1rem;
+    }
+    .bar-distance {
+        font-size:0.7rem;
+        line-height:0.9rem;
+    }
+}
+
