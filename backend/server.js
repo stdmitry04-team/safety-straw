@@ -10,13 +10,15 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
-const path = require('path');
+const path = require("path");
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
 const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
+
+const stripe = require("stripe")(process.env.STRIPE_PUBLIC); // Replace with your actual secret key
 
 app.use(cors());
 app.use(express.json());
