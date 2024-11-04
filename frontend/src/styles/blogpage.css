@@ -55,6 +55,7 @@ body {
     position: relative; /* Ensures you can move it with top, left, etc. */
     top: 0.45vh; /* Adjust this value to move it down */
     left: 3px; /* Adjust this value to move it right, if needed */
+    cursor: pointer;
 }
 
 .carrot_label {
