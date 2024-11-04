@@ -270,11 +270,19 @@ export default function Checkout() {
                             />
                         </div>
                         <div className="checkout-input-group">
-                            <input 
-                                type="text" 
+                            <input
+                                type="tel"
                                 placeholder="Phone Number (optional)"
-                                {...register("phoneNumber")}
+                                {...register("phoneNumber", {
+                                    pattern: {
+                                        value: /^(\+\d{1,3}[-.]?)?\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/,
+                                        message: "Please enter a valid phone number"
+                                    }
+                                })}
                             />
+                            {errors.phoneNumber && (
+                                <span className="error">{errors.phoneNumber.message}</span>
+                            )}
                         </div>
                         
                         <h3>Pay With Card</h3>
