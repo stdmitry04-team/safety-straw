@@ -10,7 +10,7 @@
     
     
     html{
-        font-size: 8px !important;
+        /* font-size: 8px !important; */
     }
     
     body {
@@ -24,9 +24,9 @@
         justify-content: space-between;
         align-items: flex-start;
         background-color: white;
-        overflow-y: hidden;
+        overflow-x: hidden;
         padding-bottom: 2.5vh;
-        padding-right: 1vw;;
+        padding-right: 1vw;        
     }
     
     
@@ -141,7 +141,7 @@
     
     
     html{
-        font-size: 10px !important;
+        /* font-size: 10px !important; */
     }
     
     body {
@@ -260,8 +260,7 @@
     }
     
     .footer-links ul li{
-        width: 100
-        %;
+        width: 100;
     }    
 }
 
@@ -275,7 +274,7 @@
     
     
     html{
-        font-size: 12px !important;
+        /* font-size: 12px !important; */
     }
     
     body {
@@ -407,7 +406,7 @@
     
     
     html{
-        font-size: 14px !important;
+        /* font-size: 14px !important; */
     }
     
     body {
@@ -535,11 +534,6 @@
         box-sizing: border-box;
         margin: 0;
         padding: 0;
-    }
-    
-    
-    html{
-        font-size: 16px;
     }
     
     body {
