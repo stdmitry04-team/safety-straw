@@ -18,6 +18,12 @@
     font-weight: 400;
     font-style: normal;
 }
+body {
+    background-color: white; /* Specify the image path */
+    background-size: 100% 100%; /* Stretch to fit the full viewport */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-position: center; /* Center the image */
+}
 
 .sidebar_posts {
     position: relative;
@@ -38,6 +44,11 @@
 }
 
 .carrot_2 {
+    display: none;
+}
+
+.carrot_2.shifted {
+    display: block;
     width: 1.04vw;
     height: 2.453vh;
     object-fit: contain;
@@ -59,13 +70,20 @@
     cursor: pointer;
 }
 
+.carrot.shifted {
+    display: none;
+}
+
 .blog_page {
     display: flex;
     transition: transform 0.3s ease; /* Ensure smooth transition */
 }
 
+.blog_page {
+    transform: translateX(10%);
+}
 .blog_page.shifted {
-    transform: translateX(50%); /* Shift the entire blog_page */
+    transform: translateX(0%);
 }
 
 .blog_page_image {
@@ -88,8 +106,7 @@
 /* .blog_page_article.shifted {
     transform: translateX(-50px); // This might not be needed */
 
-
-.blog-post-image {
+.blog-post-image{
     width: 15.199vw;
     height: 26.139vh;
 }
