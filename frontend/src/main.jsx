@@ -7,6 +7,7 @@ import { BlogPage } from "./components/blogpage.jsx";
 import Login from "./components/Login.jsx";
 import { Admin } from "./components/Admin.jsx";
 import Checkout from "./components/Checkout.jsx";
+import BlogViewMore from "./components/blogviewmore.jsx";
 
 //change elements as we develop pages
 const router = createBrowserRouter([
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
   { path: "/merch", element: <App /> },
   { path: "/bars", element: <App /> },
   { path: "/blog", element: <BlogPage /> },
+  { path: "/view-more", element: <BlogViewMore /> },
   { path: "/admin", element: <Admin /> },
   { path: "/login", element: <Login /> },
   { path: "/checkout", element: <Checkout /> },
