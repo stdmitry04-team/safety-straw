@@ -10,6 +10,8 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
+const { sendCardPayment } = require("./stripe.js");
+
 const path = require("path");
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
@@ -18,10 +20,7 @@ const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
-const stripe = require("stripe")(process.env.STRIPE_PUBLIC); // Replace with your actual secret key
-
-app.use(cors());
-app.use(express.json());
+const stripe = require("stripe")(process.env.STRIPE_SECRET); // Replace with your actual secret key
 
 app.use(cors());
 app.use(express.json());
@@ -195,14 +194,44 @@ app.get("/api/waitlist/confirm", async (req, res) => {
   res.status(200).send("Your email has been successfully verified!");
 });
 
+app.post("/api/create-payment-intent", async (req, res) => {
+  const { price } = req.body;
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: parseFloat(price.toFixed(2)) * 100,
+      currency: "usd",
+    });
+    res.json({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+app.post("/api/send-payment", async (req, res) => {
+  const obj = req.body;
+  let productInfo = { quantity: obj.quantity, price: obj.grandTotal };
+  let companyInfo = {
+    companyName: obj.companyName,
+    companyNumber: obj.phoneNumber,
+  };
+  await sendCardPayment(
+    obj.paymentIntentSecret,
+    productInfo,
+    companyInfo,
+    obj.mailingAddress,
+    obj.billingAddress
+  );
+});
+
 // Serve static files from the public directory (serves the built react files in deployment)
 app.use(express.static("public"));
 
 //Handle React routing, return all other requests to React app
-app.get("*", (req, res) => {
-  if (!req.path.startsWith("/api/")) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-  }
-});
+// app.get("*", (req, res) => {
+//   if (!req.path.startsWith("/api/")) {
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
+//   }
+// });
 
 app.listen(PORT, async () => {});

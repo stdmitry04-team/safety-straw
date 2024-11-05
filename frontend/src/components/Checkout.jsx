@@ -117,7 +117,7 @@ export default function Checkout() {
     Michigan: 0.06,
   };
 
-  const baseUrl = process.env.BASE_URL || "https://localhost:5000";
+  const baseUrl = process.env.BASE_URL || "http://localhost:5000";
   const itemPrice = 10.99;
   const shippingCost = 2.99;
   const totalPrice = quantity * itemPrice;
@@ -148,32 +148,48 @@ export default function Checkout() {
     }
 
     // Trigger form validation
-    const isValid = await trigger();
-    if (!isValid) {
-      return;
-    }
-
-    const formData = {
-      ...data,
-      quantity,
-      billingAddress: checked ? mailingAddress : data.billingAddress,
-      paymentMethod,
-    };
+    // const isValid = await trigger();
+    // if (!isValid) {
+    //   return;
+    // }
 
     try {
-      const response = await fetch(`${baseUrl}/api/checkout`, {
+      const responseIntent = await fetch(
+        `${baseUrl}/api/create-payment-intent`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ price: grandTotal }),
+        }
+      );
+
+      if (responseIntent.ok) {
+        console.log("Succesfully created payment intent");
+      } else {
+        const error = await responseIntent.json();
+        console.log("Failed to make payment intent");
+        throw new Error(error);
+      }
+      const data = await responseIntent.json();
+      const paymentIntentSecret = data.clientSecret;
+      const formData = {
+        ...data,
+        quantity,
+        billingAddress: checked ? mailingAddress : data.billingAddress,
+        paymentMethod,
+        grandTotal,
+        paymentIntentSecret,
+      };
+      console.log(formData);
+      const responsePayment = await fetch(`${baseUrl}/api/send-payment`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify(formData),
       });
-
-      if (response.ok) {
-        alert("Order submitted successfully!");
-      } else {
-        alert("Failed to submit the order.");
-      }
     } catch (error) {
       console.error("Error submitting order:", error);
     }
@@ -680,7 +696,7 @@ export default function Checkout() {
             <hr className="black-line" />
             <div className="summary-line total">
               <h1>Order total:</h1>
-              <h1>${grandTotal.toFixed(2)}</h1>
+              <h1>${grandTotal.toFixed(2)} </h1>
             </div>
           </div>
           <button
