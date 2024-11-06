@@ -1,17 +1,16 @@
 import React, { useState, useEffect, useRef } from "react";
 import dotenv from "dotenv";
-import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { useCreateUserWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { auth } from "../../../firebase/config";
 
-function Login() {
+function SignUp() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
+  const [createUserWithEmailAndPassword] = useCreateUserWithEmailAndPassword(auth);
 
-  const handleLogin = async () => {
+  const handleSignUp = async () => {
     try {
-      console.log(email, password);
-      const res = await signInWithEmailAndPassword(email, password);
+      const res = await createUserWithEmailAndPassword(email, password);
       console.log({res})
       setEmail('');
       setPassword('');
@@ -40,7 +39,7 @@ function Login() {
         id="login-submit"
         type="submit"
         onClick={async () => {
-          handleLogin();
+          handleSignUp();
         }}
       >
         Submit
@@ -49,4 +48,4 @@ function Login() {
   );
 }
 
-export default Login;
+export default SignUp;
