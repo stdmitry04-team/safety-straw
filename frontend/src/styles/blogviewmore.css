@@ -1,5 +1,40 @@
-.blog-view-more-container {
-    padding: 20px;
+@font-face {
+    font-family: "Aileron";
+    src: url("../fonts/Aileron-Black.otf") format("opentype");
+    font-weight: 900;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Aileron";
+    src: url("../fonts/Aileron-Bold.otf") format("opentype");
+    font-weight: 700;
+    font-style: normal;
+  }
+  
+  @font-face {
+    font-family: "Aileron";
+    src: url("../fonts/Aileron-Regular.otf") format("opentype");
+    font-weight: 400;
+    font-style: normal;
+  }
+
+/* .blog-view-more {
     text-align: center;
-    color: #333;
+    padding: 20px;
+} */
+
+.blog-view-header {
+    font-size: 2em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.posts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 20px; /* Space between items */
+    margin: 0 auto;
+    max-width: 1200px; /* Adjust to fit your layout */
+    padding: 20px 0;
 }
