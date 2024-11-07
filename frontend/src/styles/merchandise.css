@@ -61,51 +61,39 @@
   flex-direction: column;
   justify-content: space-between;
   transition: transform 0.3s ease;
-  
+  width: 23.256rem;
+  height: 23.247rem;
 }
 
 .product-box-1 {
   background-color: #FFFFFF;
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 16.52vw;
+  left: 20.424rem;
 }
 
 .product-box-2 {
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 40.62vw; 
+  left: 48.744rem;
 }
 
 .product-box-3 {
   background-color: #FFFFFF;
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 64.71vw; 
+  left: 77.652rem;
   
 }
 
 .product-box-4 {
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 16.52vw;
-  top: 58.95vh;
+  left: 20.424rem;
+  top: 39.78rem;
 }
 
 .product-box-5 {
   background-color: #FFFFFF;
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 40.62vw; 
-  top: 58.95vh;
+  left: 48.744rem;
+  top: 39.78rem;
 }
 
 .product-box-6 {
-  width: 19.38vw;
-  height: 34.44vh;
-  left: 64.71vw;
-  top: 58.95vh;
-  
+  left: 77.652rem;
+  top: 39.78rem;
 }
 
 
@@ -245,8 +233,41 @@
     height: 21.25rem;
   }
 
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 17.424rem;
+  }
+  
+  .product-box-2 {
+    left: 45.744rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 74.652rem;
+    
+  }
+  
+  .product-box-4 {
+    left: 17.424rem;
+    top: 39.78rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 45.744rem;
+    top: 39.78rem;
+  }
+  
+  .product-box-6 {
+    left: 74.652rem;
+    top: 39.78rem;
+  }
+  
+
   .add-to-cart {
     bottom: 0;
+    width: 100%;
   }
 }
 
@@ -256,66 +277,573 @@
     height: 20.25rem;
   }
 
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 15.424rem;
+  }
+  
+  .product-box-2 {
+    left: 43.744rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 72.652rem;
+    
+  }
+  
+  .product-box-4 {
+    left: 15.424rem;
+    top: 35.78rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 43.744rem;
+    top: 35.78rem;
+  }
+  
+  .product-box-6 {
+    left: 72.652rem;
+    top: 35.78rem;
+  }
+
   .add-to-cart {
     bottom: 0;
   }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 42.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 42.3vh;
+  }
 }
 
-@media only screen and (max-width: 1550px) {
+@media only screen and (max-width: 1600px) {
   .product-box {
     height: 17.25rem;
   }
 
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 14.424rem;
+    width: 19rem;
+  }
+  
+  .product-box-2 {
+    left: 40.744rem;
+    width: 19rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 67.652rem;
+    width: 19rem;
+  }
+  
+  .product-box-4 {
+    left: 14.424rem;
+    top: 34.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 40.744rem;
+    top: 34.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-6 {
+    left: 67.652rem;
+    top: 34.78rem;
+    width: 19rem;
+  }
+
   .add-to-cart {
     bottom: 0;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 39.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 39.3vh;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 13.424rem;
+    width: 19rem;
+  }
+  
+  .product-box-2 {
+    left: 38.744rem;
+    width: 19rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 64.652rem;
+    width: 19rem;
+  }
+  
+  .product-box-4 {
+    left: 13.424rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 38.744rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-6 {
+    left: 64.652rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+
+  .add-to-cart {
+    bottom: 0;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 38.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 38.3vh;
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 10.424rem;
+    width: 19rem;
+  }
+  
+  .product-box-2 {
+    left: 35.744rem;
+    width: 19rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 61.652rem;
+    width: 19rem;
+  }
+  
+  .product-box-4 {
+    left: 10.424rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 35.744rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+  
+  .product-box-6 {
+    left: 61.652rem;
+    top: 32.78rem;
+    width: 19rem;
+  }
+
+  .add-to-cart {
+    bottom: 0;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 38.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 38.3vh;
   }
 }
 
 @media only screen and (max-width: 1300px) {
-  .product-box {
-    height: 15.25rem;
+  
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 8.424rem;
+    width: 18rem;
+  }
+  
+  .product-box-2 {
+    left: 31.744rem;
+    width: 18rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 55.652rem;
+    width: 18rem;
+  }
+  
+  .product-box-4 {
+    left: 8.424rem;
+    top: 32.78rem;
+    width: 18rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 31.744rem;
+    top: 32.78rem;
+    width: 18rem;
+  }
+  
+  .product-box-6 {
+    left: 55.652rem;
+    top: 32.78rem;
+    width: 18rem;
   }
 
   .add-to-cart {
     bottom: 0;
   }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 36.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 36.3vh;
+  }
+
+  .view-more-button {
+    position: absolute;
+    top: 290rem;
+    width: 16rem;
+  }
 }
 
+
 @media only screen and (max-width: 1200px) {
-  .product-box {
-    height: 14.25rem;
+  
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 6.424rem;
+    width: 18rem;
+  }
+  
+  .product-box-2 {
+    left: 29.744rem;
+    width: 18rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 53.652rem;
+    width: 18rem;
+  }
+  
+  .product-box-4 {
+    left: 6.424rem;
+    top: 30.78rem;
+    width: 18rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 29.744rem;
+    top: 30.78rem;
+    width: 18rem;
+  }
+  
+  .product-box-6 {
+    left: 53.652rem;
+    top: 30.78rem;
+    width: 18rem;
   }
 
   .add-to-cart {
-    width: 100%;
-    height: 36.95px;
-    font-size: 0.7175rem;
-    
+    bottom: 0;
   }
 
+  .left-arrow {
+    left: 9.79vw;
+    top: 36.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 36.3vh;
+  }
+
+  .view-more-button {
+    position: absolute;
+    top: 287rem;
+    width: 16rem;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 6.424rem;
+    width: 16rem;
+  }
+  
+  .product-box-2 {
+    left: 26.844rem;
+    width: 16rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 47.652rem;
+    width: 16rem;
+  }
+  
+  .product-box-4 {
+    left: 6.424rem;
+    top: 30.78rem;
+    width: 16rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 26.844rem;
+    top: 30.78rem;
+    width: 16rem;
+  }
+  
+  .product-box-6 {
+    left: 47.652rem;
+    top: 30.78rem;
+    width: 16rem;
+  }
+
+  .add-to-cart {
+    bottom: 0;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 35.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 35.3vh;
+  }
 }
 
 @media only screen and (max-width: 1000px) {
-  .product-box {
-    height: 10.25rem;
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 4.424rem;
+    width: 16rem;
+  }
+  
+  .product-box-2 {
+    left: 23.344rem;
+    width: 16rem;
+  }
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 42.652rem;
+    width: 16rem;
+  }
+  
+  .product-box-4 {
+    left: 4.424rem;
+    top: 30.78rem;
+    width: 16rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 23.344rem;
+    top: 30.78rem;
+    width: 16rem;
+  }
+  
+  .product-box-6 {
+    left: 42.652rem;
+    top: 30.78rem;
+    width: 16rem;
   }
 
   .add-to-cart {
+    bottom: 0;
     width: 100%;
-    height: 36.95px;
-    font-size: 0.6175rem;
-    position: absolute;
-    font-family: 'Aileron';
-    font-weight: 900;
-    border-bottom-left-radius: 7.19px; /* Round bottom-left corner */
-    border-bottom-right-radius: 7.19px; /* Round bottom-right corner */
-    opacity: 65%;
   }
 
+  .left-arrow {
+    left: 9.79vw;
+    top: 35.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 35.3vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 3.424rem;
+    width: 15rem;
+    height: 16rem;
+  }
+  
+  .product-box-2 {
+    left: 21.344rem;
+    width: 15rem;
+    height: 16rem;
+  }
+
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 38.652rem;
+    width: 15rem;
+    height: 16rem;
+  }
+  
+  .product-box-4 {
+    left: 3.424rem;
+    top: 28.78rem;
+    width: 15rem;
+    height: 16rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 21.344rem;
+    top: 28.78rem;
+    width: 15rem;
+    height: 16rem;
+  }
+  
+  .product-box-6 {
+    left: 38.652rem;
+    top: 28.78rem;
+    width: 15rem;
+    height: 16rem;
+  }
+
+  .add-to-cart {
+    bottom: 0vh;
+    width: 100%;
+    height: 7vh;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 34.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 34.3vh;
+  }
+
+  .view-more-button {
+    position: absolute;
+    top: 280rem;
+    font-size: 2rem;
+    width: 16rem;
+    height: 5rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .product-image {
+    width: 100%;
+  }
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 3.424rem;
+    width: 13rem;
+
+  }
+  
+  .product-box-2 {
+    left: 18.144rem;
+    width: 15rem;
+  }
+
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 34.652rem;
+    width: 13rem;
+  }
+  
+  .product-box-4 {
+    left: 2.124rem;
+    top: 28.78rem;
+    width: 15rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 18.844rem;
+    top: 28.78rem;
+    width: 13rem;
+  }
+  
+  .product-box-6 {
+    left: 33.252rem;
+    top: 28.78rem;
+    width: 15rem;
+  }
+
+  .add-to-cart {
+    bottom: 0vh;
+    width: 100%;
+    height: 7vh;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 32.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 32.3vh;
+  }
 }
 
 /* Responsive Design */
-@media only screen and (max-width: 650px) {
+@media only screen and (max-width: 700px) {
   .merchandise-section {
     width: 82.05vw;
     height: 90.17vh;
