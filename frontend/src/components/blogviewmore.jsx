@@ -51,6 +51,8 @@ export default function BlogViewMore() {
                 </div>
             )}
             </div>
+            {/* <WaitlistBar />
+            <Footer /> */}
         </div>
     );
 }
