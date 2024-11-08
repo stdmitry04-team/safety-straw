@@ -11,7 +11,7 @@ export default function BlogViewMore() {
     return (
         <div className="blog-view-more">    
             <p className="blog-view-header">BLOG POSTS</p>
-            <div className="posts">
+            <div className="blog-view-more-posts">
                 <BlogPost imageSrc={blog_l_image} title={ <>How Safety Straw Products Are <br /> Environmental Friendly </>}  date='Aug 20, 2024' />
                 <BlogPost imageSrc={blog_m_image} title={ <>How Do Bars Use Safety Straw <br />Products?</>} date='Aug 23, 2024' />
                 <BlogPost imageSrc={blog_r_image} title={ <>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />

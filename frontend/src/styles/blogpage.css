@@ -51,7 +51,6 @@
     cursor: pointer;
     position: relative;
     top: 1.59vh;
-    left: 7.8vw;
 }
 
 .carrot.shifted {
@@ -112,30 +111,54 @@
 }
 
 .side_bar_imgs {
-    transform: translateX(200%); /* Slide it fully into view */
+    transform: translateX(200%);
     transition: left 0.3s ease; /* Smooth transition */
 }
 .side_bar_imgs.shifted {
-    transform: translateX(55%); /* Slide it fully into view */
+    display: flex;
+    flex-direction: column;
+    transform: translateX(60%); /* Slide it fully into view */
 }
 
-.blog-post-image {
-    margin: 0; /* Remove any default margin */
-    padding: 0; /* Remove any default padding */
-    width: auto !important; /* Maintain width as desired */
-    height: 12.19vh !important; /* Allow height to adjust based on aspect ratio */
-    object-fit: contain; /* Ensure the image is contained within the width */
+.blog-post-image .blog_t_image, .blog_m_image{
+    margin: 0; 
+    padding: 0;
+    width: 15.20vw;
+    height: auto;
+    object-fit: contain;
     cursor: pointer;
 }
-.blog-post-date {
-    margin-top: 0.86vh !important;
-    margin-bottom: 0.36vh !important;
+.sidebar_posts .blog-post-date {
+    margin-top: 0.86vh;
+    margin-bottom: 0.36vh;
     font-weight: 400;
 }
-.blog-post-title {
+.sidebar_posts .blog-post-title {
     margin-bottom: 1.98vh;
-    font-size: 17.63px !important;
-    line-height: 0.9vh;
+    font-size: 17.63px;
+    line-height: 1.96vh;
+}
+@media screen and (max-width: 1700px) {
+    .side_bar_imgs.shifted {
+        display: flex;
+        flex-direction: column;
+        transform: translateX(50%); /* Slide it fully into view */
+    }
+}
+@media screen and (max-width: 1600px) {
+    .side_bar_imgs.shifted {
+        transform: translateX(40%); /* Slide it fully into view */
+    }
+}
+@media screen and (max-width: 1500px) {
+    .side_bar_imgs.shifted {
+        transform: translateX(35%); /* Slide it fully into view */
+    }
+}
+@media screen and (max-width: 1400px) {
+    .side_bar_imgs.shifted {
+        transform: translateX(0%); /* Slide it fully into view */
+    }
 }
 @media screen and (max-width: 390px) {
     .carrot {

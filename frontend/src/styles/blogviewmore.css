@@ -40,12 +40,12 @@
     padding-bottom: 44.722vh;
 }
 
-.blog-post-image {
+.blog-view-more-posts .blog-post-image {
   width: 28.8vw;
   height: 49.53vh;
 }
 
-.blog-post-date {
+.blog-view-more-posts .blog-post-date {
   font-family: "Aileron", sans-serif;
   font-weight: 400;
   font-size: 18px;
@@ -57,7 +57,7 @@
 }
 
 /* Styling for the blog post titles */
-.blog-post-title {
+.blog-view-more-posts .blog-post-title {
   font-family: "Aileron", sans-serif;
   font-weight: 700;
   font-size: 24px;
