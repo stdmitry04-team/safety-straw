@@ -47,7 +47,7 @@ export default function BlogViewMore() {
     return (
         <div className="blog-view-more">    
             <p className="blog-view-header">BLOG POSTS</p>
-            <div className="posts">
+            <div className="blog-view-more-posts">
                 {isMobile ? (
                     <>
                         <BlogPost imageSrc={blog_l_image} title="How Safety Straw Products Are Environmental Friendly" date="Aug 20, 2024" />
