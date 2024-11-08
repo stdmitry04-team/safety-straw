@@ -68,45 +68,64 @@
   margin-block-start: 0;
 }
 
+.blog-post-content {
+  display: flex;
+  flex-direction: column;
+}
+
+.blog-post-date {
+  order: 1; /* Date above */
+}
+
+.blog-post-title {
+  order: 2; /* Title below */
+}
+
 @media screen and (max-width: 390px) {
   /* Stack posts in a single column */
   .posts {
       grid-template-columns: 1fr; /* Single column */
       padding: 0 3vw;
       row-gap: 5vh;
-      padding-bottom: 10vh;
+      /* Remove padding-bottom to avoid extra space */
+      padding-bottom: 0;
   }
 
   /* Display each blog post as a row with image and text side-by-side */
   .blog-post-item {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       gap: 3vw; /* Space between image and text */
   }
 
   .blog-post-image {
-      width: 30vw; /* Adjust image size for mobile */
-      height: auto; /* Maintain aspect ratio */
-      border-radius: 8px; /* Optional styling for rounded corners */
+      width: 30vw;
+      height: auto;
+      border-radius: 8px;
   }
 
-  /* Adjust container for date and title to align on the right side */
+  /* Left-align title and date in mobile */
   .blog-post-content {
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      width: 60vw; /* Adjust width to fit beside the image */
+      justify-content: flex-start;
+      align-items: flex-start; /* Left-align content */
+      width: 60vw;
   }
 
   .blog-post-date {
+      order: 2; /* Date below title on mobile */
       font-size: 16px;
-      margin-top: 0;
-      margin-bottom: 0.5vh;
+      margin-top: 0.5vh;
+      text-align: left; /* Ensure left alignment */
   }
 
   .blog-post-title {
+      order: 1; /* Title above date on mobile */
       font-size: 20px;
       line-height: 1.3;
+      margin-bottom: 0;
+      text-align: left; /* Ensure left alignment */
   }
 
   .blog-view-header {
@@ -114,4 +133,19 @@
       padding-top: 8vh;
       padding-bottom: 5vh;
   }
+
+  /* Adjust spacing for pagination bar */
+  .pagination-bar {
+      display: flex;
+      justify-content: center;
+      margin-top: 0.579vh; /* Distance from the last image */
+      margin-bottom: 1.111vh; /* Distance from the bottom of the screen */
+  }
+
+  .pagination-image {
+      width: auto;
+      height: 24px; /* Adjust height as needed to fit mobile layout */
+  }
 }
+
+
