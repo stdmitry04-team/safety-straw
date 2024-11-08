@@ -1,12 +1,5 @@
 @font-face {
     font-family: 'Aileron';
-    src: url('../fonts/Aileron-Black.otf') format('opentype');
-    font-weight: 900;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: 'Aileron';
     src: url('../fonts/Aileron-Bold.otf') format('opentype');
     font-weight: 700;
     font-style: normal;
@@ -34,7 +27,7 @@
     left: 500.97vw;
 }
 
-
+/* 'Latest Blogs' + carrot */
 .right_title {
     font-family: 'Aileron', 'sans-serif';
     font-weight: 700;
@@ -42,7 +35,6 @@
     display: flex;
     position: relative;
     gap: 0.77vw;
-    padding-left: 1.8vw;
     line-height: 1;
 }
 
@@ -74,6 +66,7 @@
     top: 14.907vh;
     padding-top: 2.16vh;
     padding-bottom: 1.64vh;
+    font-size: 32px;
 }
 
 .blog_page {
@@ -97,16 +90,15 @@
     width: 68.59vw;
     height: auto;
     left: 3.89vw;
-    top: 0vh;
     z-index: 1;
 }
 
 .blog_page_article {
     position: absolute;
-    width: 58.16vw;
+    width: 58.125vw;
     height: auto;
-    top: 15vh;
-    left: 10.10vw;
+    top: 13.83vh;
+    left: 9.10vw;
     z-index: 2; /* Ensure it's above the image */
 }
 
@@ -115,12 +107,13 @@
     transition: left 0.3s ease; /* Smooth transition */
 }
 .side_bar_imgs.shifted {
-    display: flex;
-    flex-direction: column;
+    /* display: flex;
+    flex-direction: column; */
     transform: translateX(60%); /* Slide it fully into view */
 }
 
-.blog-post-image .blog_t_image, .blog_m_image{
+.blog-indv-images .blog-post-image{
+    display: block;
     margin: 0; 
     padding: 0;
     width: 15.20vw;
@@ -128,38 +121,162 @@
     object-fit: contain;
     cursor: pointer;
 }
+.blog-post-item.blog_t_image {
+    width: 15.2vw;
+}
+.blog-post-item.blog_m_image {
+    width: 15.2vw;
+}
 .sidebar_posts .blog-post-date {
     margin-top: 0.86vh;
     margin-bottom: 0.36vh;
     font-weight: 400;
+    font-size: 15.67px;
 }
 .sidebar_posts .blog-post-title {
     margin-bottom: 1.98vh;
     font-size: 17.63px;
-    line-height: 1.96vh;
+    /* line-height: 1.96vh; */
+}
+@media screen and (max-height: 2100px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 15.83vh;
+    }
+}
+@media screen and (max-height: 2000px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 16.83vh;
+    }
+}
+@media screen and (max-height: 1900px)and (min-width: 1400px) {
+    .blog_page_article {
+        top: 17.83vh;
+    }
+}
+@media screen and (max-height: 1800px) and (min-width: 1400px)  {
+    .blog_page_article {
+        top: 18.83vh;
+    }
+}
+@media screen and (max-height: 1700px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 19.83vh;
+    }
+}
+@media screen and (max-height: 1600px)and (min-width: 1400px)  {
+    .blog_page_article {
+        top: 20.83vh;
+    }
+}
+@media screen and (max-height: 1500px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 21.83vh;
+    }
+}
+@media screen and (max-height: 1400px) and (min-width: 1400px)  {
+    .blog_page_article {
+        top: 24.83vh;
+    }
+}
+@media screen and (max-height: 1300px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 27.83vh;
+    }
+}
+@media screen and (max-height: 1200px) and (min-width: 1400px) {
+    .blog_page_article {
+        top: 30.83vh;
+    }
+}
+@media screen and (max-height: 1080px) and (min-width: 1400px)  {
+    .blog_page_article {
+        top: 33.83vh;
+    }
 }
 @media screen and (max-width: 1700px) {
-    .side_bar_imgs.shifted {
-        display: flex;
-        flex-direction: column;
-        transform: translateX(50%); /* Slide it fully into view */
+    .sidebar_posts .blog-post-title {
+        font-size: 16.63px;
     }
 }
 @media screen and (max-width: 1600px) {
-    .side_bar_imgs.shifted {
-        transform: translateX(40%); /* Slide it fully into view */
+    .sidebar_posts .blog-post-title {
+        font-size: 15.63px;
     }
 }
 @media screen and (max-width: 1500px) {
-    .side_bar_imgs.shifted {
-        transform: translateX(35%); /* Slide it fully into view */
+    .sidebar_posts .blog-post-title {
+        font-size: 14.63px;
     }
+
 }
 @media screen and (max-width: 1400px) {
-    .side_bar_imgs.shifted {
-        transform: translateX(0%); /* Slide it fully into view */
+    .blog_page_article {
+        top: 15.83vh;
+    }
+    .sidebar_posts .blog-post-title {
+        font-size: 12.63px;
+    }
+    .carrot_label {
+        font-size: 20px;
     }
 }
+@media screen and (max-width: 1200px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 11.63px;
+    }
+
+}
+@media screen and (max-width: 1100px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 10.4px;
+    }
+
+}
+@media screen and (max-width: 1000px) {
+    .side_bar_imgs.shifted {
+        transform: translateX(40%); /* Slide it fully into view */
+    }
+    .sidebar_posts .blog-post-title {
+        font-size: 9.63px;
+    }
+    .carrot_label {
+        font-size: 15px;
+    }
+
+}
+@media screen and (max-width: 900px) {
+    .side_bar_imgs.shifted {
+        transform: translateX(40%); /* Slide it fully into view */
+    }
+    .sidebar_posts .blog-post-title {
+        font-size: 8.63px;
+    }
+
+}
+@media screen and (max-width: 800px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 6.63px;
+    }
+    .sidebar_posts .blog-post-date {
+        font-size: 10px;
+    }
+}
+@media screen and (max-width: 700px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 5.63px;
+    }
+}
+@media screen and (max-width: 600px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 4.63px;
+    }
+}
+@media screen and (max-width: 500px) {
+    .sidebar_posts .blog-post-title {
+        font-size: 3.63px;
+    }
+}
+/* 390 x 1597 */
 @media screen and (max-width: 390px) {
     .carrot {
         display: none;
@@ -167,4 +284,40 @@
     .carrot_2 {
         display: none;
     }
+    .blog_page {
+        display: flex; /* Use flexbox */
+        flex-direction: column; /* Stack children vertically */
+        width: 100%;
+    }
+    
+    .blog_page_left {
+        width: 100%;
+        margin-bottom: 20px; /* Add margin to create space between left and right side */
+    }
+    
+    .sidebar_posts {
+        width: 100%;
+        /* Adjust any other styles for the right-side content */
+    }
+    
+    .blog-indv-images {
+        /* You can adjust the styles of the individual blog images here if necessary */
+        padding-top: 150px;
+        transform: translateX(-36%);
+    }
+    .sidebar_posts .blog-post-title {
+        font-size: 10px;
+    }
+    .sidebar_posts .blog-post-date {
+        font-size: 8px;
+    }
+    .blog-indv-images .blog-post-image{
+    display: block;
+    margin: 0; 
+    padding-bottom: 1.62vh;
+    width: 30vw;
+    height: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
 }

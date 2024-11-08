@@ -83,7 +83,7 @@
 
 @media screen and (max-width: 390px) {
   /* Stack posts in a single column */
-  .posts {
+  .blog-view-more-posts {
       grid-template-columns: 1fr; /* Single column */
       padding: 0 3vw;
       row-gap: 5vh;
@@ -98,7 +98,7 @@
       gap: 3vw; /* Space between image and text */
   }
 
-  .blog-post-image {
+  .blog-view-more-posts .blog-post-image {
       width: 30vw;
       height: auto;
       border-radius: 8px;
@@ -113,14 +113,14 @@
       width: 60vw;
   }
 
-  .blog-post-date {
+  .blog-view-more-posts .blog-post-date {
       order: 2; /* Date below title on mobile */
       font-size: 16px;
       margin-top: 0.5vh;
       text-align: left; /* Ensure left alignment */
   }
 
-  .blog-post-title {
+  .blog-view-more-posts .blog-post-title {
       order: 1; /* Title above date on mobile */
       font-size: 20px;
       line-height: 1.3;

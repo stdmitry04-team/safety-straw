@@ -29,19 +29,21 @@ export function BlogPage() {
                     <img className="blog_page_article" src={blog_page_article} alt="" />
                 </div>
                 
-                <div className="sidebar_posts">
-                    <img className={`carrot ${shifted ? 'shifted' : ''}`} src={carrot} alt="" onClick={shiftLeft}  />
-                    <div className = {`side_bar_imgs ${shifted ? 'shifted' : ''}`}>
+                <div className={`sidebar_posts`}>
+                    <img className={`carrot ${shifted ? 'shifted' : ''}`} src={carrot} alt="" onClick={shiftLeft} />
+                    <div className={`side_bar_imgs ${shifted ? 'shifted' : ''}`}>
                         <div className="right_title">
-                            <img className={`carrot_2 ${shifted ? 'shifted' : ''}`} src={carrot_2} alt=""onClick={shiftLeft} />
+                            <img className={`carrot_2 ${shifted ? 'shifted' : ''}`} src={carrot_2} alt="" onClick={shiftLeft}/>
                             <p className="carrot_label">Latest Blogs</p>
                         </div>
-                        <BlogPost className = "blog_t_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are <br /> Environmental Friendly </>} date='Aug 20, 2024' />
-                        <BlogPost className = "blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
-                        <BlogPost className = "blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                        <div className="blog-indv-images">
+                            <BlogPost className="blog_t_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are <br /> Environmental Friendly </>} date='Aug 20, 2024' />
+                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                        </div>
                     </div>
-                    
                 </div>
+
                 </div>
             </body>
             <WaitlistBar />
