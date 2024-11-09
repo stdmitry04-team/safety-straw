@@ -24,26 +24,26 @@ export function BlogPage() {
     return (
         <div>
             <Navbar /> 
-            <body className="blog_page_body">
-            <div className={`blog_page ${shifted ? 'shifted' : ''}`}>
-                <div className="blog_page_left">
-                    <img className="blog_page_image" src={blog_page_image} alt=""/>
-                    <img className="blog_page_article" src={blog_page_article} alt="" />
-                    <img className="blog_page_image_mobile" src={blog_page_image_mobile} alt=""/>
-                    <img className="blog_page_article_mobile" src={blog_page_article_mobile} alt="" />
+            <body className="blog-page-body">
+            <div className={`blog-page ${shifted ? 'shifted' : ''}`}>
+                <div className="blog-page-left">
+                    <img className="blog-page-image" src={blog_page_image} alt=""/>
+                    <img className="blog-page-article" src={blog_page_article} alt="" />
+                    <img className="blog-page-image-mobile" src={blog_page_image_mobile} alt=""/>
+                    <img className="blog-page-article-mobile" src={blog_page_article_mobile} alt="" />
                 </div>
                 
-                <div className={`sidebar_posts`}>
-                    <img className={`carrot ${shifted ? 'shifted' : ''}`} src={carrot} alt="" onClick={shiftLeft} />
-                    <div className={`side_bar_imgs ${shifted ? 'shifted' : ''}`}>
-                        <div className="right_title">
-                            <img className={`carrot_2 ${shifted ? 'shifted' : ''}`} src={carrot_2} alt="" onClick={shiftLeft}/>
-                            <p className="carrot_label">Latest Blogs</p>
+                <div className={`blog-page-side-bar-posts`}>
+                    <img className={`blog-page-carrot-1 ${shifted ? 'shifted' : ''}`} src={carrot} alt="" onClick={shiftLeft} />
+                    <div className={`blog-page-side-bar-imgs ${shifted ? 'shifted' : ''}`}>
+                        <div className="blog-page-carrot-title">
+                            <img className={`blog-page-carrot-2 ${shifted ? 'shifted' : ''}`} src={carrot_2} alt="" onClick={shiftLeft}/>
+                            <p className="blog-page-carrot-label">Latest Blogs</p>
                         </div>
                         <div className="blog-indv-images">
-                            <BlogPost className="blog_m_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
-                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
-                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <BlogPost className="blog-t-image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
+                            <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
                         </div>
                     </div>
                 </div>
