@@ -43,6 +43,7 @@
     cursor: pointer;
     position: relative;
     top: 1.59vh;
+    left: 6.77vw;
 }
 
 .carrot.shifted {
@@ -92,6 +93,9 @@
     left: 3.89vw;
     z-index: 1;
 }
+.blog_page_image_mobile {
+    display: none;
+}
 
 .blog_page_article {
     position: absolute;
@@ -101,7 +105,9 @@
     left: 9.10vw;
     z-index: 2; /* Ensure it's above the image */
 }
-
+.blog_page_article_mobile {
+    display: none;
+}
 .side_bar_imgs {
     transform: translateX(200%);
     transition: left 0.3s ease; /* Smooth transition */
@@ -278,6 +284,14 @@
 }
 /* 390 x 1597 */
 @media screen and (max-width: 390px) {
+    .blog_page_body {
+        padding: 0;
+        margin: 0;
+        max-height: 1597px;
+    }
+    .sidebar_posts {
+        transform: translateY(-10%);
+    }
     .carrot {
         display: none;
     }
@@ -285,39 +299,79 @@
         display: none;
     }
     .blog_page {
+        transform: translateX(0%);
+    }
+    .blog_page, .blog_page.shifted {
         display: flex; /* Use flexbox */
         flex-direction: column; /* Stack children vertically */
         width: 100%;
     }
+    .side_bar_imgs {
+        transform: translateX(45%);
+    }
     
     .blog_page_left {
         width: 100%;
-        margin-bottom: 20px; /* Add margin to create space between left and right side */
     }
     
     .sidebar_posts {
         width: 100%;
+        transform: translateY(-25%);
         /* Adjust any other styles for the right-side content */
     }
     
     .blog-indv-images {
         /* You can adjust the styles of the individual blog images here if necessary */
-        padding-top: 150px;
         transform: translateX(-36%);
     }
     .sidebar_posts .blog-post-title {
         font-size: 10px;
+        width: 38.21vw;
+        display: flex;
+        text-align: left;
     }
     .sidebar_posts .blog-post-date {
+        text-align: left;
+        padding-top: 1.5vh;
         font-size: 8px;
     }
     .blog-indv-images .blog-post-image{
-    display: block;
-    margin: 0; 
-    padding-bottom: 1.62vh;
-    width: 30vw;
-    height: auto;
-    object-fit: contain;
-    cursor: pointer;
-}
+        display: block;
+        margin: 0; 
+        padding-bottom: 1.62vh;
+        width: 30vw;
+        height: auto;
+        object-fit: contain;
+        cursor: pointer;
+    }
+    .blog_page_article {
+        display: none;
+    }
+    .blog_page_article_mobile {
+        display: block;
+        position: relative;
+        width: 71.53vw;
+        left: 14.62vw;
+        top: -6.2vh;
+    }
+    .blog_page_image {
+        display: none;
+    }
+    .blog_page_image_mobile {
+        display: flex;
+        position: relative;
+        width: 82.3vw;
+        left: 8.97vw;
+        top: -1.5vh;
+    }
+    .carrot_label {
+        transform: translateX(-152%);
+    }
+    /* .blog-post-item.blog_t_image {
+        padding-bottom:1.62vh;
+    }
+    .blog-post-item.blog_m_image {
+        padding-bottom:1.62vh;
+    } */
+
 }
