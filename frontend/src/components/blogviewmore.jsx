@@ -15,7 +15,7 @@ export default function BlogViewMore() {
     const [isMobile, setIsMobile] = useState(false);
 
     useEffect(() => {
-        const handleResize = () => setIsMobile(window.innerWidth <= 390);
+        const handleResize = () => setIsMobile(window.innerWidth <= 440);
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);

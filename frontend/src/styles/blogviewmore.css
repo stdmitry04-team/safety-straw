@@ -453,12 +453,12 @@
   .blog-view-more-posts .blog-post-title {
     font-size: 7px;
   }
-}
+} 
 
-@media screen and (max-width: 390px) {
+@media screen and (max-width: 440px) {
   .blog-view-more-posts {
       /* display: grid; */
-      grid-template-columns: 1fr; /* single column */
+      grid-template-columns: 1fr; 
       padding: 0 3vw;
       row-gap: 5vh;
       padding-bottom: 0;
