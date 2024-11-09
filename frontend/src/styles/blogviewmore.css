@@ -33,26 +33,27 @@
     font-weight: 900;
     font-weight: bold;
     font-size: 70px;
-    /* padding-top: 21.481vh; */
-    padding-top: 12.2vh;
-    line-height: 10.65vh;
-    padding-bottom: 8.056vh;
+    padding-top: 4.91vh;
+    /* padding-top: 12.2vh; */
+    /* line-height: 10.65vh; */
+    padding-bottom: 3.056vh;
 }
 
 .blog-view-more-posts {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
-    gap: 1.667vw; /* space between imgs */
+    gap: 0vw; /* space between imgs */
     margin: 0 auto;
     /* padding: 0 5.208vw; */
-    padding: 0 5.052vw;
-    row-gap: 8.241vh;
-    padding-bottom: 44.722vh;
+    /* padding: 0 5.052vw; */
+    /* row-gap: 1.241vh; */
+    /* padding-bottom: 44.722vh; */
 }
 
 .blog-view-more-posts .blog-post-image {
   width: 28.8vw;
-  height: 49.53vh;
+  height: auto;
+  object-fit: contain;
 }
 
 .blog-view-more-posts .blog-post-date {
@@ -94,12 +95,11 @@
 @media screen and (max-width: 2100px) and (min-width: 1400px) {
   .blog-view-header {
     font-size: 120px;
-    padding-top: 13.2vh;
-    padding-bottom: 9.056vh;
+    /* padding-top: 13.2vh; */
+    /* padding-bottom: 9.056vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 49.53vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 32px;
@@ -115,20 +115,19 @@
 @media screen and (max-width: 1867px) and (min-width: 1400px) {
   .blog-view-header {
     font-size: 115px;
-    padding-top: 12.8vh;
-    padding-bottom: 8.756vh;
+    /* padding-top: 12.8vh; */
+    /* padding-bottom: 8.756vh; */
   }
   .blog-view-more-posts {
     padding: 0 5vw;
     margin: 0 auto;
     display: grid;
-    gap: 2vw; 
-    row-gap: 8.241vh;
+    /* gap: 2vw;  */
+    /* row-gap: 8.241vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 50.53vh;
-  }
+    }
   .blog-view-more-posts .blog-post-date {
     font-size: 28px;
   }
@@ -140,12 +139,11 @@
 @media screen and (max-width: 1770px) and (min-width: 1400px) {
   .blog-view-header {
     font-size: 110px;
-    padding-top: 12.2vh;
-    padding-bottom: 7.756vh;
+    /* padding-top: 12.2vh; */
+    /* padding-bottom: 7.756vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 27.8vw;
-    height: 43.53vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 26px;
@@ -158,12 +156,11 @@
 @media screen and (max-width: 1611px) and (min-width: 1400px) {
   .blog-view-header {
     font-size: 90px;
-    padding-top: 11.2vh;
-    padding-bottom: 8.056vh;
+    /* padding-top: 11.2vh; */
+    /* padding-bottom: 8.056vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 27.8vw;
-    height: 45.53vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 24px;
@@ -176,12 +173,11 @@
 @media screen and (max-width: 1517px) and (min-width: 1400px) {
   .blog-view-header {
     font-size: 82px;
-    padding-top: 11.2vh;
-    padding-bottom: 8.056vh;
+    /* padding-top: 11.2vh; */
+    /* padding-bottom: 8.056vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 27.8vw;
-    height: 45.53vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 23px;
@@ -195,7 +191,7 @@
   .blog-view-header {
     font-size: 85px;
     padding-top: 11.2vh;
-    padding-bottom: 8.056vh;
+    /* padding-bottom: 8.056vh; */
   }
   .blog-view-more-posts{
     padding-bottom: 38.722vh;
@@ -244,7 +240,6 @@
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 46.53vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 16px;
@@ -262,11 +257,10 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 6.241vh;
+    /* row-gap: 6.241vh; */
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 41.83vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 15px;
@@ -285,12 +279,11 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 5.541vh;
+    /* row-gap: 5.541vh; */
     padding-bottom: 34.722vh;
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 35.8vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 15px;
@@ -329,7 +322,6 @@
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 32vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 12px;
@@ -347,12 +339,11 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 4.041vh;
+    /* row-gap: 4.041vh; */
     padding-bottom: 24.722vh;
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 27.5vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 11px;
@@ -370,7 +361,6 @@
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 24.5vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 9.5px;
@@ -388,7 +378,6 @@
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 22.5vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 8.5px;
@@ -406,12 +395,11 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 3.041vh;
+    /* row-gap: 3.041vh; */
     padding-bottom: 14.722vh;
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 20.5vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 7.5px;
@@ -429,12 +417,11 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 3.041vh;
+    /* row-gap: 3.041vh; */
     padding-bottom: 10vh;
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 18vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 7px;
@@ -454,12 +441,11 @@
   }
   .blog-view-more-posts {
     display: grid;
-    row-gap: 3.041vh;
+    /* row-gap: 3.041vh; */
     padding-bottom: 2vh;
   }
   .blog-view-more-posts .blog-post-image {
     width: 28.8vw;
-    height: 16.5vh;
   }
   .blog-view-more-posts .blog-post-date {
     font-size: 6.5px;
@@ -476,7 +462,7 @@
       /* display: grid; */
       grid-template-columns: 1fr; /* single column */
       padding: 0 3vw;
-      row-gap: 5vh;
+      /* row-gap: 5vh; */
       padding-bottom: 0;
   }
 
@@ -488,7 +474,6 @@
 
   .blog-view-more-posts .blog-post-image {
       width: 131.82px;
-      height: 127.51px;
       border-radius: 8px;
   }
 
