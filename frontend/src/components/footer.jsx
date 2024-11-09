@@ -1,14 +1,20 @@
 // import "../styles/footer.css"
-import "../styles/footer1.css"
+import "../styles/footer.css";
 
-import footer_logo from "../assets/footer-logo.svg"
-import inst from "../assets/inst.svg"
-import linkedin from "../assets/linkedin.svg"
-import tiktok from "../assets/tiktok.svg"
+import footer_logo from "../assets/footer-logo.svg";
+import inst from "../assets/inst.svg";
+import linkedin from "../assets/linkedin.svg";
+import tiktok from "../assets/tiktok.svg";
+import { useLocation } from 'react-router-dom';
 
 export default function Footer(){
+
+    const footerStyle = {
+        backgroundColor: location.pathname === '/checkout' ? '#E3E3E3' : '#fff',
+    };
+
     return(
-        <footer class="footer" id="footer">
+        <footer class="footer" id="footer" style={footerStyle}>
 
 
             <div className="footer-left">
