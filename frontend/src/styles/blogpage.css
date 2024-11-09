@@ -173,7 +173,7 @@
         flex-direction: column; /* Stack children vertically */
         width: 100%;
     }
-    .blog-page-sid-bar-imgs {
+    .blog-page-side-bar-imgs {
         transform: translateX(45%);
     }
     
