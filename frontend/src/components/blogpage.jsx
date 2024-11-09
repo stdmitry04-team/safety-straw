@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import BlogPost from "./blogpost";
+import BlogPostArticle from "./blogpostarticle"
 import blog_t_image from "../images/blog-indv-page-img-top.png";
 import blog_m_image from "../images/blog-indv-page-img-middle.png";
 import carrot_2 from "../assets/blogcarrot2.svg";
@@ -30,6 +31,7 @@ export function BlogPage() {
                     <img className="blog-page-image" src={blog_page_image} alt=""/>
                     <img className="blog-page-article" src={blog_page_article} alt="" />
                     <img className="blog-page-image-mobile" src={blog_page_image_mobile} alt=""/>
+                    <BlogPostArticle className="blog-page-article-comp" authort={<>John Doe</>} date='5 October 2024' title={<>How Do Bars Use Safety Straw Products?</>} />
                     <img className="blog-page-article-mobile" src={blog_page_article_mobile} alt="" />
                 </div>
                 

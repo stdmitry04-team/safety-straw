@@ -214,7 +214,7 @@
     }
     .blog-page-left {
         width: 82.3vw;
-        margin-bottom: 3vh;
+        /* margin-bottom: 3vh; */
     }
     .blog-page-article {
         display: none;
