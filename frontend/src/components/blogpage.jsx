@@ -28,8 +28,8 @@ export function BlogPage() {
             <div className={`blog_page ${shifted ? 'shifted' : ''}`}>
                 <div className="blog_page_left">
                     <img className="blog_page_image" src={blog_page_image} alt=""/>
-                    <img className="blog_page_image_mobile" src={blog_page_image_mobile} alt=""/>
                     <img className="blog_page_article" src={blog_page_article} alt="" />
+                    <img className="blog_page_image_mobile" src={blog_page_image_mobile} alt=""/>
                     <img className="blog_page_article_mobile" src={blog_page_article_mobile} alt="" />
                 </div>
                 
@@ -41,9 +41,9 @@ export function BlogPage() {
                             <p className="carrot_label">Latest Blogs</p>
                         </div>
                         <div className="blog-indv-images">
-                            <BlogPost className="blog_t_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are <br /> Environmental Friendly </>} date='Aug 20, 2024' />
-                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
-                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straw Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <BlogPost className="blog_t_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
+                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
                         </div>
                     </div>
                 </div>
