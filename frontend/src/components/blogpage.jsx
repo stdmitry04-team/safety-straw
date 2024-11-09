@@ -41,7 +41,7 @@ export function BlogPage() {
                             <p className="carrot_label">Latest Blogs</p>
                         </div>
                         <div className="blog-indv-images">
-                            <BlogPost className="blog_t_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
+                            <BlogPost className="blog_m_image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
                             <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
                             <BlogPost className="blog_m_image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
                         </div>
