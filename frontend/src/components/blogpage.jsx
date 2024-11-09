@@ -48,7 +48,7 @@ export function BlogPage() {
                     </div>
                 </div>
 
-                </div>
+            </div>
             </body>
             <WaitlistBar />
             <Footer />
