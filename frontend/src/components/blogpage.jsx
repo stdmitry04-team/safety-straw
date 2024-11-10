@@ -9,6 +9,8 @@ import blog_page_image from "../images/blogpagemainimg.png";
 import blog_page_image_mobile from "../images/blogpage-main-img-mobile.png";
 import blog_page_article from "../assets/blogpage-article.svg";
 import blog_page_article_mobile from "../assets/blogpage-article-mobile.svg";
+import blog_page_article_icon from "../assets/blog-article-icon.svg";
+import blog_page_article_icon_arrow from "../assets/blog-article-icon-arrow.svg";
 import Navbar from "./nav.jsx";
 import WaitlistBar from "./WaitlistBar.jsx";
 import Footer from "./footer.jsx";
@@ -29,9 +31,35 @@ export function BlogPage() {
             <div className={`blog-page ${shifted ? 'shifted' : ''}`}>
                 <div className="blog-page-left">
                     <img className="blog-page-image" src={blog_page_image} alt=""/>
-                    <img className="blog-page-article" src={blog_page_article} alt="" />
                     <img className="blog-page-image-mobile" src={blog_page_image_mobile} alt=""/>
-                    <BlogPostArticle className="blog-page-article-comp" authort={<>John Doe</>} date='5 October 2024' title={<>How Do Bars Use Safety Straw Products?</>} />
+                    <BlogPostArticle 
+                        className="blog-page-article-comp" 
+                        author="John Doe" 
+                        date="5 October 2024" 
+                        title="How Do Bars Use Safety Straw Products?" 
+                        imageSrc={blog_page_article_icon}
+                        imageSrc2={blog_page_article_icon_arrow}
+                        text={<>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                              anim id est laborum<br /><br />
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                              anim id est laborum<br /><br />
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor 
+                              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud 
+                              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
+                              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+                              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit 
+                              anim id est laborum</>}
+                    />
+                    <img className="blog-page-article" src={blog_page_article} alt="" />
+                    
                     <img className="blog-page-article-mobile" src={blog_page_article_mobile} alt="" />
                 </div>
                 
