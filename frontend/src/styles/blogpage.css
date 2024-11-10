@@ -227,18 +227,17 @@
     
     .blog-page-side-bar-posts {
         width: 100%;
-        transform: translateY(-17%);
+        transform: translateY(-7%);
     }
     .blog-page-carrot-label {
        position: relative;
        top: -1vh; 
        right: 39vw;
-       /* font-size: 12px; */
     }
     .blog-indv-images {
         position: relative;
         right: 39vw;
-        /* transform: translateX(-36%); */
+        transform: translateX(2%);
     }
     .blog-page-side-bar-posts .blog-post-title {
         font-size: 10px;
@@ -255,7 +254,7 @@
         display: block;
         margin: 0; 
         padding-bottom: 1.62vh;
-        width: 30vw;
+        width: 24vw;
         height: auto;
         object-fit: contain;
         cursor: pointer;
@@ -265,34 +264,41 @@
         width: 65%;
         height: auto;
         padding-top: 1vh;
-        transform: translateY(-9.5%) translateX(25%);
+        transform: translateY(-12.9%) translateX(25%);
         border-radius: 6.52px;
     }
+    /* .blog-post-article-top-line {
+        padding-top: 2vh;
+    } */
     .blog-post-article-text {
-        font-size: 10px;
+        font-size: 8px;
         line-height: 13px;
-        letter-spacing: 0.0001em;
-        width: 89%;
+        letter-spacing: 0.000001em;
+        width: 96%;
         text-align: justify;
+        transform: translateY(-6%);
     }
     .blog-post-article-title {
-        font-size: 14px;
+        font-size: 15.2px;
         line-height: 20.6px;
-        letter-spacing: 0.02em;
-        width: 39vw;
+        width: 42vw;
         transform: translateX(7%);
+        padding-bottom: 2vh;
     }
     .blog-post-article-icon {
-        transform: translateX(50%);
+        transform: translateX(50%) translateY(-11%);
     } 
     .blog-post-article-icon-arrow {
-        transform: translateX(-50%);
+        transform: translateX(-50%) translateY(-11%);
     }
     .blog-post-article-author, .blog-post-article-date {
-        font-size: 10px;
+        font-size: 8px;
         line-height: 8.5px;
         letter-spacing: 0.02em;
         text-align: left;
+    }
+    .blog-post-article-header {
+        padding-top: 0.5vh;
     }
     /* .blog-page-article-mobile {
         display: block;
@@ -342,5 +348,8 @@
         display: flex;
         flex-direction: column; /* or row if they're side by side */
         gap: 1rem; /* Adjust the gap size as needed */
+    }
+    .blog-page-carrot-title p{
+        font-size: 12px;
     }
 }
