@@ -355,7 +355,9 @@
         width: fit-content; 
         height: auto;
     }
-
+    .blog-post-item.blog-t-image .blog-post-content{
+        transform: translateY(70%);
+    }
     .blog-post-item.blog-m-image{
         width:fit-content !important;
         align-items: center;
