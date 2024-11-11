@@ -167,7 +167,7 @@
     transform: translateX(60%);
 }
 
-.blog-post-image:hover {
+.blog-indv-images .blog-post-image:hover {
     transform: scale(1.02);
 }
 
