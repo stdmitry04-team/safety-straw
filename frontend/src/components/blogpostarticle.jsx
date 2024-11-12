@@ -15,10 +15,6 @@ export default function BlogPostArticle({ imageSrc, imageSrc2, author, title, da
                 </div>
                 <h3 className="blog-post-article-title">{title}</h3>   
             </div>
-            
-               
-            
-            
             <div className="blog-post-article-content">
                 <p className="blog-post-article-text">{text}</p>
             </div>

@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import "../styles/blogviewmore.css";
 import BlogPost from "./blogpost";
 import blog_l_image from "../images/blogimageleft.png";
@@ -13,6 +14,8 @@ import Footer from "./footer.jsx";
 
 export default function BlogViewMore() {
     const [isMobile, setIsMobile] = useState(false);
+    const navigate = useNavigate();
+    const { id } = useParams();
 
     useEffect(() => {
         const handleResize = () => setIsMobile(window.innerWidth <= 440);
@@ -21,38 +24,52 @@ export default function BlogViewMore() {
         return () => window.removeEventListener("resize", handleResize);
     }, []);
 
+    const handleBlogClick = (index) => {
+        navigate(`/blog/${index}`);
+    };
+
+    let idCounter = 1;
+
+    const blogPosts = [
+        { id: idCounter++, imageSrc: blog_l_image, title: "How Safety Straw Products Are Environmental Friendly", date: "Aug 20, 2024" },
+        { id: idCounter++, imageSrc: blog_m_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
+        { id: idCounter++, imageSrc: blog_r_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+        { id: idCounter++, imageSrc: blog_middown_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
+        { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+        { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+    ];
+    
+    const post = blogPosts.find(post => post.id === parseInt(id));
+
+    if (!post) {
+        return <div>Post not found</div>;
+    }
+
     return (
         <div>
             <Navbar /> 
             <div className="blog-view-more">    
             <p className="blog-view-header">BLOG POSTS</p>
             <div className="blog-view-more-posts">
-                {isMobile ? (
-                    <>
-                        <BlogPost imageSrc={blog_l_image} title="How Safety Straw Products Are Environmental Friendly" date="Aug 20, 2024" />
-                        <BlogPost imageSrc={blog_m_image} title="How Do Bars Use Safety Straw Products?" date="Aug 23, 2024" />
-                        <BlogPost imageSrc={blog_l_image} title="How Safety Straw Products Are Environmental Friendly" date="Aug 20, 2024" />
-                        <BlogPost imageSrc={blog_m_image} title="How Do Bars Use Safety Straw Products?" date="Aug 23, 2024" />
-                    </>
-                ) : (
-                    <>
-                        <BlogPost imageSrc={blog_l_image} title="How Safety Straw Products Are Environmental Friendly" date="Aug 20, 2024" />
-                        <BlogPost imageSrc={blog_m_image} title="How Do Bars Use Safety Straw Products?" date="Aug 23, 2024" />
-                        <BlogPost imageSrc={blog_r_image} title="How the Safety Straw Straws Changed My Life" date="Jul 1, 2024" />
-                        <BlogPost imageSrc={blog_r_image} title="How Safety Straw Products Are Environmental Friendly" date="Aug 20, 2024" />
-                        <BlogPost imageSrc={blog_middown_image} title="How Do Bars Use Safety Straw Products?" date="Aug 23, 2024" />
-                        <BlogPost imageSrc={blog_rdown_image} title="How the Safety Straw Straws Changed My Life" date="Jul 1, 2024" />
-                    </>
-                )}
+                {blogPosts.map((post) => (
+                    <BlogPost
+                        key={post.id}
+                        imageSrc={post.imageSrc}
+                        title={post.title}
+                        date={post.date}
+                        onClick={() => handleBlogClick(post.id)}
+                    />
+                ))}
             </div>
+
             {isMobile && (
                 <div className="pagination-bar">
                     <img src={blogpagebar} alt="Pagination" className="pagination-image" />
                 </div>
             )}
             </div>
-            {/* <WaitlistBar />
-            <Footer /> */}
+            <WaitlistBar />
+            <Footer />
         </div>
     );
 }
