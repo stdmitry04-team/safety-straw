@@ -6,7 +6,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import { Admin } from "./components/Admin.jsx";
 import Checkout from "./components/Checkout.jsx";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
 
+// Initialize Stripe with your public key
+const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
 //change elements as we develop pages
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -15,7 +19,14 @@ const router = createBrowserRouter([
   { path: "/blog", element: <App /> },
   { path: "/admin", element: <Admin /> },
   { path: "/login", element: <Login /> },
-  { path: "/checkout", element: <Checkout /> },
+  {
+    path: "/checkout",
+    element: (
+      <Elements stripe={stripePromise}>
+        <Checkout />
+      </Elements>
+    ),
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(

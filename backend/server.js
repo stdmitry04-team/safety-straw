@@ -208,20 +208,9 @@ app.post("/api/create-payment-intent", async (req, res) => {
   }
 });
 
-app.post("/api/send-payment", async (req, res) => {
-  const obj = req.body;
-  let productInfo = { quantity: obj.quantity, price: obj.grandTotal };
-  let companyInfo = {
-    companyName: obj.companyName,
-    companyNumber: obj.phoneNumber,
-  };
-  await sendCardPayment(
-    obj.paymentIntentSecret,
-    productInfo,
-    companyInfo,
-    obj.mailingAddress,
-    obj.billingAddress
-  );
+app.post("/api/store-order", async (req, res) => {
+  const data = req.body;
+  console.log(data.card.nameOnCard);
 });
 
 // Serve static files from the public directory (serves the built react files in deployment)

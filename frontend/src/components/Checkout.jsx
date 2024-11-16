@@ -6,14 +6,36 @@ import img_top from "../images/checkout-pic-top.png";
 import img_mid from "../images/checkout-pic-mid.png";
 import img_bottom from "../images/checkout-pic-bottom.png";
 import straws_img from "../images/checkout-straws.png";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import {
+  Elements,
+  CardElement,
+  useStripe,
+  useElements,
+} from "@stripe/react-stripe-js"; // React components for Stripe
+function calculateResponsiveFontSize() {
+  const minFontSize = 14; // Minimum font size in px
+  const maxFontSize = 28; // Maximum font size in px
+  const viewportWidth = window.innerWidth;
+  const fontSize = Math.min(
+    Math.max(minFontSize, 0.015 * viewportWidth),
+    maxFontSize
+  );
+  return `${fontSize}px`;
+}
 
 export default function Checkout() {
   const [quantity, setQuantity] = useState(1);
   const [checked, setChecked] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentError, setPaymentError] = useState("");
+  const [cardComplete, setCardComplete] = useState(null);
+
+  const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
+  const stripe = useStripe();
+  const elements = useElements();
+  const cardContainer = useRef(null);
 
   const {
     register,
@@ -25,12 +47,6 @@ export default function Checkout() {
     defaultValues: {
       companyName: "",
       phoneNumber: "",
-      card: {
-        nameOnCard: "",
-        cardNumber: "",
-        expiryDate: "",
-        cvv: "",
-      },
       checking: {
         nameOnAccount: "",
         routingNumber: "",
@@ -70,7 +86,7 @@ export default function Checkout() {
 
   // Update payment method when fields change
   useEffect(() => {
-    const hasCardInfo = cardFields.some((field) => field);
+    const hasCardInfo = cardComplete != null;
     const hasCheckingInfo = checkingFields.some((field) => field);
 
     if (hasCardInfo && !hasCheckingInfo) {
@@ -90,13 +106,19 @@ export default function Checkout() {
     } else if (!hasCardInfo && !hasCheckingInfo) {
       setPaymentMethod("");
     }
+    const handleResize = () => {
+      setFontSize(calculateResponsiveFontSize());
+    };
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
   }, [...cardFields, ...checkingFields]);
 
   // Validate that at least one payment method is fully filled out
   const validatePaymentMethod = () => {
-    const hasCompleteCardInfo = cardFields.every((field) => field);
+    const hasCompleteCardInfo = cardComplete;
     const hasCompleteCheckingInfo = checkingFields.every((field) => field);
-
+    console.log(!hasCompleteCardInfo && !hasCompleteCheckingInfo);
     if (!hasCompleteCardInfo && !hasCompleteCheckingInfo) {
       setPaymentError(
         "Please complete either card information or checking account information"
@@ -117,7 +139,7 @@ export default function Checkout() {
     Michigan: 0.06,
   };
 
-  const baseUrl = process.env.BASE_URL || "http://localhost:5000";
+  const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
   const itemPrice = 10.99;
   const shippingCost = 2.99;
   const totalPrice = quantity * itemPrice;
@@ -133,6 +155,40 @@ export default function Checkout() {
   // Watch mailing address for syncing with billing address
   const mailingAddress = watch("mailingAddress");
 
+  const sendCardPayment = async (paymentIntentSecret, data) => {
+    const cardElement = elements.getElement(CardElement);
+
+    console.log(paymentIntentSecret);
+    const { error, paymentIntent } = await stripe.confirmCardPayment(
+      paymentIntentSecret,
+      {
+        payment_method: {
+          card: cardElement,
+        },
+      }
+    );
+    if (error) {
+      throw new Error(error);
+    } else if (paymentIntent && paymentIntent.status === "succeeded") {
+      console.log("Payment successful");
+      const formData = {
+        ...data,
+        quantity,
+        billingAddress: checked ? mailingAddress : data.billingAddress,
+        grandTotal,
+        paymentIntent: paymentIntent.id,
+      };
+      console.log(formData);
+      const responsePayment = await fetch(`${baseUrl}/api/store-order`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+    }
+  };
+
   useEffect(() => {
     if (checked) {
       Object.keys(mailingAddress).forEach((key) => {
@@ -143,15 +199,17 @@ export default function Checkout() {
 
   const onSubmit = async (data) => {
     // Validate payment method before submission
+    console.log("hit");
+    console.log(cardComplete);
     if (!validatePaymentMethod()) {
       return;
     }
 
-    // Trigger form validation
-    // const isValid = await trigger();
-    // if (!isValid) {
-    //   return;
-    // }
+    // // Trigger form validation
+    // // const isValid = await trigger();
+    // // if (!isValid) {
+    // //   return;
+    // // }
 
     try {
       const responseIntent = await fetch(
@@ -164,7 +222,6 @@ export default function Checkout() {
           body: JSON.stringify({ price: grandTotal }),
         }
       );
-
       if (responseIntent.ok) {
         console.log("Succesfully created payment intent");
       } else {
@@ -172,24 +229,12 @@ export default function Checkout() {
         console.log("Failed to make payment intent");
         throw new Error(error);
       }
-      const data = await responseIntent.json();
-      const paymentIntentSecret = data.clientSecret;
-      const formData = {
-        ...data,
-        quantity,
-        billingAddress: checked ? mailingAddress : data.billingAddress,
-        paymentMethod,
-        grandTotal,
-        paymentIntentSecret,
-      };
-      console.log(formData);
-      const responsePayment = await fetch(`${baseUrl}/api/send-payment`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const dataIntent = await responseIntent.json();
+      const paymentIntentSecret = dataIntent.clientSecret;
+      if (paymentMethod == "card") {
+        await sendCardPayment(paymentIntentSecret, data);
+      } else {
+      }
     } catch (error) {
       console.error("Error submitting order:", error);
     }
@@ -327,7 +372,8 @@ export default function Checkout() {
             </div>
 
             <h3>Pay With Card</h3>
-            <div id="card-element">
+
+            <div id="card-element" ref={cardContainer}>
               <div className="checkout-input-group">
                 <input
                   id="card-name"
@@ -346,75 +392,26 @@ export default function Checkout() {
                   </span>
                 )}
               </div>
-              <div className="checkout-input-group">
-                <input
-                  id="card-number"
-                  type="text"
-                  placeholder="Card Number"
-                  {...registerCardField("cardNumber", {
-                    required:
-                      paymentMethod === "card"
-                        ? "Card number is required"
-                        : false,
-                    pattern: {
-                      value: /^[0-9]{16}$/,
-                      message: "Please enter a valid 16-digit card number",
+              <div className="card-element-group">
+                <CardElement
+                  onChange={(e) => setCardComplete(e.empty ? null : e.complete)}
+                  options={{
+                    style: {
+                      base: {
+                        fontSize: fontSize,
+                        fontWeight: "400",
+                      },
                     },
-                  })}
+                  }}
                 />
-                {errors.card?.cardNumber && (
-                  <span className="error">
-                    {errors.card.cardNumber.message}
-                  </span>
-                )}
               </div>
-              <div className="checkout-input-group date-cvv">
-                <div className="half-width">
-                  <input
-                    id="card-exp"
-                    className="checkout-expiry"
-                    type="text"
-                    placeholder="Ex. Date 00/00"
-                    {...registerCardField("expiryDate", {
-                      required:
-                        paymentMethod === "card"
-                          ? "Expiry date is required"
-                          : false,
-                      pattern: {
-                        value: /^(0[1-9]|1[0-2])\/([0-9]{2})$/,
-                        message: "Please enter a valid date (MM/YY)",
-                      },
-                    })}
-                  />
-                  {errors.card?.expiryDate && (
-                    <span className="error">
-                      {errors.card.expiryDate.message}
-                    </span>
-                  )}
-                </div>
-                <div className="checkout-half-width checkout-cvv-div">
-                  <input
-                    id="card-cvv"
-                    className="checkout-cvv"
-                    type="text"
-                    placeholder="CVV"
-                    {...registerCardField("cvv", {
-                      required:
-                        paymentMethod === "card" ? "CVV is required" : false,
-                      pattern: {
-                        value: /^[0-9]{3,4}$/,
-                        message: "Please enter a valid CVV",
-                      },
-                    })}
-                  />
-                  {errors.card?.cvv && (
-                    <span className="error">{errors.card.cvv.message}</span>
-                  )}
-                </div>
-              </div>
+              {paymentMethod == "card" && cardComplete == false && (
+                <span className="error">Card is incomplete</span>
+              )}
             </div>
 
             <h3>Pay With Checking Account</h3>
+
             <div className="checkout-input-group">
               <input
                 id="checking-name"
