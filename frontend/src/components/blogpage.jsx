@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import BlogPost from "./blogpost";
 import BlogPostArticle from "./blogpostarticle"
 import blog_t_image from "../images/blog-indv-page-img-top.png";
@@ -71,9 +72,15 @@ export function BlogPage() {
                             <p className="blog-page-carrot-label">Latest Blogs</p>
                         </div>
                         <div className="blog-indv-images">
-                            <BlogPost className="blog-t-image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
-                            <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
-                            <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            <NavLink to='post/1' className="blogpage-navlink">
+                                <BlogPost className="blog-t-image" imageSrc={blog_t_image} title={<>How Safety Straw Products Are Environmental Friendly </>} date='Aug 20, 2024' />
+                            </NavLink>
+                            <NavLink to='post/2' className="blogpage-navlink">
+                                <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            </NavLink>
+                            <NavLink to='post/3' className="blogpage-navlink">
+                                <BlogPost className="blog-m-image" imageSrc={blog_m_image} title={<>How the Safety Straws <br />Changed My Life</>} date='Jul 1, 2024' />
+                            </NavLink>
                         </div>
                     </div>
                 </div>

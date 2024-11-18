@@ -59,6 +59,7 @@
 
 
 import React, { useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import "../styles/blogviewmore.css";
 import BlogPost from "./blogpost";
 import blog_l_image from "../images/blogimageleft.png";
