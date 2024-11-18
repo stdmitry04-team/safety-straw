@@ -541,7 +541,7 @@
       border: none;
       color: #000;
       cursor: pointer;
-      padding: 5px 10px;
+      /* padding: 5px 10px; */
       margin: 0 5px;
   }
 
@@ -550,6 +550,43 @@
       color: #fff;
       background-color: #d63a2b;
       border-radius: 5px;
+  }
+
+  .pagination-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0px;
+    margin-top: 24px;
+  }
+  
+  .pagination-numbers {
+    display: flex;
+    align-items: center;
+  }
+  
+  .pagination-item {
+    width: 29px;
+    height: 29px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+  }
+  
+  .pagination-item.active {
+    background: #D63A29;
+    color: white;
+    border-radius: 4.2034px;
+  }
+  
+  .pagination-dots {
+    color: #000;
+    font-size: 16px;
   }
 }
 
