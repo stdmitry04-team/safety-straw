@@ -3,8 +3,9 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Admin } from "./components/admin.jsx";
 import Login from "./components/Login.jsx";
-import { Admin } from "./components/Admin.jsx";
+
 import Checkout from "./components/Checkout.jsx";
 
 //change elements as we develop pages

@@ -1,0 +1,99 @@
+@font-face {
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Black.otf") format("opentype");
+  font-weight: 900;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Aileron";
+  src: url("../fonts/Aileron-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+.bar-locator-address {
+  height: 35%;
+  width: 90%;
+  border-bottom: 2.64px solid #e3e3e3;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 2.083vw;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.bar-name {
+  font-size: 1.76rem;
+  font-weight: 900;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 1.68rem;
+}
+.bar-number {
+  font-size: 1.76rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 1.8125rem;
+}
+.bar-address {
+  font-size: 1.76rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #000000;
+  margin-top: 0.875rem;
+}
+.bar-distance {
+  font-size: 1.32rem;
+  font-weight: 400;
+  font-family: "Aileron", sans-serif;
+  color: #d63a29;
+  margin-top: 0.875rem;
+  margin-bottom: 1.8rem;
+}
+@media screen and (max-width:1440px){
+    
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.6rem;
+      line-height:1.8rem;
+  }
+  .bar-distance {
+      font-size:1.4rem;
+      line-height:1.6rem;
+  }
+}
+@media screen and (max-width:1024px){
+  
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.4rem;
+      line-height:1.6rem;
+  }
+  .bar-distance {
+      font-size:1.2rem;
+      line-height:1.4rem;
+  }
+}
+@media screen and (max-width:768px){
+  .bar-name, .bar-number, .bar-address {
+      font-size:1.2rem;
+      line-height:1.4rem;
+  }
+  .bar-distance {
+      font-size:1rem;
+      line-height:1.2rem;
+  }
+}
+
+@media screen and (max-width: 390px) {
+    .bar-name, .bar-number, .bar-address {
+        font-size:0.9rem;
+        line-height:1.1rem;
+    }
+    .bar-distance {
+        font-size:0.7rem;
+        line-height:0.9rem;
+    }
+}
+
