@@ -39,48 +39,49 @@ export function Admin() {
     }
   };
 
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `${baseUrl}/api/get-newsletter?token=${token}`,
-        {
-          method: "GET",
-        }
-      );
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(`${baseUrl}/api/get-role?token=${token}`, {
+        method: "GET",
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       let data = await response.json();
-      data = data[0];
-      setSubjectTemplate(data[0]);
-      setHeaderTemplate(data[1]);
-      setContentTemplate(data[2]);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
+      if (data.result != "Admin") {
+        window.location = "/login";
+        console.error("Incorrect credentials");
+      }
+    })();
 
-  const confirmRole = async () => {
-    const response = await fetch(`${baseUrl}/api/get-role?token=${token}`, {
-      method: "GET",
-    });
+    const getData = async () => {
+      try {
+        console.log(import.meta.env);
+        if (!token) {
+          window.location = "/login";
+        }
+        const response = await fetch(
+          `${baseUrl}/api/get-newsletter?token=${token}`,
+          {
+            method: "GET",
+          }
+        );
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-    let data = await response.json();
-    if (data.result != "Admin") {
-      //window.location = "http://localhost:3000/";
-      console.log(data);
-      console.error("Incorrect credentials");
-    }
-  };
-
-  useEffect(() => {
-    confirmRole();
+        let data = await response.json();
+        data = data[0];
+        setSubjectTemplate(data[0]);
+        setHeaderTemplate(data[1]);
+        setContentTemplate(data[2]);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
     getData();
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("calendar").setAttribute("min", today);
