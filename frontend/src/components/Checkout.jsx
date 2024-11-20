@@ -56,7 +56,7 @@ export default function Checkout() {
         Michigan: 0.06,
     };
 
-    const baseUrl = process.env.BASE_URL || 'https://localhost:5000';
+    const baseUrl = process.env.REACT_APP_BASE_URL || 'https://localhost:5000';
     const itemPrice = 10.99;
     const shippingCost = 2.99;
     const totalPrice = quantity * itemPrice;
