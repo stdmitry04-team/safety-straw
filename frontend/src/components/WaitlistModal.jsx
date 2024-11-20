@@ -3,7 +3,6 @@ import React, { useState, useEffect } from 'react';
 import cross from "../assets/close-button.svg";
 // require("dotenv").config({ path: "../backend/config.env" });
 // const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
-require("dotenv").config();
 
 
 export default function WaitlistModal({ isOpen, onClose }) {
@@ -14,7 +13,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [validStatus, setValidStatus] = useState(true);
     useEffect(() => {
         console.log('Base URL:', process.env.REACT_APP_BASE_URL);
-        console.log('Base URL Vite:', process.env.VITE_BASE_URL);
+        console.log('Base URL Vite:', import.meta.env.VITE_BASE_URL);
     }, []);
 
     // Use the environment variable with a production fallback
