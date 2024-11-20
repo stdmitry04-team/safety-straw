@@ -8,8 +8,8 @@ function Login() {
 
   const API_PORT = process.env.REACT_APP_API_PORT || 5000;
   const REG_PORT = process.env.REACT_APP_REG_PORT || 3000;
-  const baseUrl = process.env.REACT_APP_BASE_URL || `http://localhost:${API_PORT}`;
-  const REG_URL = process.env.REACT_APP_REG_URL || `http://localhost:${REG_PORT}`;
+  const baseUrl = import.meta.env.VITE_BASE_URL || `http://localhost:${API_PORT}`;
+  const REG_URL = import.meta.env.VITE_BASE_URL || `http://localhost:${REG_PORT}`;
   const handleSubmit = async (e) => {
     if (username && password) {
       const response = await fetch(`${baseUrl}/api/verify-login`, {
