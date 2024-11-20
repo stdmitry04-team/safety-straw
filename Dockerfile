@@ -2,7 +2,6 @@
 FROM node:18-alpine AS frontend-build
 
 ARG VITE_BASE_URL
-ARG REACT_APP_BASE_URL
 
 # Set working directory for frontend
 WORKDIR /app/frontend
@@ -18,7 +17,6 @@ COPY frontend/ ./
 
 #set env vars
 ENV VITE_BASE_URL=$VITE_BASE_URL
-ENV REACT_APP_BASE_URL=$REACT_APP_BASE_URL
 
 # Build the frontend for production
 RUN npm run build

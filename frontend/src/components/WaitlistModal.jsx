@@ -11,15 +11,17 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [validStatus, setValidStatus] = useState(true);
-    useEffect(() => {
-        console.log('Base URL:', process.env.REACT_APP_BASE_URL);
-        console.log('Base URL Vite:', import.meta.env.VITE_BASE_URL);
-    }, []);
+    // useEffect(() => {
+    //     console.log('Base URL:', process.env.REACT_APP_BASE_URL);
+    //     console.log('Base URL Vite:', import.meta.env.VITE_BASE_URL);
+    // }, []);
 
-    // Use the environment variable with a production fallback
-    const baseUrl = process.env.NODE_ENV === 'production' 
-        ? 'https://safety-straw.fly.dev'  // Hardcode production URL as fallback
-        : 'http://localhost:5000';        // Development URL
+    // // Use the environment variable with a production fallback
+    // const baseUrl = process.env.NODE_ENV === 'production' 
+    //     ? 'https://safety-straw.fly.dev'  // Hardcode production URL as fallback
+    //     : 'http://localhost:5000';        // Development URL
+
+    const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
 
     const errorMessageStyle = {
         color: validStatus ? 'green' : 'red',
