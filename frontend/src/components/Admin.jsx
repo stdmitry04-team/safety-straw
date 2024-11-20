@@ -10,6 +10,7 @@ export function Admin() {
   const [contentTemplate, setContentTemplate] = useState("");
   const [subjectTemplate, setSubjectTemplate] = useState("");
   const calendar = useRef(null);
+  const time = useRef(null);
   const token = localStorage.getItem("token");
   const PORT = process.env.REACT_APP_API_PORT || 5000; // Make sure PORT is defined here
 
@@ -38,47 +39,49 @@ export function Admin() {
     }
   };
 
-  const getData = async () => {
-    try {
-      const response = await fetch(
-        `${baseUrl}/api/get-newsletter?token=${token}`,
-        {
-          method: "GET",
-        }
-      );
+  useEffect(() => {
+    (async () => {
+      const response = await fetch(`${baseUrl}/api/get-role?token=${token}`, {
+        method: "GET",
+      });
 
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
       }
 
       let data = await response.json();
-      data = data[0];
-      setSubjectTemplate(data[0]);
-      setHeaderTemplate(data[1]);
-      setContentTemplate(data[2]);
-    } catch (error) {
-      console.log("Error fetching data:", error);
-    }
-  };
+      if (data.result != "Admin") {
+        window.location = "/login";
+        console.error("Incorrect credentials");
+      }
+    })();
 
-  const confirmRole = async () => {
-    const response = await fetch(`${baseUrl}/api/get-role?token=${token}`, {
-      method: "GET",
-    });
+    const getData = async () => {
+      try {
+        console.log(import.meta.env);
+        if (!token) {
+          window.location = "/login";
+        }
+        const response = await fetch(
+          `${baseUrl}/api/get-newsletter?token=${token}`,
+          {
+            method: "GET",
+          }
+        );
 
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
 
-    let data = await response.json();
-    if (data.result != "Admin") {
-      //window.location = "http://localhost:3000/";
-      console.error("Incorrect credentials");
-    }
-  };
-
-  useEffect(() => {
-    confirmRole();
+        let data = await response.json();
+        data = data[0];
+        setSubjectTemplate(data[0]);
+        setHeaderTemplate(data[1]);
+        setContentTemplate(data[2]);
+      } catch (error) {
+        console.log("Error fetching data:", error);
+      }
+    };
     getData();
     const today = new Date().toISOString().split("T")[0];
     document.getElementById("calendar").setAttribute("min", today);
@@ -134,12 +137,14 @@ export function Admin() {
       <div className="settings-container">
         <h1>Schedule your email</h1>
         <input type="date" id="calendar" name="scheduled-time" ref={calendar} />
+        <input id="mailer-time" type="time" name="mailer-time" ref={time} />
         <button
           className="dash-buttons"
           id="schedule-button"
           onClick={async () => {
             if (calendar.current.value) {
-              let scheduleTime = calendar.current.value + "T12:00:00";
+              let scheduleTime =
+                calendar.current.value + `T${time.current.value}`;
               await fetch(`${baseUrl}/api/schedule-mail`, {
                 method: "POST",
                 body: JSON.stringify({ date: scheduleTime, token: token }),

@@ -1,534 +1,109 @@
 @import url('https://fonts.googleapis.com/css2?family=Gantari:wght@700;900&display=swap');
 
-@media screen and (max-width: 599px){
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    
-    html{
-        /* font-size: 8px !important; */
-    }
-    
-    body {
-        font-family: 'Gantari', sans-serif;
-    }
-    
-    .footer{
-        min-height:44.72vh;
-        max-width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: white;
-        overflow-y: hidden;
-        padding-bottom: 2.5vh;
-        padding-right: 1vw;;
-    }
-    
-    
-    .footer-left {
-        left: 3.7vw;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: space-between; 
-        width: calc(100vw - 66.15vw);
-        height: 100%;
-        padding-left:3vw;
-    }
-    
-    
-    .footer-text {
-        font-family: 'Gantari', 'sans-serif';
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 2.78vh;
-        text-align: left;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-    
-    
-    .footer-logo{
-        display: flex;
-        left: 3.70vw;
-        
-    }
-
-    .footer-logo img {
-        width: 30vw;
-        height: 10vh;
-        margin-top: 2vh;
-    }
-    
-    .icons{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5vh;
-        margin-top: 1vh;
-    }
-    
-    .icons img {
-        padding-right:1.09vw;
-        width: 10vw;
-    }
-    
-    .footer-links {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 3.15vh;
-        width: 66.15%;
-        height: 100%;
-        flex-wrap: wrap;
-        margin-left: 10vw;
-
-    }
-    
-    .footer-links ul {
-        list-style: none;
-    }
-    
-    /* --------------------- RIGHT PART ---------------------  */
-    
-    .customers {
-        padding-right: 9.635vw;
-        text-align: left;
-    }
-    
-    .contact_us {
-        padding-right: 5.99vw;
-        text-align: left;
-    }
-    
-    .company {
-        padding-right: 3.072vw;
-        text-align: left;
-    }
-    
-    .footer-links ul li:first-child {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 2vh;
-        margin-top: 2.5vh;
-    }
-    
-    .footer-links ul li:not(:first-child) {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.1vh;
-        padding-top: 1.5vh;
-        margin-bottom: 1vh;
-    }
-    
-    .footer-links ul li{
-        width: 100%;
-    }    
+.footer{
+    display: flex;
+    background-color: white;
+    align-items: center;
 }
 
-@media screen and (min-width: 391px) and (max-width: 600px){
+.footer-left{
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-left: 3.75vw;
+    margin-bottom: 1.667vw;
+    margin-top: 2.18vw;
+    width: clamp(150px,32.4vw,700px)
 
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    
-    html{
-        /* font-size: 10px !important; */
-    }
-    
-    body {
-        font-family: 'Gantari', sans-serif;
-    }
-    
-    .footer{
-        min-height:44.72vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: white;
-    }
-    
-    
-    .footer-left {
-        left: 3.7vw;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: space-between; 
-        width: calc(100vw - 66.15vw);
-        height: 100%;
-        padding-left:3vw;
-    }
-    
-    
-    .footer-text {
-        font-family: 'Gantari', 'sans-serif';
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 2.78vh;
-        text-align: left;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-    }
-    
-    
-    .footer-logo{
-        display: flex;
-        left: 3.70vw;
-        
-    }
 
-    .footer-logo img {
-        width: 30vw;
-        height: 10vh;
-        margin-top: 2vh;
-    }
-    
-    .icons{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5vh;
-        margin-top: 1vh;
-    }
-    
-    .icons img {
-        padding-right:1.09vw;
-        width: 10vw;
-    }
-    
-    .footer-links {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 3.15vh;
-        width: 66.15%;
-        height: 100%;
-        flex-wrap: wrap;
-        margin-left: 10vw;
-
-    }
-    
-    .footer-links ul {
-        list-style: none;
-    }
-    
-    /* --------------------- RIGHT PART ---------------------  */
-    
-    /* Customers Section */
-    .customers {
-        padding-right: 9.635vw;
-        text-align: left;
-    }
-    
-    /* Contact Us Section */
-    .contact_us {
-        padding-right: 5.99vw;
-        text-align: left;
-    }
-    
-    /* Company Section */
-    .company {
-        padding-right: 3.072vw;
-        text-align: left;
-    }
-    
-    /* Style for all first-child headings */
-    .footer-links ul li:first-child {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 2vh;
-        margin-top: 3vh;
-    }
-    
-    /* Style for other list items */
-    .footer-links ul li:not(:first-child) {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.1vh;
-        padding-top: 2vh;
-        margin-bottom: 1vh;
-    }
-    
-    .footer-links ul li{
-        width: 100;
-    }    
 }
 
-@media screen and (min-width: 600px) and (max-width: 1050px) {
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    
-    html{
-        /* font-size: 12px !important; */
-    }
-    
-    body {
-        font-family: 'Gantari', sans-serif;
-    }
-    
-    .footer{
-        min-height:44.72vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: white;
-    
-    }
-    
-    
-    .footer-left {
-        left: 3.7vw;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: space-between; 
-        width: calc(100vw - 66.15vw);
-        height: 100%;
-        padding-left:3vw;
-    }
-    
-    
-    .footer-text {
-        font-family: 'Gantari', 'sans-serif';
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 2.78vh;
-        text-align: left;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-        
-    }
-    
-    
-    .footer-logo{
-        display: flex;
-        left: 3.70vw;
-        
-    }
-
-    .footer-logo img {
-        width: 23vw;
-        height: 17vh;
-    }
-    
-    .icons{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5vh;
-    }
-    
-    .icons img {
-        padding-right:1.09vw;
-    }
-    
-    .footer-links {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 3.15vh;
-        width: 66.15%;
-        height: 100%;
-        flex-wrap: wrap;
-        margin-left: 2vw;
-    }
-    
-    .footer-links ul {
-        list-style: none;
-    }
-    
-    /* --------------------- RIGHT PART ---------------------  */
-    
-    /* Customers Section */
-    .customers {
-        padding-right: 9.635vw;
-        text-align: left;
-    }
-    
-    /* Contact Us Section */
-    .contact_us {
-        padding-right: 5.99vw;
-        text-align: left;
-    }
-    
-    /* Company Section */
-    .company {
-        padding-right: 3.072vw;
-        text-align: left;
-    }
-    
-    /* Style for all first-child headings */
-    .footer-links ul li:first-child {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 2vh;
-        margin-top: 3vh;
-    }
-    
-    /* Style for other list items */
-    .footer-links ul li:not(:first-child) {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.1vh;
-        padding-top: 2vh;
-        margin-bottom: 1vh;
-    }
-    
-    .footer-links ul li{
-        width: 125%;
-    }   
+.footer-social:hover{
+    transform: scale(0.95);
 }
 
-
-@media screen and (min-width: 950px) and (max-width: 1399px) {
-
-    * {
-        box-sizing: border-box;
-        margin: 0;
-        padding: 0;
-    }
-    
-    
-    html{
-        /* font-size: 14px !important; */
-    }
-    
-    body {
-        font-family: 'Gantari', sans-serif;
-    }
-    
-    .footer{
-        min-height:44.72vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: white;
-    
-    }
-    
-    
-    .footer-left {
-        left: 3.7vw;
-        display: flex;
-        align-items: flex-start;
-        flex-direction: column;
-        justify-content: space-between; 
-        width: calc(100vw - 66.15vw);
-        height: 100%;
-        padding-left:3vw;
-    }
-    
-    
-    .footer-text {
-        font-family: 'Gantari', 'sans-serif';
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 2.78vh;
-        text-align: left;
-        padding-top: 1vh;
-        padding-bottom: 1vh;
-        
-    }
-    
-    
-    .footer-logo{
-        display: flex;
-        left: 3.70vw;
-        
-    }
-
-    .footer-logo img {
-        width: 20vw;
-        height: 20vh;
-    }
-    
-    .icons{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5vh;
-    }
-    
-    .icons img {
-        padding-right:1.09vw;
-    }
-    
-    .footer-links {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 7.15vh;
-        width: 66.15%;
-        height: 100%;
-        flex-wrap: wrap;
-        margin-left: 2vw;
-    }
-    
-    .footer-links ul {
-        list-style: none;
-    }
-    
-    /* --------------------- RIGHT PART ---------------------  */
-    
-    /* Customers Section */
-    .customers {
-        padding-right: 4cqb;
-        text-align: left;
-    }
-    
-    /* Contact Us Section */
-    .contact_us {
-        padding-right: 3.99vw;
-        text-align: left;
-    }
-    
-    /* Company Section */
-    .company {
-        padding-right: 3.072vw;
-        text-align: left;
-    }
-    
-    /* Style for all first-child headings */
-    .footer-links ul li:first-child {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 2vh;
-    }
-    
-    /* Style for other list items */
-    .footer-links ul li:not(:first-child) {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.1vh;
-        padding-top: 3vh;
-        padding-bottom: 1.5vh;
-    }
-    
-    .footer-links ul li{
-        width: 100%;
-    }   
+.footer-social:active{
+    opacity: 0.9;
 }
 
+.footer-text {
+    font-family: 'Gantari', 'sans-serif';
+    font-size: clamp(11px, 1.667vw, 2rem);
+    font-weight: 700;
+    line-height: clamp(1rem, 2vw, 4rem);
+    text-align: left;
+    max-width: 430px;
+}
 
-@media screen and (min-width: 1400px)
-{
+.footer-logo-img{
+    max-width: 100%;
+    width: clamp(150px,15.625vw,300px);
+    height: auto;
+}
+
+.footer-logo{
+    margin-bottom: 1vw;
+}
+
+.footer-text{
+    margin-bottom: 1vw;
+}
+
+.icons img {
+    margin-right: 1vw;
+}
+
+.footer-social{
+    max-width: 61px;
+    width: clamp(21px,3.177vw,61px);
+    height: auto;
+}
+
+.icons img:last-child {
+    margin-right: 1vw;
+}
+
+.footer-links {
+    display: flex;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    /* justify-content: space-evenly; */
+    width: 66.15%;
+    height: 100%;
+}
+
+.footer-links ul {
+    list-style: none;
+    text-align: left;
+    max-width: 400px;
+}
+
+.footer-links ul li:first-child{
+    font-family: 'Gantari', sans-serif;
+    font-size: clamp(14px, 2.083vw, 2.5rem);
+    font-weight: 900;
+    line-height: clamp(1rem, 2vw, 4rem);
+}
+
+.footer-links ul li:not(:first-child) {
+    font-family: 'Gantari', sans-serif;
+    font-size: clamp(11px, 1.667vw, 2rem);
+    font-weight: 700;
+    line-height: clamp(1rem, 2vw, 4rem);
+    padding-top: clamp(1.25rem, 2.083vw, 2.5rem);
+    white-space: wrap;
+}
+
+ul li a {
+    color: black;
+    text-decoration: none; /* Removes underline by default */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* Adds underline on hover */
+}
+
+@media screen and (max-width: 440px){
 
     * {
         box-sizing: border-box;
@@ -536,116 +111,41 @@
         padding: 0;
     }
     
-    
-    html{
-        /* font-size: 16px; */
-    }
-    
     body {
         font-family: 'Gantari', sans-serif;
     }
     
-    .footer{
-        min-height:44.72vh;
-        width: 100vw;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        background-color: white;
-        overflow-x:hidden;
-    }
-    
-    
-    .footer-left {
-        left: 3.7vw;
-        display: flex;
-        align-items: flex-start;
+  .footer{
         flex-direction: column;
-        justify-content: space-between; 
-        width: calc(100vw - 66.15vw);
-        height: 100%;
-        padding-left:3.7vw;
-        padding-top: 2.8vh;
+        align-items: center;
+        margin-top: 20vw;
     }
-    
-    
-    .footer-text {
-        font-family: 'Gantari', 'sans-serif';
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 2.78vh;
-        text-align: left;
-        
+
+    .footer-left{
+        order: 2;
     }
-    
-    
-    .footer-logo{
-        display: flex;
-        left: 3.70vw;
-        bottom: 21.64vh;
-        margin-bottom: 2.5vh;
-        
+
+    .footer-links{
+        order: 1;
     }
-    
-    .icons{
-        display: flex;
-        justify-content: center;
-        margin-bottom: 2.5vh;
-        margin-top: 1vh;
-    }
-    
-    .icons img {
-        padding-right:1.09vw;
-    }
-    
-    .footer-links {
-        display: flex;
-        justify-content: space-between;
-        padding-top: 7.15vh;
-        width: 66.15%;
-        height: 100%;
-    }
-    
-    .footer-links ul {
-        list-style: none;
-    }
-    
-    /* --------------------- RIGHT PART ---------------------  */
-    
-    .customers {
-        padding-right: 9.635vw;
-        text-align: left;
-    }
-    
-    .contact_us {
-        padding-right: 5.99vw;
-        text-align: left;
-    }
-    
-    .company {
-        padding-right: 8.072vw;
-        text-align: left;
-    }
-    
-    .footer-links ul li:first-child {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: 2.5vh;
-    }
-    
-    .footer-links ul li:not(:first-child) {
-        font-family: 'Gantari', sans-serif;
-        font-size: 2rem;
-        font-weight: 700;
-        line-height: 1.56vh;
-        padding-top: 4.4vh;
+
+    .footer-left{
+        margin: 0 0 2.55vw;
         width: fit-content;
-        display: inline-block;
-        white-space: nowrap;
+        /* max-width: 40%; */
     }
-    
-    .footer-links ul li{
-        width: 100%;
-    }   
+
+    .footer-links{
+        width: max-content;
+        max-width: 60%;
+        margin: 5vw 0;
+    }
+
+    .footer-links ul{
+        text-align: center;
+    }
+
+    .footer-links ul li:not(:first-child){
+        padding-top: clamp(0.5rem, 0.75vw, 1rem);;
+    }
 }

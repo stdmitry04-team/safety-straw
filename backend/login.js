@@ -4,7 +4,11 @@ const crypto = require("crypto");
 
 function generateRandomBase64(byteLength) {
   const randomBytes = crypto.randomBytes(byteLength);
-  return randomBytes.toString("base64");
+  return randomBytes
+    .toString("base64")
+    .replace(/\+/g, "0")
+    .replace(/\//g, "1")
+    .replace(/=+$/, "");
 }
 
 async function verifyLogin(user, pwd) {
@@ -26,6 +30,7 @@ async function verifyLogin(user, pwd) {
 
 async function retrieveRole(collection, token) {
   const data = await collection.findOne({ token: token });
+
   if (data) {
     return data.roles;
   }
