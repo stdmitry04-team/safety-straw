@@ -12,6 +12,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
     const [validStatus, setValidStatus] = useState(true);
     useEffect(() => {
         console.log('Base URL:', process.env.REACT_APP_BASE_URL);
+        console.log('Base URL Vite:', process.env.VITE_BASE_URL);
     }, []);
 
     // Use the environment variable with a production fallback
