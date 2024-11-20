@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import cross from "../assets/close-button.svg";
 // require("dotenv").config({ path: "../backend/config.env" });
 // const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+require("dotenv").config();
+
 
 export default function WaitlistModal({ isOpen, onClose }) {
     if (!isOpen) return null;
