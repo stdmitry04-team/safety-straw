@@ -667,11 +667,11 @@ export default function Checkout() {
             </div>
             <div className="summary-line shipping">
               <h1>Shipping:</h1>
-              <h1>${shippingCost}</h1>
+              <h1>${shippingCost.toFixed(2)}</h1>
             </div>
             <div className="summary-line before-tax">
               <h1>Total before tax:</h1>
-              <h1>${totalBeforeTax}</h1>
+              <h1>${totalBeforeTax.toFixed(2)}</h1>
             </div>
             <div className="summary-line tax">
               <h1>Tax:</h1>
