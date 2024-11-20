@@ -9,3 +9,6 @@ app = "safety-straw"
   [[services.ports]]
     handlers = ["tls", "http"]
     port = 443
+  [build.args]
+  REACT_APP_BASE_URL = "https://safety-straw.fly.dev/"
+  VITE_BASE_URL = "https://safety-straw.fly.dev/"
