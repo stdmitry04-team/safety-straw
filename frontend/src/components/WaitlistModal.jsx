@@ -34,7 +34,7 @@ export default function WaitlistModal({ isOpen, onClose }) {
         e.preventDefault();
 
         // const response = await fetch(`${backendUrl}/api/waitlist`, {
-        const response = await fetch(`${baseUrl}/api/waitlist`, {
+        const response = await fetch(`${baseUrl}api/waitlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

@@ -16,7 +16,7 @@ export default function WaitlistBar(props) {
         e.preventDefault();
 
         // const response = await fetch(`${backendUrl}/api/waitlist`, {
-        const response = await fetch(`${baseUrl}/api/waitlist`, {
+        const response = await fetch(`${baseUrl}api/waitlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
