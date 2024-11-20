@@ -1,7 +1,7 @@
 import "../styles/WaitlistModal.css";
 import React, { useState, useEffect } from 'react';
 import cross from "../assets/close-button.svg";
-require("dotenv").config({ path: "../.env" });
+// require("dotenv").config({ path: "../.env" });
 // const backendURL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
 
 
