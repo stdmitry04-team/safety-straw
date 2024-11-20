@@ -195,14 +195,44 @@ app.get("/api/waitlist/confirm", async (req, res) => {
 });
 
 app.post("/api/create-payment-intent", async (req, res) => {
-  const { price } = req.body;
+  const { price, type } = req.body;
+
+  try {
+    if (type == "card") {
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: parseFloat(price.toFixed(2)) * 100,
+        currency: "usd",
+      });
+      res.json({ clientSecret: paymentIntent.client_secret });
+    } else {
+      const setupIntent = await stripe.setupIntents.create({
+        payment_method_types: ["us_bank_account"], // Specify payment method
+        usage: "on_session", // Payment is saved for later use
+      });
+      res.json({ clientSecret: setupIntent.client_secret });
+    }
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+app.post("api/charge-bank-account", async (req, res) => {
+  const { paymentMethodId, amount } = req.body;
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
-      amount: parseFloat(price.toFixed(2)) * 100,
+      amount: parseFloat(amount.toFixed(2)) * 100,
       currency: "usd",
+      payment_method: paymentMethodId,
+      confirm: true,
+      payment_method_options: {
+        us_bank_account: {
+          verification_method: "automatic",
+        },
+      },
     });
-    res.json({ clientSecret: paymentIntent.client_secret });
+
+    res.json(paymentIntent);
   } catch (error) {
     res.status(500).send({ error: error.message });
   }
@@ -210,7 +240,23 @@ app.post("/api/create-payment-intent", async (req, res) => {
 
 app.post("/api/store-order", async (req, res) => {
   const data = req.body;
-  console.log(data.card.nameOnCard);
+  const orders = {
+    straw_quantity: data.quantity,
+    merch_one_quantity: 0,
+    merch_two_quantity: 0,
+  };
+  const personalInfo = {
+    company_name: data.companyName,
+    phone: data.phoneNumber,
+    name: data.card.nameOnCard,
+  };
+  await sendCardPayment(
+    data.paymentIntent,
+    personalInfo,
+    orders,
+    data.mailingAddress,
+    data.billingAddress
+  );
 });
 
 // Serve static files from the public directory (serves the built react files in deployment)

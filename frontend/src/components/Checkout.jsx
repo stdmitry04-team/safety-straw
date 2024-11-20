@@ -13,6 +13,7 @@ import {
   CardElement,
   useStripe,
   useElements,
+  PaymentElement,
 } from "@stripe/react-stripe-js"; // React components for Stripe
 function calculateResponsiveFontSize() {
   const minFontSize = 14; // Minimum font size in px
@@ -31,7 +32,7 @@ export default function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentError, setPaymentError] = useState("");
   const [cardComplete, setCardComplete] = useState(null);
-
+  const [paymentSecretBank, setPaymentSecretBank] = useState(null);
   const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
   const stripe = useStripe();
   const elements = useElements();
@@ -47,6 +48,9 @@ export default function Checkout() {
     defaultValues: {
       companyName: "",
       phoneNumber: "",
+      card: {
+        nameOnCard: "",
+      },
       checking: {
         nameOnAccount: "",
         routingNumber: "",
@@ -69,14 +73,8 @@ export default function Checkout() {
       },
     },
   });
-
   // Watch for changes in payment fields
-  const cardFields = watch([
-    "card.nameOnCard",
-    "card.cardNumber",
-    "card.expiryDate",
-    "card.cvv",
-  ]);
+  const cardFields = watch(["card.nameOnCard"]);
   const checkingFields = watch([
     "checking.nameOnAccount",
     "checking.routingNumber",
@@ -155,10 +153,25 @@ export default function Checkout() {
   // Watch mailing address for syncing with billing address
   const mailingAddress = watch("mailingAddress");
 
-  const sendCardPayment = async (paymentIntentSecret, data) => {
+  const sendCardPayment = async (data) => {
+    const responseIntent = await fetch(`${baseUrl}/api/create-payment-intent`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ price: grandTotal, type: "card" }),
+    });
+    if (responseIntent.ok) {
+      console.log("Succesfully created payment intent");
+    } else {
+      const error = await responseIntent.json();
+      console.log("Failed to make payment intent");
+      throw new Error(error);
+    }
+    const dataIntent = await responseIntent.json();
+    const paymentIntentSecret = dataIntent.clientSecret;
     const cardElement = elements.getElement(CardElement);
 
-    console.log(paymentIntentSecret);
     const { error, paymentIntent } = await stripe.confirmCardPayment(
       paymentIntentSecret,
       {
@@ -171,6 +184,8 @@ export default function Checkout() {
       throw new Error(error);
     } else if (paymentIntent && paymentIntent.status === "succeeded") {
       console.log("Payment successful");
+
+      delete data.checking;
       const formData = {
         ...data,
         quantity,
@@ -186,6 +201,59 @@ export default function Checkout() {
         },
         body: JSON.stringify(formData),
       });
+    }
+  };
+
+  const sendCheckingAccountPayment = async (data) => {
+    const responseIntent = await fetch(`${baseUrl}/api/create-payment-intent`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ price: grandTotal, type: "checking" }),
+    });
+    const { clientSecret } = await responseIntent.json();
+
+    const result = await stripe.confirmSetup({
+      clientSecret: clientSecret,
+      payment_method: {
+        type: "us_bank_account", // Specify the type of payment method
+        us_bank_account: {
+          account_number: data.checking.accountNumber,
+          routing_number: data.checking.routingNumber,
+          account_holder_type: "individual", // 'individual' or 'company'
+        },
+        // billing_details: {
+        //   name: 'John Doe', // Optional but recommended
+        //   email: 'john.doe@example.com',
+        // },
+      },
+      confirmParams: {
+        return_url: import.meta.env.VITE_REG_URL, // Your app's URL for redirect after confirmation
+      },
+      redirect: "if_required", // Optional, prevents redirection if not needed
+    });
+
+    if (result.error) {
+      console.error("Error confirming setup:", result.error.message);
+    } else {
+      console.log("Setup complete:", result.setupIntent.payment_method);
+    }
+
+    const chargeResponse = await fetch("/charge-bank-account", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        paymentMethodId: "pm_xxx", // Replace with saved payment_method ID
+        amount: grandTotal, // Amount in cents ($50.00)
+      }),
+    });
+
+    const chargeResult = await chargeResponse.json();
+    if (result.error) {
+      console.error("Error charging bank account:", chargeResult.error);
+    } else {
+      console.log("Payment successful:", chargeResult);
     }
   };
 
@@ -211,29 +279,12 @@ export default function Checkout() {
     // //   return;
     // // }
 
+    console.log(paymentMethod);
     try {
-      const responseIntent = await fetch(
-        `${baseUrl}/api/create-payment-intent`,
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ price: grandTotal }),
-        }
-      );
-      if (responseIntent.ok) {
-        console.log("Succesfully created payment intent");
-      } else {
-        const error = await responseIntent.json();
-        console.log("Failed to make payment intent");
-        throw new Error(error);
-      }
-      const dataIntent = await responseIntent.json();
-      const paymentIntentSecret = dataIntent.clientSecret;
       if (paymentMethod == "card") {
-        await sendCardPayment(paymentIntentSecret, data);
+        await sendCardPayment(data);
       } else {
+        await sendCheckingAccountPayment(data);
       }
     } catch (error) {
       console.error("Error submitting order:", error);
@@ -411,7 +462,6 @@ export default function Checkout() {
             </div>
 
             <h3>Pay With Checking Account</h3>
-
             <div className="checkout-input-group">
               <input
                 id="checking-name"
