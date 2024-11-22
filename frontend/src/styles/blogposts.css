@@ -28,6 +28,7 @@
   top: 650.37vh;
   /* padding-bottom: 17.31vh; */
   padding-bottom: 9.54vh;
+  text-decoration: none;
 }
 .blog-post-images {
   display: flex;

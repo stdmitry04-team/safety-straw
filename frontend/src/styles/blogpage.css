@@ -193,12 +193,18 @@
     margin-top: 0.86vh;
     margin-bottom: 0.36vh;
     font-weight: 400;
+    color: black;
+    text-decoration: none !important;
     font-size: clamp(8px, 0.816vw, 15.67px);
 }
+
 .blog-page-side-bar-posts .blog-post-title {
     margin-bottom: 1.98vh;
+    color: black;
+    text-decoration: none !important;
     font-size: clamp(3.63px, 0.918vw, 17.63px);
 }
+
 @media screen and (max-width: 1400px) {
     .blog-post-article-item.blog-page-article-comp {
         transform: translateY(-5%) translateX(9%);
@@ -374,11 +380,13 @@
     .blog-post-content{
         width: fit-content;
         height: auto;
+        
     }
 
     .blog-post-date, .blog-post-title{
         margin: 0 !important;
         padding: 0 !important;
+        
     }
     
     .blog-post-image{
