@@ -1,33 +1,22 @@
-import { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import dotenv from "dotenv";
+import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
+import { auth } from "../../../firebase/config";
 
 function Login() {
-  const [username, setUsername] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //figure out env later
+  const [signInWithEmailAndPassword] = useSignInWithEmailAndPassword(auth);
 
-  const API_PORT = process.env.API_PORT || 5000;
-  const REG_PORT = process.env.REG_PORT || 3000;
-  const baseUrl = process.env.BASE_URL || `http://localhost:${API_PORT}`;
-  const REG_URL = process.env.REG_URL || `http://localhost:${REG_PORT}`;
-  const handleSubmit = async (e) => {
-    if (username && password) {
-      const response = await fetch(`${baseUrl}/api/verify-login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ user: username, pwd: password }),
-      });
-
-      const { token } = await response.json();
-      if (response.ok && token != "ERROR") {
-        localStorage.setItem("token", token);
-        window.location = `${REG_URL}/admin`;
-      } else {
-        window.location = `baseUrl`;
-        console.error(data.message);
-      }
+  const handleLogin = async () => {
+    try {
+      console.log(email, password);
+      const res = await signInWithEmailAndPassword(email, password);
+      console.log({res})
+      setEmail('');
+      setPassword('');
+    } catch (e) {
+      console.error(e);
     }
   };
 
@@ -38,7 +27,7 @@ function Login() {
           placeholder="username"
           type="text"
           id="username"
-          onChange={(e) => setUsername(e.target.value)}
+          onChange={(e) => setEmail(e.target.value)}
         ></input>
         <input
           placeholder="password"
@@ -51,7 +40,7 @@ function Login() {
         id="login-submit"
         type="submit"
         onClick={async () => {
-          handleSubmit();
+          handleLogin();
         }}
       >
         Submit
