@@ -33,7 +33,7 @@
 
 
 .merchandise-title {
-  width: 27.13vw;
+  width: 32.56rem;
   text-align: center;
   margin: 0 auto;
   margin-bottom: 11.1vh;
@@ -199,7 +199,7 @@
 }
 
 .coming-soon-text {
-  font-size: 3.21vw;
+  font-size: 3.85rem;
   color: #D63A29;
   text-align: center;
   font-weight: 900;
@@ -368,6 +368,11 @@
     left: 88.28vw;
     top: 39.3vh;
   }
+
+  .coming-soon-text {
+    margin-top: 5rem;
+    font-size: 3.2rem;
+  }
 }
 
 @media only screen and (max-width: 1500px) {
@@ -419,6 +424,15 @@
   .right-arrow {
     left: 88.28vw;
     top: 38.3vh;
+  }
+
+  .merchandise-title {
+    width: 28rem;
+  }
+
+  .coming-soon-text {
+    margin-top: 4rem;
+    font-size: 3.2rem;
   }
 }
 
@@ -534,6 +548,11 @@
     width: 16rem;
   }
 
+  .coming-soon-text {
+    margin-top: 4rem;
+    font-size: 2.8rem;
+  }
+
 }
 
 
@@ -642,6 +661,15 @@
   .right-arrow {
     left: 88.28vw;
     top: 34.3vh;
+  }
+
+  .merchandise-title {
+    width: 25rem;
+  }
+
+  .coming-soon-text {
+    margin-top: 3.5rem;
+    font-size: 2.2rem;
   }
 }
 
@@ -800,6 +828,10 @@
     width: 16rem;
     height: 5rem;
   }
+
+  .merchandise-title {
+    width: 23rem;
+  }
 }
 
 @media only screen and (max-width: 850px) {
@@ -887,6 +919,11 @@
     left: 88.28vw;
     top: 29.3vh;
   }
+
+  .coming-soon-text {
+    margin-top: 3rem;
+    font-size: 2rem;
+  }
 }
 
 @media only screen and (max-width: 750px) {
@@ -948,10 +985,11 @@
   }
 
   .product-box-1 {
+    position: absolute;
     left: 0vw;
     top: 3.44vh;
-    width: 38.97vw;
-    height: 18vh;
+    width: 38.97vw; 
+    height: 18vh; 
     border-radius: 7.19px;
   }
 
