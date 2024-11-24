@@ -472,6 +472,10 @@
     left: 88.28vw;
     top: 38.3vh;
   }
+
+  .product-name {
+    font-size: 1.3rem;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
@@ -529,6 +533,7 @@
     top: 290rem;
     width: 16rem;
   }
+
 }
 
 
