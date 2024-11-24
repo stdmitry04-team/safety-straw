@@ -223,6 +223,11 @@
         line-height: 30px;
     }
 }
+@media screen and (max-width: 1000px) {
+    .blog-post-article-title {
+        font-size: 25px;
+    }
+}
 @media screen and (max-width: 600px) {
     .blog-post-article-text {
         font-size: 18px;
