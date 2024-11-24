@@ -169,6 +169,7 @@
 }
 
 .add-to-cart {
+  position: absolute;
   width: 100%;
   height: 8.39vh;
   font-size: 1.76rem;
@@ -177,7 +178,6 @@
   border: none;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  position: absolute;
   font-family: 'Aileron';
   font-weight: 900;
   border-bottom-left-radius: 0.916vw;
@@ -185,6 +185,7 @@
   opacity: 65%;
   bottom: 0;
 }
+
 
 .add-to-cart:hover {
   background-color: #333333; 
@@ -232,10 +233,6 @@
 }
 
 @media only screen and (max-width: 1800px) {
-  .product-box {
-    height: 21.25rem;
-  }
-
   .product-box-1 {
     background-color: #FFFFFF;
     left: 17.424rem;
@@ -266,19 +263,13 @@
     left: 74.652rem;
     top: 39.78rem;
   }
+}
   
 
-  .add-to-cart {
-    bottom: 0;
-    width: 100%;
-  }
-}
-
-
 @media only screen and (max-width: 1700px) {
-  .product-box {
+  /* .product-box {
     height: 20.25rem;
-  }
+  } */
 
   .product-box-1 {
     background-color: #FFFFFF;
@@ -328,43 +319,40 @@
 
 @media only screen and (max-width: 1600px) {
   .product-box {
-    height: 17.25rem;
+    display: flex;
+    position: absolute;
+    height: clamp(20rem, 10vw, 21rem);
+    width: 20rem;
   }
 
   .product-box-1 {
     background-color: #FFFFFF;
     left: 14.424rem;
-    width: 19rem;
   }
   
   .product-box-2 {
     left: 40.744rem;
-    width: 19rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
     left: 67.652rem;
-    width: 19rem;
   }
   
   .product-box-4 {
     left: 14.424rem;
     top: 34.78rem;
-    width: 19rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
     left: 40.744rem;
     top: 34.78rem;
-    width: 19rem;
   }
   
   .product-box-6 {
     left: 67.652rem;
     top: 34.78rem;
-    width: 19rem;
   }
 
   .add-to-cart {
@@ -383,42 +371,40 @@
 }
 
 @media only screen and (max-width: 1500px) {
-  
+  .product-box {
+    width: 19rem;
+    height: 19rem;
+  }
+
 
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 13.424rem;
-    width: 19rem;
+    left: 12.424rem;
   }
   
   .product-box-2 {
-    left: 38.744rem;
-    width: 19rem;
+    left: 37.744rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 64.652rem;
-    width: 19rem;
+    left: 63.652rem;
   }
   
   .product-box-4 {
-    left: 13.424rem;
+    left: 12.424rem;
     top: 32.78rem;
-    width: 19rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 38.744rem;
+    left: 37.744rem;
     top: 32.78rem;
-    width: 19rem;
   }
   
   .product-box-6 {
-    left: 64.652rem;
+    left: 63.652rem;
     top: 32.78rem;
-    width: 19rem;
   }
 
   .add-to-cart {
@@ -437,40 +423,38 @@
 }
 
 @media only screen and (max-width: 1400px) {
-  
-
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 10.424rem;
+    left: 8.424rem;
     width: 19rem;
   }
   
   .product-box-2 {
-    left: 35.744rem;
+    left: 33.744rem;
     width: 19rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 61.652rem;
+    left: 58.652rem;
     width: 19rem;
   }
   
   .product-box-4 {
-    left: 10.424rem;
+    left: 8.424rem;
     top: 32.78rem;
     width: 19rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 35.744rem;
+    left: 33.744rem;
     top: 32.78rem;
     width: 19rem;
   }
   
   .product-box-6 {
-    left: 61.652rem;
+    left: 58.652rem;
     top: 32.78rem;
     width: 19rem;
   }
@@ -491,42 +475,39 @@
 }
 
 @media only screen and (max-width: 1300px) {
+  .product-box {
+    width: 18rem;
+    height: 18rem;
+  }
   
-
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 8.424rem;
-    width: 18rem;
+    left: 7.424rem;
   }
   
   .product-box-2 {
-    left: 31.744rem;
-    width: 18rem;
+    left: 30.744rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 55.652rem;
-    width: 18rem;
+    left: 54.652rem;
   }
   
   .product-box-4 {
-    left: 8.424rem;
+    left: 7.424rem;
     top: 32.78rem;
-    width: 18rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 31.744rem;
+    left: 30.744rem;
     top: 32.78rem;
-    width: 18rem;
   }
   
   .product-box-6 {
-    left: 55.652rem;
+    left: 54.652rem;
     top: 32.78rem;
-    width: 18rem;
   }
 
   .add-to-cart {
@@ -552,40 +533,38 @@
 
 
 @media only screen and (max-width: 1200px) {
-  
-
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 6.424rem;
+    left: 5.424rem;
     width: 18rem;
   }
   
   .product-box-2 {
-    left: 29.744rem;
+    left: 26.744rem;
     width: 18rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 53.652rem;
+    left: 48.652rem;
     width: 18rem;
   }
-  
+
   .product-box-4 {
-    left: 6.424rem;
+    left: 5.424rem;
     top: 30.78rem;
     width: 18rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 29.744rem;
+    left: 26.744rem;
     top: 30.78rem;
     width: 18rem;
   }
   
   .product-box-6 {
-    left: 53.652rem;
+    left: 48.652rem;
     top: 30.78rem;
     width: 18rem;
   }
@@ -612,40 +591,38 @@
 }
 
 @media only screen and (max-width: 1100px) {
+  .product-box {
+    width: 16rem;
+    height: 16rem;
+  }
   .product-box-1 {
     background-color: #FFFFFF;
     left: 6.424rem;
-    width: 16rem;
   }
   
   .product-box-2 {
-    left: 26.844rem;
-    width: 16rem;
+    left: 25.844rem;
   }
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 47.652rem;
-    width: 16rem;
+    left: 44.652rem;
   }
   
   .product-box-4 {
     left: 6.424rem;
     top: 30.78rem;
-    width: 16rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 26.844rem;
+    left: 25.844rem;
     top: 30.78rem;
-    width: 16rem;
   }
   
   .product-box-6 {
-    left: 47.652rem;
+    left: 44.652rem;
     top: 30.78rem;
-    width: 16rem;
   }
 
   .add-to-cart {
@@ -654,12 +631,12 @@
 
   .left-arrow {
     left: 9.79vw;
-    top: 35.3vh;
+    top: 34.3vh;
   }
   
   .right-arrow {
     left: 88.28vw;
-    top: 35.3vh;
+    top: 34.3vh;
   }
 }
 
@@ -677,7 +654,7 @@
   
   .product-box-3 {
     background-color: #FFFFFF;
-    left: 42.652rem;
+    left: 41.652rem;
     width: 16rem;
   }
   
@@ -695,7 +672,7 @@
   }
   
   .product-box-6 {
-    left: 42.652rem;
+    left: 41.652rem;
     top: 30.78rem;
     width: 16rem;
   }
@@ -707,57 +684,92 @@
 
   .left-arrow {
     left: 9.79vw;
-    top: 35.3vh;
+    top: 34.3vh;
   }
   
   .right-arrow {
     left: 88.28vw;
-    top: 35.3vh;
+    top: 34.3vh;
   }
 }
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 950px) {
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 3.424rem;
-    width: 15rem;
-    height: 16rem;
+    left: 2.424rem;
   }
   
   .product-box-2 {
-    left: 21.344rem;
-    width: 15rem;
-    height: 16rem;
+    left: 20.344rem;
   }
 
   
   .product-box-3 {
     background-color: #FFFFFF;
     left: 38.652rem;
-    width: 15rem;
-    height: 16rem;
   }
   
   .product-box-4 {
-    left: 3.424rem;
+    left: 2.424rem;
     top: 28.78rem;
-    width: 15rem;
-    height: 16rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 21.344rem;
+    left: 20.344rem;
     top: 28.78rem;
-    width: 15rem;
-    height: 16rem;
   }
   
   .product-box-6 {
     left: 38.652rem;
     top: 28.78rem;
+  }
+
+  .left-arrow {
+    left: 9.79vw;
+    top: 32.3vh;
+  }
+  
+  .right-arrow {
+    left: 88.28vw;
+    top: 32.3vh;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .product-box {
     width: 15rem;
-    height: 16rem;
+    height: 15rem;
+  }
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 3.424rem;
+  }
+  
+  .product-box-2 {
+    left: 20.344rem;
+  }
+
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 36.652rem;
+  }
+  
+  .product-box-4 {
+    left: 3.424rem;
+    top: 28.78rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 20.344rem;
+    top: 28.78rem;
+  }
+  
+  .product-box-6 {
+    left: 36.652rem;
+    top: 28.78rem;
   }
 
   .add-to-cart {
@@ -768,12 +780,12 @@
 
   .left-arrow {
     left: 9.79vw;
-    top: 34.3vh;
+    top: 32.3vh;
   }
   
   .right-arrow {
     left: 88.28vw;
-    top: 34.3vh;
+    top: 32.3vh;
   }
 
   .view-more-button {
@@ -785,47 +797,74 @@
   }
 }
 
-@media only screen and (max-width: 800px) {
-  .product-image {
-    width: 100%;
-  }
-
+@media only screen and (max-width: 850px) {
   .product-box-1 {
     background-color: #FFFFFF;
-    left: 3.424rem;
-    width: 13rem;
-
+    left: 1.424rem;
   }
   
   .product-box-2 {
-    left: 18.144rem;
-    width: 15rem;
+    left: 18.344rem;
   }
 
   
   .product-box-3 {
     background-color: #FFFFFF;
     left: 34.652rem;
-    width: 13rem;
   }
   
   .product-box-4 {
-    left: 2.124rem;
+    left: 1.424rem;
     top: 28.78rem;
-    width: 15rem;
   }
   
   .product-box-5 {
     background-color: #FFFFFF;
-    left: 18.844rem;
+    left: 18.344rem;
     top: 28.78rem;
-    width: 13rem;
   }
   
   .product-box-6 {
-    left: 33.252rem;
+    left: 34.652rem;
     top: 28.78rem;
-    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .product-box {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 3.424rem;
+  }
+  
+  .product-box-2 {
+    left: 18.144rem;
+  }
+
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 32.652rem;
+  }
+  
+  .product-box-4 {
+    left: 3.424rem;
+    top: 26.78rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 18.144rem;
+    top: 26.78rem;
+  }
+  
+  .product-box-6 {
+    left: 32.652rem;
+    top: 26.78rem;
   }
 
   .add-to-cart {
@@ -836,16 +875,51 @@
 
   .left-arrow {
     left: 9.79vw;
-    top: 32.3vh;
+    top: 29.3vh;
   }
   
   .right-arrow {
     left: 88.28vw;
-    top: 32.3vh;
+    top: 29.3vh;
   }
 }
 
-/* Responsive Design */
+@media only screen and (max-width: 750px) {
+  .product-box-1 {
+    background-color: #FFFFFF;
+    left: 1.424rem;
+  }
+  
+  .product-box-2 {
+    left: 16.344rem;
+  }
+
+  
+  .product-box-3 {
+    background-color: #FFFFFF;
+    left: 30.652rem;
+  }
+  
+  .product-box-4 {
+    left: 1.424rem;
+    top: 26.78rem;
+  }
+  
+  .product-box-5 {
+    background-color: #FFFFFF;
+    left: 16.344rem;
+    top: 26.78rem;
+  }
+  
+  .product-box-6 {
+    left: 30.652rem;
+    top: 26.78rem;
+  }
+
+  
+}
+
+/* Phone Responsive Design */
 @media only screen and (max-width: 700px) {
   .merchandise-section {
     width: 82.05vw;
