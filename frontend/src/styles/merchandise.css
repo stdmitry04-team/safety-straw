@@ -157,7 +157,7 @@
 
 .view-more-button {
   background-color: #FFFFFF;
-  width: 20.36vw;
+  width: 24.43rem;
   height: 7.41vh;
   border-radius: 1.04vw;
   color: #D63A29;
@@ -373,6 +373,11 @@
     margin-top: 5rem;
     font-size: 3.2rem;
   }
+
+  .view-more-button {
+    position: absolute;
+    top: 295rem;
+  }
 }
 
 @media only screen and (max-width: 1500px) {
@@ -434,6 +439,11 @@
     margin-top: 4rem;
     font-size: 3.2rem;
   }
+
+  .view-more-button {
+    position: absolute;
+    top: 290rem;
+  }
 }
 
 @media only screen and (max-width: 1400px) {
@@ -490,6 +500,11 @@
   .product-name {
     font-size: 1.3rem;
   }
+
+  .view-more-button {
+    position: absolute;
+    top: 290rem;
+  }
 }
 
 @media only screen and (max-width: 1300px) {
@@ -545,7 +560,6 @@
   .view-more-button {
     position: absolute;
     top: 290rem;
-    width: 16rem;
   }
 
   .coming-soon-text {
@@ -610,7 +624,6 @@
   .view-more-button {
     position: absolute;
     top: 287rem;
-    width: 16rem;
   }
 }
 
@@ -723,6 +736,11 @@
   .right-arrow {
     left: 88.28vw;
     top: 34.3vh;
+  }
+
+  .view-more-button {
+    position: absolute;
+    width: 20rem;
   }
 }
 
@@ -984,6 +1002,104 @@
       grid-template-rows: repeat(3, auto); /* Adjust to 3 rows */
   }
 
+  .product-box {
+    width: 13rem; 
+    height: 13rem; 
+  }
+
+  .product-box-1 {
+    position: absolute;
+    left: 4vw;
+    top: 3.44vh;
+    border-radius: 7.19px;
+  }
+
+  .product-box-2 {
+    position: absolute;
+    left: 46.08vw;
+    top: 3.44vh; 
+    border-radius: 7.19px;
+  }
+
+  .product-box-3 {
+    left: 4vw; 
+    top: 29.74vh;
+    border-radius: 7.19px;
+  }
+
+  .product-box-5 {
+    left: 46.08vw;
+    top: 29.74vh;
+    border-radius: 7.19px;
+  }
+
+  .product-box-6 {
+    left: 4vw;
+    top: 55.92vh;
+    border-radius: 7.19px;
+  }
+
+  .product-box-4 {
+    left: 46.08vw;
+    top: 55.92vh;
+  }
+
+  .add-to-cart {
+    width: 100%;
+    height: 36.95px;
+    font-size: 0.7175rem;
+    position: absolute;
+    font-family: 'Aileron';
+    font-weight: 900;
+    border-bottom-left-radius: 7.19px; /* Round bottom-left corner */
+    border-bottom-right-radius: 7.19px; /* Round bottom-right corner */
+    opacity: 65%;
+  }
+
+  
+  .add-to-cart-2 {
+    bottom: 0;
+  }
+
+  .product-name {
+    font-size: 0.73rem;
+    font-weight: 900;
+    color: #000000;
+    font-family: 'Aileron';
+    position: relative;
+  }
+
+  .coming-soon-text {
+    font-size: 2.13rem;
+    color: #D63A29;
+    text-align: center;
+    font-weight: 900;
+    font-family: 'Aileron';
+    left: 52.98vw;
+    margin-top: 4.7vh;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .view-more-button {
+    background-color: #FFFFFF;
+    width: 36.67vw;
+    height: 3.44vh;
+    border-radius: 1.87vw;
+    color: #D63A29;
+    font-size: 1.1rem;
+    font-family: 'Gantari';
+    font-weight: 600;
+    border: none;
+    line-height: 2.5vh;
+    position: absolute;
+    top: 86.73vh;
+  }
+}
+
+@media only screen and (max-width: 550px) {
   .product-box-1 {
     position: absolute;
     left: 0vw;
@@ -1033,58 +1149,7 @@
     top: 55.92vh;
   }
 
-  .add-to-cart {
-    width: 100%;
-    height: 36.95px;
-    font-size: 0.7175rem;
-    position: absolute;
-    font-family: 'Aileron';
-    font-weight: 900;
-    border-bottom-left-radius: 7.19px; /* Round bottom-left corner */
-    border-bottom-right-radius: 7.19px; /* Round bottom-right corner */
-    opacity: 65%;
-  }
-
-  
-  .add-to-cart-2 {
-    bottom: 0;
-  }
-
-  .product-name {
-    font-size: 0.73rem;
-    font-weight: 900;
-    color: #000000;
-    font-family: 'Aileron';
-    position: relative;
-  }
-
   .coming-soon-text {
     font-size: 6.42vw;
-    color: #D63A29;
-    text-align: center;
-    font-weight: 900;
-    font-family: 'Aileron';
-    left: 52.98vw;
-    margin-top: 4.7vh;
-  }
-
-  .arrow {
-    display: none;
-  }
-
-  .view-more-button {
-    background-color: #FFFFFF;
-    width: 36.67vw;
-    height: 3.44vh;
-    border-radius: 1.87vw;
-    color: #D63A29;
-    font-size: 1.1rem;
-    font-family: 'Gantari';
-    font-weight: 600;
-    border: none;
-    line-height: 2.5vh;
-    position: absolute;
-    top: 86.73vh;
   }
 }
-
