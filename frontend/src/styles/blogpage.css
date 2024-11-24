@@ -136,6 +136,7 @@
     transform: translateX(0%);
 }
 .blog-page-left {
+    font-family: 'Aileron';
     margin-top: 37px;
     width: 68.59vw;
     transform: translateX(5.4%);
@@ -194,15 +195,17 @@
     margin-bottom: 0.36vh;
     font-weight: 400;
     color: black;
-    text-decoration: none !important;
     font-size: clamp(8px, 0.816vw, 15.67px);
 }
 
 .blog-page-side-bar-posts .blog-post-title {
     margin-bottom: 1.98vh;
     color: black;
-    text-decoration: none !important;
     font-size: clamp(3.63px, 0.918vw, 17.63px);
+}
+.blogpage-navlink {
+    font-family: 'Aileron';
+    text-decoration: none;
 }
 
 @media screen and (max-width: 1400px) {
@@ -348,6 +351,7 @@
         display: none;
     }
     .blog-page-left {
+        font-family: 'Aileron';
         width: 82.3vw;
         /* margin-bottom: 3vh; */
     }
