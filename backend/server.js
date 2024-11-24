@@ -195,22 +195,15 @@ app.get("/api/waitlist/confirm", async (req, res) => {
 });
 
 app.post("/api/create-payment-intent", async (req, res) => {
-  const { price, type } = req.body;
+  const { price } = req.body;
 
   try {
-    if (type == "card") {
-      const paymentIntent = await stripe.paymentIntents.create({
-        amount: parseFloat(price.toFixed(2)) * 100,
-        currency: "usd",
-      });
-      res.json({ clientSecret: paymentIntent.client_secret });
-    } else {
-      const setupIntent = await stripe.setupIntents.create({
-        payment_method_types: ["us_bank_account"], // Specify payment method
-        usage: "on_session", // Payment is saved for later use
-      });
-      res.json({ clientSecret: setupIntent.client_secret });
-    }
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: parseFloat(price.toFixed(2)) * 100,
+      currency: "usd",
+      payment_method_types: ["card", "us_bank_account"],
+    });
+    res.json({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
     res.status(500).send({ error: error.message });
   }

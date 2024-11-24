@@ -8,6 +8,8 @@ import img_bottom from "../images/checkout-pic-bottom.png";
 import straws_img from "../images/checkout-straws.png";
 import React, { useState, useEffect, useRef } from "react";
 import { useForm } from "react-hook-form";
+import { loadStripe } from "@stripe/stripe-js"; // Import loadStripe
+
 import {
   Elements,
   CardElement,
@@ -32,12 +34,11 @@ export default function Checkout() {
   const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentError, setPaymentError] = useState("");
   const [cardComplete, setCardComplete] = useState(null);
-  const [paymentSecretBank, setPaymentSecretBank] = useState(null);
+  const [intent, setIntent] = useState(null);
   const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
-  const stripe = useStripe();
-  const elements = useElements();
-  const cardContainer = useRef(null);
+  const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
 
+  const cardContainer = useRef(null);
   const {
     register,
     handleSubmit,
@@ -48,15 +49,15 @@ export default function Checkout() {
     defaultValues: {
       companyName: "",
       phoneNumber: "",
-      card: {
-        nameOnCard: "",
-      },
-      checking: {
-        nameOnAccount: "",
-        routingNumber: "",
-        accountNumber: "",
-        confirmAccountNumber: "",
-      },
+      // card: {
+      //   nameOnCard: "",
+      // },
+      // checking: {
+      //   nameOnAccount: "",
+      //   routingNumber: "",
+      //   accountNumber: "",
+      //   confirmAccountNumber: "",
+      // },
       mailingAddress: {
         address: "",
         apartment: "",
@@ -74,43 +75,89 @@ export default function Checkout() {
     },
   });
   // Watch for changes in payment fields
-  const cardFields = watch(["card.nameOnCard"]);
-  const checkingFields = watch([
-    "checking.nameOnAccount",
-    "checking.routingNumber",
-    "checking.accountNumber",
-    "checking.confirmAccountNumber",
-  ]);
+  // const cardFields = watch(["card.nameOnCard"]);
+  // const checkingFields = watch([
+  //   "checking.nameOnAccount",
+  //   "checking.routingNumber",
+  //   "checking.accountNumber",
+  //   "checking.confirmAccountNumber",
+  // ]);
+
+  useEffect(() => {
+    const getIntent = async () => {
+      const stripe = await stripePromise;
+      if (!stripe) {
+        console.error("Stripe failed to initialize.");
+        return;
+      }
+      if (intent) {
+        return;
+      }
+      try {
+        const responseIntent = await fetch(
+          `${baseUrl}/api/create-payment-intent`,
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ price: grandTotal }),
+          }
+        );
+
+        if (responseIntent.ok) {
+          console.log("Succesfully created payment intent");
+          const { clientSecret } = await responseIntent.json();
+          setIntent(clientSecret);
+          const elements = stripe.elements({ clientSecret }); // Ensure this is correctly set up
+          if (!elements) {
+            console.error("Failed to initialize Stripe Elements.");
+            return;
+          }
+          const PaymentElement = elements.create("payment", { clientSecret });
+          PaymentElement.mount("#payment-element");
+        } else {
+          const error = await responseIntent.json();
+          console.log("Failed to make payment intent");
+          throw new Error(error);
+        }
+      } catch (error) {
+        console.error("Error fetching payment intent:", error.message);
+      }
+    };
+    getIntent();
+  }, [intent]);
 
   // Update payment method when fields change
   useEffect(() => {
-    const hasCardInfo = cardComplete != null;
-    const hasCheckingInfo = checkingFields.some((field) => field);
+    // const hasCardInfo = cardComplete != null;
+    // const hasCheckingInfo = checkingFields.some((field) => field);
 
-    if (hasCardInfo && !hasCheckingInfo) {
-      setPaymentMethod("card");
-      setPaymentError("");
-      // Clear checking account fields
-      Object.keys(watch("checking")).forEach((key) => {
-        setValue(`checking.${key}`, "");
-      });
-    } else if (hasCheckingInfo && !hasCardInfo) {
-      setPaymentMethod("checking");
-      setPaymentError("");
-      // Clear card fields
-      Object.keys(watch("card")).forEach((key) => {
-        setValue(`card.${key}`, "");
-      });
-    } else if (!hasCardInfo && !hasCheckingInfo) {
-      setPaymentMethod("");
-    }
+    // if (hasCardInfo && !hasCheckingInfo) {
+    //   setPaymentMethod("card");
+    //   setPaymentError("");
+    //   // Clear checking account fields
+    //   Object.keys(watch("checking")).forEach((key) => {
+    //     setValue(`checking.${key}`, "");
+    //   });
+    // } else if (hasCheckingInfo && !hasCardInfo) {
+    //   setPaymentMethod("checking");
+    //   setPaymentError("");
+    //   // Clear card fields
+    //   Object.keys(watch("card")).forEach((key) => {
+    //     setValue(`card.${key}`, "");
+    //   });
+    // } else if (!hasCardInfo && !hasCheckingInfo) {
+    //   setPaymentMethod("");
+    // }
     const handleResize = () => {
       setFontSize(calculateResponsiveFontSize());
     };
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [...cardFields, ...checkingFields]);
+  });
+  //[...cardFields, ...checkingFields]
 
   // Validate that at least one payment method is fully filled out
   const validatePaymentMethod = () => {
@@ -462,6 +509,7 @@ export default function Checkout() {
             </div>
 
             <h3>Pay With Checking Account</h3>
+            <div id="payment-element"></div>
             <div className="checkout-input-group">
               <input
                 id="checking-name"
