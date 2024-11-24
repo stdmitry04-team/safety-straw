@@ -44,15 +44,15 @@ function Navbar() {
           <div className="navbar-right">
             <div className="desktop-links">
                 <Link to="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</Link>
-                <Link to="#" className="nav-link">Merchandise</Link>
-                <button className="nav-link btn-link">Bar Locator</button>
-                <button className="nav-link btn-link">Blog</button>
-                <button onClick={openModal} className="join-btn">Join Waitlist</button>
+                <Link to="/checkout" className="nav-link">Order Now</Link>
+                {/* <button className="nav-link btn-link">Bar Locator</button> */}
+                {/* <button className="nav-link btn-link">Blog</button> */}
+                <button onClick={openModal} className="join-btn">Get updates</button>
                 
             </div>
             
           
-            <img src={profileIcon} alt="User Profile" className="profile-icon" />
+            {/* <img src={profileIcon} alt="User Profile" className="profile-icon" /> */}
 
             <button className="menu-toggle-btn" onClick={toggleDropdown}>
             <img src={menuIcon} alt="Menu Icon" className="menu-icon" />
@@ -63,9 +63,9 @@ function Navbar() {
           <div className="dropdown-menu">
             <Link to="/" className="nav-link" onClick={topFunction}>SAFETY STRAW</Link>
             <Link to="#footer" className="nav-link" onClick={() => setDropdownOpen(false)}>About Us</Link>
-            <Link to="#" className="nav-link" onClick={() => setDropdownOpen(false)}>Merchandise</Link>
-            <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Bar Locator</button>
-            <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Blog</button>
+            <Link to="#" className="nav-link" onClick={() => setDropdownOpen(false)}>Order Now</Link>
+            {/* <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Bar Locator</button> */}
+            {/* <button className="nav-link btn-link" onClick={() => setDropdownOpen(false)}>Blog</button> */}
           </div>
         )}
 

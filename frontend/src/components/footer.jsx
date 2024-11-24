@@ -23,7 +23,7 @@ export default function Footer(){
                 </div>
                 <p className = "footer-text">Safety Straw is a company <br />focused on establishing a <br/> safer nightlife environment.</p>
                 <div className="icons">
-                <a href="https://www.instagram.com/safetystrawcorporation?igsh=eHVucjVkc2N4eGUw" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.instagram.com/safetystrawinc/" target="_blank" rel="noopener noreferrer">
                     <img className="footer-social" src={inst} alt="Instagram" />
                 </a>
 
@@ -31,7 +31,7 @@ export default function Footer(){
                     <img className="footer-social" src={linkedin} alt="LinkedIn" />
                 </a>
 
-                <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
+                <a href="https://www.tiktok.com/@safetystraw" target="_blank" rel="noopener noreferrer">
                     <img className="footer-social" src={tiktok} alt="TikTok" />
                 </a>
                 </div>

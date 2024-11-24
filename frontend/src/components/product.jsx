@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import "../styles/product.css";
 import back from "../assets/product.svg";
 import mobileBack from "../assets/mobile-product.svg"; // Import the mobile background
@@ -46,7 +47,8 @@ export default function Product() {
           <br />
           any and all establishments.
         </p>
-        <button className="join-waitlist">Join Waitlist</button>
+        {/* <button className="join-waitlist">Buy Now!</button> */}
+        <Link to="/checkout" className="join-waitlist">Buy Now!</Link>
       </div>
 
       <div className="diagram-container">

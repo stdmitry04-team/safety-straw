@@ -89,6 +89,8 @@
   cursor: pointer;
   transition: background-color 0.3s opacity 0.3s;
   font-family: "Gantari", sans-serif;
+
+  margin-right: 2vw;  /* only for when cart/profile is not there */
 }
 
 .join-btn:hover {
