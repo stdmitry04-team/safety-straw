@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Remove useParams as it's not needed in the list view
-import { useNavigate } from 'react-router-dom';
 import "../styles/blogviewmore.css";
 import BlogPost from "./blogpost";
 import PaginationArrow from './PaginationArrow';
@@ -10,15 +9,15 @@ import blog_r_image from "../images/blogimageright.png";
 import blog_middown_image from "../images/strawtint.png";
 import blog_rdown_image from "../images/bartint.png";
 import blogpagebar from "../images/blogpagebar.png";
-import blog_middown_image from "../images/strawtint.png";
-import blog_rdown_image from "../images/bartint.png";
+// import blog_middown_image from "../images/strawtint.png";
+// import blog_rdown_image from "../images/bartint.png";
 import Navbar from "./nav.jsx";
 import WaitlistBar from "./WaitlistBar.jsx";
 import Footer from "./footer.jsx";
 
 export default function BlogViewMore() {
-  const [isMobile, setIsMobile] = useState(false);
-  const navigate = useNavigate();
+  // const [isMobile, setIsMobile] = useState(false);
+  // const navigate = useNavigate();
   const [isMobile, setIsMobile] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const postsPerPage = 4;
@@ -31,19 +30,19 @@ export default function BlogViewMore() {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const handleBlogClick = (index) => {
-    navigate(`/blog/${index}`);
-  };
+  // const handleBlogClick = (index) => {
+  //   navigate(`/blog/${index}`);
+  // };
 
-  let idCounter = 1;
-  const blogPosts = [
-    { id: idCounter++, imageSrc: blog_l_image, title: "How Safety Straw Products Are Environmental Friendly", date: "Aug 20, 2024" },
-    { id: idCounter++, imageSrc: blog_m_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
-    { id: idCounter++, imageSrc: blog_r_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
-    { id: idCounter++, imageSrc: blog_middown_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
-    { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
-    { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
-  ];
+  // let idCounter = 1;
+  // const blogPosts = [
+  //   { id: idCounter++, imageSrc: blog_l_image, title: "How Safety Straw Products Are Environmental Friendly", date: "Aug 20, 2024" },
+  //   { id: idCounter++, imageSrc: blog_m_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
+  //   { id: idCounter++, imageSrc: blog_r_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+  //   { id: idCounter++, imageSrc: blog_middown_image, title: "How Do Bars Use Safety Straw Products?", date: "Aug 23, 2024" },
+  //   { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+  //   { id: idCounter++, imageSrc: blog_rdown_image, title: "How the Safety Straw Straws Changed My Life", date: "Jul 1, 2024" },
+  // ];
   useEffect(() => {
     const handleResize = () => setIsMobile(window.innerWidth <= 440);
     handleResize();
