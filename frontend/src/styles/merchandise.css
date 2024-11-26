@@ -263,6 +263,14 @@
     left: 74.652rem;
     top: 39.78rem;
   }
+
+  .left-arrow {
+    left: 10rem;
+  }
+
+  .right-arrow {
+    left: 100rem;
+  }
 }
   
 
@@ -307,13 +315,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 42.3vh;
+    top: 28rem;
+    left: 10rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 42.3vh;
+    top: 28rem;
+    left: 98rem;
   }
 }
 
@@ -360,13 +368,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 39.3vh;
+    top: 27rem;
+    left: 10rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 39.3vh;
+    top: 27rem;
+    left: 90rem;
   }
 
   .coming-soon-text {
@@ -422,13 +430,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 38.3vh;
+    top: 25rem;
+    left: 8rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 38.3vh;
+    top: 25rem;
+    left: 85rem;
   }
 
   .merchandise-title {
@@ -488,13 +496,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 38.3vh;
+    top: 25rem;
+    left: 4rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 38.3vh;
+    top: 25rem;
+    left: 79rem;
   }
 
   .product-name {
@@ -548,13 +556,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 36.3vh;
+    top: 25rem;
+    left: 3rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 36.3vh;
+    top: 25rem;
+    left: 73rem;
   }
 
   .view-more-button {
@@ -612,13 +620,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 36.3vh;
+    top: 23rem;
+    left: 2rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 36.3vh;
+    top: 23rem;
+    left: 68rem;
   }
 
   .view-more-button {
@@ -667,13 +675,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 34.3vh;
+    top: 22rem;
+    left: 2rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 34.3vh;
+    top: 22rem;
+    left: 61rem;
   }
 
   .merchandise-title {
@@ -729,13 +737,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 34.3vh;
+    top: 22rem;
+    left: 1rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 34.3vh;
+    top: 22rem;
+    left: 57rem;
   }
 
   .view-more-button {
@@ -777,13 +785,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 32.3vh;
+    top: 21rem;
+    left: 1rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 32.3vh;
+    top: 21rem;
+    left: 55rem;
   }
 }
 
@@ -830,13 +838,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 32.3vh;
+    top: 21rem;
+    left: 1rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 32.3vh;
+    top: 21rem;
+    left: 52rem;
   }
 
   .view-more-button {
@@ -882,6 +890,16 @@
   .product-box-6 {
     left: 34.652rem;
     top: 28.78rem;
+  }
+
+  .left-arrow {
+    top: 21rem;
+    left: 0rem;
+  }
+
+  .right-arrow {
+    top: 21rem;
+    left: 49rem;
   }
 }
 
@@ -929,13 +947,13 @@
   }
 
   .left-arrow {
-    left: 9.79vw;
-    top: 29.3vh;
+    top: 20rem;
+    left: 0rem;
   }
-  
+
   .right-arrow {
-    left: 88.28vw;
-    top: 29.3vh;
+    top: 20rem;
+    left: 45rem;
   }
 
   .coming-soon-text {
@@ -974,6 +992,16 @@
   .product-box-6 {
     left: 30.652rem;
     top: 26.78rem;
+  }
+
+  .left-arrow {
+    top: 20rem;
+    left: -1rem;
+  }
+
+  .right-arrow {
+    top: 20rem;
+    left: 43rem;
   }
 
   
