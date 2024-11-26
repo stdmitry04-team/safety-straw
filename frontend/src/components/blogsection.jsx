@@ -10,7 +10,7 @@ export default function BlogSection () {
     const navigate = useNavigate(); // Initialize the navigate function
 
     const handleButtonClick = () => {
-       // navigate('/view-more'); // Change to the desired path
+       navigate('/blog'); // Change to the desired path
     };
     return (
         <div className = "blog-post">

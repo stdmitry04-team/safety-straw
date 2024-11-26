@@ -12,6 +12,7 @@ import AboutUs from "./components/AboutUs.jsx";
 import Blogsection from "./components/blogsection.jsx";
 import Checkout from "./components/Checkout.jsx";
 
+import BlogSection from "./components/blogsection.jsx";
 
 
 
@@ -25,9 +26,10 @@ function App() {
       <Background></Background>
       <Mission></Mission>
       <AboutUs></AboutUs>
-      <Blogsection></Blogsection>
+      <BlogSection></BlogSection>
       <WaitlistBar/>
       <Footer/>
+      
     </div>
 
   );

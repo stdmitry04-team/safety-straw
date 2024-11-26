@@ -3,16 +3,19 @@ import { createRoot } from "react-dom/client";
 import App from "./App.jsx";
 import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { BlogPage } from "./components/blogpage.jsx";
 import Login from "./components/Login.jsx";
 import { Admin } from "./components/Admin.jsx";
 import Checkout from "./components/Checkout.jsx";
+import BlogViewMore from "./components/blogviewmore.jsx";
 
 //change elements as we develop pages
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   { path: "/merch", element: <App /> },
   { path: "/bars", element: <App /> },
-  { path: "/blog", element: <App /> },
+  { path: "/blog", element: <BlogViewMore /> },
+  { path: "/blog/:id", element: <BlogPage /> },
   { path: "/admin", element: <Admin /> },
   { path: "/login", element: <Login /> },
   { path: "/checkout", element: <Checkout /> },
