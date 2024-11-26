@@ -36,9 +36,11 @@ export default function Checkout() {
   const [cardComplete, setCardComplete] = useState(null);
   const [intent, setIntent] = useState(null);
   const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
+  const [paymentElement, setPaymentElement] = useState(null); // Store PaymentElement instance
+
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
 
-  const cardContainer = useRef(null);
+  const paymentForm = useRef(null);
   const {
     register,
     handleSubmit,
@@ -114,8 +116,9 @@ export default function Checkout() {
             console.error("Failed to initialize Stripe Elements.");
             return;
           }
-          const PaymentElement = elements.create("payment", { clientSecret });
+          const PaymentElement = elements.create("payment");
           PaymentElement.mount("#payment-element");
+          setPaymentElement(PaymentElement);
         } else {
           const error = await responseIntent.json();
           console.log("Failed to make payment intent");
@@ -161,20 +164,20 @@ export default function Checkout() {
 
   // Validate that at least one payment method is fully filled out
   const validatePaymentMethod = () => {
-    const hasCompleteCardInfo = cardComplete;
-    const hasCompleteCheckingInfo = checkingFields.every((field) => field);
-    console.log(!hasCompleteCardInfo && !hasCompleteCheckingInfo);
-    if (!hasCompleteCardInfo && !hasCompleteCheckingInfo) {
-      setPaymentError(
-        "Please complete either card information or checking account information"
-      );
-      return false;
-    }
+    // const hasCompleteCardInfo = cardComplete;
+    // const hasCompleteCheckingInfo = checkingFields.every((field) => field);
+    // console.log(!hasCompleteCardInfo && !hasCompleteCheckingInfo);
+    // if (!hasCompleteCardInfo && !hasCompleteCheckingInfo) {
+    //   setPaymentError(
+    //     "Please complete either card information or checking account information"
+    //   );
+    //   return false;
+    // }
 
-    if (hasCompleteCardInfo && hasCompleteCheckingInfo) {
-      setPaymentError("Please provide only one payment method");
-      return false;
-    }
+    // if (hasCompleteCardInfo && hasCompleteCheckingInfo) {
+    //   setPaymentError("Please provide only one payment method");
+    //   return false;
+    // }
 
     setPaymentError("");
     return true;
@@ -314,8 +317,6 @@ export default function Checkout() {
 
   const onSubmit = async (data) => {
     // Validate payment method before submission
-    console.log("hit");
-    console.log(cardComplete);
     if (!validatePaymentMethod()) {
       return;
     }
@@ -326,16 +327,32 @@ export default function Checkout() {
     // //   return;
     // // }
 
-    console.log(paymentMethod);
     try {
-      if (paymentMethod == "card") {
-        await sendCardPayment(data);
-      } else {
-        await sendCheckingAccountPayment(data);
+      //const elements = stripe.elements({ clientSecret: intent });
+      const stripe = await stripePromise;
+      if (!stripe) {
+        console.error("Stripe failed to initialize.");
+        return;
       }
-    } catch (error) {
-      console.error("Error submitting order:", error);
-    }
+      const elements = stripe.elements({ intent }); // Ensure this is correctly set up
+      console.log(elements);
+
+      const { error } = await stripe.confirmPayment({
+        elements,
+        confirmParams: {
+          // Optionally define a return URL
+          return_url: `${import.meta.env.VITE_REG_URL}/`,
+        },
+      });
+
+      if (error) {
+        console.log("error paying");
+      } else {
+        // Proceed with the payment submission
+        console.log("Payment details are valid");
+        // Optionally, send any necessary information to your backend
+      }
+    } catch (error) {}
   };
 
   const smoothScroll = (e) => {
@@ -442,7 +459,11 @@ export default function Checkout() {
 
       <div className="checkout-bottom" id="checkout">
         <div className="payment-information">
-          <form className="checkout-form" onSubmit={handleSubmit(onSubmit)}>
+          <form
+            className="checkout-form"
+            onSubmit={handleSubmit(onSubmit)}
+            ref={paymentForm}
+          >
             <div className="input-group">
               <input
                 id="company-name"
@@ -468,135 +489,8 @@ export default function Checkout() {
                 <span className="error">{errors.phoneNumber.message}</span>
               )}
             </div>
-
-            <h3>Pay With Card</h3>
-
-            <div id="card-element" ref={cardContainer}>
-              <div className="checkout-input-group">
-                <input
-                  id="card-name"
-                  type="text"
-                  placeholder="Name on Card"
-                  {...registerCardField("nameOnCard", {
-                    required:
-                      paymentMethod === "card"
-                        ? "Name on card is required"
-                        : false,
-                  })}
-                />
-                {errors.card?.nameOnCard && (
-                  <span className="error">
-                    {errors.card.nameOnCard.message}
-                  </span>
-                )}
-              </div>
-              <div className="card-element-group">
-                <CardElement
-                  onChange={(e) => setCardComplete(e.empty ? null : e.complete)}
-                  options={{
-                    style: {
-                      base: {
-                        fontSize: fontSize,
-                        fontWeight: "400",
-                      },
-                    },
-                  }}
-                />
-              </div>
-              {paymentMethod == "card" && cardComplete == false && (
-                <span className="error">Card is incomplete</span>
-              )}
-            </div>
-
-            <h3>Pay With Checking Account</h3>
+            <h3>Payment Information</h3>
             <div id="payment-element"></div>
-            <div className="checkout-input-group">
-              <input
-                id="checking-name"
-                type="text"
-                placeholder="Name on Account"
-                {...registerCheckingField("nameOnAccount", {
-                  required:
-                    paymentMethod === "checking"
-                      ? "Name on account is required"
-                      : false,
-                })}
-              />
-              {errors.checking?.nameOnAccount && (
-                <span className="error">
-                  {errors.checking.nameOnAccount.message}
-                </span>
-              )}
-            </div>
-            <div className="checkout-input-group">
-              <input
-                id="checking-routing"
-                type="text"
-                placeholder="Routing Number"
-                {...registerCheckingField("routingNumber", {
-                  required:
-                    paymentMethod === "checking"
-                      ? "Routing number is required"
-                      : false,
-                  pattern: {
-                    value: /^[0-9]{9}$/,
-                    message: "Please enter a valid 9-digit routing number",
-                  },
-                })}
-              />
-              {errors.checking?.routingNumber && (
-                <span className="error">
-                  {errors.checking.routingNumber.message}
-                </span>
-              )}
-            </div>
-            <div className="checkout-input-group">
-              <input
-                id="checking-account"
-                type="text"
-                placeholder="Account Number"
-                // {...registerCheckingField("accountNumber", {
-                //     required: paymentMethod === 'checking' ? "Account number is required" : false
-                // })}
-                {...registerCheckingField("accountNumber", {
-                  required:
-                    paymentMethod === "checking"
-                      ? "Routing number is required"
-                      : false,
-                  pattern: {
-                    value: /^[0-9]+$/,
-                    message: "Account numbers should consist only of digits",
-                  },
-                })}
-              />
-              {errors.checking?.accountNumber && (
-                <span className="error">
-                  {errors.checking.accountNumber.message}
-                </span>
-              )}
-            </div>
-            <div className="checkout-input-group">
-              <input
-                type="text"
-                placeholder="Confirm Account Number"
-                {...registerCheckingField("confirmAccountNumber", {
-                  required:
-                    paymentMethod === "checking"
-                      ? "Please confirm account number"
-                      : false,
-                  validate: (value) =>
-                    !value ||
-                    value === watch("checking.accountNumber") ||
-                    "Account numbers do not match",
-                })}
-              />
-              {errors.checking?.confirmAccountNumber && (
-                <span className="error">
-                  {errors.checking.confirmAccountNumber.message}
-                </span>
-              )}
-            </div>
-
             <h3>Mailing Address</h3>
             <div className="checkout-input-group">
               <input

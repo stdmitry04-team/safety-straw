@@ -209,28 +209,6 @@ app.post("/api/create-payment-intent", async (req, res) => {
   }
 });
 
-app.post("api/charge-bank-account", async (req, res) => {
-  const { paymentMethodId, amount } = req.body;
-
-  try {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: parseFloat(amount.toFixed(2)) * 100,
-      currency: "usd",
-      payment_method: paymentMethodId,
-      confirm: true,
-      payment_method_options: {
-        us_bank_account: {
-          verification_method: "automatic",
-        },
-      },
-    });
-
-    res.json(paymentIntent);
-  } catch (error) {
-    res.status(500).send({ error: error.message });
-  }
-});
-
 app.post("/api/store-order", async (req, res) => {
   const data = req.body;
   const orders = {

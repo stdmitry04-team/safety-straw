@@ -478,6 +478,11 @@ input {
   text-wrap: nowrap;
 }
 
+#payment-element {
+  height: fit-content;
+  margin-bottom: clamp(0.5em, 1.5vw, 0.85em);
+}
+
 @media screen and (max-width: 1024px) {
   .checkout-left-imgs {
     display: none;
