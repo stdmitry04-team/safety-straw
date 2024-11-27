@@ -94,6 +94,7 @@
   border-radius: 1.25rem;
   -webkit-border-radius: 1.25rem;
   max-width: 542px;
+  min-height: 68px;
   line-height: 1.875rem;
   font-size: clamp(1.75rem, 2.083vw, 2.5rem);
   background-color: #d63a29;
