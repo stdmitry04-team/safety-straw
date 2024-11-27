@@ -29,13 +29,35 @@ function Navbar() {
       document.documentElement.scrollTop = 0;
   };
 
-  const scrollToFooter = (e) => {
-      e.preventDefault(); // Prevent default anchor behavior
-      const footer = document.querySelector('#footer');
-      if (footer) {
-          footer.scrollIntoView({ behavior: 'smooth' });
+  const scrollToAboutUs = (e) => {
+    e.preventDefault();
+    const footer = document.querySelector('.about-us');
+    
+    if (footer) {
+      const start = window.pageYOffset;
+      const target = footer.getBoundingClientRect().top + start;
+      const duration = 2000;
+      let startTime = null;
+  
+      function animation(currentTime) {
+        if (startTime === null) startTime = currentTime;
+        const timeElapsed = currentTime - startTime;
+        const progress = Math.min(timeElapsed / duration, 1);
+        
+        window.scrollTo(0, start + (target - start) * easeInOutCubic(progress));
+        
+        if (timeElapsed < duration) {
+          requestAnimationFrame(animation);
+        }
       }
-      setDropdownOpen(false);
+  
+      function easeInOutCubic(t) {
+        return t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+      }
+  
+      requestAnimationFrame(animation);
+    }
+    setDropdownOpen(false);
   };
 
   return (
@@ -50,7 +72,7 @@ function Navbar() {
 
           <div className="navbar-right">
               <div className="desktop-links">
-                  <a href="#footer" className="nav-link" onClick={scrollToFooter}>About Us</a>
+                  <a href="#footer" className="nav-link" onClick={scrollToAboutUs}>About Us</a>
                   <Link to="/checkout" className="nav-link">Order Now</Link>
                   <button onClick={openModal} className="join-btn">Get updates</button>
               </div>

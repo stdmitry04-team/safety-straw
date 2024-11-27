@@ -65,7 +65,7 @@
   color: #d63a29;
 }
 
-.join-waitlist {
+.product-buy-now {
   position: relative;
   background: #d63a29;
   color: white;
@@ -76,7 +76,8 @@
   font-family: "Gantari";
   font-weight: 600;
   border: none;
-  margin-top: 10rem;
+  margin-top: 1rem;
+  cursor: pointer;
 }
 
 * {
@@ -198,7 +199,7 @@
     font-size: 5rem;
   }
 
-  .join-waitlist {
+  .product-buy-now {
     width: 35rem;
     height: 5rem;
   }
@@ -244,7 +245,7 @@
   .our-product-paragraph {
     font-size: 6rem;
   }
-  .join-waitlist {
+  .product-buy-now {
     width: 40rem;
     height: 6rem;
   }
