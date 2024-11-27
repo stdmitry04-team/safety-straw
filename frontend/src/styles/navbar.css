@@ -32,8 +32,9 @@
 }
 
 .logo-image {
-  width: 3.125vw;
-  height: 7.13vh;
+  /* width: clamp(40px, 4vw, 60px); */
+  width: clamp(40px, 3.125vw, 50px);
+  height: auto;
   margin-left: 1.67vw;
   align-items: center;
 }
@@ -52,7 +53,7 @@
 .navbar-right .nav-link {
   margin-right: 1.98vw;
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   line-height: 3.56vh;
   font-family: "Gantari";
@@ -84,11 +85,13 @@
   padding: 0.375rem 0.875rem;
   border-radius: 0.93vh;
   line-height: 3.56vh;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: 700;
   cursor: pointer;
   transition: background-color 0.3s opacity 0.3s;
   font-family: "Gantari", sans-serif;
+
+  margin-right: 2vw;  /* only for when cart/profile is not there */
 }
 
 .join-btn:hover {
@@ -110,7 +113,8 @@
 }
 
 .menu-icon {
-  width: 2.5rem;
+  width: 1.68rem;
+  height: auto;
 }
 
 .dropdown-menu {
@@ -146,16 +150,26 @@
 
 .mobile-logo-text {
   display: none;
-}
-
-.logo-text {
+  width: clamp(90px,3.17vw, 100px);
+  height: auto;
   margin-left: 3vw;
-  max-width: 318px;
-  width: 15vw;
-  min-width: 61px;
 }
 
-@media (max-width: 850px) {
+.desktop-logo-text {
+  margin-left: 3vw;
+  /* width: clamp(200px,15vw, 318px); */
+  width: 318px;
+}
+
+@media (max-width: 1024px) {
+  .logo-image{
+    width: 44px;
+  }
+
+  .navbar-left{
+    margin-left: 4vw;
+  }
+
   .mobile-logo-text {
     display: block;
   }
@@ -164,10 +178,6 @@
   }
   .desktop-links {
     display: none;
-  }
-
-  .menu-toggle-btn {
-    display: block;
   }
 
   .dropdown-menu {
@@ -183,21 +193,36 @@
     width: 4rem;
   }
 
-  .logo-image {
-    width: 30px;
-    height: 38px;
-    margin-left: 4vw;
-  }
-
-  .menu-icon {
-    width: 6rem;
-
+  .menu-toggle-btn{
+    display: block;
     margin-right: 4vw;
     margin-left: 2vw;
   }
 
+  .menu-icon {
+    width: 34px;
+    height: auto;
+  }
+
   .nav-link {
-    font-size: 3vw;
+    font-size: 24px;
+  }
+
+  .nav-link:hover{
+    text-decoration: underline;
+  }
+
+  .nav-link:active{
+    text-decoration: underline;
+  }
+
+  .dropdown-menu{
+    font-family: 'Gantari', sans-serif;
+    font-weight: 600;
+  }
+
+  .join-btn{
+    padding: 0rem 0.75rem;
   }
 }
 
