@@ -10,7 +10,8 @@ import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 
 // Initialize Stripe with your public key
-const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
+
+
 //change elements as we develop pages
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
@@ -22,9 +23,7 @@ const router = createBrowserRouter([
   {
     path: "/checkout",
     element: (
-      <Elements stripe={stripePromise}>
         <Checkout />
-      </Elements>
     ),
   },
 ]);
