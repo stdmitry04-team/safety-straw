@@ -1,6 +1,7 @@
 import React from "react";
 import "../styles/Product1.css";
 import back from "../assets/product.svg";
+import mob_back from "../assets/mobile-product.svg";
 import straw from "../assets/straw.svg";
 import l_arr from "../assets/left-arrow.svg";
 import r_arr from "../assets/right-arrow.svg";
