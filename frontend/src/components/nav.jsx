@@ -84,7 +84,7 @@ function Navbar() {
 
           {isDropdownOpen && (
               <div className="dropdown-menu">
-                  <a href="#footer" className="nav-link" onClick={scrollToFooter}>About Us</a>
+                  <a href="#footer" className="nav-link" onClick={scrollToAboutUs}>About Us</a>
                   <Link 
                       to="/checkout" 
                       className="nav-link" 
