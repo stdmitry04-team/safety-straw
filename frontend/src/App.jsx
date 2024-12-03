@@ -21,7 +21,7 @@ function App() {
     <div className="app">
       <Navbar/>
       <Video/>
-      {/* <Product></Product> */}
+      <Product></Product>
       <Background></Background>
       <Mission></Mission>
       <AboutUs></AboutUs>
