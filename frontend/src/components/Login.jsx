@@ -6,10 +6,10 @@ function Login() {
   const [password, setPassword] = useState("");
   //figure out env later
 
-  const API_PORT = process.env.API_PORT || 5000;
-  const REG_PORT = process.env.REG_PORT || 3000;
-  const baseUrl = process.env.BASE_URL || `http://localhost:${API_PORT}`;
-  const REG_URL = process.env.REG_URL || `http://localhost:${REG_PORT}`;
+  const API_PORT = process.env.REACT_APP_API_PORT || 5000;
+  const REG_PORT = process.env.REACT_APP_REG_PORT || 3000;
+  const baseUrl = import.meta.env.VITE_BASE_URL || `http://localhost:${API_PORT}`;
+  const REG_URL = import.meta.env.VITE_BASE_URL || `http://localhost:${REG_PORT}`;
   const handleSubmit = async (e) => {
     if (username && password) {
       const response = await fetch(`${baseUrl}/api/verify-login`, {

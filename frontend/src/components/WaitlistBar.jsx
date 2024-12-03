@@ -8,13 +8,15 @@ export default function WaitlistBar(props) {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [validStatus, setValidStatus] = useState(true);
-    const baseUrl = process.env.BASE_URL || 'http://localhost:5000';
+    // const baseUrl = process.env.REACT_APP_BASE_URL || 'http://localhost:5000';
+    const baseUrl = import.meta.env.VITE_BASE_URL || 'http://localhost:5000';
+
 
     const handleSubmit = async (e) => {
         e.preventDefault();
 
         // const response = await fetch(`${backendUrl}/api/waitlist`, {
-        const response = await fetch(`${baseUrl}/api/waitlist`, {
+        const response = await fetch(`${baseUrl}api/waitlist`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',

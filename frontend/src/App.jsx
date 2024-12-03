@@ -21,7 +21,7 @@ function App() {
       <Background></Background>
       <Mission></Mission>
       <AboutUs></AboutUs>
-      <Blogsection></Blogsection>
+      {/* <Blogsection></Blogsection> */}
       <WaitlistBar />
       <Footer />
     </div>
