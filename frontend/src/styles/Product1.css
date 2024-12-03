@@ -1,0 +1,124 @@
+.our-product {
+    background: linear-gradient(180deg, #e79b56 0%, #f9c673 30.52%, #ffffff 100%);
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 5vh 2rem;
+}
+
+.our-product-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.product-content {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+.product-diagram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    max-width: 750px;
+    aspect-ratio: 4/3;
+}
+
+.straw {
+    width: clamp(135px, 14.5vw, 257px);
+    top: 500%;
+}
+
+.annotation {
+    position: absolute;
+    font-family: "Gantari", sans-serif;
+    font-size: clamp(15px, 1.563vw, 30px);
+    font-weight: 600;
+}
+
+.left-annotation {
+    left: clamp(0em, -10%, 1em);
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.right-annotation {
+    right: 15%;
+    top: 87.5%;
+    transform: translateY(-50%);
+}
+
+.arrow {
+    position: absolute;
+}
+
+.left-arrow {
+    left: 25%;
+    top: 25%;
+    width: clamp(68.94px, 10vw, 131px);
+}
+
+.right-arrow {
+    right: 25%;
+    top: 60%;
+    width: clamp(68.94px, 8vw, 131px);
+}
+
+.product-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    width:45vw;
+    max-width: 880px;
+}
+
+.our-product-paragraph {
+    font-family: "Aileron", sans-serif;
+    font-size: clamp(27px, 3.646vw, 70px);
+    margin-bottom: 1.5rem;
+}
+
+.our-product-text {
+    font-size: clamp(19px, 2.604vw, 50px);
+    font-weight: 600;
+    font-family: "Aileron", sans-serif;
+    margin-bottom: 1rem;
+}
+
+.text-1-color {
+    color: #d63a29;
+}
+
+.product-buy-now {
+    background: #d63a29;
+    color: white;
+    font-size: clamp(17px, 2.083vw, 40px);
+    padding: 14px 100px;
+    text-decoration: none;
+    border-radius: 1.85vh;
+    font-family: "Gantari";
+    font-weight: 600;
+    border: none;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+    .product-content {
+        grid-template-columns: 1fr;
+    }
+}
