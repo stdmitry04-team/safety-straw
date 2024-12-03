@@ -209,25 +209,48 @@ app.post("/api/create-payment-intent", async (req, res) => {
   }
 });
 
+app.post("/api/update-payment-intent", async (req, res) => {
+  const { paymentIntentId, newAmount } = req.body;
+  let newPrice = Math.round(newAmount);
+  console.log(paymentIntentId, newPrice);
+  try {
+    const updatedPaymentIntent = await stripe.paymentIntents.update(
+      paymentIntentId,
+      { amount: newPrice }
+    );
+
+    res.status(200).json(updatedPaymentIntent);
+  } catch (error) {
+    console.error("Error updating payment intent:", error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
 app.post("/api/store-order", async (req, res) => {
-  const data = req.body;
-  const orders = {
-    straw_quantity: data.quantity,
-    merch_one_quantity: 0,
-    merch_two_quantity: 0,
-  };
-  const personalInfo = {
-    company_name: data.companyName,
-    phone: data.phoneNumber,
-    name: data.card.nameOnCard,
-  };
-  await sendCardPayment(
-    data.paymentIntent,
-    personalInfo,
-    orders,
-    data.mailingAddress,
-    data.billingAddress
-  );
+  try {
+    const data = req.body.data;
+    const orders = {
+      straw_quantity: data.quantity,
+      merch_one_quantity: 0,
+      merch_two_quantity: 0,
+    };
+    const personalInfo = {
+      company_name: data.companyName,
+      phone: data.phoneNumber,
+    };
+    await sendCardPayment(
+      data.paymentIntent,
+      personalInfo,
+      orders,
+      data.mailingAddress,
+      data.billingAddress,
+      data.type
+    );
+    res.status(200).json({});
+  } catch (error) {
+    console.error("Error saving the order", error.message);
+    res.status(400).json({ error: error.message });
+  }
 });
 
 // Serve static files from the public directory (serves the built react files in deployment)

@@ -20,16 +20,27 @@ function calculateResponsiveFontSize() {
   return `${fontSize}px`;
 }
 
-export default function CheckoutForm({ quantityProduct }) {
+export default function CheckoutForm({
+  quantityProduct,
+  secret,
+  formError,
+  paymentIdInitial,
+}) {
   const [checked, setChecked] = useState(false);
-  const [paymentMethod, setPaymentMethod] = useState("");
   const [paymentError, setPaymentError] = useState("");
-  const [cardComplete, setCardComplete] = useState(null);
-  const [intent, setIntent] = useState(null);
   const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
-  const [paymentElement, setPaymentElement] = useState(null); // Store PaymentElement instance
   const stripe = useStripe();
   const elements = useElements();
+  const [error, setError] = useState("");
+  const [quantity, setQuantity] = useState(1);
+  const [grandTotal, setGrandTotal] = useState(0);
+  const [totalPrice, setTotalPrice] = useState(0);
+  const [tax, setTax] = useState(0);
+  const [totalBeforeTax, setTotalBeforeTax] = useState(0);
+  const [totalWithTax, setTotalWithTax] = useState(0);
+  const [paymentId, setPaymentId] = useState(null);
+  const itemPrice = 10.99;
+  const shippingCost = 2.99;
 
   const {
     register,
@@ -62,14 +73,32 @@ export default function CheckoutForm({ quantityProduct }) {
     Michigan: 0.06,
   };
   const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
-  const itemPrice = 10.99;
-  const shippingCost = 2.99;
-  const totalPrice = quantityProduct * itemPrice;
-  const tax = totalPrice * (stateTaxRates[watch("mailingAddress.state")] || 0);
-  const totalBeforeTax = totalPrice + shippingCost;
-  const totalWithTax = totalPrice + tax;
-  const grandTotal = totalWithTax + shippingCost;
+
   const mailingAddress = watch("mailingAddress");
+
+  useEffect(() => {
+    const totalPrice = quantityProduct * itemPrice;
+    const tax =
+      totalPrice * (stateTaxRates[watch("mailingAddress.state")] || 0);
+    const totalBeforeTax = totalPrice + shippingCost;
+    const totalWithTax = totalPrice + tax;
+    setTax(tax);
+    setTotalBeforeTax(totalBeforeTax);
+    setTotalPrice(totalPrice);
+    setGrandTotal(totalWithTax + shippingCost);
+    setError(formError);
+    setQuantity(quantityProduct);
+    if (paymentId == null) {
+      setPaymentId(paymentIdInitial);
+      console.log(paymentIdInitial);
+    }
+
+    console.log(error);
+  }, [quantityProduct, paymentIdInitial, error]);
+
+  useEffect(() => {
+    handleQuantityChange();
+  }, [quantity]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -79,6 +108,40 @@ export default function CheckoutForm({ quantityProduct }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   });
+
+  const handleQuantityChange = async () => {
+    try {
+      if (paymentId != null && grandTotal > 0) {
+        console.log(grandTotal);
+        console.log(quantity);
+        const response = await fetch(`${baseUrl}/api/update-payment-intent`, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            paymentIntentId: paymentId,
+            newAmount: grandTotal * 100, // Stripe uses the smallest currency unit (e.g., cents)
+          }),
+        });
+
+        if (response.ok) {
+          const updatedIntent = await response.json();
+          setError("");
+          console.log("Updated PaymentIntent:", updatedIntent);
+        } else {
+          const error = await response.json();
+          setError(
+            "There has been a problem with the payment system. Please contact the support team."
+          );
+          console.error("Error updating PaymentIntent:", error);
+        }
+      }
+    } catch (error) {
+      console.error("Error calling update endpoint:", error.message);
+    }
+  };
+
   // Validate that at least one payment method is fully filled out
   const validatePaymentMethod = (event) => {
     console.log(event);
@@ -118,20 +181,53 @@ export default function CheckoutForm({ quantityProduct }) {
         return;
       }
 
-      const { error } = await stripe.confirmPayment({
+      const { error, paymentIntent } = await stripe.confirmPayment({
         elements,
         confirmParams: {
           return_url: `${import.meta.env.VITE_REG_URL}`,
         },
+        redirect: "if_required",
       });
-      console.log("hit");
+      data.type = paymentIntent.payment_method_types[0];
+      data.paymentIntent = secret;
+      data.quantity = quantityProduct * 100;
+
       if (error) {
         console.log("error paying");
         console.log(error);
+        setError(
+          "Failed to confirm payment. Please try again or contact support team."
+        );
       } else {
         // Proceed with the payment submission
         console.log("Payment details are valid");
-        // Optionally, send any necessary information to your backend
+
+        try {
+          // Perform the fetch request first
+          const responseIntent = await fetch(`${baseUrl}/api/store-order`, {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ data: data }),
+          });
+          console.log(responseIntent.ok);
+          if (!responseIntent.ok) {
+            setError(
+              "Failed to record the order. Please contact support team."
+            );
+
+            throw new Error("Failed to store order");
+          } else {
+            setError("");
+            const responseData = await responseIntent.json();
+            console.log("hit");
+            window.location = `${import.meta.env.VITE_REG_URL}`;
+          }
+        } catch (err) {
+          setError("Failed to record the order. Please contact support team.");
+          console.log("Error in fetch request:", err);
+        }
       }
     } catch (error) {}
   };
@@ -373,7 +469,9 @@ export default function CheckoutForm({ quantityProduct }) {
           >
             Place Your Order
           </button>
-          {/* <button className="place-order" onClick={handleButtonClick}>Place Your Order</button> */}
+          {error != "" && (
+            <p className="summary-info error-text-checkout">{error}</p>
+          )}
         </div>
       </div>
     </>

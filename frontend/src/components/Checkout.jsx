@@ -28,12 +28,23 @@ export default function Checkout() {
   const [fontSize, setFontSize] = useState(calculateResponsiveFontSize());
   const [clientSecret, setClientSecret] = useState(null);
   const [grandTotal, setGrandTotal] = useState(0);
+  const [error, setError] = useState("");
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
   const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
   const itemPrice = 10.99;
   const shippingCost = 2.99;
+
+  useEffect(() => {
+    let totalPrice = quantity * itemPrice;
+    let tax = totalPrice * (stateTaxRates["Michigan"] || 0);
+    let totalWithTax = totalPrice + tax;
+    setGrandTotal(totalWithTax + shippingCost);
+    console.log(totalWithTax + shippingCost);
+  }, []);
+
   useEffect(() => {
     const getIntent = async () => {
+      console.log("hit");
       const stripe = await stripePromise;
       if (!stripe) {
         console.error("Stripe failed to initialize.");
@@ -41,6 +52,7 @@ export default function Checkout() {
       }
 
       try {
+        console.log(grandTotal);
         const responseIntent = await fetch(
           `${baseUrl}/api/create-payment-intent`,
           {
@@ -59,22 +71,19 @@ export default function Checkout() {
         } else {
           const error = await responseIntent.json();
           console.log("Failed to make payment intent");
+          console.log(error);
           throw new Error(error);
         }
       } catch (error) {
         console.error("Error fetching payment intent:", error.message);
       }
     };
-    if (clientSecret == null) {
+
+    if (clientSecret == null && grandTotal > 0) {
       getIntent();
       console.log(clientSecret);
     }
-
-    let totalPrice = quantity * itemPrice;
-    let tax = totalPrice * (stateTaxRates["Michigan"] || 0);
-    let totalWithTax = totalPrice + tax;
-    setGrandTotal(totalWithTax + shippingCost);
-  }, [clientSecret]);
+  }, [clientSecret, grandTotal]);
 
   useEffect(() => {
     const handleResize = () => {
@@ -87,15 +96,6 @@ export default function Checkout() {
 
   const stateTaxRates = {
     Michigan: 0.06,
-  };
-
-  const handleChange = async (event) => {
-    setQuantity(parseInt(event.target.value));
-    const totalPrice = event.target.value * itemPrice;
-    const tax = totalPrice * (stateTaxRates["Michigan"] || 0);
-    const totalWithTax = totalPrice + tax;
-    setGrandTotal(totalWithTax + shippingCost);
-    console.log(totalWithTax + shippingCost);
   };
 
   // Watch mailing address for syncing with billing address
@@ -113,6 +113,10 @@ export default function Checkout() {
 
       window.history.pushState("", "", targetId);
     }
+  };
+
+  const handleChange = (event) => {
+    setQuantity(parseInt(event.target.value));
   };
 
   return (
@@ -179,7 +183,12 @@ export default function Checkout() {
           stripe={stripePromise}
           options={{ clientSecret: clientSecret }}
         >
-          <CheckoutForm quantityProduct={quantity} />
+          <CheckoutForm
+            secret={clientSecret}
+            formError={error}
+            quantityProduct={quantity}
+            paymentIdInitial={clientSecret.split("_secret")[0]}
+          />
         </Elements>
       ) : (
         clientSecret == null && (

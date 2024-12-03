@@ -483,6 +483,10 @@ input {
   margin-bottom: clamp(0.5em, 1.5vw, 0.85em);
 }
 
+.error-text-checkout {
+  margin-top: 3rem;
+  background-color: #f08275;
+}
 @media screen and (max-width: 1024px) {
   .checkout-left-imgs {
     display: none;
