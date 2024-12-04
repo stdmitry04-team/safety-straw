@@ -257,10 +257,10 @@ app.post("/api/store-order", async (req, res) => {
 app.use(express.static("public"));
 
 //Handle React routing, return all other requests to React app
-// app.get("*", (req, res) => {
-//   if (!req.path.startsWith("/api/")) {
-//     res.sendFile(path.join(__dirname, "public", "index.html"));
-//   }
-// });
+app.get("*", (req, res) => {
+  if (!req.path.startsWith("/api/")) {
+    res.sendFile(path.join(__dirname, "public", "index.html"));
+  }
+});
 
 app.listen(PORT, async () => {});
