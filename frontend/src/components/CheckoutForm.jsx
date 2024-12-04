@@ -237,7 +237,7 @@ export default function CheckoutForm({
       <div className="checkout-bottom" id="checkout">
         <div className="payment-information">
           <form className="checkout-form" onSubmit={handleSubmit(onSubmit)}>
-            <div className="input-group">
+            <div className="checkout-input-group">
               <input
                 id="company-name"
                 type="text"
@@ -265,7 +265,7 @@ export default function CheckoutForm({
             <h3>Payment Information</h3>
             <PaymentElement onChange={validatePaymentMethod} />
 
-            <h3>Mailing Address</h3>
+            <h3 className="checkout-mailing-address">Mailing Address</h3>
             <div className="checkout-input-group">
               <input
                 id="mailing-address"

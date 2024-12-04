@@ -29,6 +29,7 @@ export default function Checkout() {
   const [clientSecret, setClientSecret] = useState(null);
   const [grandTotal, setGrandTotal] = useState(0);
   const [error, setError] = useState("");
+  console.log('Stripe Key:', import.meta.env.VITE_STRIPE_PUBLIC);
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
   const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
   const itemPrice = 10.99;

@@ -4,7 +4,6 @@ FROM node:18-alpine AS frontend-build
 ARG VITE_BASE_URL
 ARG VITE_STRIPE_PUBLIC
 ARG VITE_REG_URL
-ARG VITE_BASE_URL
 
 # Set working directory for frontend
 WORKDIR /app/frontend
@@ -22,7 +21,6 @@ COPY frontend/ ./
 ENV VITE_BASE_URL=$VITE_BASE_URL
 ENV VITE_STRIPE_PUBLIC=$VITE_STRIPE_PUBLIC
 ENV VITE_REG_URL=$VITE_REG_URL
-ENV VITE_BASE_URL=$VITE_BASE_URL
 
 # Build the frontend for production
 RUN npm run build
