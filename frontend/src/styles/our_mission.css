@@ -1,195 +1,81 @@
 @font-face {
-  font-family: "Aileron";
-  src: url("../fonts/Aileron-SemiBold.otf") format("opentype");
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: "Aileron";
-  src: url("../fonts/Aileron-Bold.otf") format("opentype");
-  font-weight: 900;
-}
-
-* {
-  padding: 0;
-  margin: 0;
-}
-
-.our_mission {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 20vh auto 20vh auto;
-}
-.our_mission-whitebox {
-  background-color: white;
-  border-radius: 3.26vh;
-  position: relative;
-  width: 91.15vw;
-  min-height: 44.26vh;
-  padding: 4.62vh 11.6vw 5vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.whitebox-quotation {
-  width: 5.93rem;
-  height: 5.93rem;
-
-  position: absolute;
-  /* left: 6.4vw;
-    top: 6vw; */
-  left: 7.5%;
-  top: 25%;
-}
-
-.content-wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.our_mission-p {
-  top: 4.62vh;
-  left: 33.43vw;
-
-  height: 7.8vh;
-
-  display: flex;
-  flex-grow: 1;
-
-  font-size: 4.375rem;
-  line-height: 7.78vh;
-  font-family: "Aileron";
-  font-weight: 900;
-
-  text-align: center;
-
-  margin-bottom: 5vh;
-}
-
-.our_mission-text {
-  font-size: 3rem;
-  line-height: 1.2;
-  font-family: "Aileron", sans-serif;
-  font-weight: 600;
-  text-align: left;
-  margin-bottom: 2vh;
-  max-width: 1179px;
-}
-
-.text-color {
-  color: #d63a29;
-}
-
-.jack_and_zack {
-  right: 4.75vw;
-  bottom: 5vh;
-  /* width: 15.6vw;
-    height:5vh; */
-  position: absolute;
-  padding-top: 2vh;
-}
-
-@media screen and (max-width: 1750px) {
-  .our_mission-p {
-    font-size: 3.4rem;
+    font-family: "Aileron";
+    src: url("../fonts/Aileron-SemiBold.otf") format("opentype");
+    font-weight: 600;
   }
-  .our_mission-text {
-    font-size: 2.8rem;
-  }
-  .whitebox-quotation {
-    left: 6%;
-    width: 75px;
-  }
-  .jack_and_zack {
-    bottom: 7%;
-    width: 15%;
-  }
-}
-
-@media screen and (max-width: 1500px) {
-  .our_mission-p {
-    font-size: 3.2rem;
-  }
-  .our_mission-text {
-    font-size: 3rem;
-  }
-  .whitebox-quotation {
-    left: 5%;
-    width: 70px;
-  }
-  .jack_and_zack {
-    bottom: 12%;
-    width: 17.5%;
-  }
-}
-
-@media screen and (max-width: 1350px) {
-  .our_mission-p {
-    font-size: 3rem;
+  
+  @font-face {
+    font-family: "Aileron";
+    src: url("../fonts/Aileron-Bold.otf") format("opentype");
+    font-weight: 900;
   }
 
-  .whitebox-quotation {
-    left: 3%;
-    width: 65px;
+  .our_mission {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 15vh auto;
   }
-  .jack_and_zack {
-    right: 3%;
-  }
-}
 
-@media screen and (max-width: 1100px) {
-  .our_mission-p {
-    font-size: 4rem;
-    margin-bottom: 1vh;
-  }
-  .whitebox-quotation {
-    left: 5%;
-    top: 20%;
-    width: 60px;
-  }
-  .jack_and_zack {
-    right: 6%;
-    bottom: 10%;
-    width: 18%;
-  }
   .our_mission-whitebox {
-    min-height: 5rem;
+    background: white;
+    width: 91.15vw;
+    max-width: 1750px;
+    margin: 0 auto;
+    padding: 4.62vh 7vw 5vh;
+    border-radius: 3.26vh;
   }
-}
 
-@media screen and (max-width: 800px) {
+  .content-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5vw;
+  }
+
   .whitebox-quotation {
-    left: 7.5%;
-    top: 23%;
-    width: 10%;
-    width: 50px;
+    color: #E8927C;
+    width: clamp(40px, 5.948vw, 95px);
+    height: clamp(40px, 5.948vw, 95px);
+    aspect-ratio: 1/1;
+    margin-top: -3.906vw;
+  }
+
+  .our_mission-p {
+    text-align: center;
+    font-size: clamp(28px, 3.646vw, 70px);
+    font-family: "Aileron";
+    font-weight: 900;
   }
 
   .our_mission-text {
-    margin-left: 5vw;
+    text-align: start;
+    font-size: clamp(19px, 2.5vw, 3rem);
+    line-height: clamp(24px, 3.125vw, 60px);
+    font-family: "Aileron", sans-serif;
+    font-weight: 600;
+    width: max-content;
+    min-width: 75%;
+    height:fit-content
   }
-}
 
-@media (max-width: 700px) {
-  .our_mission-whitebox {
-    min-height: 4rem;
-  }
-}
-
-@media (max-width: 570px) {
-  .our_mission-p {
-    font-size: 4rem;
-    margin-bottom: 1vh;
-    line-height: normal;
-    height: fit-content;
+  .text-color {
+    color: #d63a29;
   }
 
   .jack_and_zack {
-    right: 8%;
-    bottom: 15%;
-    width: 25%;
+    margin-top: 1em;
+    margin-right: clamp(-60vw, -55vw, -50vw);
+    width: clamp(142px, 14.479vw, 310px);
+    height: clamp(23px, 3.125vw, 60px);
   }
+
+@media screen and (max-width: 600px){
+    .jack_and_zack{
+        margin-right: -45vw
+    }
+
+    .content-wrapper{
+        gap: 10px
+    }
 }

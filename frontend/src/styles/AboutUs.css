@@ -7,6 +7,8 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -14,6 +16,8 @@
   src: url("../fonts/Aileron-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -25,23 +29,35 @@
   -webkit-box-sizing: border-box;
 }
 
+h1 {
+  all: unset;  /* removes all default browser styles */
+}
+
 .about-us-header {
   font-family: "Aileron", -apple-system, sans-serif;
-  font-size: clamp(1.5rem, 1.667vw, 2rem);
+  font-size: clamp(27px, 3.646vw, 70px);
   font-weight: 900;
-  line-height: clamp(2.75rem, 4.375vw, 5.25rem);
   color: #000000;
+  width: -webkit-fit-content;
   width: -webkit-fit-content;
   width: fit-content;
   margin: 0 auto 3rem auto;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
+
 
 .about-us-container {
   display: -webkit-flex;
+  display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   -webkit-align-items: center;
   align-items: center;
   transform: translateZ(0);
@@ -50,8 +66,10 @@
 
 .about-us-content {
   display: -webkit-flex;
+  display: -webkit-flex;
   display: flex;
 }
+
 
 .about-us-left {
   width: 50.73vw;
@@ -60,24 +78,37 @@
   max-width: 974px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  height: auto;
+  min-height: 497px;
+  max-width: 974px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
+
 
 .about-us-right {
   display: inline-block;
   width: 34.6%;
   max-width: 562px;
   display: -webkit-flex;
+  display: inline-block;
+  width: 34.6%;
+  max-width: 562px;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
   margin: 0 0 0 4rem;
   font-family: "Aileron", -apple-system, sans-serif;
-  font-size: clamp(1.75rem, 1.875vw, 2.25rem);
+  font-size: clamp(17px, 2.135vw, 41px);
   font-weight: 400;
   color: #000000;
   text-align: left;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
+
 
 .about-us-left iframe {
   width: 100%;
@@ -88,28 +119,40 @@
   transform: translateZ(0);
   mask-image: radial-gradient(white, black);
   -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari border-radius on iframe */
+  -webkit-border-radius: 1rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  mask-image: radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari border-radius on iframe */
 }
 
+
 .contact {
-  border-radius: 1.25rem;
-  -webkit-border-radius: 1.25rem;
-  max-width: 542px;
-  min-height: 68px;
-  line-height: 1.875rem;
-  font-size: clamp(1.75rem, 2.083vw, 2.5rem);
+  border-radius: clamp(8.77px, 1.042vw, 20px);
+  -webkit-border-radius: clamp(8.77px, 1.042vw, 20px);
+  width: clamp(311px, 28.8vw, 554px);
+  height: clamp(30px, 3.542vw, 68px);
+  padding: 1rem 2rem;
+  font-size: clamp(17px, 2.083vw, 40px);
   background-color: #d63a29;
   color: white;
   border: none;
   cursor: pointer;
   font-family: "Gantari", -apple-system, sans-serif;
+  font-family: "Gantari", -apple-system, sans-serif;
   font-weight: 600;
   margin-top: auto;
   -webkit-tap-highlight-color: transparent;
   -webkit-font-smoothing: antialiased;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .contact:hover {
   opacity: 0.7;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
 }
@@ -122,33 +165,24 @@
   margin-bottom: 1rem;
 }
 
+
 .about-us {
   display: -webkit-flex;
+  display: -webkit-flex;
   display: flex;
+  -webkit-justify-content: center;
   -webkit-justify-content: center;
   justify-content: center;
   width: 100vw;
   height: -webkit-fit-content;
+  height: -webkit-fit-content;
   height: fit-content;
-  margin-bottom: 20vh;
+  margin-bottom: 20vw;
 }
 
-/* Media queries remain the same but with webkit prefixes added */
-@media (max-width: 1600px) {
-  .about-us-right {
-    /* font-size: 2.5rem; */
-  }
-}
-
-@media (max-width: 1300px) {
-  .about-us-right {
-    /* font-size: 2.75rem; */
-  }
-}
 
 @media (max-width: 1024px) {
   .about-us-right {
-    /* font-size: 2.5rem; */
     margin: 2rem 0 0 0;
     text-align: center;
     width: 88.5%;
@@ -169,27 +203,15 @@
 
     min-height: 45.12vw;
   }
-
+/* 
   .contact{
     max-width: 100%;
     width: 100%;
     min-height: 68px;
     line-height: 1.875rem;
-    /* font-size: 2.5rem; */
-  }
+  } */
 }
 
-@media (max-width: 830px) {
-  .about-us-right {
-    /* font-size: 2.25rem; */
-  }
-  .contact {
-    /* font-size: 2.25rem; */
-  }
-}
-
-
-/* Add Safari-specific media query for notched devices */
 @supports (padding-top: env(safe-area-inset-top)) {
   .about-us {
     padding-left: env(safe-area-inset-left);

@@ -185,17 +185,17 @@ html {
   width: 100%;
 }
 
-input {
-  width: 100%;
-  border: none;
-  background-color: white;
-  border-radius: 0.75em;
-  border-radius: clamp(0.5em, 0.75vw, 1em);
-  margin-bottom: clamp(0.5em, 1.5vw, 1em);
-  padding: clamp(0.5em, 1.5vw, 0.85em);
-  font-family: "Aileron", sans-serif;
-  font-weight: 400;
-  font-size: clamp(0.875rem, 1.5vw, 1.8rem);
+.checkout-input-group input{
+    width: 100%;
+    border: none;
+    background-color: white;
+    border-radius: 0.75em;
+    border-radius: clamp(0.5em, 0.75vw, 1em);
+    margin-bottom: clamp(0.5em, 1.5vw, 1em);
+    padding: clamp(0.5em, 1.5vw, 0.85em);
+    font-family: 'Aileron', sans-serif;
+    font-weight: 400;
+    font-size: clamp(0.875rem, 1.5vw, 1.8rem);
 }
 
 .card-element-group {
@@ -533,32 +533,12 @@ input {
     height: 1em;
   }
 
-  .checkout-quantity-dropdown {
-    /* font-size: 1rem; */
-    padding: 0.5em 0.5em;
-    min-height: 4.4vh;
-    border-radius: 0.6em;
-  }
-
-  .card-element-group {
-    height: clamp(1.5rem, 4vw, 5.5rem);
-  }
-  /* .checkout-quantity-dropdown option{
-        font-size: 1rem;
+    .checkout-quantity-dropdown{
+        /* font-size: 1rem; */
+        padding: 0.5em 0.5em;
+        min-height: 4.4vh;
+        border-radius: 0.6em;
     }
-
-    .checkout-currency {
-    font-size: 2rem;
-    }
-    
-    .checkout-amount {
-    font-size: 2rem;
-    }
-    
-    .checkout-cents {
-    font-size: 0.8rem;
-    vertical-align: 0.8rem;
-    } */
 
   .checkout-bottom {
     flex-direction: column;
@@ -575,15 +555,14 @@ input {
     align-items: center;
   }
 
-  .payment-information {
-    width: 80%;
-    max-width: none;
-    margin: 0;
-    order: 2;
-    /* padding: 1.75rem 1.5rem 0.75rem 1.5rem; */
-    border-radius: 1rem;
-    margin-top: 1.25em;
-  }
+    .payment-information{
+        width: 80%;
+        max-width: none;
+        margin: 0;
+        order: 2;
+        border-radius: 1rem;
+        margin-top: 1.25em;
+    }
 
   .checkout-form-bottom-input div input {
     margin-bottom: 0;
@@ -601,22 +580,19 @@ input {
     display: none;
   }
 
-  .place-order-mobile {
-    display: block;
-    width: 80%;
-    order: 2;
-    margin: 0;
-    font-size: 1.25rem;
-    text-wrap: nowrap;
-    border-radius: 1rem;
-    letter-spacing: 0.05rem;
-    padding: 0.5em 0;
-    margin-top: 1em;
-  }
-
-  .summary h1 {
-    /* font-size: 1rem; */
-  }
+    .place-order-mobile{
+        display: block;
+        width: 80%;
+        order: 2;
+        margin: 0;
+        font-size: 1.25rem;
+        text-wrap: nowrap;
+        border-radius: 1rem;
+        letter-spacing: 0.05rem;
+        padding: 0.5em 0;
+        margin-top: 1em;
+        
+    }
 
   .items,
   .before-tax {
@@ -628,55 +604,34 @@ input {
     margin-bottom: 0.625em;
   }
 
-  input,
-  .city-state-zip {
-    /* font-size: 0.7rem; */
-    /* min-height: 32px;
-        height: 2rem; */
-    /* height: 3rem; */
-    height: clamp(32px, 1.667vw, 80px) !important;
-  }
+    .city-state-zip input, .city-state-zip{
+        height: clamp(32px, 1.667vw, 80px) !important;
+    }
 
   .select-wrapper select {
     height: clamp(32px, 1.667vw, 80px) !important;
   }
 
-  .checkout-form h3 {
-    /* font-size: 1rem; */
-    text-wrap: nowrap;
-  }
+    .checkout-form h3{
+        text-wrap: nowrap;
+    }
 
   .select-field {
     padding: 0rem 0.25rem;
     font-size: 0.75rem;
   }
 
-  .same-as-label {
-    text-wrap: nowrap;
-    font-size: clamp(0, 5rem, 0.625vw, 0.75rem);
-    margin-left: 0;
-  }
+    .same-as-label{
+        text-wrap: nowrap;
+        font-size: clamp(0,5rem,0.625vw,0.75rem);
+        margin-left: 0;
+    }
 
-  /* .select-wrapper::after{
-        right: 1em;
-        top: 50%;
-        width: 0.35rem;
-        height: 0.35rem;
-        border-right: 0.15em solid #757575;
-        border-bottom: 0.15em solid #757575;
-        transform: translateY(-140%) translateX(50%) rotate(45deg);
-
-    } */
-
-  .select-wrapper select {
-    max-height: 46px;
-    height: clamp(32px, 2rem, 46px);
-    display: flex;
-  }
-
-  .city-state-zip {
-    /* gap: 1rem; */
-  }
+    .select-wrapper select{
+        max-height: 46px;
+        height: clamp(32px, 2rem, 46px);
+        display: flex;
+    }
 
   .select-label {
     font-size: 0.5rem;

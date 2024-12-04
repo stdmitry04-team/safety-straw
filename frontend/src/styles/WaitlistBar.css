@@ -12,7 +12,7 @@
 
 .waitlist {
     background-color: #FCD578;
-    height: 16.373rem;
+    min-height: 13.64vw;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -22,11 +22,11 @@
     padding-left: 3.46vw;
     padding-right: 5.46vw;
     box-sizing: border-box;
-    zoom: 0.8;
+    /* zoom: 0.8; */
 }
 
 .waitlist-header {
-    font-size: 1.8rem;
+    font-size: clamp(1rem, 2vw, 1.8rem);
     color: #D63A29;
     font-weight: 900;
 }
@@ -36,52 +36,59 @@
     flex-direction: column;
     align-items: start;
     justify-content: start;
-    row-gap: 0.438rem;
-    width: 65.313rem;
+    row-gap: clamp(0.25rem, 0.365vw, 0.438rem);
+    /* row-gap: 0.438rem; */
+    width: clamp(45rem, 54.428vw, 65.313rem);
     height: 100%;
     position: relative;
 }
 
 .waitlist-form {
-    padding-top: 6.061rem;
+    /* padding-top: 6.061rem; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    column-gap: 1.75rem;
+    /* column-gap: 1.75rem; */
+    column-gap: clamp(1rem, 1.458vw, 1.75rem);
     width: 100%;
 }
 
 .waitlist-input {
     border: none;
-    border-radius: 1.25rem;
-    font-size: 1.813rem;
+    border-radius: clamp(0.95rem, 1.25vw, 1.5rem);
+    font-size: clamp(1rem, 1.511vw, 1.813rem);
     outline: none;
-    height: 4.25rem;
+    height: clamp(2rem, 3.542vw, 4.25rem);
     box-sizing: border-box;
     padding-top: 0;
     padding-bottom: 0;
-    padding-left: 1rem;
+    padding-left: clamp(0.5rem, 0.833vw, 1rem);
+    margin: 0;
 }
 
 .waitlist-firstname {
-    width: 14.625rem;
+    width: clamp(7rem, 12.188vw, 14.625rem);
 }
 
 .waitlist-email-wrapper {
     height: 100%;
     position: relative;
-    width: 48.938rem;
+    width: clamp(30.782rem, 40.782vw, 48.938rem);
     display: flex;
     align-items: start;
 }
 .waitlist-email {
-    width: 38.438rem;
+    width: clamp(25rem, 32.448vw, 38.438rem);
 }
 
 .waitlist-terms {
-    font-size: 1.25rem;
+    font-size: clamp(0.75rem, 1.042vw, 1.25rem);
     text-align: start;
+    width: 100%;
+    max-width: calc(clamp(7rem, 12.188vw, 14.625rem) + clamp(30.782rem, 40.782vw, 48.938rem) + clamp(1rem, 1.458vw, 1.75rem));
+    box-sizing: border-box;
+    padding-right: clamp(8rem, 10.261vw, 12.313rem);
 }
 
 .waitlist-invalid {
@@ -95,9 +102,9 @@
 
 .waitlist-valid {
     position: absolute;
-    top: 4rem;
-    left: 16.5rem;
-    font-size: 1.25rem;
+    top: clamp(3rem, 3.333vw, 4rem);
+    left: clamp(10rem, 13.75vw, 16.75rem);
+    font-size: clamp(0.95rem, 1.042vw, 1.25rem);
     text-align: start;
     color: #00b415;
 }
@@ -106,12 +113,12 @@
     position: absolute;
     right: 0;
     background-color: #D63A29;
-    border-radius: 1.25rem;
-    width: 12.313rem; 
-    height: 4.249rem;
+    border-radius: clamp(0.95rem, 1.042vw, 1.25rem);
+    width: clamp(8rem, 10.261vw, 12.313rem); 
+    height: clamp(2rem, 3.542vw, 4.25rem);
     border: none;
     color: white;
-    font-size: 2rem;
+    font-size: clamp(1rem, 1.667vw, 2rem);
     font-weight: 700;
     padding: 0;
 }
@@ -125,70 +132,33 @@
     font-weight: 900;
 }
 
-@media only screen and (max-width: 1070px) {
-    .waitlist {
+@media only screen and (max-width: 1024px) {
+    .waitlist{
         flex-direction: column;
-        padding: 0;
     }
-    .waitlist-right {
-        height: auto;
-        width: 100vw;
-        align-items: start;
-        justify-content: center;
-    }
-    .waitlist-form {
+    .waitlist-form{
         flex-direction: column;
-        padding: 0;
-        height: fit-content;
-        row-gap: 0.625rem;
+        gap: 1rem
     }
-    .waitlist-email-wrapper {
-        width: 100vw;
-        height: fit-content;
+    .waitlist-input{
+        width: 100%;
+        height: clamp(2.5rem, 3.5vw, 4rem);
+        font-size: clamp(1rem, 1.75vw, 2rem);
     }
-    .waitlist-input {
-        height: 3.438rem;
+    .waitlist-button{
+        height: clamp(2.5rem, 3.5vw, 4rem);
     }
-    .waitlist-firstname {
+    .waitlist-email-wrapper{
         width: 100%;
     }
-    .waitlist-email {
-        width: 90%;
+    .waitlist-header{
+        padding: 1rem 0;
+        /* font-size: clamp(0.75rem, 3vw, 2.5rem); */
     }
-    .waitlist-button {
-        height: 3.438rem;
+    .waitlist-terms{
+        padding: 0.5rem 0;
     }
-    .waitlist-header {
-        text-align: center;
-    }
-    .waitlist-terms {
-        font-size: 1.125rem;
-    }
-    .waitlist-invalid {
-        font-size: 1.125rem;
-        position: static;
-        float: left;
-    }
-    .waitlist-valid {
-        font-size: 1.125rem;
-        position: static;
-        float: left;
-    }
-}
-
-@media only screen and (max-width: 550px) {
-    .waitlist-header {
-        font-size: 1.5rem;
-    }
-    .waitlist-input {
-        font-size: 1.25rem;
-    }
-}
-
-@media only screen and (min-width: 1537px) {
-    .waitlist-header {
-        width: 65.313rem;
-        text-align: center;
-        font-size: 2.188rem;
+    .waitlist-right{
+        width: clamp(15rem, 80.184vw, 60rem);
     }
 }

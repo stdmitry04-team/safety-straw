@@ -14,8 +14,6 @@
     margin-bottom: 1.667vw;
     margin-top: 2.18vw;
     width: clamp(150px,32.4vw,700px)
-
-
 }
 
 .footer-social:hover{
@@ -118,7 +116,7 @@ ul li a:hover {
   .footer{
         flex-direction: column;
         align-items: center;
-        margin-top: 20vw;
+        /* margin-top: 20vw; */
     }
 
     .footer-left{
