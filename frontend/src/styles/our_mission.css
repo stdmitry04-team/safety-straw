@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20vh auto;
+    margin: 15vh auto;
   }
 
   .our_mission-whitebox {
@@ -30,6 +30,7 @@
     display: flex;
     justify-content: center;
     gap: 20px;
+    margin-top: 5vw;
   }
 
   .whitebox-quotation {
@@ -43,7 +44,6 @@
   .our_mission-p {
     text-align: center;
     font-size: clamp(28px, 3.646vw, 70px);
-    margin-bottom: 5vw;
     font-family: "Aileron";
     font-weight: 900;
   }

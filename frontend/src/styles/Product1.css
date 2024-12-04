@@ -93,6 +93,7 @@
     font-family: "Aileron", sans-serif;
     font-size: clamp(27px, 3.646vw, 70px);
     margin-bottom: 1.5rem;
+    font-weight: 900;
 }
 
 .our-product-text {
