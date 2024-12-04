@@ -12,3 +12,4 @@ app = "safety-straw"
   [build.args]
   REACT_APP_BASE_URL = "https://safety-straw.fly.dev/"
   VITE_BASE_URL = "https://safety-straw.fly.dev/"
+  VITE_STRIPE_PUBLIC = "pk_test_51QAI0SP3rdeMXFxcbHMsPCs67PyQtrOJDaWkZjURanqRFLrEtruTzqYBK8LJftErciIFWilxIDezYM36XHOU1QJ3005QGzP7jR"
