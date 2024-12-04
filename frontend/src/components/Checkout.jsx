@@ -52,6 +52,8 @@ export default function Checkout() {
       }
 
       try {
+        const url = `${baseUrl}/api/create-payment-intent`;
+        console.log('Payment Intent URL:', url);
         const responseIntent = await fetch(
           `${baseUrl}/api/create-payment-intent`,
           {
@@ -79,7 +81,6 @@ export default function Checkout() {
 
     if (clientSecret == null && grandTotal > 0) {
       getIntent();
-      console.log(clientSecret);
     }
   }, [clientSecret, grandTotal]);
 
