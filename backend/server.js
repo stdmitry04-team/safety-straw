@@ -10,6 +10,8 @@ const {
   scheduleMail,
 } = require("./mailer.js");
 const { connectDB, connectClient } = require("./connect.js");
+const { sendCardPayment } = require("./stripe.js");
+
 const path = require("path");
 const app = express();
 const PORT = process.env.API_PORT || 5000; // Make sure PORT is defined here
@@ -18,8 +20,7 @@ const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
-app.use(cors());
-app.use(express.json());
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 app.use(cors());
 app.use(express.json());
@@ -193,14 +194,73 @@ app.get("/api/waitlist/confirm", async (req, res) => {
   res.status(200).send("Your email has been successfully verified!");
 });
 
+app.post("/api/create-payment-intent", async (req, res) => {
+  const { price } = req.body;
+
+  try {
+    const paymentIntent = await stripe.paymentIntents.create({
+      amount: parseFloat(price.toFixed(2)) * 100,
+      currency: "usd",
+      payment_method_types: ["card", "us_bank_account"],
+    });
+    res.json({ clientSecret: paymentIntent.client_secret });
+  } catch (error) {
+    res.status(500).send({ error: error.message });
+  }
+});
+
+app.post("/api/update-payment-intent", async (req, res) => {
+  const { paymentIntentId, newAmount } = req.body;
+  let newPrice = Math.round(newAmount);
+  console.log(paymentIntentId, newPrice);
+  try {
+    const updatedPaymentIntent = await stripe.paymentIntents.update(
+      paymentIntentId,
+      { amount: newPrice }
+    );
+
+    res.status(200).json(updatedPaymentIntent);
+  } catch (error) {
+    console.error("Error updating payment intent:", error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
+app.post("/api/store-order", async (req, res) => {
+  try {
+    const data = req.body.data;
+    const orders = {
+      straw_quantity: data.quantity,
+      merch_one_quantity: 0,
+      merch_two_quantity: 0,
+    };
+    const personalInfo = {
+      company_name: data.companyName,
+      phone: data.phoneNumber,
+    };
+    await sendCardPayment(
+      data.paymentIntent,
+      personalInfo,
+      orders,
+      data.mailingAddress,
+      data.billingAddress,
+      data.type
+    );
+    res.status(200).json({});
+  } catch (error) {
+    console.error("Error saving the order", error.message);
+    res.status(400).json({ error: error.message });
+  }
+});
+
 // Serve static files from the public directory (serves the built react files in deployment)
 app.use(express.static("public"));
 
 //Handle React routing, return all other requests to React app
-app.get("*", (req, res) => {
-  if (!req.path.startsWith("/api/")) {
-    res.sendFile(path.join(__dirname, "public", "index.html"));
-  }
-});
+// app.get("*", (req, res) => {
+//   if (!req.path.startsWith("/api/")) {
+//     res.sendFile(path.join(__dirname, "public", "index.html"));
+//   }
+// });
 
 app.listen(PORT, async () => {});

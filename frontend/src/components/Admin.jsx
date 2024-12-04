@@ -12,9 +12,9 @@ export function Admin() {
   const calendar = useRef(null);
   const time = useRef(null);
   const token = localStorage.getItem("token");
-  const PORT = process.env.REACT_APP_API_PORT || 5000; // Make sure PORT is defined here
+  const PORT = import.meta.env.VITE_API_PORT || 5000; // Make sure PORT is defined here
 
-  const baseUrl = process.env.REACT_APP_BASE_URL || `http://localhost:${PORT}`;
+  const baseUrl = import.meta.env.VITE_BASE_URL || `http://localhost:${PORT}`;
 
   const handleSubmit = async (e) => {
     if (subject && header && content) {

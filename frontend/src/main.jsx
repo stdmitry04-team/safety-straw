@@ -6,6 +6,11 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Login from "./components/Login.jsx";
 import { Admin } from "./components/Admin.jsx";
 import Checkout from "./components/Checkout.jsx";
+import { loadStripe } from "@stripe/stripe-js";
+import { Elements } from "@stripe/react-stripe-js";
+
+// Initialize Stripe with your public key
+
 
 //change elements as we develop pages
 const router = createBrowserRouter([
@@ -15,11 +20,16 @@ const router = createBrowserRouter([
   { path: "/blog", element: <App /> },
   { path: "/admin", element: <Admin /> },
   { path: "/login", element: <Login /> },
-  { path: "/checkout", element: <Checkout /> },
+  {
+    path: "/checkout",
+    element: (
+        <Checkout />
+    ),
+  },
 ]);
 
 createRoot(document.getElementById("root")).render(
-  <StrictMode>
-    <RouterProvider router={router}></RouterProvider>
-  </StrictMode>
+  //<StrictMode>
+  <RouterProvider router={router}></RouterProvider>
+  //</StrictMode>
 );
