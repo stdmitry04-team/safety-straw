@@ -20,7 +20,7 @@ const baseUrl = process.env.BASE_URL || `http://localhost:${PORT}`;
 const crypto = require("crypto");
 const nodemailer = require("nodemailer");
 
-const stripe = require("stripe")(process.env.STRIPE_SECRET); // Replace with your actual secret key
+const stripe = require("stripe")(process.env.STRIPE_SECRET);
 
 app.use(cors());
 app.use(express.json());

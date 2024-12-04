@@ -32,7 +32,7 @@ export default function Checkout() {
   const stripePromise = loadStripe(import.meta.env.VITE_STRIPE_PUBLIC);
   const baseUrl = import.meta.env.VITE_BASE_URL || "http://localhost:5000";
   const itemPrice = 10.99;
-  const shippingCost = 2.99;
+  const shippingCost = 9.99;
 
   useEffect(() => {
     let totalPrice = quantity * itemPrice;
@@ -52,7 +52,6 @@ export default function Checkout() {
       }
 
       try {
-        console.log(grandTotal);
         const responseIntent = await fetch(
           `${baseUrl}/api/create-payment-intent`,
           {
@@ -67,7 +66,6 @@ export default function Checkout() {
         if (responseIntent.ok) {
           const { clientSecret } = await responseIntent.json();
           setClientSecret(clientSecret);
-          console.log(clientSecret);
         } else {
           const error = await responseIntent.json();
           console.log("Failed to make payment intent");
