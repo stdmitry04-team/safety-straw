@@ -7,6 +7,8 @@
   font-style: normal;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @font-face {
@@ -14,6 +16,8 @@
   src: url("../fonts/Aileron-Regular.otf") format("opentype");
   font-weight: 400;
   font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -35,16 +39,25 @@ h1 {
   font-weight: 900;
   color: #000000;
   width: -webkit-fit-content;
+  width: -webkit-fit-content;
   width: fit-content;
   margin: 0 auto 3rem auto;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
+
 
 .about-us-container {
   display: -webkit-flex;
+  display: -webkit-flex;
   display: flex;
   -webkit-flex-direction: column;
+  -webkit-flex-direction: column;
   flex-direction: column;
+  -webkit-align-items: center;
+  align-items: center;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
   -webkit-align-items: center;
   align-items: center;
   transform: translateZ(0);
@@ -53,8 +66,10 @@ h1 {
 
 .about-us-content {
   display: -webkit-flex;
+  display: -webkit-flex;
   display: flex;
 }
+
 
 .about-us-left {
   width: 50.73vw;
@@ -63,14 +78,25 @@ h1 {
   max-width: 974px;
   -webkit-transform: translateZ(0);
   transform: translateZ(0);
+  height: auto;
+  min-height: 497px;
+  max-width: 974px;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
 }
+
 
 .about-us-right {
   display: inline-block;
   width: 34.6%;
   max-width: 562px;
   display: -webkit-flex;
+  display: inline-block;
+  width: 34.6%;
+  max-width: 562px;
+  display: -webkit-flex;
   display: flex;
+  -webkit-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
   margin: 0 0 0 4rem;
@@ -80,7 +106,9 @@ h1 {
   color: #000000;
   text-align: left;
   -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: antialiased;
 }
+
 
 .about-us-left iframe {
   width: 100%;
@@ -91,7 +119,13 @@ h1 {
   transform: translateZ(0);
   mask-image: radial-gradient(white, black);
   -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari border-radius on iframe */
+  -webkit-border-radius: 1rem;
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  mask-image: radial-gradient(white, black);
+  -webkit-mask-image: -webkit-radial-gradient(white, black); /* Fix for Safari border-radius on iframe */
 }
+
 
 .contact {
   border-radius: clamp(8.77px, 1.042vw, 20px);
@@ -104,6 +138,7 @@ h1 {
   color: white;
   border: none;
   cursor: pointer;
+  font-family: "Gantari", -apple-system, sans-serif;
   font-family: "Gantari", -apple-system, sans-serif;
   font-weight: 600;
   margin-top: auto;
@@ -118,6 +153,8 @@ h1 {
   opacity: 0.7;
   -webkit-transition: opacity 0.2s ease;
   transition: opacity 0.2s ease;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
 }
 
 .contact:active {
@@ -128,12 +165,16 @@ h1 {
   margin-bottom: 1rem;
 }
 
+
 .about-us {
+  display: -webkit-flex;
   display: -webkit-flex;
   display: flex;
   -webkit-justify-content: center;
+  -webkit-justify-content: center;
   justify-content: center;
   width: 100vw;
+  height: -webkit-fit-content;
   height: -webkit-fit-content;
   height: fit-content;
   margin-bottom: 20vw;

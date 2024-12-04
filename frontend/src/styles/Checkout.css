@@ -177,6 +177,7 @@ html{
     width: 53vw;
     border-radius: clamp(1rem,2.6vw,3.125rem);
     padding: clamp(2rem, 4vw, 7rem) clamp(2rem, 7vw, 7rem);
+    margin-bottom: 5rem;
 }
 
 .checkout-input-group{
