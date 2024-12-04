@@ -184,7 +184,7 @@ html{
     width: 100%;
 }
 
-input{
+.checkout-input-group input{
     width: 100%;
     border: none;
     background-color: white;
@@ -528,23 +528,6 @@ input{
         border-radius: 0.6em;
     }
 
-    /* .checkout-quantity-dropdown option{
-        font-size: 1rem;
-    }
-
-    .checkout-currency {
-    font-size: 2rem;
-    }
-    
-    .checkout-amount {
-    font-size: 2rem;
-    }
-    
-    .checkout-cents {
-    font-size: 0.8rem;
-    vertical-align: 0.8rem;
-    } */
-
     .checkout-bottom{
         flex-direction: column;
         width: 100%;
@@ -565,7 +548,6 @@ input{
         max-width: none;
         margin: 0;
         order: 2;
-        /* padding: 1.75rem 1.5rem 0.75rem 1.5rem; */
         border-radius: 1rem;
         margin-top: 1.25em;
     }
@@ -600,10 +582,6 @@ input{
         
     }
 
-    .summary h1{
-        /* font-size: 1rem; */
-    }
-
     .items, .before-tax{
         margin-bottom: 0.5em;
 
@@ -613,11 +591,7 @@ input{
         margin-bottom: 0.625em;
     }
 
-    input, .city-state-zip{
-        /* font-size: 0.7rem; */
-        /* min-height: 32px;
-        height: 2rem; */
-        /* height: 3rem; */
+    .city-state-zip input, .city-state-zip{
         height: clamp(32px, 1.667vw, 80px) !important;
     }
 
@@ -626,7 +600,6 @@ input{
     }
 
     .checkout-form h3{
-        /* font-size: 1rem; */
         text-wrap: nowrap;
     }
 
@@ -641,25 +614,10 @@ input{
         margin-left: 0;
     }
 
-    /* .select-wrapper::after{
-        right: 1em;
-        top: 50%;
-        width: 0.35rem;
-        height: 0.35rem;
-        border-right: 0.15em solid #757575;
-        border-bottom: 0.15em solid #757575;
-        transform: translateY(-140%) translateX(50%) rotate(45deg);
-
-    } */
-
     .select-wrapper select{
         max-height: 46px;
         height: clamp(32px, 2rem, 46px);
         display: flex;
-    }
-
-    .city-state-zip{
-        /* gap: 1rem; */
     }
 
     .select-label{
