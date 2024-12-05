@@ -12,9 +12,7 @@ export function Admin() {
   const calendar = useRef(null);
   const time = useRef(null);
   const token = localStorage.getItem("token");
-  const PORT = import.meta.env.VITE_API_PORT || 5000; // Make sure PORT is defined here
-
-  const baseUrl = import.meta.env.VITE_BASE_URL || `http://localhost:${PORT}`;
+  const baseUrl = import.meta.env.VITE_BASE_URL || `http://localhost:5000`;
 
   const handleSubmit = async (e) => {
     if (subject && header && content) {
